@@ -9,18 +9,19 @@ import { AnimatedSection } from '@/components/shared/animated-section'
 
 export function GuidePreview() {
   return (
-    <section className="bg-muted/50 py-16 sm:py-24">
-      <div className="container">
-        <AnimatedSection className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Essential Home Buying Guides
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <AnimatedSection className="mb-16 text-center">
+          <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+            Essential{' '}
+            <span className="text-gradient-warm">Home Buying</span> Guides
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-xl text-gray-600 leading-relaxed">
             Everything you need to know about buying a home in Santa Clarita
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {guides.map((guide, index) => (
             <AnimatedSection key={guide.slug} delay={index * 0.1}>
               <GuideCard guide={guide} />
@@ -28,10 +29,13 @@ export function GuidePreview() {
           ))}
         </div>
 
-        <AnimatedSection className="mt-12 text-center" delay={0.4}>
+        <AnimatedSection className="text-center" delay={0.4}>
           <Link href="/guides">
-            <Button size="lg">
-              <BookOpen className="mr-2 h-5 w-5" />
+            <Button
+              size="lg"
+              className="group h-14 px-8 text-lg font-semibold bg-premium-orange hover:bg-premium-rust shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+            >
+              <BookOpen className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
               Explore All Guides
             </Button>
           </Link>

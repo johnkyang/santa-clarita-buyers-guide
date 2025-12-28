@@ -2,32 +2,47 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Home, MapPin } from 'lucide-react'
+import { ArrowRight, Home, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-b from-background to-muted/50 py-20 sm:py-32">
-      <div className="container">
-        <div className="mx-auto max-w-4xl text-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2400')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm"
+            transition={{ duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2.5 text-sm font-medium text-white"
           >
-            <MapPin className="h-4 w-4 text-primary" />
-            <span className="text-muted-foreground">Your Guide to Santa Clarita Real Estate</span>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-premium-orange opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-premium-orange"></span>
+            </span>
+            Your Trusted Guide to Santa Clarita Real Estate
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl font-bold tracking-tight sm:text-6xl"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl mb-8"
           >
-            Find Your Perfect Home in{' '}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Find Your Dream Home in{' '}
+            <span className="text-gradient-warm inline-block">
               Santa Clarita
             </span>
           </motion.h1>
@@ -35,30 +50,36 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto max-w-3xl text-xl leading-relaxed text-white/90 sm:text-2xl mb-12"
           >
-            Discover the best neighborhoods, explore new construction and resale homes, and learn
-            about 55+ communities in Santa Clarita Valley. Your comprehensive resource for making
-            an informed home buying decision.
+            Discover pristine neighborhoods, explore new construction and resale homes,
+            and unlock insider knowledge about Santa Clarita Valley&apos;s finest communities.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6"
           >
             <Link href="/neighborhoods">
-              <Button size="lg" className="w-full sm:w-auto">
-                <Home className="mr-2 h-5 w-5" />
+              <Button
+                size="lg"
+                className="group w-full sm:w-auto h-14 px-8 text-lg font-semibold bg-premium-blue hover:bg-premium-blue-dark shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+              >
+                <Home className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
                 Explore Neighborhoods
               </Button>
             </Link>
             <Link href="/guides">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline"
+                className="group w-full sm:w-auto h-14 px-8 text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-105"
+              >
                 View Buyer Guides
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </motion.div>
@@ -67,27 +88,47 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4"
+            className="mt-20 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8"
           >
-            <div className="text-center">
-              <div className="text-3xl font-bold">6</div>
-              <div className="mt-1 text-sm text-muted-foreground">Neighborhoods</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">4</div>
-              <div className="mt-1 text-sm text-muted-foreground">Buyer Guides</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">55+</div>
-              <div className="mt-1 text-sm text-muted-foreground">Communities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">100%</div>
-              <div className="mt-1 text-sm text-muted-foreground">Free Resource</div>
-            </div>
+            {[
+              { value: '6', label: 'Neighborhoods', gradient: 'from-premium-blue to-premium-blue-dark' },
+              { value: '4', label: 'Buyer Guides', gradient: 'from-premium-orange to-premium-rust' },
+              { value: '55+', label: 'Communities', gradient: 'from-premium-green to-emerald-600' },
+              { value: '100%', label: 'Free Resource', gradient: 'from-amber-400 to-orange-500' },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                className="group relative rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-premium"
+              >
+                <div className={`text-4xl sm:text-5xl font-display font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2`}>
+                  {stat.value}
+                </div>
+                <div className="text-sm font-medium text-white/80 uppercase tracking-wide">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="h-8 w-8 text-white/60" />
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

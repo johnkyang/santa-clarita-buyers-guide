@@ -49,7 +49,31 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			// Premium color palette
+  			'premium-blue': {
+  				DEFAULT: '#2563eb',
+  				dark: '#1e40af',
+  				light: '#dbeafe',
+  			},
+  			'premium-orange': {
+  				DEFAULT: '#f97316',
+  				light: '#fed7aa',
+  			},
+  			'premium-green': '#10b981',
+  			'premium-cream': '#f5f1ea',
+  			'premium-gold': '#fef3c7',
+  			'premium-rust': '#ea580c',
+  		},
+  		fontFamily: {
+  			sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+  			display: ['var(--font-playfair)', 'Georgia', 'serif'],
+  		},
+  		backgroundImage: {
+  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+  			'gradient-premium': 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
+  			'gradient-warm': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+  			'gradient-overlay': 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6))',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

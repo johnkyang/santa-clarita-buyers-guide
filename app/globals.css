@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,22 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-gradient-premium {
+    @apply bg-gradient-to-r from-premium-blue to-premium-blue-dark bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-premium-orange to-premium-rust bg-clip-text text-transparent;
+  }
+
+  .shadow-premium {
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -74,5 +92,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+  }
+
+  :root {
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, serif;
   }
 }
