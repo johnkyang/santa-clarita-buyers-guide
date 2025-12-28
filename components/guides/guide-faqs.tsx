@@ -1,0 +1,27 @@
+import type { FAQ } from '@/types/guide'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+
+interface GuideFAQsProps {
+  faqs: FAQ[]
+}
+
+export function GuideFAQs({ faqs }: GuideFAQsProps) {
+  if (!faqs || faqs.length === 0) return null
+
+  return (
+    <section className="container py-12">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+
+        <Accordion type="single" collapsible className="mt-8">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
+  )
+}
