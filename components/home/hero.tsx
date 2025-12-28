@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Home, ChevronDown } from 'lucide-react'
+import { ArrowRight, Phone, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export function Hero() {
@@ -61,28 +61,37 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6"
+            className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6 mb-8"
           >
-            <Link href="/neighborhoods">
+            <Link href="/contact">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-14 px-8 text-lg font-semibold bg-premium-blue hover:bg-premium-blue-dark shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
-                <Home className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
-                Explore Neighborhoods
+                Get Started Today
+                <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link href="/guides">
+            <a href="tel:6614517200">
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-14 px-8 text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-105"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-110"
               >
-                View Buyer Guides
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
+                (661) 451-7200
               </Button>
-            </Link>
+            </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-white/80 text-sm mb-16"
+          >
+            Free consultation • No obligation • Connect with local experts
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}

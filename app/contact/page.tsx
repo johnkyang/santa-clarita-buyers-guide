@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
-import { LeadForm } from '@/components/forms/lead-form'
-import { siteConfig } from '@/config/site'
+import { LeadCaptureForm } from '@/components/forms/lead-capture-form'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 
@@ -21,10 +20,10 @@ export default function ContactPage() {
     <div className="container py-12">
       {/* Hero Section */}
       <section className="mx-auto max-w-3xl text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get In Touch</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get Started Today</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Ready to start your Santa Clarita home search? Fill out the form below and our team will
-          get back to you within 24 hours.
+          Ready to start your Santa Clarita home search? Fill out the form below and one of our affiliated
+          real estate professionals will get back to you within 24 hours.
         </p>
       </section>
 
@@ -38,8 +37,8 @@ export default function ContactPage() {
                 <Phone className="mt-1 h-5 w-5 text-primary" />
                 <div>
                   <div className="font-medium">Phone</div>
-                  <a href={`tel:${siteConfig.contact.phone}`} className="text-muted-foreground hover:text-primary">
-                    {siteConfig.contact.phone}
+                  <a href="tel:6614517200" className="text-muted-foreground hover:text-primary">
+                    (661) 451-7200
                   </a>
                 </div>
               </div>
@@ -48,8 +47,8 @@ export default function ContactPage() {
                 <Mail className="mt-1 h-5 w-5 text-primary" />
                 <div>
                   <div className="font-medium">Email</div>
-                  <a href={`mailto:${siteConfig.contact.email}`} className="text-muted-foreground hover:text-primary">
-                    {siteConfig.contact.email}
+                  <a href="mailto:jyang@loandepot.com" className="text-muted-foreground hover:text-primary">
+                    jyang@loandepot.com
                   </a>
                 </div>
               </div>
@@ -89,15 +88,15 @@ export default function ContactPage() {
             <ol className="space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="font-semibold text-primary">1.</span>
-                <span>We&apos;ll review your information and preferences</span>
+                <span>We review your information and match you with an affiliated real estate professional</span>
               </li>
               <li className="flex gap-2">
                 <span className="font-semibold text-primary">2.</span>
-                <span>A team member will contact you within 24 hours</span>
+                <span>A licensed agent will contact you within 24 hours</span>
               </li>
               <li className="flex gap-2">
                 <span className="font-semibold text-primary">3.</span>
-                <span>We&apos;ll schedule a consultation to discuss your needs</span>
+                <span>Schedule a consultation to discuss your home buying goals</span>
               </li>
               <li className="flex gap-2">
                 <span className="font-semibold text-primary">4.</span>
@@ -110,8 +109,8 @@ export default function ContactPage() {
         {/* Lead Form */}
         <div className="lg:col-span-2">
           <Card className="p-6 sm:p-8">
-            <h2 className="mb-6 text-2xl font-bold">Send Us a Message</h2>
-            <LeadForm />
+            <h2 className="mb-6 text-2xl font-bold">Tell Us About Your Home Search</h2>
+            <LeadCaptureForm source="contact-page" />
           </Card>
         </div>
       </div>

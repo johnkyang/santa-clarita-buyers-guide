@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { mainNavigation } from '@/data/navigation'
 import { MobileMenu } from './mobile-menu'
@@ -73,8 +73,17 @@ export function Header() {
               )}
             </div>
           ))}
+          <a
+            href="tel:6614517200"
+            className="hidden lg:flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-premium-blue transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            (661) 451-7200
+          </a>
           <Link href="/contact">
-            <Button>Get Started</Button>
+            <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
+              Get Started
+            </Button>
           </Link>
         </div>
 

@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { footerNavigation } from '@/data/navigation'
-import { siteConfig } from '@/config/site'
+import { Mail, Phone } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t bg-gray-900 text-white">
       <div className="container py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
@@ -15,33 +15,23 @@ export function Footer() {
               <h3 className="text-lg font-bold">Santa Clarita</h3>
               <p className="text-sm font-light">Buyers Guide</p>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-400">
               Your comprehensive resource for buying homes in Santa Clarita, California.
             </p>
-            {siteConfig.contact && (
-              <div className="space-y-2 text-sm text-muted-foreground">
-                {siteConfig.contact.email && (
-                  <div>
-                    <a
-                      href={`mailto:${siteConfig.contact.email}`}
-                      className="hover:text-primary"
-                    >
-                      {siteConfig.contact.email}
-                    </a>
-                  </div>
-                )}
-                {siteConfig.contact.phone && (
-                  <div>
-                    <a
-                      href={`tel:${siteConfig.contact.phone.replace(/[^0-9]/g, '')}`}
-                      className="hover:text-primary"
-                    >
-                      {siteConfig.contact.phone}
-                    </a>
-                  </div>
-                )}
+            <div className="space-y-2 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <a href="tel:6614517200" className="hover:text-white transition-colors">
+                  (661) 451-7200
+                </a>
               </div>
-            )}
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:jyang@loandepot.com" className="hover:text-white transition-colors">
+                  jyang@loandepot.com
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Neighborhoods */}
@@ -52,7 +42,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="text-gray-400 transition-colors hover:text-white"
                   >
                     {item.name}
                   </Link>
@@ -69,7 +59,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="text-gray-400 transition-colors hover:text-white"
                   >
                     {item.name}
                   </Link>
@@ -82,34 +72,39 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold">Company</h4>
             <ul className="space-y-3 text-sm">
-              {footerNavigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/contact" className="text-gray-400 transition-colors hover:text-white">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-gray-400 transition-colors hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="text-gray-400 transition-colors hover:text-white">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 border-t pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
-            <p>
-              &copy; {currentYear} {siteConfig.name}. All rights reserved.
+        {/* Disclaimer */}
+        <div className="mt-12 border-t border-gray-800 pt-8">
+          <div className="bg-gray-800 rounded-lg p-6 mb-8">
+            <p className="text-sm text-gray-400">
+              <strong className="text-white">Important Disclosure:</strong> Santa Clarita Buyers Guide is operated by Kailei Media,
+              a marketing firm. We are NOT a licensed real estate agent or brokerage. We provide educational resources and connect
+              prospective home buyers with affiliated real estate professionals in Santa Clarita, California. By using this website,
+              you acknowledge that any information you submit may be shared with affiliated real estate agents who can provide
+              professional assistance.
             </p>
-            <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-primary">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-primary">
-                Terms of Service
-              </Link>
-            </div>
+          </div>
+
+          <div className="text-center text-gray-500 text-sm">
+            <p>&copy; {currentYear} Santa Clarita Buyers Guide. A Kailei Media Property. All rights reserved.</p>
           </div>
         </div>
       </div>
