@@ -1,9 +1,5 @@
 import { Metadata } from 'next'
-import { Hero } from '@/components/home/hero'
-import { FeaturedNeighborhoods } from '@/components/home/featured-neighborhoods'
-import { GuidePreview } from '@/components/home/guide-preview'
-import { Features } from '@/components/home/features'
-import { CTASection } from '@/components/home/cta-section'
+import { HomeClient } from './home-client'
 
 export const metadata: Metadata = {
   title: 'Santa Clarita Home Buyers Guide | Neighborhoods, New Construction & More',
@@ -26,13 +22,5 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  return (
-    <div>
-      <Hero />
-      <Features />
-      <FeaturedNeighborhoods />
-      <GuidePreview />
-      <CTASection />
-    </div>
-  )
+  return <HomeClient />
 }
