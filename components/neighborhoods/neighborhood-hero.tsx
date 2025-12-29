@@ -9,7 +9,7 @@ interface NeighborhoodHeroProps {
 export function NeighborhoodHero({ neighborhood }: NeighborhoodHeroProps) {
   return (
     <section className="relative bg-gradient-to-b from-muted/50 to-background py-20">
-      <div className="container">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             {neighborhood.name}

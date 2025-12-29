@@ -22,7 +22,7 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
 
   return (
     <section className="bg-muted/50 py-12">
-      <div className="container">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="flex items-center gap-3">
             <DollarSign className="h-8 w-8 text-primary" />

@@ -10,7 +10,7 @@ interface GuideHeroProps {
 export function GuideHero({ guide }: GuideHeroProps) {
   return (
     <section className="relative bg-gradient-to-b from-muted/50 to-background py-20">
-      <div className="container">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="mb-4 flex items-center gap-2 text-primary">
             <BookOpen className="h-6 w-6" />

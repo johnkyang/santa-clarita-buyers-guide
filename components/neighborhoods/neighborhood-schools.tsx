@@ -9,7 +9,7 @@ interface NeighborhoodSchoolsProps {
 
 export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) {
   return (
-    <section className="container py-12">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mx-auto max-w-4xl">
         <div className="flex items-center gap-3">
           <GraduationCap className="h-8 w-8 text-primary" />

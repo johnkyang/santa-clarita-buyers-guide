@@ -18,7 +18,7 @@ export default function ResaleGuidePage() {
     <div>
       <GuideHero guide={resaleGuide} />
 
-      <section className="container py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mx-auto max-w-3xl">
           <p className="text-lg leading-relaxed text-muted-foreground">
             {resaleGuide.introduction}
@@ -28,7 +28,7 @@ export default function ResaleGuidePage() {
 
       <Separator />
 
-      <div className="container py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mx-auto max-w-3xl space-y-12">
           {resaleGuide.sections.map((section, index) => (
             <GuideSection key={section.id} section={section} index={index} />
@@ -41,7 +41,7 @@ export default function ResaleGuidePage() {
       {resaleGuide.faqs && <GuideFAQs faqs={resaleGuide.faqs} />}
 
       <section className="bg-gradient-to-b from-background to-muted/50 py-16">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl rounded-lg border bg-card p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold">Ready to Find Your Resale Home?</h2>
             <p className="mt-2 text-muted-foreground">

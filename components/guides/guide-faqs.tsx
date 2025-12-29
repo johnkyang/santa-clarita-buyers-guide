@@ -9,7 +9,7 @@ export function GuideFAQs({ faqs }: GuideFAQsProps) {
   if (!faqs || faqs.length === 0) return null
 
   return (
-    <section className="container py-12">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
 

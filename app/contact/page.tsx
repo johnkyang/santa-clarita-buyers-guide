@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { LeadCaptureForm } from '@/components/forms/lead-capture-form'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Phone, MapPin, Clock } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container py-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <section className="mx-auto max-w-3xl text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get Started Today</h1>
@@ -39,16 +39,6 @@ export default function ContactPage() {
                   <div className="font-medium">Phone</div>
                   <a href="tel:6614517200" className="text-muted-foreground hover:text-primary">
                     (661) 451-7200
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Mail className="mt-1 h-5 w-5 text-primary" />
-                <div>
-                  <div className="font-medium">Email</div>
-                  <a href="mailto:jyang@loandepot.com" className="text-muted-foreground hover:text-primary">
-                    jyang@loandepot.com
                   </a>
                 </div>
               </div>

@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container flex h-16 items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold">Santa Clarita</span>
@@ -80,9 +80,14 @@ export function Header() {
             <Phone className="w-4 h-4" />
             (661) 451-7200
           </a>
+          <Link href="/get-pre-approved">
+            <Button className="bg-gradient-to-r from-premium-blue to-premium-blue-dark hover:from-premium-blue-dark hover:to-blue-900 text-white font-semibold">
+              Get Pre-Approved
+            </Button>
+          </Link>
           <Link href="/contact">
-            <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
-              Get Started
+            <Button variant="outline" className="border-2">
+              Contact Us
             </Button>
           </Link>
         </div>

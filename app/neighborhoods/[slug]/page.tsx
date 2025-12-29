@@ -71,7 +71,7 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
 
       {/* CTA Section */}
       <section className="bg-gradient-to-b from-background to-muted/50 py-16">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl rounded-lg border bg-card p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold">Interested in {neighborhood.name}?</h2>
             <p className="mt-2 text-muted-foreground">

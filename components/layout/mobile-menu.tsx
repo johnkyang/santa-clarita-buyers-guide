@@ -23,7 +23,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   return (
     <div className="border-t bg-background md:hidden">
-      <div className="container space-y-1 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-1 py-4">
         {mainNavigation.map((item) => (
           <div key={item.name}>
             {item.children ? (
