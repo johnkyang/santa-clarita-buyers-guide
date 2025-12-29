@@ -24,9 +24,9 @@ export function FeaturedNeighborhoods() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16 justify-items-center">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
           {featuredNeighborhoods.map((neighborhood, index) => (
-            <AnimatedSection key={neighborhood.slug} delay={index * 0.1}>
+            <AnimatedSection key={neighborhood.slug} delay={index * 0.1} className="w-full">
               <NeighborhoodCard neighborhood={neighborhood} />
             </AnimatedSection>
           ))}

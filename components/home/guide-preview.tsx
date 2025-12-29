@@ -21,9 +21,9 @@ export function GuidePreview() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16 justify-items-center">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {guides.map((guide, index) => (
-            <AnimatedSection key={guide.slug} delay={index * 0.1}>
+            <AnimatedSection key={guide.slug} delay={index * 0.1} className="w-full">
               <GuideCard guide={guide} />
             </AnimatedSection>
           ))}

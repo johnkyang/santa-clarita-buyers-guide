@@ -52,11 +52,11 @@ export function Features() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <AnimatedSection key={feature.title} delay={index * 0.1}>
+              <AnimatedSection key={feature.title} delay={index * 0.1} className="w-full">
                 <div className="group relative h-[400px] rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-lg transition-all duration-500 hover:scale-105 cursor-pointer">
                   {/* Background Image */}
                   <div
