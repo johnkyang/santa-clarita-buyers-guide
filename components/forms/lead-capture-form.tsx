@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { LegalDisclosure } from '@/components/legal/disclosure';
 import { ConsentCheckbox } from '@/components/legal/consent-checkbox';
 import { Loader2, CheckCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -256,10 +255,7 @@ export function LeadCaptureForm({
         />
       </div>
 
-      {/* Legal Disclosure - Moved below form fields */}
-      <LegalDisclosure />
-
-      {/* Consent Checkbox */}
+      {/* Consent Checkbox - Now includes all legal disclosure */}
       <ConsentCheckbox
         checked={consent}
         onCheckedChange={(checked) => {
@@ -289,13 +285,6 @@ export function LeadCaptureForm({
           </>
         )}
       </Button>
-
-      <p className="text-xs text-center text-gray-500">
-        By submitting this form, you agree to our{' '}
-        <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a>
-        {' '}and{' '}
-        <a href="/terms-of-service" className="text-blue-600 hover:underline">Terms of Service</a>
-      </p>
     </form>
   );
 }
