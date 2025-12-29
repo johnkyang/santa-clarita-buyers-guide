@@ -41,7 +41,7 @@ const features = [
 export function Features() {
   return (
     <section className="py-20 sm:py-32 bg-premium-cream">
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Why Choose{' '}
@@ -52,7 +52,7 @@ export function Features() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (

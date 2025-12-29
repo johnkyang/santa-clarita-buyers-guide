@@ -10,7 +10,7 @@ import { AnimatedSection } from '@/components/shared/animated-section'
 export function GuidePreview() {
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Essential{' '}
@@ -21,7 +21,7 @@ export function GuidePreview() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16 justify-items-center">
           {guides.map((guide, index) => (
             <AnimatedSection key={guide.slug} delay={index * 0.1}>
               <GuideCard guide={guide} />

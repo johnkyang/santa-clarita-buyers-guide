@@ -20,7 +20,7 @@ export function CTASection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-5xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
             Ready to Find Your{' '}
@@ -41,14 +41,14 @@ export function CTASection() {
                 Get Started Today
               </Button>
             </Link>
-            <a href="tel:+1234567890">
+            <a href="tel:6614517200">
               <Button
                 size="lg"
                 variant="outline"
                 className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
-                Call Us Now
+                (661) 451-7200
               </Button>
             </a>
           </div>

@@ -13,7 +13,7 @@ export function FeaturedNeighborhoods() {
 
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-premium-cream/30">
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Explore Santa Clarita{' '}
@@ -24,7 +24,7 @@ export function FeaturedNeighborhoods() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16 justify-items-center">
           {featuredNeighborhoods.map((neighborhood, index) => (
             <AnimatedSection key={neighborhood.slug} delay={index * 0.1}>
               <NeighborhoodCard neighborhood={neighborhood} />
