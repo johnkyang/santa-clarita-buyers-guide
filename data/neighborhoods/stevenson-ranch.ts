@@ -45,6 +45,12 @@ export const stevensonRanch: Neighborhood = {
       district: 'Newhall School District',
     },
     {
+      name: 'Pico Canyon Elementary',
+      type: 'elementary',
+      rating: 9,
+      district: 'Newhall School District',
+    },
+    {
       name: 'Stevenson Ranch Elementary',
       type: 'elementary',
       rating: 9,
