@@ -98,9 +98,6 @@ export function LeadCaptureForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Legal Disclosure */}
-      <LegalDisclosure />
-
       {/* Name Field */}
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -258,6 +255,9 @@ export function LeadCaptureForm({
           className="w-full"
         />
       </div>
+
+      {/* Legal Disclosure - Moved below form fields */}
+      <LegalDisclosure />
 
       {/* Consent Checkbox */}
       <ConsentCheckbox
