@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { AffordabilityCalculator } from '@/components/calculators/affordability-calculator'
 
 export default function FirstTimeBuyerGuidePage() {
   return (
@@ -211,21 +212,9 @@ export default function FirstTimeBuyerGuidePage() {
                   </div>
                 </div>
 
-                {/* Calculator Placeholder */}
-                <div id="calculator" className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 mb-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Calculator className="w-8 h-8" />
-                    <h4 className="text-2xl font-bold">Interactive Affordability Calculator</h4>
-                  </div>
-                  <p className="text-blue-100 mb-6">Calculate exactly how much home you can afford based on your income, debts, down payment, and current interest rates.</p>
-
-                  <Link href="/contact">
-                    <Button size="lg" className="w-full bg-white text-blue-600 font-semibold hover:bg-gray-50 h-auto py-4">
-                      <Calculator className="w-5 h-5 mr-2" />
-                      Get Your Personalized Affordability Report
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
-                  </Link>
+                {/* Interactive Affordability Calculator */}
+                <div id="calculator" className="mb-8">
+                  <AffordabilityCalculator />
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Santa Clarita Home Affordability by Income</h3>
