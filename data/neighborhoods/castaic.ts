@@ -7,15 +7,21 @@ export const castaic: Neighborhood = {
   heroImage: '/images/neighborhoods/castaic-hero.jpg',
 
   description:
-    'Castaic is a unique community situated at the northern edge of the Santa Clarita Valley, best known for Castaic Lake and its natural beauty. This growing area offers a mix of established neighborhoods and new developments, with many homes featuring lake views or easy access to outdoor recreation. Castaic appeals to those who value outdoor activities, more affordable housing, and a peaceful setting while maintaining reasonable commute access to Los Angeles. The community offers a more rural feel compared to central Santa Clarita, with plenty of opportunities for boating, fishing, and hiking.',
+    'Castaic is Santa Clarita Valley\'s premier lakeside community and outdoor recreation paradise, offering a lifestyle centered around the spectacular 9,000-acre Castaic Lake—Southern California\'s ultimate destination for boating, fishing, water sports, and mountain-framed natural beauty. Located at the northern gateway of the valley along Interstate 5, Castaic delivers what outdoor enthusiasts and nature lovers crave: immediate access to water recreation, Angeles National Forest hiking, Pyramid Lake proximity, and breathtaking mountain vistas, all while providing exceptional home value compared to central Santa Clarita communities. Home to approximately 19,000 residents, Castaic spans from lakeside properties with stunning water views to hillside estates overlooking the valley, newer master-planned developments like Rivervillage with resort amenities, and established neighborhoods offering authentic small-town character. With home prices ranging from $350,000 (condos) to $1.2M+ (custom lakeside estates), Castaic attracts outdoor-oriented families, commuters seeking affordability without sacrificing natural beauty, retirees desiring peaceful lakeside living, and adventure seekers who prioritize weekend lake activities over urban conveniences. The community features Castaic High School (7/10), Live Oak Elementary (8/10), the state-of-the-art Castaic Sports Complex, and rapidly improving retail infrastructure including shopping centers and dining options. Castaic\'s unbeatable combination—waterfront lifestyle, mountain recreation, I-5 commuter access, $150,000-$300,000 savings versus comparable Valencia properties, low traffic, clean air, and genuine community feel—makes it Santa Clarita\'s best-kept secret for buyers who refuse to compromise outdoor living for suburban cookie-cutter developments. This is where you wake up to mountain sunrises, spend weekends on the lake instead of in shopping malls, and get significantly more house and land for your money. For families who value nature over nightlife, water sports over wine bars, and authentic outdoor Southern California living, Castaic is the obvious choice.',
 
   highlights: [
-    'Castaic Lake for boating, fishing, and water sports',
-    'More affordable housing with larger properties',
-    'Natural beauty and mountain views',
-    'Growing community with new development',
-    'Easy I-5 access for commuters',
-    'Less congested than central Santa Clarita',
+    'Castaic Lake: 9,000-acre premier recreation destination for boating, fishing, jet skiing, water skiing, swimming',
+    'Exceptional value: $350K-$1.2M+ homes ($150K-$300K below comparable Valencia, significantly more space)',
+    'Waterfront lifestyle: lakeside properties, lake-view homes, immediate water access, beach areas, boat launches',
+    'Outdoor recreation paradise: Angeles National Forest access, Pyramid Lake nearby, endless hiking trails',
+    'Larger properties: many lots 8,000-20,000+ sq ft, room for RVs, boats, outdoor living spaces',
+    'Castaic High School (7/10), Live Oak Elementary (8/10), improving Castaic Union School District',
+    'Rivervillage master-plan: newer gated community with pools, parks, trails, resort-style amenities',
+    'I-5 corridor location: easy commute to Valencia (15 min), Santa Clarita (20 min), Los Angeles (45-60 min)',
+    'Natural beauty: mountain vistas, cleaner air, lower density, peaceful semi-rural atmosphere',
+    'Castaic Sports Complex: state-of-the-art youth sports facilities, baseball, soccer, community events',
+    'Growing retail: expanding shopping centers, restaurants, essential services along Lake Hughes Road',
+    'No or minimal Mello-Roos in established neighborhoods, authentic small-town community character',
   ],
 
   demographics: {
@@ -119,16 +125,26 @@ export const castaic: Neighborhood = {
   ],
 
   metaDescription:
-    'Discover Castaic homes near beautiful Castaic Lake. Find affordable properties with mountain views, outdoor recreation, and a peaceful lifestyle in Santa Clarita\'s northern community.',
+    'Complete Castaic, CA guide. Santa Clarita\'s lakeside community: 9,000-acre Castaic Lake recreation, homes $350K-$1.2M+ ($150K-$300K below Valencia), larger lots (8,000-20,000+ sq ft), Rivervillage master-plan, Castaic High (7/10), outdoor paradise. Best value for waterfront lifestyle, boating, fishing, nature lovers in Santa Clarita Valley.',
 
   keywords: [
-    'Castaic homes',
-    'Castaic real estate',
+    'Castaic CA homes for sale',
+    'Castaic real estate Santa Clarita',
     'Castaic Lake homes',
-    'Castaic Santa Clarita',
     'lakefront properties Castaic',
-    'affordable Castaic homes',
-    'Castaic neighborhoods',
+    'waterfront homes Castaic Lake',
+    'affordable homes Castaic',
+    'Castaic home prices 2025',
+    'Rivervillage Castaic',
+    'Castaic vs Valencia prices',
+    'Castaic High School rating',
+    'Live Oak Elementary Castaic',
+    'outdoor living Castaic',
+    'boating communities Castaic',
+    'larger lots Castaic',
+    'I-5 corridor homes',
     'northern Santa Clarita',
+    'Castaic Sports Complex',
+    'buy home Castaic CA',
   ],
 }
