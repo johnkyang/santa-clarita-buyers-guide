@@ -2,11 +2,32 @@
 
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { BookOpen, ArrowRight, CheckCircle, Building2, Home, Users, DollarSign, Image as ImageIcon } from 'lucide-react'
+import { BookOpen, ArrowRight, CheckCircle, Building2, Home, Users, DollarSign, Image as ImageIcon, GraduationCap } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 
 export default function GuidesPage() {
   const guideDetails = [
+    {
+      slug: 'first-time-buyer',
+      title: 'First-Time Home Buyer Guide',
+      description: 'Complete guide to buying your first home in Santa Clarita with down payment assistance',
+      icon: GraduationCap,
+      colorFrom: 'from-teal-500',
+      colorTo: 'to-teal-600',
+      bgGradient: 'from-teal-50',
+      borderColor: 'border-teal-100',
+      hoverBorder: 'hover:border-teal-300',
+      textColor: 'text-teal-600',
+      iconBg: 'bg-gradient-to-br from-teal-500 to-teal-600',
+      benefits: [
+        'How Much Home Can You Afford?',
+        'Credit Score Requirements & Improvement',
+        'Down Payment Options (3-3.5%)',
+        'CalHFA Assistance Programs ($15K-$30K)',
+        'The Complete Buying Process',
+        'Common Mistakes to Avoid'
+      ]
+    },
     {
       slug: 'new-construction',
       title: 'New Construction Home Buying Guide',
