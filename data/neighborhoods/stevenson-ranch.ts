@@ -7,15 +7,21 @@ export const stevensonRanch: Neighborhood = {
   heroImage: '/images/neighborhoods/stevenson-ranch-hero.jpg',
 
   description:
-    'Stevenson Ranch is an exclusive, master-planned community located just west of Santa Clarita proper. Known for its gated neighborhoods, upscale homes, and meticulously maintained landscapes, Stevenson Ranch offers a premium lifestyle with resort-style amenities. The community features rolling hills, mature trees, and well-designed neighborhoods with a variety of architectural styles. Popular among professionals and families seeking a higher-end living experience, Stevenson Ranch provides excellent schools, recreational facilities, and a strong sense of community.',
+    'Stevenson Ranch stands as Santa Clarita Valley\'s most prestigious master-planned community, offering an unparalleled blend of luxury, security, and resort-style living. Developed in the 1990s on 6,000 acres of rolling hills, this exclusive community features predominantly gated neighborhoods with meticulously maintained landscapes, mature trees, and architectural diversity ranging from Mediterranean villas to contemporary estates. Home to approximately 18,000 residents, Stevenson Ranch commands premium prices ($850K-$2.5M+) justified by exceptional amenities including The Centre—a world-class 42,000 square-foot recreation facility, three championship golf courses nearby, award-winning schools (West Ranch High rated 9/10, Old Orchard Elementary rated 10/10), and an extensive network of private parks and trails. The community attracts affluent professionals, executives, and families seeking privacy, prestige, and a refined lifestyle just minutes from major employment centers. With its gated entries, 24-hour security, and strict architectural standards enforced by HOAs, Stevenson Ranch delivers the exclusivity and property value protection that discerning buyers demand.',
 
   highlights: [
-    'Gated, master-planned community with premium homes',
-    'Resort-style Recreation Center (The Centre)',
-    'Award-winning schools and high test scores',
-    'Meticulously landscaped neighborhoods',
-    'Low-density development with spacious lots',
-    'HOA amenities including pools, parks, and trails',
+    'Predominantly gated communities with 24-hour security and controlled access',
+    'The Centre: 42,000 sq ft resort-style recreation center with pools, fitness, tennis, and event spaces',
+    'Award-winning schools: West Ranch High (9/10), Old Orchard Elementary (10/10), Pico Canyon Elementary (9/10)',
+    'Meticulously maintained landscapes with mature trees and professional HOA management',
+    'Low-density development: larger lots (6,000-15,000+ sq ft) with privacy and space',
+    'Three nearby championship golf courses: Robinson Ranch, Valencia Country Club access',
+    'Stevenson Ranch Library: Modern facility with extensive programs and resources',
+    'Upscale home prices ($850K-$2.5M+) with strong appreciation history',
+    'Strict architectural guidelines ensuring property value protection',
+    'Extensive trail system connecting neighborhoods to parks and recreation',
+    'The Marketplace at Stevenson Ranch: Sprouts, dining, services',
+    'Quick access to I-5 and Valencia (5-10 minutes) while maintaining peaceful setting',
   ],
 
   demographics: {
@@ -119,15 +125,26 @@ export const stevensonRanch: Neighborhood = {
   ],
 
   metaDescription:
-    'Discover Stevenson Ranch, an exclusive gated community in Santa Clarita offering upscale homes, top-rated schools, and resort-style amenities. Perfect for families seeking premium lifestyle.',
+    'Complete Stevenson Ranch, CA community guide. Explore gated neighborhoods, The Centre recreation facility, West Ranch High School (9/10), Robinson Ranch golf, home prices ($850K-$2.5M+), HOA amenities, Mello-Roos info, and why affluent families choose this exclusive Santa Clarita community. Comprehensive buyer\'s guide to Stevenson Ranch real estate.',
 
   keywords: [
-    'Stevenson Ranch homes',
-    'Stevenson Ranch real estate',
-    'gated community Santa Clarita',
+    'Stevenson Ranch homes for sale',
+    'Stevenson Ranch gated communities',
+    'Stevenson Ranch real estate prices',
+    'The Centre Stevenson Ranch',
+    'West Ranch High School',
+    'Old Orchard Elementary Stevenson Ranch',
+    'Stevenson Ranch HOA fees',
     'luxury homes Stevenson Ranch',
-    'Stevenson Ranch schools',
-    'upscale Santa Clarita',
-    'Stevenson Ranch neighborhoods',
+    'Stevenson Ranch Mello-Roos',
+    'Robinson Ranch golf Stevenson Ranch',
+    'gated communities Santa Clarita',
+    'upscale Santa Clarita neighborhoods',
+    'Stevenson Ranch home prices 2025',
+    'buy home Stevenson Ranch',
+    'Stevenson Ranch vs Valencia',
+    'Pico Canyon Elementary',
+    'Stevenson Ranch Library',
+    'master-planned Stevenson Ranch',
   ],
 }
