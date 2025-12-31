@@ -57,7 +57,7 @@ export default function FirstTimeBuyerGuidePage() {
               <div className="text-sm text-gray-600">Min Down Payment (FHA)</div>
             </AnimatedSection>
             <AnimatedSection delay={0.1} className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">580</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">520</div>
               <div className="text-sm text-gray-600">Min Credit Score (FHA)</div>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="text-center">
@@ -139,7 +139,7 @@ export default function FirstTimeBuyerGuidePage() {
                         detail: 'You need 3-6 months of expenses AFTER buying. Don&apos;t drain savings entirely.'
                       },
                       {
-                        item: 'Good Credit Score (620+ minimum, 700+ ideal)',
+                        item: 'Good Credit Score (520+ FHA, no minimum for Conventional per DU, 700+ ideal)',
                         detail: 'Higher credit scores unlock better interest rates. A 680 vs 740 score can cost you $100+ monthly.'
                       },
                       {
@@ -292,7 +292,7 @@ export default function FirstTimeBuyerGuidePage() {
                     <h4 className="text-xl font-bold text-gray-900 mb-4">FHA Loans</h4>
                     <div className="bg-white rounded-lg p-4 border border-blue-100 mb-3">
                       <p className="text-sm text-gray-600 mb-1">Minimum Score</p>
-                      <p className="text-3xl font-bold text-blue-600">580</p>
+                      <p className="text-3xl font-bold text-blue-600">520</p>
                       <p className="text-xs text-gray-500 mt-1">3.5% down payment required</p>
                     </div>
                     <p className="text-sm text-gray-600"><strong>Best for:</strong> First-time buyers with limited down payment</p>
@@ -302,8 +302,8 @@ export default function FirstTimeBuyerGuidePage() {
                     <h4 className="text-xl font-bold text-gray-900 mb-4">Conventional Loans</h4>
                     <div className="bg-white rounded-lg p-4 border border-green-100 mb-3">
                       <p className="text-sm text-gray-600 mb-1">Minimum Score</p>
-                      <p className="text-3xl font-bold text-green-600">620</p>
-                      <p className="text-xs text-gray-500 mt-1">3-5% down payment available</p>
+                      <p className="text-2xl font-bold text-green-600">Per DU</p>
+                      <p className="text-xs text-gray-500 mt-1">No minimum - Desktop Underwriter approved</p>
                     </div>
                     <p className="text-sm text-gray-600"><strong>Best for:</strong> Buyers with good credit seeking lower costs</p>
                   </div>
@@ -372,7 +372,7 @@ export default function FirstTimeBuyerGuidePage() {
                   <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 rounded-xl p-6">
                     <h4 className="text-xl font-bold text-gray-900 mb-4">3.5% Down - FHA Loan</h4>
                     <p className="text-gray-700 mb-3"><strong>Example:</strong> $600K home = $21,000 down</p>
-                    <p className="text-sm text-gray-600"><strong>Best for:</strong> Lower credit scores (580+) or limited savings</p>
+                    <p className="text-sm text-gray-600"><strong>Best for:</strong> Lower credit scores (520+) or limited savings</p>
                   </div>
                 </div>
               </div>
