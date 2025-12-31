@@ -1,9 +1,14 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, CheckCircle2 } from 'lucide-react'
-import type { Guide } from '@/types/guide'
 
 interface GuideCardProps {
-  guide: Guide
+  guide: {
+    slug: string
+    title: string
+    subtitle: string
+    sections?: Array<{ title: string }>
+  }
+  icon?: React.ComponentType<{ className?: string }>
 }
 
 const gradients = [
@@ -13,8 +18,9 @@ const gradients = [
   'from-amber-500 via-orange-500 to-red-600',
 ]
 
-export function GuideCard({ guide }: GuideCardProps) {
+export function GuideCard({ guide, icon }: GuideCardProps) {
   const gradient = gradients[Math.abs(guide.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % gradients.length]
+  const Icon = icon || BookOpen
 
   return (
     <Link href={`/guides/${guide.slug}`} className="group block">
@@ -23,7 +29,7 @@ export function GuideCard({ guide }: GuideCardProps) {
         <div className={`relative bg-gradient-to-br ${gradient} p-8 pb-16`}>
           {/* Icon */}
           <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-white/20 backdrop-blur-sm border-2 border-white/30 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-            <BookOpen className="h-10 w-10 text-white" />
+            <Icon className="h-10 w-10 text-white" />
           </div>
 
           {/* Title */}
@@ -41,22 +47,52 @@ export function GuideCard({ guide }: GuideCardProps) {
         <div className="p-8 pt-6">
           <div className="mb-6">
             <h4 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
-              What You&apos;ll Learn:
+              {guide.sections ? "What You'll Learn:" : "Key Topics:"}
             </h4>
-            <ul className="space-y-3">
-              {guide.sections.slice(0, 3).map((section, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
-                    {section.title}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {guide.sections.length > 3 && (
-              <p className="mt-4 text-sm font-semibold text-premium-blue">
-                + {guide.sections.length - 3} more topics
-              </p>
+            {guide.sections ? (
+              <>
+                <ul className="space-y-3">
+                  {guide.sections.slice(0, 3).map((section, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                        {section.title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {guide.sections.length > 3 && (
+                  <p className="mt-4 text-sm font-semibold text-premium-blue">
+                    + {guide.sections.length - 3} more topics
+                  </p>
+                )}
+              </>
+            ) : (
+              <>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                      Interactive Affordability Calculator
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                      Down Payment & Credit Requirements
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                      CalHFA Assistance Programs ($15K-$30K)
+                    </span>
+                  </li>
+                </ul>
+                <p className="mt-4 text-sm font-semibold text-premium-blue">
+                  + 3 more comprehensive sections
+                </p>
+              </>
             )}
           </div>
 

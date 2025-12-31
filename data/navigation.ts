@@ -56,6 +56,11 @@ export const mainNavigation: NavSection[] = [
     href: '/guides',
     children: [
       {
+        name: 'First-Time Home Buyer',
+        href: '/guides/first-time-buyer',
+        description: 'Complete guide with affordability calculator & assistance programs',
+      },
+      {
         name: 'New Construction',
         href: '/guides/new-construction',
         description: 'Everything about buying brand-new homes',
@@ -98,6 +103,7 @@ export const footerNavigation = {
     { name: 'Castaic', href: '/neighborhoods/castaic' },
   ],
   guides: [
+    { name: 'First-Time Home Buyer Guide', href: '/guides/first-time-buyer' },
     { name: 'New Construction Guide', href: '/guides/new-construction' },
     { name: 'Resale Home Guide', href: '/guides/resale' },
     { name: '55+ Communities', href: '/guides/55-plus-communities' },

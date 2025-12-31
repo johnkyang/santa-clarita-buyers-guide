@@ -4,10 +4,24 @@ import Link from 'next/link'
 import { guides } from '@/data/guides'
 import { GuideCard } from '@/components/guides/guide-card'
 import { Button } from '@/components/ui/button'
-import { BookOpen } from 'lucide-react'
+import { BookOpen, GraduationCap } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 
+// First-Time Buyer Guide (standalone page)
+const firstTimeBuyerGuide = {
+  slug: 'first-time-buyer',
+  title: 'First-Time Home Buyer Guide',
+  subtitle: 'Complete guide to buying your first home in Santa Clarita with down payment assistance',
+  heroImage: '/images/guides/first-time-buyer-hero.jpg',
+  introduction: 'Everything you need to buy your first home in Santa Clarita Valley—from pre-approval to closing, down payment assistance programs to avoiding common mistakes.',
+  metaDescription: 'Complete first-time home buyer guide for Santa Clarita. Learn about affordability, credit requirements, down payment options, and CalHFA assistance programs.',
+  keywords: ['first time home buyer santa clarita', 'down payment assistance california', 'fha loans', 'conventional loans'],
+}
+
 export function GuidePreview() {
+  // Combine First-Time Buyer Guide with other guides, showing only first 4
+  const displayedGuides = [firstTimeBuyerGuide, ...guides.slice(0, 3)]
+
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,9 +36,9 @@ export function GuidePreview() {
         </AnimatedSection>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
-          {guides.map((guide, index) => (
+          {displayedGuides.map((guide, index) => (
             <AnimatedSection key={guide.slug} delay={index * 0.1} className="w-full">
-              <GuideCard guide={guide} />
+              <GuideCard guide={guide} icon={guide.slug === 'first-time-buyer' ? GraduationCap : undefined} />
             </AnimatedSection>
           ))}
         </div>
