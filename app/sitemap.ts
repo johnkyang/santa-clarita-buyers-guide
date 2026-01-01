@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { neighborhoods } from '@/data/neighborhoods'
 import { guides } from '@/data/guides'
+import { neighborhoodComparisons } from '@/data/comparisons/neighborhood-comparisons'
+import { buyerTypeGuides } from '@/data/buyer-types/buyer-type-guides'
 import { siteConfig } from '@/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -62,6 +64,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/compare`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/buyers`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
   ]
 
   // Dynamic neighborhood pages
@@ -80,5 +94,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...neighborhoodPages, ...guidePages]
+  // Programmatic comparison pages
+  const comparisonPages: MetadataRoute.Sitemap = neighborhoodComparisons.map((comparison) => ({
+    url: `${baseUrl}/compare/${comparison.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  // Programmatic buyer-type pages
+  const buyerTypePages: MetadataRoute.Sitemap = buyerTypeGuides.map((guide) => ({
+    url: `${baseUrl}/buyers/${guide.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticPages, ...neighborhoodPages, ...guidePages, ...comparisonPages, ...buyerTypePages]
 }
