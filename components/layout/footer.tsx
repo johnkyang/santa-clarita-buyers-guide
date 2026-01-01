@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Section */}
           <div className="space-y-4">
             <div>
@@ -50,6 +50,23 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-semibold">Buyer Guides</h4>
             <ul className="space-y-3 text-sm">
               {footerNavigation.guides.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 transition-colors hover:text-white"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="mb-4 text-sm font-semibold">Resources</h4>
+            <ul className="space-y-3 text-sm">
+              {footerNavigation.resources.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}

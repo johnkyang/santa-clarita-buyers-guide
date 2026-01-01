@@ -88,6 +88,58 @@ export const mainNavigation: NavSection[] = [
     ],
   },
   {
+    name: 'Blog',
+    href: '/blog',
+    children: [
+      {
+        name: 'Market Updates',
+        href: '/blog',
+        description: 'Latest Santa Clarita housing market trends and analysis',
+      },
+      {
+        name: 'Neighborhood Spotlights',
+        href: '/blog',
+        description: 'Deep dives into Santa Clarita communities',
+      },
+      {
+        name: 'Buying Tips',
+        href: '/blog',
+        description: 'Expert advice for home buyers',
+      },
+      {
+        name: 'Down Payment Assistance',
+        href: '/blog',
+        description: 'CalHFA and assistance program updates',
+      },
+    ],
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    children: [
+      {
+        name: 'Free Checklists',
+        href: '/resources',
+        description: 'Step-by-step home buying checklists',
+      },
+      {
+        name: 'Buyer Guides (PDF)',
+        href: '/resources',
+        description: 'Comprehensive downloadable guides',
+      },
+      {
+        name: 'Worksheets & Calculators',
+        href: '/resources',
+        description: 'Budget and planning tools',
+      },
+      {
+        name: 'Market Reports',
+        href: '/resources',
+        description: 'Monthly market data and trends',
+      },
+    ],
+  },
+  {
     name: 'Contact',
     href: '/contact',
   },
@@ -109,6 +161,12 @@ export const footerNavigation = {
     { name: 'New Construction Guide', href: '/guides/new-construction' },
     { name: 'Senior 55+ Communities', href: '/guides/55-plus-communities' },
     { name: 'Reverse for Purchase', href: '/guides/reverse-mortgage' },
+  ],
+  resources: [
+    { name: 'Blog', href: '/blog' },
+    { name: 'Free Resources & Downloads', href: '/resources' },
+    { name: 'Market Reports', href: '/blog' },
+    { name: 'Neighborhood Guides', href: '/blog' },
   ],
   company: [
     { name: 'About', href: '/about' },
