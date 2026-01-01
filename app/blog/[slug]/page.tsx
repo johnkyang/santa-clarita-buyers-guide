@@ -8,7 +8,7 @@ import { ArticleSchema } from '@/components/shared/article-schema'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, User, ArrowRight, Share2 } from 'lucide-react'
-import ReactMarkdown from 'react-markdown'
+import { MarkdownContent } from '@/components/blog/markdown-content'
 
 interface BlogPostPageProps {
   params: {
@@ -118,9 +118,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article Content */}
       <article className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg prose-blue max-w-none">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
-          </div>
+          <MarkdownContent content={post.content} />
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
