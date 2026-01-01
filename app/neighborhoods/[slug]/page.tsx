@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: NeighborhoodPageProps): Promi
   }
 
   return {
-    title: `${neighborhood.name} - Santa Clarita Neighborhood Guide`,
+    title: `${neighborhood.name} Community Guide`,
     description: neighborhood.metaDescription,
     keywords: neighborhood.keywords,
     openGraph: {
-      title: `${neighborhood.name} - Santa Clarita`,
+      title: `${neighborhood.name} Community Guide`,
       description: neighborhood.metaDescription,
       type: 'website',
     },

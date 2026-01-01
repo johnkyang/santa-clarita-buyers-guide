@@ -123,16 +123,6 @@ Don't wait for the voucher! Start researching now:
 - **Saugus**: $795K median, top schools
 - **Valencia**: $950K median, master-planned amenities
 
-**What you can afford with Dream For All:**
-
-| Budget | Dream For All | Your Down | Purchase Power |
-|--------|---------------|-----------|----------------|
-| $50K | $150K | $26K (3.5%) | $750K |
-| $70K | $150K | $31.5K (3.5%) | $900K |
-| $90K | $150K | $36.75K (3.5%) | $1.05M |
-
-*Assumes 3.5% FHA minimum down payment + Dream For All assistance*
-
 ## Common Mistakes to Avoid
 
 ### ❌ Waiting Until Registration Opens

@@ -85,11 +85,6 @@ export function Header() {
               Get Pre-Approved
             </Button>
           </Link>
-          <Link href="/contact">
-            <Button variant="outline" className="border-2">
-              Contact Us
-            </Button>
-          </Link>
         </div>
 
         {/* Mobile menu button */}

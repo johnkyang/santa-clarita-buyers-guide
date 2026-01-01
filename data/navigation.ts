@@ -170,7 +170,7 @@ export const footerNavigation = {
   ],
   company: [
     { name: 'About', href: '/about' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'Contact', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
   ],

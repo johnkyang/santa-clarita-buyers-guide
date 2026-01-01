@@ -152,26 +152,39 @@ export function LeadCaptureForm({
 
       {/* Interested In */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-2">
-          Interested In (Select all that apply) <span className="text-red-600">*</span>
-        </label>
+        <div className="flex items-center justify-between mb-2">
+          <label className="block text-sm font-semibold text-gray-700">
+            Neighborhoods of Interest <span className="text-red-600">*</span>
+          </label>
+          {selectedNeighborhoods.length > 0 && (
+            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-semibold">
+              {selectedNeighborhoods.length} selected
+            </span>
+          )}
+        </div>
+        <p className="text-xs text-gray-600 mb-3 flex items-center gap-1">
+          <CheckCircle className="w-3 h-3" />
+          Select all neighborhoods you&apos;re interested in
+        </p>
         <div className="grid grid-cols-2 gap-3">
           {['Valencia', 'Stevenson Ranch', 'Saugus', 'Canyon Country', 'Newhall', 'Castaic', 'Not Sure Yet'].map((neighborhood) => (
             <label
               key={neighborhood}
-              className={`flex items-center gap-2 cursor-pointer p-3 border rounded-lg transition-colors ${
+              className={`flex items-center gap-2 cursor-pointer p-3 border-2 rounded-lg transition-all ${
                 selectedNeighborhoods.includes(neighborhood)
-                  ? 'bg-blue-50 border-blue-500'
-                  : 'hover:bg-gray-50'
+                  ? 'bg-blue-50 border-blue-500 shadow-sm'
+                  : 'border-gray-200 hover:bg-gray-50 hover:border-gray-300'
               }`}
             >
               <input
                 type="checkbox"
                 checked={selectedNeighborhoods.includes(neighborhood)}
                 onChange={() => toggleNeighborhood(neighborhood)}
-                className="w-4 h-4"
+                className="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
               />
-              <span className="text-sm text-gray-700">{neighborhood}</span>
+              <span className={`text-sm ${selectedNeighborhoods.includes(neighborhood) ? 'text-blue-900 font-semibold' : 'text-gray-700'}`}>
+                {neighborhood}
+              </span>
             </label>
           ))}
         </div>
