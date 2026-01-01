@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
             <li>Right to opt-out of the sale of personal information (we do not sell your information)</li>
           </ul>
           <p className="mt-4">
-            To exercise these rights, contact us at (661) 451-7200 or jyang@loandepot.com
+            To exercise these rights, contact us at (661) 451-7200
           </p>
         </section>
 
@@ -138,7 +138,6 @@ export default function PrivacyPolicyPage() {
             <p className="mb-2"><strong>Kailei Media</strong></p>
             <p className="mb-2">Santa Clarita Buyers Guide</p>
             <p className="mb-2">Phone: (661) 451-7200</p>
-            <p className="mb-2">Email: jyang@loandepot.com</p>
           </div>
         </section>
       </div>

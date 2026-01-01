@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { footerNavigation } from '@/data/navigation'
-import { Mail, Phone } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -23,12 +23,6 @@ export function Footer() {
                 <Phone className="w-4 h-4" />
                 <a href="tel:6614517200" className="hover:text-white transition-colors">
                   (661) 451-7200
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <a href="mailto:jyang@loandepot.com" className="hover:text-white transition-colors">
-                  jyang@loandepot.com
                 </a>
               </div>
             </div>

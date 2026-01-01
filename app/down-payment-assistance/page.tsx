@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
 import { CheckCircle2, DollarSign, Home } from 'lucide-react'
+import { CalHFADFASection } from '@/components/shared/calhfa-dfa-section'
 
 export const metadata: Metadata = {
   title: 'Down Payment Assistance Programs Santa Clarita (2025) | CalHFA, GSFA & More',
@@ -48,8 +49,8 @@ export default function DownPaymentAssistancePage() {
           <p className="mb-8 text-xl text-muted-foreground">
             Buying a home in Santa Clarita is more affordable than you think with down payment
             assistance (DPA) programs. Whether you&apos;re a first-time home buyer or moving up,
-            programs like CalHFA MyHome, CalHFA ZIP, GSFA DPA, and GSFA AccessZero can help you buy
-            a home with as little as 3% down—or even 0% down in some cases.
+            programs like CalHFA Dream For All, CalHFA MyHome, CalHFA ZIP, and GSFA DPA can help you buy
+            a home with as little as 3% down—with assistance up to $150,000.
           </p>
 
           <Card className="mb-8 border-l-4 border-l-green-500 bg-green-50 p-6">
@@ -85,13 +86,20 @@ export default function DownPaymentAssistancePage() {
           <Separator className="my-8" />
 
           <h2 className="mb-6 text-3xl font-bold">
-            4 Main Down Payment Assistance Programs for Santa Clarita
+            Down Payment Assistance Programs for Santa Clarita
           </h2>
+
+          {/* CalHFA Dream For All - Now Program #1 */}
+          <div className="mb-8">
+            <CalHFADFASection showFAQ={true} />
+          </div>
+
+          <Separator className="my-8" />
 
           {/* CalHFA MyHome */}
           <Card className="mb-8 border-2 border-blue-200 p-6">
             <h3 className="mb-4 text-2xl font-semibold text-blue-700">
-              1. CalHFA MyHome Assistance Program
+              2. CalHFA MyHome Assistance Program
             </h3>
 
             <div className="mb-4 grid gap-4 md:grid-cols-2">
@@ -158,7 +166,7 @@ export default function DownPaymentAssistancePage() {
                 <strong>First-time home buyer</strong> (or haven&apos;t owned in 3 years)
               </li>
               <li>
-                <strong>Income limits:</strong> LA County: $184,300 for 1-2 person household
+                <strong>Income limits:</strong> Varies by county (see CalHFA Dream For All section below for county limits)
               </li>
               <li>
                 <strong>Credit score:</strong> Minimum 660 for conventional, 640 for FHA
@@ -179,7 +187,7 @@ export default function DownPaymentAssistancePage() {
           {/* CalHFA ZIP */}
           <Card className="mb-8 border-2 border-purple-200 p-6">
             <h3 className="mb-4 text-2xl font-semibold text-purple-700">
-              2. CalHFA Zero Interest Program (ZIP)
+              3. CalHFA Zero Interest Program (ZIP)
             </h3>
 
             <div className="mb-4 grid gap-4 md:grid-cols-2">
@@ -250,7 +258,7 @@ export default function DownPaymentAssistancePage() {
                 <strong>First-time buyer:</strong> NOT required (repeat buyers OK!)
               </li>
               <li>
-                <strong>Income limits:</strong> Same as MyHome - LA County: $184,300
+                <strong>Income limits:</strong> Same as MyHome - varies by county
               </li>
               <li>
                 <strong>Credit score:</strong> Minimum 660 (conventional), 640 (FHA)
@@ -267,24 +275,24 @@ export default function DownPaymentAssistancePage() {
           {/* GSFA DPA */}
           <Card className="mb-8 border-2 border-green-200 p-6">
             <h3 className="mb-4 text-2xl font-semibold text-green-700">
-              3. GSFA Down Payment Assistance (DPA) Program
+              4. GSFA Down Payment Assistance (DPA) Program (Platinum)
             </h3>
 
             <div className="mb-4 grid gap-4 md:grid-cols-2">
               <div>
                 <p className="mb-2 font-semibold">Program Type:</p>
                 <p className="text-muted-foreground">
-                  Grant (3.5% of purchase price - does NOT have to be repaid!)
+                  15-year amortizing second mortgage (up to 5.5% of loan amount)
                 </p>
               </div>
               <div>
                 <p className="mb-2 font-semibold">Repayment:</p>
-                <p className="text-muted-foreground">NONE - it&apos;s a grant, not a loan</p>
+                <p className="text-muted-foreground">Yes - monthly payments required</p>
               </div>
               <div>
-                <p className="mb-2 font-semibold">Catch:</p>
+                <p className="mb-2 font-semibold">Interest Rate:</p>
                 <p className="text-muted-foreground">
-                  Slightly higher interest rate on first mortgage (+0.375%)
+                  Same rate as your first mortgage
                 </p>
               </div>
               <div>
@@ -295,11 +303,12 @@ export default function DownPaymentAssistancePage() {
 
             <h4 className="mb-3 text-xl font-semibold">How GSFA DPA Works:</h4>
             <ul className="mb-4 list-disc space-y-2 pl-6">
-              <li>You get 3.5% of purchase price as a GRANT (free money - never repaid)</li>
-              <li>Trade-off: Your mortgage interest rate is 0.375% higher</li>
+              <li>Get up to 5.5% of loan amount as down payment assistance</li>
+              <li>Second mortgage with 15-year term and monthly payments</li>
+              <li>Interest rate on second loan matches your first mortgage rate</li>
               <li>Works with FHA, VA, USDA, and conventional loans</li>
-              <li>No income limits (unlike CalHFA)</li>
-              <li>Can be used for down payment and/or closing costs</li>
+              <li>Income limits apply for conventional loans only (80% of Area Median Income)</li>
+              <li>Due and payable when you sell, refinance, or pay off first mortgage</li>
             </ul>
 
             <div className="mb-4 rounded bg-green-50 p-4">
@@ -311,22 +320,28 @@ export default function DownPaymentAssistancePage() {
                   <strong>Home price:</strong> $725,000 (Newhall)
                 </p>
                 <p>
-                  <strong>GSFA DPA grant:</strong> $25,375 (3.5% - NEVER repaid!)
+                  <strong>First mortgage (FHA):</strong> $699,625 (96.5%)
                 </p>
                 <p>
-                  <strong>Your down payment:</strong> $0 (FHA 3.5% covered by grant)
+                  <strong>GSFA DPA (5% of loan):</strong> $34,981 (second mortgage)
                 </p>
                 <p>
-                  <strong>First mortgage:</strong> $725,000 (FHA)
+                  <strong>Your down payment:</strong> $500 (FHA 3.5% minus DPA)
                 </p>
                 <p>
-                  <strong>Interest rate:</strong> 7.125% (vs 6.75% without DPA)
+                  <strong>Interest rate (both loans):</strong> 6.75%
                 </p>
                 <p>
-                  <strong>Total out of pocket:</strong> ~$10,000 (closing costs only)
+                  <strong>First mortgage payment:</strong> ~$4,536/month
+                </p>
+                <p>
+                  <strong>Second mortgage payment:</strong> ~$310/month (15-year term)
+                </p>
+                <p>
+                  <strong>Total monthly payment:</strong> ~$4,846 + taxes/insurance
                 </p>
                 <p className="font-semibold text-green-700">
-                  Free $25K grant, but higher rate = $150/month more
+                  Buy with minimal cash, but monthly payment includes both loans
                 </p>
               </div>
             </div>
@@ -337,102 +352,19 @@ export default function DownPaymentAssistancePage() {
                 <strong>First-time buyer:</strong> Required (or 3 years without ownership)
               </li>
               <li>
-                <strong>Income limits:</strong> NONE (major advantage over CalHFA)
+                <strong>Income limits:</strong> NONE for FHA/VA/USDA. For conventional loans, income must be at or below 80% of Area Median Income for best pricing
               </li>
               <li>
-                <strong>Credit score:</strong> Minimum 620
+                <strong>Credit score:</strong> Minimum 640 (660 for manufactured housing)
               </li>
               <li>
-                <strong>Homebuyer education:</strong> Required
+                <strong>Max DTI:</strong> 45-50% depending on loan type and credit score
+              </li>
+              <li>
+                <strong>Homebuyer education:</strong> Required if all borrowers are first-time buyers
               </li>
               <li>
                 <strong>Owner-occupied:</strong> Primary residence only
-              </li>
-            </ul>
-          </Card>
-
-          {/* GSFA AccessZero */}
-          <Card className="mb-8 border-2 border-orange-200 p-6">
-            <h3 className="mb-4 text-2xl font-semibold text-orange-700">
-              4. GSFA AccessZero Program (0% Down!)
-            </h3>
-
-            <div className="mb-4 grid gap-4 md:grid-cols-2">
-              <div>
-                <p className="mb-2 font-semibold">Down Payment:</p>
-                <p className="text-muted-foreground">0% - Buy with NO down payment</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">Program Type:</p>
-                <p className="text-muted-foreground">Piggyback loan (covers 3% down payment)</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">Repayment:</p>
-                <p className="text-muted-foreground">
-                  Repaid when you sell or refinance (silent second)
-                </p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">First-Time Buyer?</p>
-                <p className="text-muted-foreground">Yes</p>
-              </div>
-            </div>
-
-            <h4 className="mb-3 text-xl font-semibold">How GSFA AccessZero Works:</h4>
-            <ul className="mb-4 list-disc space-y-2 pl-6">
-              <li>0% down payment required - buy with ZERO money down</li>
-              <li>GSFA provides 3% of purchase price as silent second mortgage</li>
-              <li>No monthly payment on the 3% loan</li>
-              <li>Repaid when you sell, refinance, or after 30 years</li>
-              <li>Conventional 97% LTV first mortgage</li>
-            </ul>
-
-            <div className="mb-4 rounded bg-orange-50 p-4">
-              <h4 className="mb-3 text-xl font-semibold">
-                Real Example: Buying in Castaic with AccessZero
-              </h4>
-              <div className="space-y-2">
-                <p>
-                  <strong>Home price:</strong> $750,000 (Castaic)
-                </p>
-                <p>
-                  <strong>GSFA AccessZero covers:</strong> $22,500 (3%)
-                </p>
-                <p>
-                  <strong>Your down payment:</strong> $0
-                </p>
-                <p>
-                  <strong>First mortgage (97%):</strong> $727,500
-                </p>
-                <p>
-                  <strong>Second mortgage (3%):</strong> $22,500 (no monthly payment)
-                </p>
-                <p>
-                  <strong>Total out of pocket:</strong> ~$12,000 (closing costs only)
-                </p>
-                <p className="font-semibold text-orange-700">Buy a $750K home with $0 down!</p>
-              </div>
-            </div>
-
-            <h4 className="mb-3 text-xl font-semibold">GSFA AccessZero Requirements:</h4>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                <strong>First-time buyer:</strong> Required
-              </li>
-              <li>
-                <strong>Income limits:</strong> NONE
-              </li>
-              <li>
-                <strong>Credit score:</strong> Minimum 680
-              </li>
-              <li>
-                <strong>Debt-to-income:</strong> Max 45%
-              </li>
-              <li>
-                <strong>Reserves:</strong> May need 2-6 months reserves
-              </li>
-              <li>
-                <strong>Homebuyer education:</strong> Required
               </li>
             </ul>
           </Card>
@@ -448,25 +380,25 @@ export default function DownPaymentAssistancePage() {
               <thead>
                 <tr className="bg-muted">
                   <th className="border p-3 text-left">Feature</th>
+                  <th className="border p-3 text-left">CalHFA Dream For All</th>
                   <th className="border p-3 text-left">CalHFA MyHome</th>
                   <th className="border p-3 text-left">CalHFA ZIP</th>
                   <th className="border p-3 text-left">GSFA DPA</th>
-                  <th className="border p-3 text-left">GSFA AccessZero</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border p-3 font-semibold">Assistance Amount</td>
+                  <td className="border p-3">Up to 20% (max $150K)</td>
                   <td className="border p-3">3.5% of price</td>
                   <td className="border p-3">Up to $30,000</td>
-                  <td className="border p-3">3.5% of price</td>
-                  <td className="border p-3">3% of price</td>
+                  <td className="border p-3">Up to 5.5% of loan</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">Must Repay?</td>
+                  <td className="border p-3">Appreciation share</td>
                   <td className="border p-3">Yes (when sell/refi)</td>
                   <td className="border p-3">Yes (when sell/refi)</td>
-                  <td className="border p-3">NO - it&apos;s a grant!</td>
                   <td className="border p-3">Yes (when sell/refi)</td>
                 </tr>
                 <tr>
@@ -474,42 +406,42 @@ export default function DownPaymentAssistancePage() {
                   <td className="border p-3">No</td>
                   <td className="border p-3">No</td>
                   <td className="border p-3">No</td>
-                  <td className="border p-3">No</td>
+                  <td className="border p-3">YES - amortizing</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">Interest Rate</td>
                   <td className="border p-3">0%</td>
                   <td className="border p-3">0%</td>
-                  <td className="border p-3">N/A (grant) but +0.375% on mortgage</td>
                   <td className="border p-3">0%</td>
+                  <td className="border p-3">Same as first mortgage</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">First-Time Buyer?</td>
+                  <td className="border p-3">Yes (first-generation)</td>
                   <td className="border p-3">Yes</td>
                   <td className="border p-3">NO</td>
-                  <td className="border p-3">Yes</td>
                   <td className="border p-3">Yes</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">Income Limits?</td>
-                  <td className="border p-3">Yes ($184K)</td>
-                  <td className="border p-3">Yes ($184K)</td>
-                  <td className="border p-3">NO</td>
-                  <td className="border p-3">NO</td>
+                  <td className="border p-3">Yes (by county)</td>
+                  <td className="border p-3">Yes (by county)</td>
+                  <td className="border p-3">Yes (by county)</td>
+                  <td className="border p-3">Conventional only (80% AMI)</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">Min Credit Score</td>
+                  <td className="border p-3">Varies by lender</td>
                   <td className="border p-3">640-660</td>
                   <td className="border p-3">640-660</td>
-                  <td className="border p-3">620</td>
-                  <td className="border p-3">680</td>
+                  <td className="border p-3">640</td>
                 </tr>
                 <tr>
                   <td className="border p-3 font-semibold">Best For</td>
+                  <td className="border p-3">First-generation buyers needing max assistance</td>
                   <td className="border p-3">First-time buyers under income limits</td>
                   <td className="border p-3">Repeat buyers or fixed $30K need</td>
-                  <td className="border p-3">Higher income buyers</td>
-                  <td className="border p-3">Zero down purchase</td>
+                  <td className="border p-3">Buyers who can afford 2 payments</td>
                 </tr>
               </tbody>
             </table>
@@ -521,12 +453,25 @@ export default function DownPaymentAssistancePage() {
           </h2>
 
           <div className="mb-12 space-y-6">
+            <Card className="bg-green-50 p-6">
+              <h4 className="mb-3 text-xl font-semibold">Choose CalHFA Dream For All if:</h4>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>You&apos;re a first-generation homebuyer (parents never owned a home)</li>
+                <li>You need significant down payment help (up to $150K)</li>
+                <li>Your income meets CalHFA county limits</li>
+                <li>You want 0% interest with no monthly payment on the assistance</li>
+                <li>You&apos;re OK with appreciation sharing when you sell</li>
+                <li>You can register for a voucher when the program opens in early 2026</li>
+              </ul>
+            </Card>
+
             <Card className="bg-blue-50 p-6">
               <h4 className="mb-3 text-xl font-semibold">Choose CalHFA MyHome if:</h4>
               <ul className="list-disc space-y-2 pl-6">
                 <li>You&apos;re a first-time buyer</li>
-                <li>Your income is under $184,300</li>
+                <li>Your income meets CalHFA county limits</li>
                 <li>You want the lowest interest rate possible</li>
+                <li>You want 0% interest with no monthly payment on the assistance</li>
                 <li>You&apos;re OK repaying when you sell (which most people do anyway)</li>
               </ul>
             </Card>
@@ -536,31 +481,23 @@ export default function DownPaymentAssistancePage() {
               <ul className="list-disc space-y-2 pl-6">
                 <li>You&apos;ve owned a home before (not first-time buyer)</li>
                 <li>You need a fixed $30,000 in help</li>
-                <li>Your income is under $184,300</li>
+                <li>Your income meets CalHFA county limits</li>
                 <li>Buying a lower-priced home where $30K is enough</li>
               </ul>
             </Card>
 
-            <Card className="bg-green-50 p-6">
+            <Card className="bg-orange-50 p-6">
               <h4 className="mb-3 text-xl font-semibold">Choose GSFA DPA if:</h4>
               <ul className="list-disc space-y-2 pl-6">
-                <li>Your income EXCEEDS $184,300 (no income limits!)</li>
-                <li>You want FREE money you never repay</li>
-                <li>You plan to stay in the home 5+ years (higher rate worth it)</li>
-                <li>You don&apos;t mind 0.375% higher interest rate</li>
-              </ul>
-            </Card>
-
-            <Card className="bg-orange-50 p-6">
-              <h4 className="mb-3 text-xl font-semibold">Choose GSFA AccessZero if:</h4>
-              <ul className="list-disc space-y-2 pl-6">
-                <li>You have good credit (680+) but little cash</li>
-                <li>You want 0% down</li>
-                <li>You have stable income and can afford the payment</li>
-                <li>Your income exceeds CalHFA limits</li>
+                <li>You need more than $30K in assistance (up to 5.5% of loan amount)</li>
+                <li>You can afford two monthly mortgage payments (first + second)</li>
+                <li>You&apos;re using FHA/VA/USDA and have higher income (no income limits)</li>
+                <li>You want assistance without a higher interest rate surcharge</li>
               </ul>
             </Card>
           </div>
+
+          <Separator className="my-12" />
 
           {/* CTAs */}
           <div className="rounded-lg bg-gradient-to-r from-primary to-primary/60 p-8 text-white">

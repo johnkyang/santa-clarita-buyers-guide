@@ -1,5 +1,6 @@
 import type { FAQ } from '@/types/guide'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { FAQSchema } from '@/components/shared/faq-schema'
 
 interface GuideFAQsProps {
   faqs: FAQ[]
@@ -10,6 +11,7 @@ export function GuideFAQs({ faqs }: GuideFAQsProps) {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <FAQSchema faqs={faqs} />
       <div className="mx-auto max-w-3xl">
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
 

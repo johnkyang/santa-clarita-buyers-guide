@@ -3,9 +3,12 @@ import { newConstructionGuide } from '@/data/guides'
 import { GuideHero } from '@/components/guides/guide-hero'
 import { GuideSection } from '@/components/guides/guide-section'
 import { GuideFAQs } from '@/components/guides/guide-faqs'
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
-import Link from 'next/link'
+import { ScheduleTourCTA } from '@/components/shared/schedule-tour-cta'
+import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+import { ArticleSchema } from '@/components/shared/article-schema'
+import { RelatedGuides } from '@/components/shared/related-guides'
+import { RelatedNeighborhoods } from '@/components/shared/related-neighborhoods'
+import { Home, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: newConstructionGuide.title,
@@ -16,55 +19,109 @@ export const metadata: Metadata = {
 export default function NewConstructionGuidePage() {
   return (
     <div>
+      <ArticleSchema
+        headline={newConstructionGuide.title}
+        description={newConstructionGuide.metaDescription}
+        keywords={newConstructionGuide.keywords}
+        datePublished="2025-01-01T00:00:00Z"
+        dateModified={new Date().toISOString()}
+      />
       <GuideHero guide={newConstructionGuide} />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <Breadcrumbs
+          items={[
+            { label: 'Buyer Guides', href: '/guides' },
+            { label: 'New Construction', href: '/guides/new-construction' },
+          ]}
+        />
+      </div>
+
       {/* Introduction */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            {newConstructionGuide.introduction}
-          </p>
+      <section className="bg-white py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <p className="text-lg lg:text-xl leading-relaxed text-gray-600">
+              {newConstructionGuide.introduction}
+            </p>
+          </div>
         </div>
       </section>
 
-      <Separator />
-
       {/* Main Content Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mx-auto max-w-3xl space-y-12">
-          {newConstructionGuide.sections.map((section, index) => (
-            <GuideSection key={section.id} section={section} index={index} />
-          ))}
+      <div className="bg-gradient-to-b from-white to-orange-50/30 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl space-y-12">
+            {newConstructionGuide.sections.map((section, index) => (
+              <GuideSection key={section.id} section={section} index={index} />
+            ))}
+          </div>
         </div>
       </div>
-
-      <Separator />
 
       {/* FAQs */}
       {newConstructionGuide.faqs && <GuideFAQs faqs={newConstructionGuide.faqs} />}
 
+      {/* Related Neighborhoods */}
+      <RelatedNeighborhoods
+        title="Top Communities for New Construction"
+        description="Explore Santa Clarita neighborhoods with active new home construction and development"
+        neighborhoods={[
+          {
+            name: 'Valencia',
+            slug: 'valencia',
+            tagline: 'Master-planned community with ongoing new development',
+            priceRange: '$650K - $1.5M',
+            highlights: ['Award-winning schools', 'New residential projects'],
+          },
+          {
+            name: 'Stevenson Ranch',
+            slug: 'stevenson-ranch',
+            tagline: 'Upscale community with premium new homes',
+            priceRange: '$800K - $2M+',
+            highlights: ['Golf course community', 'Luxury new builds'],
+          },
+          {
+            name: 'Castaic',
+            slug: 'castaic',
+            tagline: 'Growing area with new construction opportunities',
+            priceRange: '$600K - $900K',
+            highlights: ['Lake access', 'Newer developments'],
+          },
+        ]}
+      />
+
+      {/* Related Guides */}
+      <RelatedGuides
+        guides={[
+          {
+            title: 'First-Time Home Buyer Guide',
+            description: 'Complete roadmap for first-time buyers including affordability calculators and down payment assistance programs',
+            href: '/guides/first-time-buyer',
+            icon: <Home className="h-5 w-5 text-white" />,
+          },
+          {
+            title: 'Down Payment Assistance',
+            description: 'Explore CalHFA Dream For All, MyHome, and GSFA programs to help with your down payment',
+            href: '/down-payment-assistance',
+            icon: <DollarSign className="h-5 w-5 text-white" />,
+          },
+          {
+            title: 'Resale Homes Guide',
+            description: 'Learn about buying existing homes in Santa Clarita and how they compare to new construction',
+            href: '/guides/resale',
+            icon: <Home className="h-5 w-5 text-white" />,
+          },
+        ]}
+      />
+
       {/* CTA Section */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl rounded-lg border bg-card p-8 text-center shadow-sm">
-            <h2 className="text-2xl font-bold">Ready to Explore New Construction?</h2>
-            <p className="mt-2 text-muted-foreground">
-              Let us help you navigate the new construction process and find the perfect builder and
-              community for your needs.
-            </p>
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Link href="/contact">
-                <Button size="lg">Get Started</Button>
-              </Link>
-              <Link href="/guides">
-                <Button size="lg" variant="outline">
-                  View All Guides
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ScheduleTourCTA
+        title="Ready to Explore New Construction?"
+        description="Let us help you navigate the new construction process and find the perfect builder and community for your needs"
+        variant="primary"
+        showPhone={true}
+      />
     </div>
   )
 }

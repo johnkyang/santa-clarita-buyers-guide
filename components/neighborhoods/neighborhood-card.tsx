@@ -20,6 +20,8 @@ export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200')`,
           }}
+          role="img"
+          aria-label={`${neighborhood.name} neighborhood in Santa Clarita`}
         />
 
         {/* Gradient Overlay */}

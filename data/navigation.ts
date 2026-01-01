@@ -61,9 +61,9 @@ export const mainNavigation: NavSection[] = [
         description: 'Complete guide with affordability calculator & assistance programs',
       },
       {
-        name: 'New Construction',
-        href: '/guides/new-construction',
-        description: 'Everything about buying brand-new homes',
+        name: 'Down Payment Assistance',
+        href: '/down-payment-assistance',
+        description: 'CalHFA, GSFA programs and funding options',
       },
       {
         name: 'Resale Homes',
@@ -71,19 +71,19 @@ export const mainNavigation: NavSection[] = [
         description: 'Navigate the existing home market',
       },
       {
-        name: '55+ Communities',
+        name: 'New Construction',
+        href: '/guides/new-construction',
+        description: 'Everything about buying brand-new homes',
+      },
+      {
+        name: 'Senior 55+ Communities',
         href: '/guides/55-plus-communities',
         description: 'Active adult and retirement living',
       },
       {
-        name: 'Reverse Mortgage',
+        name: 'Reverse for Purchase',
         href: '/guides/reverse-mortgage',
         description: 'Financial options for seniors 62+',
-      },
-      {
-        name: 'Down Payment Assistance',
-        href: '/down-payment-assistance',
-        description: 'CalHFA, GSFA programs and funding options',
       },
     ],
   },
@@ -104,11 +104,11 @@ export const footerNavigation = {
   ],
   guides: [
     { name: 'First-Time Home Buyer Guide', href: '/guides/first-time-buyer' },
-    { name: 'New Construction Guide', href: '/guides/new-construction' },
-    { name: 'Resale Home Guide', href: '/guides/resale' },
-    { name: '55+ Communities', href: '/guides/55-plus-communities' },
-    { name: 'Reverse Mortgage Info', href: '/guides/reverse-mortgage' },
     { name: 'Down Payment Assistance', href: '/down-payment-assistance' },
+    { name: 'Resale Home Guide', href: '/guides/resale' },
+    { name: 'New Construction Guide', href: '/guides/new-construction' },
+    { name: 'Senior 55+ Communities', href: '/guides/55-plus-communities' },
+    { name: 'Reverse for Purchase', href: '/guides/reverse-mortgage' },
   ],
   company: [
     { name: 'About', href: '/about' },

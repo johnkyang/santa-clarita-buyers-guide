@@ -132,7 +132,6 @@ export default function TermsOfServicePage() {
             <p className="mb-2"><strong>Kailei Media</strong></p>
             <p className="mb-2">Santa Clarita Buyers Guide</p>
             <p className="mb-2">Phone: (661) 451-7200</p>
-            <p className="mb-2">Email: jyang@loandepot.com</p>
           </div>
         </section>
       </div>

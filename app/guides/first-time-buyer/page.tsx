@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import {
   Home, ArrowRight, CheckCircle, DollarSign, CreditCard,
   Calculator, FileText, ShieldCheck, AlertCircle,
@@ -9,7 +10,24 @@ import {
 } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { AffordabilityCalculator } from '@/components/calculators/affordability-calculator'
+import { CalHFADFASection } from '@/components/shared/calhfa-dfa-section'
+import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+
+// Lazy load heavy components for better performance
+const AffordabilityCalculator = dynamic(
+  () => import('@/components/calculators/affordability-calculator').then(mod => ({ default: mod.AffordabilityCalculator })),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center p-12 bg-blue-50 rounded-lg border-2 border-blue-200">
+        <div className="text-center">
+          <Calculator className="w-12 h-12 mx-auto mb-4 text-blue-500 animate-pulse" />
+          <p className="text-gray-600">Loading calculator...</p>
+        </div>
+      </div>
+    ),
+    ssr: false,
+  }
+)
 
 export default function FirstTimeBuyerGuidePage() {
   return (
@@ -49,6 +67,18 @@ export default function FirstTimeBuyerGuidePage() {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <Breadcrumbs
+            items={[
+              { label: 'Buyer Guides', href: '/guides' },
+              { label: 'First-Time Home Buyer', href: '/guides/first-time-buyer' },
+            ]}
+          />
+        </div>
+      </div>
+
       {/* Quick Stats */}
       <section className="bg-white py-12 border-b">
         <div className="max-w-7xl mx-auto px-6">
@@ -85,6 +115,7 @@ export default function FirstTimeBuyerGuidePage() {
                 { title: 'Credit Score Requirements', anchor: '#credit' },
                 { title: 'Down Payment Options', anchor: '#down-payment' },
                 { title: 'First-Time Buyer Programs', anchor: '#programs' },
+                { title: 'CalHFA Dream For All', anchor: '#calhfa-dream-for-all' },
                 { title: 'Common Mistakes to Avoid', anchor: '#mistakes' },
               ].map((item, idx) => (
                 <a key={idx} href={item.anchor} className="flex items-center gap-3 p-4 bg-white border border-blue-100 rounded-lg hover:border-blue-300 hover:shadow-md transition-all group">
@@ -441,6 +472,13 @@ export default function FirstTimeBuyerGuidePage() {
                   </div>
                 </div>
               </div>
+            </AnimatedSection>
+          </div>
+
+          {/* CalHFA Dream For All */}
+          <div className="mb-16">
+            <AnimatedSection>
+              <CalHFADFASection showFAQ={true} />
             </AnimatedSection>
           </div>
 

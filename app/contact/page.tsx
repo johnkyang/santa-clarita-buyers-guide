@@ -1,9 +1,25 @@
 'use client'
 
-import { LeadCaptureForm } from '@/components/forms/lead-capture-form'
+import dynamic from 'next/dynamic'
 import { Phone, MapPin, Clock, Shield, Award, Users, Image as ImageIcon } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { AnimatedSection } from '@/components/shared/animated-section'
+
+// Lazy load the form for better initial page load performance
+const LeadCaptureForm = dynamic(
+  () => import('@/components/forms/lead-capture-form').then(mod => ({ default: mod.LeadCaptureForm })),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center p-12">
+        <div className="text-center">
+          <div className="w-12 h-12 mx-auto mb-4 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-gray-600">Loading form...</p>
+        </div>
+      </div>
+    ),
+    ssr: false,
+  }
+)
 
 export default function ContactPage() {
   return (

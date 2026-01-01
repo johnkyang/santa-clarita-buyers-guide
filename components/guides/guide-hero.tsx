@@ -1,7 +1,9 @@
 import type { Guide } from '@/types/guide'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { BookOpen } from 'lucide-react'
+import { BookOpen, CheckCircle } from 'lucide-react'
+import { HeroSplit } from '@/components/shared/hero-split'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface GuideHeroProps {
   guide: Guide
@@ -9,43 +11,60 @@ interface GuideHeroProps {
 
 export function GuideHero({ guide }: GuideHeroProps) {
   return (
-    <section className="relative bg-gradient-to-b from-muted/50 to-background py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <div className="mb-4 flex items-center gap-2 text-primary">
-            <BookOpen className="h-6 w-6" />
-            <span className="font-medium">Buyer Guide</span>
-          </div>
-
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{guide.title}</h1>
-
-          <p className="mt-4 text-xl text-muted-foreground">{guide.subtitle}</p>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+    <>
+      <HeroSplit
+        badge={{
+          icon: <BookOpen className="w-4 h-4" />,
+          text: 'Buyer Guide'
+        }}
+        title={guide.title}
+        subtitle={guide.subtitle}
+        variant="guide"
+        placeholderTitle={`${guide.title} Guide Image`}
+        actions={
+          <>
             <Link href="/contact">
-              <Button size="lg">Get Personalized Help</Button>
+              <Button
+                size="lg"
+                className="group h-14 px-8 text-lg font-bold bg-gradient-to-r from-premium-orange to-premium-rust hover:from-orange-600 hover:to-orange-700 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+              >
+                Get Personalized Help
+              </Button>
             </Link>
             <Link href="/guides">
-              <Button size="lg" variant="outline">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-14 px-8 text-lg font-semibold border-2 border-premium-orange text-premium-orange hover:bg-premium-orange hover:text-white transition-all duration-300"
+              >
                 View All Guides
               </Button>
             </Link>
-          </div>
-
-          {/* Table of Contents */}
-          <div className="mt-12 rounded-lg border bg-card p-6">
-            <h2 className="font-semibold">In This Guide:</h2>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {guide.sections.map((section, index) => (
+          </>
+        }
+      >
+        {/* Table of Contents Card */}
+        <Card className="mt-6 bg-white border-2 border-orange-100 shadow-md">
+          <CardHeader>
+            <CardTitle className="text-lg text-gray-900">📋 In This Guide:</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {guide.sections.slice(0, 6).map((section, index) => (
                 <li key={index} className="flex items-start gap-2 text-sm">
-                  <span className="mt-1 text-primary">•</span>
-                  <span>{section.title}</span>
+                  <CheckCircle className="mt-0.5 h-4 w-4 text-premium-orange flex-shrink-0" />
+                  <span className="text-gray-700">{section.title}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+            {guide.sections.length > 6 && (
+              <p className="mt-3 text-sm font-semibold text-premium-orange">
+                + {guide.sections.length - 6} more sections
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </HeroSplit>
+    </>
   )
 }
