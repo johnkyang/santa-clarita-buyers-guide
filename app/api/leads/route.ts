@@ -282,14 +282,19 @@ A Kailei Media property
     // 3. Send to n8n Webhook (if configured)
     if (process.env.N8N_WEBHOOK_URL) {
       try {
-        await fetch(process.env.N8N_WEBHOOK_URL, {
+        console.log('Sending to n8n webhook:', process.env.N8N_WEBHOOK_URL)
+        const webhookResponse = await fetch(process.env.N8N_WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
         })
+        const webhookData = await webhookResponse.json()
+        console.log('n8n webhook response:', webhookResponse.status, webhookData)
       } catch (webhookError) {
         console.error('Webhook error:', webhookError)
       }
+    } else {
+      console.log('N8N_WEBHOOK_URL not configured')
     }
 
     return NextResponse.json({
