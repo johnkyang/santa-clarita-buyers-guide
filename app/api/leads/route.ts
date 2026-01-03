@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,43 +30,10 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 1. Save to Supabase
-    try {
-      const supabase = await createClient()
+    // Note: Supabase integration removed per user request
+    // All data is sent to n8n webhook → Airtable instead
 
-      // Handle both field name formats
-      let first_name = firstName
-      let last_name = lastName
-
-      if (!firstName && name) {
-        // Split name into first and last name
-        const nameParts = name.trim().split(' ')
-        first_name = nameParts[0] || name
-        last_name = nameParts.slice(1).join(' ') || ''
-      }
-
-      const { error } = await supabase
-        .from('leads')
-        .insert({
-          first_name,
-          last_name,
-          email,
-          phone: phone || null,
-          preferred_neighborhoods: interestedIn,
-          buyer_type: buyerType || null,
-          timeline,
-          comments: comments || message || null,
-          source_page: sourcePage || source,
-        })
-
-      if (error) {
-        console.error('Supabase insert error:', error)
-      }
-    } catch (supabaseError) {
-      console.error('Supabase error:', supabaseError)
-    }
-
-    // 2. Send Email to Recipients
+    // 1. Send Email to Recipients
     const fullName = name || `${firstName} ${lastName}`
 
     // Plain text version
@@ -279,7 +245,7 @@ A Kailei Media property
       console.warn('RESEND_API_KEY not configured - emails will not be sent')
     }
 
-    // 3. Send to n8n Webhook (if configured)
+    // 2. Send to n8n Webhook (if configured)
     if (process.env.N8N_WEBHOOK_URL) {
       try {
         console.log('Sending to n8n webhook:', process.env.N8N_WEBHOOK_URL)
