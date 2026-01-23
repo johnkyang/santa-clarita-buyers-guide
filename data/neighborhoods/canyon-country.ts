@@ -130,6 +130,39 @@ export const canyonCountry: Neighborhood = {
     'Santa Clarita Woodlands Park',
   ],
 
+  faqs: [
+    {
+      question: 'What are the average home prices in Canyon Country, CA?',
+      answer:
+        'Canyon Country offers Santa Clarita\'s best affordability and space value with home prices ranging from $350,000 for condos to $1.5M+ for equestrian estates. Single-family homes typically range from $550,000 to $1.1M (median $750,000), townhomes from $450,000 to $650,000 (median $550,000), and condos from $350,000 to $550,000 (median $450,000) as of January 2025. Canyon Country homes are typically $200,000-$400,000 less expensive than comparable west-side properties while offering significantly larger lots (10,000-20,000+ sq ft common), more house square footage, and room for pools, RVs, boats, and outdoor living that Valencia buyers can only dream about.',
+    },
+    {
+      question: 'How are the schools in Canyon Country?',
+      answer:
+        'Canyon Country features solid schools including Canyon High School rated 8/10, Golden Valley High School rated 7/10, Leona Cox Elementary rated 8/10, and Fair Oaks Elementary rated 7/10. Schools are served by the William S. Hart Union High School District and Sulphur Springs Union School District. While ratings average slightly lower than premium west-side schools, many families prioritize the $200,000-$400,000 housing savings, significantly larger properties, and outdoor lifestyle over marginal rating differences—especially since all Hart District high schools provide quality college-prep curriculum and the price difference allows families to invest in tutoring, private lessons, or college savings.',
+    },
+    {
+      question: 'Is Canyon Country good for equestrian and outdoor living?',
+      answer:
+        'Yes, Canyon Country is Santa Clarita Valley\'s premier equestrian and outdoor recreation community. The area features extensive horse trails, bridle paths, properties with corrals and stables, and a rural atmosphere that horse lovers require. Beyond equestrian amenities, Canyon Country offers immediate access to Angeles National Forest, Vasquez Rocks Natural Area Park (famous filming location with spectacular hiking), Fair Oaks Ranch Park (40 acres), and endless outdoor recreation. Larger lots (10,000-20,000+ sq ft typical) provide space for horses, RVs, boats, workshops, gardens, and authentic outdoor Southern California living that cookie-cutter communities cannot match.',
+    },
+    {
+      question: 'What is the commute time from Canyon Country?',
+      answer:
+        'Canyon Country offers excellent 14 Freeway access making it ideal for Palmdale, Lancaster, and Antelope Valley commuters (25-35 minutes). For Los Angeles commuters, the drive is typically 50-80 minutes via the 14 to I-5 depending on traffic and destination. Many residents work locally in Santa Clarita, at nearby aerospace companies, or in Palmdale—avoiding long commutes entirely. The 14 Freeway also provides quick access to all Santa Clarita Valley communities: Valencia is 15 minutes, Saugus 10 minutes, and Castaic 20 minutes via surface streets.',
+    },
+    {
+      question: 'Why choose Canyon Country over other Santa Clarita neighborhoods?',
+      answer:
+        'Canyon Country is the smart choice for buyers prioritizing space, value, outdoor living, and freedom over amenities and gated prestige. You get significantly more house and land for your money ($200K-$400K savings versus Valencia/Stevenson Ranch), larger lots (10,000-20,000+ sq ft common versus 5,000-8,000 sq ft west-side), room for horses/RVs/boats, semi-rural atmosphere, immediate nature access (Angeles National Forest, Vasquez Rocks), small-town community character, and no restrictive HOA covenants limiting your lifestyle. For families who value authentic outdoor living, space to breathe, and financial wisdom over keeping up appearances, Canyon Country is the obvious choice.',
+    },
+    {
+      question: 'Does Canyon Country have Mello-Roos taxes?',
+      answer:
+        'Most established Canyon Country neighborhoods have no Mello-Roos or minimal assessments since they were developed before the Mello-Roos era. Some newer developments and specific phases may have Mello-Roos ranging from $1,000-$3,000 annually, but these are significantly lower than comparable west-side communities ($3,000-$6,000+ typical in Valencia and Stevenson Ranch). Always verify Mello-Roos for specific properties before purchasing, but the majority of Canyon Country homes offer freedom from these burdensome assessments, saving thousands annually while already delivering $200,000-$400,000 in purchase price savings.',
+    },
+  ],
+
   metaDescription:
     'Complete Canyon Country, CA guide. Santa Clarita\'s largest, most affordable community: spacious lots (10,000-20,000+ sq ft), equestrian properties, homes $400K-$1.5M+ ($200K-$400K below Valencia), Canyon High (8/10), Angeles National Forest access, 14 Freeway commuters. Best value for families seeking space, outdoor living, and affordability.',
 

@@ -1,4 +1,12 @@
+/**
+ * School Schema Component
+ *
+ * Uses the centralized schema generator from lib/schema.ts
+ */
+
 import type { School } from '@/types/neighborhood'
+import { generateSchoolSchema } from '@/lib/schema'
+import { JsonLd } from './json-ld'
 
 interface SchoolSchemaProps {
   schools: School[]
@@ -6,36 +14,16 @@ interface SchoolSchemaProps {
 }
 
 export function SchoolSchema({ schools, neighborhoodName }: SchoolSchemaProps) {
-  const schoolSchemas = schools.map((school) => ({
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
+  // Convert School[] to SchoolItem[] format expected by generator
+  const schoolItems = schools.map((school) => ({
     name: school.name,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: neighborhoodName,
-      addressRegion: 'CA',
-      addressCountry: 'US',
-    },
-    // Rating out of 10
-    aggregateRating: school.rating
-      ? {
-          '@type': 'AggregateRating',
-          ratingValue: school.rating.toString(),
-          bestRating: '10',
-          worstRating: '1',
-        }
-      : undefined,
+    rating: school.rating,
   }))
 
-  return (
-    <>
-      {schoolSchemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </>
-  )
+  const schemas = generateSchoolSchema({
+    schools: schoolItems,
+    neighborhoodName,
+  })
+
+  return <JsonLd schema={schemas} />
 }

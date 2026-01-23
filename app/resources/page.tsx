@@ -122,6 +122,29 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* Mortgage Qualifier Tool */}
+      <section className="py-12 bg-gradient-to-r from-premium-orange/10 to-premium-rust/10 border-y border-orange-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-gradient-to-br from-premium-orange to-premium-rust rounded-xl">
+                <FileSpreadsheet className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900">Mortgage Qualifying Calculator</h3>
+                <p className="text-gray-600">Interactive slider-based tool to check your qualification status in real-time</p>
+              </div>
+            </div>
+            <Link href="/mortgage-qualifier">
+              <Button className="bg-gradient-to-r from-premium-orange to-premium-rust hover:opacity-90 text-white">
+                Try Calculator
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Resource Categories */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

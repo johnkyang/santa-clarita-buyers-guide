@@ -1,30 +1,20 @@
-export interface FAQItem {
-  question: string
-  answer: string
-}
+/**
+ * FAQ Schema Component
+ *
+ * Uses the centralized schema generator from lib/schema.ts
+ * Re-exports FAQItem type for backward compatibility
+ */
+
+import { generateFAQSchema, type FAQItem } from '@/lib/schema'
+import { JsonLd } from './json-ld'
+
+// Re-export for backward compatibility
+export type { FAQItem }
 
 interface FAQSchemaProps {
   faqs: FAQItem[]
 }
 
 export function FAQSchema({ faqs }: FAQSchemaProps) {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-    />
-  )
+  return <JsonLd schema={generateFAQSchema({ faqs })} />
 }

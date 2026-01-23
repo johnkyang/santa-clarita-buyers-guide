@@ -112,16 +112,17 @@ export default function FirstTimeBuyerGuidePage() {
               {[
                 { title: 'Are You Ready to Buy?', anchor: '#ready' },
                 { title: 'How Much Home Can You Afford?', anchor: '#afford' },
+                { title: 'Mortgage Qualifying Calculator', anchor: '/mortgage-qualifier', isExternal: true },
                 { title: 'Credit Score Requirements', anchor: '#credit' },
                 { title: 'Down Payment Options', anchor: '#down-payment' },
                 { title: 'First-Time Buyer Programs', anchor: '#programs' },
                 { title: 'CalHFA Dream For All', anchor: '#calhfa-dream-for-all' },
                 { title: 'Common Mistakes to Avoid', anchor: '#mistakes' },
               ].map((item, idx) => (
-                <a key={idx} href={item.anchor} className="flex items-center gap-3 p-4 bg-white border border-blue-100 rounded-lg hover:border-blue-300 hover:shadow-md transition-all group">
+                <Link key={idx} href={item.anchor} className="flex items-center gap-3 p-4 bg-white border border-blue-100 rounded-lg hover:border-blue-300 hover:shadow-md transition-all group">
                   <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
                   <span className="text-gray-700 group-hover:text-blue-600 font-medium">{item.title}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </AnimatedSection>

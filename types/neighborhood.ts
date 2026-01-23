@@ -19,6 +19,11 @@ export interface Amenity {
   icon: string
 }
 
+export interface FAQ {
+  question: string
+  answer: string
+}
+
 export interface Neighborhood {
   slug: string
   name: string
@@ -48,6 +53,9 @@ export interface Neighborhood {
   // Amenities
   amenities: Amenity[]
   nearbyAttractions: string[]
+
+  // FAQs
+  faqs?: FAQ[]
 
   // SEO
   metaDescription: string

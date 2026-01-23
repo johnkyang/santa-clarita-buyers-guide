@@ -1,42 +1,28 @@
+/**
+ * Breadcrumbs Component with JSON-LD Schema
+ *
+ * Uses the centralized schema generator from lib/schema.ts
+ * Includes both visual breadcrumb navigation and structured data
+ */
+
 import Link from 'next/link'
 import { ChevronRight, Home } from 'lucide-react'
+import { generateBreadcrumbSchema, type BreadcrumbItem } from '@/lib/schema'
+import { JsonLd } from './json-ld'
 
-export interface BreadcrumbItem {
-  label: string
-  href: string
-}
+// Re-export for backward compatibility
+export type { BreadcrumbItem }
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[]
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
-  // Generate JSON-LD schema for breadcrumbs
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://santaclaritabuyersguide.com',
-      },
-      ...items.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 2,
-        name: item.label,
-        item: `https://santaclaritabuyersguide.com${item.href}`,
-      })),
-    ],
-  }
+  const breadcrumbSchema = generateBreadcrumbSchema({ items })
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd schema={breadcrumbSchema} />
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center gap-2 text-sm text-gray-600">
           <li>

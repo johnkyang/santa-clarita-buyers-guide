@@ -124,6 +124,39 @@ export const newhall: Neighborhood = {
     'Saugus Speedway Swap Meet',
   ],
 
+  faqs: [
+    {
+      question: 'What are the average home prices in Newhall, CA?',
+      answer:
+        'Newhall offers exceptional value with home prices ranging from $350,000 for condos to $950,000 for larger single-family homes. Single-family homes typically range from $550,000 to $950,000 (median $700,000), townhomes from $450,000 to $650,000 (median $550,000), and condos from $350,000 to $550,000 (median $450,000) as of January 2025. Newhall homes are typically $100,000-$250,000 less expensive than comparable Valencia properties while offering significantly more character, history, and walkability—making it ideal for first-time buyers and those seeking authentic community over cookie-cutter developments.',
+    },
+    {
+      question: 'How are the schools in Newhall?',
+      answer:
+        'Newhall features solid schools including Oak Hills Elementary rated 8/10, Hart High School rated 7/10, and Placerita Junior High rated 7/10. Schools are served by the William S. Hart Union High School District and Newhall School District. While ratings are slightly lower than premium Valencia schools, Newhall schools offer strong academics, dedicated teachers, diverse student populations, and active parent involvement. Many families prioritize the walkable community, historic character, and $100K-$250K price savings over marginal rating differences—especially since Hart District high schools all provide quality college-prep education.',
+    },
+    {
+      question: 'Is Newhall walkable and family-friendly?',
+      answer:
+        'Yes, Newhall is one of the few truly walkable communities in Santa Clarita Valley, featuring a revitalized Main Street with local shops, cafes, art galleries, and family-owned restaurants within walking distance of residential neighborhoods. Hart Park offers 125 acres with Heritage Junction museum, sports fields, playgrounds, and trails. The community hosts farmer\'s markets, Fourth of July parades, arts festivals, and neighborhood events that create authentic small-town character. Families appreciate tree-lined streets where kids bike to friends\' houses, neighbors know each other, and genuine community feel replaces HOA-enforced uniformity.',
+    },
+    {
+      question: 'What is the commute time from Newhall to Los Angeles?',
+      answer:
+        'Newhall offers excellent commute access to Los Angeles via I-5, typically 45-75 minutes depending on traffic and your LA destination. The central Santa Clarita location provides quick access to I-5 (5 minutes) and easy connectivity to all valley communities—Valencia is 5 minutes away, Canyon Country 10 minutes, Castaic 15 minutes. Many residents work locally in Santa Clarita or at nearby corporate parks, avoiding the LA commute entirely. The 14 Freeway is also easily accessible (15 minutes) for Palmdale and Lancaster commuters.',
+    },
+    {
+      question: 'What makes Newhall unique compared to other Santa Clarita neighborhoods?',
+      answer:
+        'Newhall is Santa Clarita\'s bohemian alternative—the valley\'s historic heart with authentic character that new developments simply cannot replicate. Unique features include walkable Main Street with local businesses (not chain stores), vintage homes with character (1920s-1970s architecture with stories and charm), emerging arts district with galleries and creative community, Heritage Junction historic museum, William S. Hart Ranch preserving Western history, and genuine small-town feel where community events happen on actual Main Street. Newhall attracts buyers who value history over newness, walkability over gated entries, and authentic neighborhood character over cookie-cutter subdivisions.',
+    },
+    {
+      question: 'Does Newhall have Mello-Roos or HOA fees?',
+      answer:
+        'Most Newhall neighborhoods have no Mello-Roos or minimal assessments since they are established communities built before the Mello-Roos era. This is a significant advantage—you avoid the $2,000-$6,000+ annual Mello-Roos that burden newer Valencia and Stevenson Ranch developments. HOA fees are also minimal or nonexistent in most Newhall neighborhoods since the area features traditional non-gated communities rather than master-planned HOA developments. Some newer townhome and condo complexes have HOAs ($150-$350/month), but the majority of Newhall homes offer freedom from both Mello-Roos and restrictive HOA covenants, saving thousands annually.',
+    },
+  ],
+
   metaDescription:
     'Complete Newhall, CA guide. Santa Clarita\'s historic heart: walkable Main Street, arts district, vintage homes $350K-$950K ($100K-$250K below Valencia), Hart Park 125 acres, Heritage Junction museum, Hart High (7/10). Best character homes, authentic community, first-time buyer friendly. Santa Clarita\'s bohemian alternative.',
 

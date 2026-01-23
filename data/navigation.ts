@@ -140,8 +140,8 @@ export const mainNavigation: NavSection[] = [
     ],
   },
   {
-    name: 'Contact',
-    href: '/contact',
+    name: 'Buying Power',
+    href: '/buying-power',
   },
 ]
 
@@ -163,10 +163,11 @@ export const footerNavigation = {
     { name: 'Reverse for Purchase', href: '/guides/reverse-mortgage' },
   ],
   resources: [
+    { name: 'Buying Power Calculator', href: '/buying-power' },
+    { name: 'Mortgage Qualifier', href: '/mortgage-qualifier' },
     { name: 'Blog', href: '/blog' },
     { name: 'Free Resources & Downloads', href: '/resources' },
     { name: 'Market Reports', href: '/blog' },
-    { name: 'Neighborhood Guides', href: '/blog' },
   ],
   company: [
     { name: 'About', href: '/about' },

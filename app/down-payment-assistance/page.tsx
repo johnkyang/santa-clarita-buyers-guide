@@ -521,6 +521,12 @@ export default function DownPaymentAssistancePage() {
                   Get Pre-Approved
                 </Button>
               </Link>
+              <Link href="/mortgage-qualifier">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <CheckCircle2 className="mr-2 h-5 w-5" />
+                  Check Your Qualification
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -122,6 +122,39 @@ export const valencia: Neighborhood = {
     'Westfield Valencia Town Center',
   ],
 
+  faqs: [
+    {
+      question: 'What are the average home prices in Valencia, CA?',
+      answer:
+        'Valencia home prices range from $500,000 for townhomes to $2.5M+ for custom estates. Single-family homes typically range from $650,000 to $1.5M (median $850,000), townhomes from $500,000 to $750,000 (median $625,000), and condos from $400,000 to $650,000 (median $525,000) as of January 2025. Prices vary significantly by neighborhood—Westridge and Northbridge command premium prices for hillside views and newer construction, while Valencia Meadows and Valencia Greens offer more affordable entry points.',
+    },
+    {
+      question: 'How are the schools in Valencia?',
+      answer:
+        'Valencia features award-winning schools including Old Orchard Elementary with a perfect 10/10 rating, Valencia High School rated 8/10, and Bridgeport Elementary rated 9/10. Schools are served by the highly-regarded William S. Hart Union High School District and Newhall School District. The combination of excellent academics, strong parent involvement, diverse extracurricular programs, and newer facilities makes Valencia schools among the best in Santa Clarita Valley.',
+    },
+    {
+      question: 'Is Valencia family-friendly?',
+      answer:
+        'Yes, Valencia is extremely family-friendly with over 30 parks totaling 2,000+ acres, the iconic 25-acre Bridgeport Lake, Santa Clarita Aquatic Center, extensive trail systems, top-rated schools, and family-oriented amenities. The community was specifically designed as a master-planned community with families in mind, featuring safe neighborhoods, walkable streets, bike paths, youth sports leagues, and abundant recreational opportunities. The proximity to Six Flags Magic Mountain, quality schools, and family-focused events make it ideal for raising children.',
+    },
+    {
+      question: 'What is the commute time from Valencia to Los Angeles?',
+      answer:
+        'Valencia offers convenient commute options to Los Angeles. The Metrolink commuter rail provides direct service to downtown LA (approximately 45-60 minutes). By car via I-5, the commute is typically 45-75 minutes depending on traffic and your destination in LA. Many residents work locally in Santa Clarita or at nearby corporate parks in Valencia, avoiding the LA commute entirely. The 14 Freeway also provides access to Palmdale and Lancaster (25-35 minutes).',
+    },
+    {
+      question: 'What amenities are available in Valencia?',
+      answer:
+        'Valencia offers world-class amenities including Westfield Valencia Town Center with 100+ stores and restaurants, Six Flags Magic Mountain theme park, Valencia Marketplace with Whole Foods and Trader Joe\'s, College of the Canyons, Valencia Country Club golf course, Santa Clarita Aquatic Center, Bridgeport Lake, extensive parks and trails, and numerous shopping centers. The master-planned design ensures residents have convenient access to shopping, dining, entertainment, education, and recreation all within minutes.',
+    },
+    {
+      question: 'Does Valencia have Mello-Roos taxes?',
+      answer:
+        'Yes, many newer neighborhoods in Valencia have Mello-Roos special assessments that can range from $1,500 to $6,000+ annually depending on the specific neighborhood and home. Established neighborhoods like Westridge and parts of Bridgeport have lower or paid-off Mello-Roos. Newer developments and newer phases of existing neighborhoods typically have higher assessments. Always verify Mello-Roos amounts for specific properties before purchasing, as they significantly impact your total monthly housing costs beyond mortgage and property taxes.',
+    },
+  ],
+
   metaDescription:
     'Complete Valencia, CA community guide. Explore 6 distinct neighborhoods (Westridge, Bridgeport, Northbridge), top-rated schools (Old Orchard 10/10), 30+ parks, shopping, dining, commute times, Mello-Roos info, and current home prices ($500K-$2.5M+). Everything you need to know about buying a home in Valencia, Santa Clarita.',
 

@@ -130,6 +130,39 @@ export const saugus: Neighborhood = {
     'Santa Clarita Public Library - Saugus Branch',
   ],
 
+  faqs: [
+    {
+      question: 'What are the average home prices in Saugus, CA?',
+      answer:
+        'Saugus offers Santa Clarita\'s best value with home prices ranging from $380,000 for condos to $1.2M for larger single-family homes. Single-family homes typically range from $600,000 to $1.2M (median $800,000), townhomes from $480,000 to $700,000 (median $590,000), and condos from $380,000 to $580,000 (median $480,000) as of January 2025. Saugus homes are typically $150,000-$300,000 less expensive than comparable Valencia or Stevenson Ranch properties while delivering award-winning schools, mature neighborhoods with larger lots, and excellent community amenities—making it the smart choice for value-conscious families who refuse to overpay.',
+    },
+    {
+      question: 'How are the schools in Saugus?',
+      answer:
+        'Saugus features award-winning schools including Saugus High School rated 9/10 (one of Hart District\'s top-rated high schools), Emblem Academy rated 9/10, Arroyo Seco Junior High rated 8/10, and multiple elementary schools rated 8/10. Schools are served by the highly-regarded William S. Hart Union High School District and Saugus Union School District. The combination of top ratings, strong academic programs, active parent involvement, diverse extracurricular activities, and experienced teachers makes Saugus schools among the best in the entire Santa Clarita Valley—rivaling or exceeding Valencia schools at a fraction of the housing cost.',
+    },
+    {
+      question: 'Is Saugus family-friendly and what amenities does it offer?',
+      answer:
+        'Yes, Saugus is extremely family-friendly with Central Park (60 acres featuring soccer fields, baseball diamonds, skate park, playgrounds, trails), Santa Clarita Sports Complex with youth leagues, numerous neighborhood parks, the historic Saugus Cafe gathering spot, and strong community feel. Mature neighborhoods from the 1970s-1990s feature larger lots where kids bike to friends\' houses, play street hockey, and build lasting friendships. Active PTAs, neighborhood associations, youth sports leagues, and community events create the authentic suburban family experience that master-planned communities try to engineer but never quite replicate.',
+    },
+    {
+      question: 'What is the commute time from Saugus to Los Angeles?',
+      answer:
+        'Saugus offers excellent central location with easy I-5 freeway access for Los Angeles commuters. The drive to downtown LA is typically 45-75 minutes depending on traffic and your specific destination. Saugus\' central position provides quick access to all Santa Clarita Valley communities—Valencia is 10 minutes, Canyon Country 10 minutes, Newhall 5 minutes, and Castaic 15 minutes. Many residents work locally at Santa Clarita businesses, avoiding the LA commute entirely. The 14 Freeway is also easily accessible (15 minutes) for Palmdale and Lancaster commuters.',
+    },
+    {
+      question: 'Why is Saugus considered Santa Clarita\'s best value?',
+      answer:
+        'Saugus delivers unbeatable value by combining award-winning schools (Saugus High 9/10, Emblem Academy 9/10) with housing prices $150,000-$300,000 below comparable Valencia or Stevenson Ranch properties. You get mature tree-lined neighborhoods with larger lots (7,000-12,000+ sq ft typical), traditional floor plans with more space, established community character, excellent central location, abundant parks and recreation, and authentic neighborhood feel—without paying the Valencia premium. For smart buyers prioritizing education, value, and genuine community over gated entries and resort amenities, Saugus is the obvious choice.',
+    },
+    {
+      question: 'Does Saugus have Mello-Roos taxes?',
+      answer:
+        'Most Saugus neighborhoods have low or no Mello-Roos since they are established communities built primarily in the 1970s-1990s, before the Mello-Roos era. This is a massive financial advantage—you avoid the $2,000-$6,000+ annual Mello-Roos assessments that burden newer Valencia, Stevenson Ranch, and Castaic developments. Some newer phases or specific neighborhoods may have minimal assessments ($500-$1,500 annually), but the vast majority of Saugus homes are Mello-Roos free. Combined with lower purchase prices, this translates to thousands in annual savings compared to west-side communities, making Saugus the financially smart choice for families.',
+    },
+  ],
+
   metaDescription:
     'Complete Saugus, CA community guide. Santa Clarita\'s best value: award-winning schools (Saugus High 9/10), Central Park, affordable homes ($380K-$1.2M), mature neighborhoods, no Mello-Roos in most areas, first-time buyer friendly. Everything you need to know about buying in Saugus, Santa Clarita\'s hidden gem for families seeking quality and value.',
 

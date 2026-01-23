@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { LenderHero } from '@/components/lender/lender-hero';
 import { LenderInfo } from '@/components/lender/lender-info';
+import { CalculatorTool } from '@/components/lender/calculator-tool';
 import { PreApprovalBenefits } from '@/components/lender/pre-approval-benefits';
 import { LenderCTA } from '@/components/lender/lender-cta';
 
@@ -29,6 +30,7 @@ export default function GetPreApprovedPage() {
     <div className="min-h-screen">
       <LenderHero />
       <LenderInfo />
+      <CalculatorTool />
       <PreApprovalBenefits />
       <LenderCTA />
     </div>

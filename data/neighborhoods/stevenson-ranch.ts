@@ -124,6 +124,39 @@ export const stevensonRanch: Neighborhood = {
     'Quick access to Valencia and I-5',
   ],
 
+  faqs: [
+    {
+      question: 'What are the average home prices in Stevenson Ranch, CA?',
+      answer:
+        'Stevenson Ranch is Santa Clarita\'s most upscale community with home prices ranging from $850,000 to $2.5M+ for single-family homes and $650,000 to $950,000 for townhomes. Single-family homes typically range from $850,000 to $2.5M (median $1.3M), while luxury townhomes range from $650,000 to $950,000 (median $800,000) as of January 2025. The premium pricing reflects gated security, The Centre resort-style amenities, award-winning schools (West Ranch High 9/10, Old Orchard Elementary 10/10), meticulously maintained landscapes, and strict architectural standards that protect property values. Buyers seeking prestige, privacy, and refined living accept the premium for the lifestyle and security Stevenson Ranch delivers.',
+    },
+    {
+      question: 'How are the schools in Stevenson Ranch?',
+      answer:
+        'Stevenson Ranch features some of Santa Clarita Valley\'s highest-rated schools including Old Orchard Elementary with a perfect 10/10 rating, West Ranch High School rated 9/10, Rancho Pico Junior High rated 9/10, Pico Canyon Elementary rated 9/10, and Stevenson Ranch Elementary rated 9/10. Schools are served by the prestigious William S. Hart Union High School District and Newhall School District. The combination of exceptional ratings, strong academic programs, extensive AP/honors offerings, competitive athletics, robust extracurriculars, and highly-involved parent communities makes Stevenson Ranch schools the gold standard in the region—a primary reason affluent families choose this community.',
+    },
+    {
+      question: 'What is The Centre at Stevenson Ranch?',
+      answer:
+        'The Centre is Stevenson Ranch\'s crown jewel—a spectacular 42,000 square-foot resort-style recreation facility exclusively for residents. Amenities include resort-style swimming pools, state-of-the-art fitness center, tennis courts, basketball courts, event spaces for private parties and weddings, meeting rooms, and beautifully landscaped grounds. The Centre hosts community events, fitness classes, youth programs, and social gatherings that create strong neighborhood bonds. Access requires HOA membership (included with most Stevenson Ranch homes), making it an exclusive amenity that adds tremendous lifestyle value and justifies the community\'s premium pricing.',
+    },
+    {
+      question: 'Are most Stevenson Ranch neighborhoods gated?',
+      answer:
+        'Yes, the majority of Stevenson Ranch neighborhoods feature gated entries with 24-hour security, controlled access, and monitored entry points. Gated communities include popular neighborhoods like The Vintage, The Reserve, The Classics, and many others. Some non-gated neighborhoods exist but the predominant character is gated, private, and secure. Gates provide enhanced security, property value protection, privacy, and peace of mind that discerning buyers demand. Combined with professionally managed HOAs enforcing strict architectural standards, the gated structure ensures Stevenson Ranch maintains its upscale character and protects residents\' substantial investments.',
+    },
+    {
+      question: 'What is the commute time from Stevenson Ranch to Los Angeles?',
+      answer:
+        'Stevenson Ranch offers convenient Los Angeles commute access via I-5 freeway (5 minutes to freeway entrance). The drive to downtown LA is typically 45-75 minutes depending on traffic and your specific destination. Many Stevenson Ranch residents are executives, professionals, and business owners with flexible schedules or remote work arrangements, reducing commute frequency. The community\'s proximity to Valencia (5-10 minutes) provides access to major employers (Princess Cruises, Kaiser, College of the Canyons, corporate parks) for those working locally. The peaceful, gated setting feels worlds away from LA while maintaining reasonable accessibility.',
+    },
+    {
+      question: 'What are typical HOA and Mello-Roos fees in Stevenson Ranch?',
+      answer:
+        'Stevenson Ranch HOA fees typically range from $150-$400 monthly depending on your specific neighborhood and included amenities. Most HOAs include access to The Centre recreation facility, community parks, professionally maintained landscaping, gated security, and common area maintenance. Mello-Roos assessments vary significantly by neighborhood and phase, ranging from $2,000-$6,000+ annually. Newer developments typically have higher Mello-Roos, while older neighborhoods may have lower or paid-off assessments. Always verify specific HOA dues and Mello-Roos for your target property—these ongoing costs significantly impact total monthly housing expenses and must be factored into affordability calculations alongside mortgage payments.',
+    },
+  ],
+
   metaDescription:
     'Complete Stevenson Ranch, CA community guide. Explore gated neighborhoods, The Centre recreation facility, West Ranch High School (9/10), Robinson Ranch golf, home prices ($850K-$2.5M+), HOA amenities, Mello-Roos info, and why affluent families choose this exclusive Santa Clarita community. Comprehensive buyer\'s guide to Stevenson Ranch real estate.',
 

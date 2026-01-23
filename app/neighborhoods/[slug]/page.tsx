@@ -7,12 +7,14 @@ import { NeighborhoodOverview } from '@/components/neighborhoods/neighborhood-ov
 import { NeighborhoodSchools } from '@/components/neighborhoods/neighborhood-schools'
 import { NeighborhoodPricing } from '@/components/neighborhoods/neighborhood-pricing'
 import { NeighborhoodAmenities } from '@/components/neighborhoods/neighborhood-amenities'
+import { NeighborhoodFAQs } from '@/components/neighborhoods/neighborhood-faqs'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { MapPin, Home, ArrowRight } from 'lucide-react'
+import { generateBreadcrumbSchema } from '@/lib/schema'
 
 interface NeighborhoodPageProps {
   params: {
@@ -57,8 +59,22 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
 
   const subdivisions = getSubdivisionsByNeighborhood(params.slug)
 
+  // Generate BreadcrumbList schema: Home > Neighborhoods > [Neighborhood Name]
+  const breadcrumbSchema = generateBreadcrumbSchema({
+    items: [
+      { label: 'Neighborhoods', href: '/neighborhoods' },
+      { label: neighborhood.name, href: `/neighborhoods/${params.slug}` },
+    ],
+  })
+
   return (
     <div>
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <NeighborhoodHero neighborhood={neighborhood} />
 
       <NeighborhoodOverview neighborhood={neighborhood} />
@@ -74,6 +90,14 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
       <Separator />
 
       <NeighborhoodAmenities neighborhood={neighborhood} />
+
+      {/* FAQs Section */}
+      {neighborhood.faqs && neighborhood.faqs.length > 0 && (
+        <>
+          <Separator />
+          <NeighborhoodFAQs faqs={neighborhood.faqs} neighborhoodName={neighborhood.name} />
+        </>
+      )}
 
       {/* Subdivisions Section */}
       {subdivisions.length > 0 && (

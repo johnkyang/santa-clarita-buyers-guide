@@ -5,24 +5,32 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
 
     const {
+      // Support both form formats
       name,
       firstName,
       lastName,
       email,
       phone,
+      // lead-capture-form fields
       interestedIn,
       propertyType,
+      message,
+      // lead-form fields (legacy)
+      preferredNeighborhoods,
+      bedrooms,
+      budgetMin,
+      budgetMax,
+      comments,
+      // Common fields
       buyerType,
       timeline,
-      message,
       source,
       sourcePage,
-      comments,
       consent,
       submittedAt,
     } = body
 
-    // Validate required fields (consent not required for resource downloads)
+    // Validate required fields
     if ((!name && !firstName) || !email) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -33,8 +41,10 @@ export async function POST(request: NextRequest) {
     // Note: Supabase integration removed per user request
     // All data is sent to n8n webhook → Airtable instead
 
-    // 1. Send Email to Recipients
+    // Normalize fields for consistent processing
     const fullName = name || `${firstName} ${lastName}`
+    const neighborhoods = interestedIn || preferredNeighborhoods || []
+    const additionalNotes = message || comments || ''
 
     // Plain text version
     const emailText = `
@@ -45,13 +55,15 @@ Name: ${fullName}
 Email: ${email}
 Phone: ${phone || 'Not provided'}
 
-Interested In: ${Array.isArray(interestedIn) ? interestedIn.join(', ') : interestedIn || 'Not specified'}
+Neighborhoods: ${Array.isArray(neighborhoods) && neighborhoods.length > 0 ? neighborhoods.join(', ') : 'Not specified'}
 Property Type: ${propertyType || 'Not specified'}
 Buyer Type: ${buyerType || 'Not specified'}
 Timeline: ${timeline || 'Not specified'}
+${bedrooms ? `Bedrooms: ${bedrooms}` : ''}
+${budgetMin || budgetMax ? `Budget Range: ${budgetMin && budgetMax ? `$${budgetMin.toLocaleString()} - $${budgetMax.toLocaleString()}` : budgetMin ? `$${budgetMin.toLocaleString()}+` : `Up to $${budgetMax.toLocaleString()}`}` : ''}
 
-Message:
-${comments || message || 'No additional message'}
+Additional Information:
+${additionalNotes || 'None provided'}
 
 ---
 Source Page: ${sourcePage || source}
@@ -128,39 +140,47 @@ A Kailei Media property
                   <td style="padding: 8px 0;">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tr>
-                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 140px; font-weight: 600;">Interested In:</td>
-                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${Array.isArray(interestedIn) ? interestedIn.join(', ') : interestedIn || 'Not specified'}</td>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Neighborhoods:</td>
+                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${Array.isArray(neighborhoods) && neighborhoods.length > 0 ? neighborhoods.join(', ') : 'Not specified'}</td>
                       </tr>
-                      <tr>
-                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 140px; font-weight: 600;">Property Type:</td>
-                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${propertyType || 'Not specified'}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 140px; font-weight: 600;">Buyer Type:</td>
-                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${buyerType || 'Not specified'}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 140px; font-weight: 600;">Timeline:</td>
+                      ${propertyType ? `<tr>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Property Type:</td>
+                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${propertyType}</td>
+                      </tr>` : ''}
+                      ${buyerType ? `<tr>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Buyer Type:</td>
+                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${buyerType}</td>
+                      </tr>` : ''}
+                      ${timeline ? `<tr>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Timeline:</td>
                         <td style="padding: 8px 0;">
-                          <span style="background-color: #10b981; color: #ffffff; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 600;">${timeline || 'Not specified'}</span>
+                          <span style="background-color: #10b981; color: #ffffff; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 600;">${timeline}</span>
                         </td>
-                      </tr>
+                      </tr>` : ''}
+                      ${bedrooms ? `<tr>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Bedrooms:</td>
+                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${bedrooms}</td>
+                      </tr>` : ''}
+                      ${budgetMin || budgetMax ? `<tr>
+                        <td style="padding: 8px 0; color: #64748b; font-size: 14px; width: 180px; font-weight: 600;">Budget Range:</td>
+                        <td style="padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 600;">${budgetMin && budgetMax ? `$${budgetMin.toLocaleString()} - $${budgetMax.toLocaleString()}` : budgetMin ? `$${budgetMin.toLocaleString()}+` : `Up to $${budgetMax.toLocaleString()}`}</td>
+                      </tr>` : ''}
                     </table>
                   </td>
                 </tr>
               </table>
 
-              ${comments || message ? `
-              <!-- Message -->
+              ${additionalNotes ? `
+              <!-- Additional Information -->
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 30px;">
                 <tr>
                   <td>
-                    <h2 style="margin: 0 0 20px 0; color: #1e293b; font-size: 20px; font-weight: bold; border-bottom: 2px solid #10b981; padding-bottom: 10px;">Additional Message</h2>
+                    <h2 style="margin: 0 0 20px 0; color: #1e293b; font-size: 20px; font-weight: bold; border-bottom: 2px solid #10b981; padding-bottom: 10px;">Additional Information</h2>
                   </td>
                 </tr>
                 <tr>
                   <td style="background-color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #10b981;">
-                    <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${comments || message}</p>
+                    <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${additionalNotes}</p>
                   </td>
                 </tr>
               </table>
