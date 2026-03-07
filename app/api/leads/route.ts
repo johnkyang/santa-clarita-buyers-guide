@@ -229,14 +229,125 @@ A Kailei Media property
 </html>
     `.trim()
 
+    // Build buyer confirmation email HTML
+    const confirmationHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're on your way home</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+    <tr>
+      <td style="padding: 40px 20px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 40px 30px; border-radius: 8px 8px 0 0; text-align: center;">
+              <p style="margin: 0 0 8px 0; color: #dbeafe; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">Santa Clarita Buyers Guide</p>
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold; line-height: 1.3;">We Got Your Request, ${fullName.split(' ')[0]}.</h1>
+              <p style="margin: 12px 0 0 0; color: #bfdbfe; font-size: 16px;">Here's what happens next.</p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <p style="margin: 0 0 20px 0; color: #374151; font-size: 16px; line-height: 1.6;">
+                Thanks for reaching out. We're a free, independent resource for Santa Clarita home buyers — no sales pressure, no obligation. Our goal is to make sure you're fully informed before you make one of the biggest decisions of your life.
+              </p>
+
+              <!-- Next Steps Box -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 6px 6px 0; margin-bottom: 30px;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <p style="margin: 0 0 16px 0; color: #1e40af; font-size: 16px; font-weight: bold;">Your next steps:</p>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td style="padding: 6px 0; color: #1e293b; font-size: 15px;">&#10003;&nbsp; <a href="https://www.santaclaritabuyersguide.com/buying-power" style="color: #2563eb; text-decoration: none; font-weight: 600;">Check your buying power</a> — see your real price range in 2 minutes</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 6px 0; color: #1e293b; font-size: 15px;">&#10003;&nbsp; <a href="https://www.santaclaritabuyersguide.com/neighborhood-quiz" style="color: #2563eb; text-decoration: none; font-weight: 600;">Take the neighborhood quiz</a> — find your best fit in 5 questions</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 6px 0; color: #1e293b; font-size: 15px;">&#10003;&nbsp; <a href="https://www.santaclaritabuyersguide.com/dpa-checker" style="color: #2563eb; text-decoration: none; font-weight: 600;">Check DPA eligibility</a> — you may qualify for $15K–$150K in assistance</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 0 0 16px 0; color: #374151; font-size: 16px; line-height: 1.6;">
+                Over the next few days, I'll send you a short series of emails covering the things most buyers wish they'd known earlier — how much house you can actually afford, which neighborhoods fit different lifestyles, and the programs that help buyers close with less money out of pocket.
+              </p>
+
+              <p style="margin: 0 0 30px 0; color: #374151; font-size: 16px; line-height: 1.6;">
+                If you have questions in the meantime, just reply to this email or call <a href="tel:6614517200" style="color: #2563eb; text-decoration: none; font-weight: 600;">(661) 451-7200</a>.
+              </p>
+
+              <!-- CTA Button -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 30px;">
+                <tr>
+                  <td style="text-align: center;">
+                    <a href="https://www.santaclaritabuyersguide.com/neighborhoods" style="display: inline-block; background: linear-gradient(135deg, #f97316, #ea580c); color: #ffffff; text-decoration: none; padding: 16px 36px; border-radius: 6px; font-size: 16px; font-weight: bold;">Explore Santa Clarita Neighborhoods</a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 0; color: #6b7280; font-size: 14px; line-height: 1.6;">
+                — The Santa Clarita Buyers Guide Team<br>
+                <span style="color: #9ca3af;">A free resource by Kailei Media</span>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8fafc; padding: 20px 30px; border-radius: 0 0 8px 8px; border-top: 1px solid #e2e8f0;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px; text-align: center; line-height: 1.6;">
+                You received this because you requested information from SantaClaritaBuyersGuide.com.<br>
+                This is a free, independent buyer resource. We are not a licensed real estate brokerage.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `.trim()
+
+    const confirmationText = `
+Hi ${fullName.split(' ')[0]},
+
+Thanks for reaching out to Santa Clarita Buyers Guide. We got your request and here's what happens next.
+
+YOUR NEXT STEPS:
+- Check your buying power: https://www.santaclaritabuyersguide.com/buying-power
+- Take the neighborhood quiz: https://www.santaclaritabuyersguide.com/neighborhood-quiz
+- Check DPA eligibility: https://www.santaclaritabuyersguide.com/dpa-checker
+
+Over the next few days, I'll send you a short series of emails covering the things most buyers wish they'd known earlier — affordability, neighborhoods, and down payment assistance programs.
+
+Questions? Reply to this email or call (661) 451-7200.
+
+— The Santa Clarita Buyers Guide Team
+A free resource by Kailei Media
+
+---
+You received this because you requested information from SantaClaritaBuyersGuide.com.
+    `.trim()
+
     // Send email to recipients (using Resend if API key is available)
     if (process.env.RESEND_API_KEY) {
       try {
-        // Send to both email addresses
-        // Note: Resend in testing mode can only send to verified emails
-        // Primary: johnkyang@outlook.com (Resend account owner)
-        // CC: jyang@loandepot.com will work once domain is verified
-        const emailResponse = await fetch('https://api.resend.com/emails', {
+        // 1. Send lead notification to admin
+        const notificationResponse = await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -245,18 +356,41 @@ A Kailei Media property
           body: JSON.stringify({
             from: 'Santa Clarita Buyers Guide <onboarding@resend.dev>',
             to: ['johnkyang@outlook.com'],
-            reply_to: email, // Reply goes to the lead's email
-            subject: `🏠 New Lead: ${fullName} - ${timeline || buyerType || 'Inquiry'}`,
+            reply_to: email,
+            subject: `New Lead: ${fullName} - ${timeline || buyerType || 'Inquiry'}`,
             html: emailHtml,
             text: emailText,
           }),
         })
 
-        if (!emailResponse.ok) {
-          const errorData = await emailResponse.json()
-          console.error('Failed to send email:', errorData)
+        if (!notificationResponse.ok) {
+          const errorData = await notificationResponse.json()
+          console.error('Failed to send admin notification:', errorData)
         } else {
-          console.log('Email sent successfully to jyang@loandepot.com')
+          console.log('Admin notification sent successfully')
+        }
+
+        // 2. Send buyer confirmation email
+        const confirmationResponse = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          },
+          body: JSON.stringify({
+            from: 'Santa Clarita Buyers Guide <onboarding@resend.dev>',
+            to: [email],
+            subject: `We got your request, ${fullName.split(' ')[0]} — here's what's next`,
+            html: confirmationHtml,
+            text: confirmationText,
+          }),
+        })
+
+        if (!confirmationResponse.ok) {
+          const errorData = await confirmationResponse.json()
+          console.error('Failed to send buyer confirmation:', errorData)
+        } else {
+          console.log('Buyer confirmation sent to:', email)
         }
       } catch (emailError) {
         console.error('Email sending error:', emailError)
