@@ -118,6 +118,16 @@ export const mainNavigation: NavSection[] = [
     href: '/resources',
     children: [
       {
+        name: 'Neighborhood Quiz',
+        href: '/neighborhood-quiz',
+        description: 'Find your perfect Santa Clarita neighborhood in 2 minutes',
+      },
+      {
+        name: 'DPA Eligibility Checker',
+        href: '/dpa-checker',
+        description: 'See if you qualify for down payment assistance',
+      },
+      {
         name: 'Free Checklists',
         href: '/resources',
         description: 'Step-by-step home buying checklists',
@@ -163,6 +173,8 @@ export const footerNavigation = {
     { name: 'Reverse for Purchase', href: '/guides/reverse-mortgage' },
   ],
   resources: [
+    { name: 'Neighborhood Quiz', href: '/neighborhood-quiz' },
+    { name: 'DPA Eligibility Checker', href: '/dpa-checker' },
     { name: 'Buying Power Calculator', href: '/buying-power' },
     { name: 'Mortgage Qualifier', href: '/mortgage-qualifier' },
     { name: 'Blog', href: '/blog' },

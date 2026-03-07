@@ -3,6 +3,7 @@ import { neighborhoods } from '@/data/neighborhoods'
 import { guides } from '@/data/guides'
 import { neighborhoodComparisons } from '@/data/comparisons/neighborhood-comparisons'
 import { buyerTypeGuides } from '@/data/buyer-types/buyer-type-guides'
+import { getAllPosts } from '@/data/blog'
 import { siteConfig } from '@/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -88,6 +89,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/neighborhood-quiz`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/dpa-checker`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ]
 
   // Dynamic neighborhood pages
@@ -122,5 +135,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...neighborhoodPages, ...guidePages, ...comparisonPages, ...buyerTypePages]
+  // Blog post pages
+  const blogPages: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedDate || post.publishedDate),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticPages, ...neighborhoodPages, ...guidePages, ...comparisonPages, ...buyerTypePages, ...blogPages]
 }

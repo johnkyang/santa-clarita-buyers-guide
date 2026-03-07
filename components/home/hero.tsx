@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Phone, ChevronDown } from 'lucide-react'
+import { Phone, ChevronDown, Calculator, Compass } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export function Hero() {
@@ -38,7 +38,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-premium-orange opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-premium-orange"></span>
             </span>
-            Your Trusted Guide to Santa Clarita Real Estate
+            100% Free Resource. Zero Sales Pressure. Always On Your Side.
           </motion.div>
 
           <motion.h1
@@ -47,9 +47,9 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0 }}
             className="font-display text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl mb-8"
           >
-            Find Your Dream Home in{' '}
+            Buy Your Santa Clarita Home{' '}
             <span className="text-gradient-warm inline-block">
-              Santa Clarita
+              With Confidence
             </span>
           </motion.h1>
 
@@ -59,33 +59,42 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="mx-auto max-w-3xl text-xl leading-relaxed text-white/90 sm:text-2xl mb-12"
           >
-            Discover pristine neighborhoods, explore new construction and resale homes,
-            and unlock insider knowledge about Santa Clarita Valley&apos;s finest communities.
+            We&apos;re not agents trying to sell you a house. We&apos;re your free, independent resource for honest neighborhood data, financial tools, and expert guidance — so you make the best decision for your family.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6 mb-8"
+            className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-4 mb-8"
           >
-            <Link href="/contact">
+            <Link href="/buying-power">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-8 text-lg font-bold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
-                Get Started Today
-                <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                <Calculator className="mr-3 h-6 w-6" />
+                See What You Can Afford
+              </Button>
+            </Link>
+            <Link href="/neighborhood-quiz">
+              <Button
+                size="lg"
+                variant="outline"
+                className="group w-full sm:w-auto h-16 px-8 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-110"
+              >
+                <Compass className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
+                Find My Neighborhood
               </Button>
             </Link>
             <a href="tel:6614517200">
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-8 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue-dark transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
-                (661) 451-7200
+                Talk to AI Advisor
               </Button>
             </a>
           </motion.div>
@@ -96,7 +105,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-white/80 text-sm mb-16"
           >
-            Free consultation • No obligation • Connect with local experts
+            No sign-ups required. No sales pitch. Just answers.
           </motion.p>
 
           <motion.div
@@ -106,10 +115,10 @@ export function Hero() {
             className="mt-20 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8"
           >
             {[
-              { value: '6', label: 'Neighborhoods', gradient: 'from-premium-blue to-premium-blue-dark' },
-              { value: '4', label: 'Buyer Guides', gradient: 'from-premium-orange to-premium-rust' },
-              { value: '55+', label: 'Communities', gradient: 'from-premium-green to-emerald-600' },
-              { value: '100%', label: 'Free Resource', gradient: 'from-amber-400 to-orange-500' },
+              { value: '6', label: 'Neighborhoods Analyzed', gradient: 'from-premium-blue to-premium-blue-dark' },
+              { value: '4', label: 'Free Buyer Guides', gradient: 'from-premium-orange to-premium-rust' },
+              { value: '$0', label: 'Cost to You', gradient: 'from-premium-green to-emerald-600' },
+              { value: '24/7', label: 'AI Advisor Available', gradient: 'from-amber-400 to-orange-500' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
