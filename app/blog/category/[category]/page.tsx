@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getPostsByCategory, getAllPosts } from '@/data/blog'
+import { getPostsByCategory } from '@/data/blog'
 import { blogCategories, getCategoryBySlug } from '@/data/blog/categories'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
