@@ -236,4 +236,11 @@ If you're a veteran, service member, or surviving spouse and you haven't explore
 
 *This is educational information only. Consult a licensed mortgage professional for advice specific to your situation.*
   `.trim(),
+  faqs: [
+    { question: 'Can I use a VA loan to buy a home in Santa Clarita, California?', answer: 'Yes. VA loans are available to eligible veterans, active-duty service members, and qualifying surviving spouses throughout the country, including Santa Clarita. There is no VA loan limit for borrowers with full entitlement as of 2020, meaning you can finance any amount — subject to the lender\'s qualification standards.' },
+    { question: 'Do VA loans have PMI (private mortgage insurance)?', answer: 'No. VA loans have no private mortgage insurance (PMI) regardless of your down payment — even with 0% down. This is one of the biggest financial advantages of the VA loan program. Instead, VA loans charge a one-time VA funding fee, which is smaller than years of PMI payments and can be financed into the loan.' },
+    { question: 'What is the VA funding fee in 2026?', answer: 'For first-time VA loan users with 0% down, the funding fee is 2.15% of the loan amount. For subsequent use, it\'s 3.3%. With 5–9.99% down, the fee drops to 1.5% (first use) or 1.5% (subsequent). With 10%+ down, it drops to 1.25%. Veterans receiving VA disability compensation are exempt from the funding fee entirely.' },
+    { question: 'How many times can I use my VA loan benefit?', answer: 'There is no limit on the number of times you can use your VA loan benefit. You can use it again after selling your previous VA-financed home and paying off the loan (restoring full entitlement), or simultaneously if you have remaining entitlement. VA loans can be used for primary residences only — not investment properties or vacation homes.' },
+    { question: 'What are the VA loan requirements for Santa Clarita buyers?', answer: 'VA loan eligibility requires a Certificate of Eligibility (COE) demonstrating sufficient military service. Minimum service requirements: 90 consecutive days on active duty during wartime, 181 days during peacetime, or 6 years in the National Guard/Reserves. Most VA lenders also require a minimum 580–620 credit score and a debt-to-income ratio below 41–57% depending on the lender.' },
+  ],
 }

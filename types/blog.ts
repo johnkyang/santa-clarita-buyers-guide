@@ -13,6 +13,7 @@ export interface BlogPost {
   metaDescription: string
   keywords: string[]
   readTime: number // in minutes
+  faqs?: Array<{ question: string; answer: string }>
 }
 
 export type BlogCategory =

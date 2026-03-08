@@ -291,4 +291,11 @@ Reserves (2–4 months of PITIA) are in addition to this. Your lender will verif
 
 *This is educational information only. Consult a licensed mortgage professional for advice specific to your situation.*
   `.trim(),
+  faqs: [
+    { question: 'How much are closing costs in Santa Clarita, California?', answer: 'Buyers typically pay 2–3% of the purchase price in closing costs. On a $750,000 home, that\'s $15,000–$22,500. This includes lender fees (origination, appraisal, credit report), title and escrow fees, prepaid items (insurance, taxes, prepaid interest), and government recording fees.' },
+    { question: 'Who pays closing costs in Santa Clarita — buyer or seller?', answer: 'Both parties pay closing costs, but for different items. Buyers typically pay lender fees, title insurance (lender\'s policy), escrow fees (often split 50/50), and prepaid items. Sellers typically pay the real estate commission, transfer taxes, and owner\'s title insurance. In some negotiations, sellers agree to credit the buyer a portion of closing costs.' },
+    { question: 'Can the seller pay my closing costs in California?', answer: 'Yes — seller concessions are negotiable. A seller may agree to credit you a set dollar amount toward closing costs as part of the purchase agreement. Lenders typically cap seller concessions at 3–6% of the purchase price depending on your loan type and down payment. In Santa Clarita\'s competitive market, asking for seller concessions is more common in slower-moving segments.' },
+    { question: 'Can closing costs be rolled into my mortgage in California?', answer: 'Generally no for purchase loans — closing costs must typically be paid upfront out of pocket or covered by seller concessions. However, some loan programs allow you to finance certain costs into the loan amount, and USDA loans permit rolling the guarantee fee into the loan. VA loans also allow the funding fee to be financed.' },
+    { question: 'What is a Closing Disclosure and when will I receive it?', answer: 'The Closing Disclosure (CD) is a 5-page federal document that itemizes all your final closing costs, loan terms, and the exact cash needed to close. You must receive it at least 3 business days before your signing appointment. Compare it carefully to your original Loan Estimate — most fees should be within 10% of the initial estimate.' },
+  ],
 }

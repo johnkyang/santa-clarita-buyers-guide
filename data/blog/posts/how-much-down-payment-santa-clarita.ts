@@ -238,4 +238,11 @@ These ranges illustrate why programs that cover closing costs—especially DPA p
 
 *This is educational information only. Consult a licensed mortgage professional for advice specific to your situation.*
   `.trim(),
+  faqs: [
+    { question: 'What is the minimum down payment to buy a home in Santa Clarita?', answer: 'The minimum varies by loan type: FHA requires 3.5% (with a 580+ credit score), conventional loans allow as low as 3%, VA loans for eligible veterans require 0% down, and USDA loans also offer 0% down for eligible rural properties. On a $750,000 Santa Clarita home, 3.5% FHA = $26,250; 3% conventional = $22,500.' },
+    { question: 'Can I buy a house in Santa Clarita with no money down?', answer: 'Yes, with the right loan type. VA loans (for veterans and active-duty military) and USDA loans (for eligible rural areas — some Castaic areas qualify) offer 100% financing with no down payment required. Down payment assistance programs like CalHFA Dream For All can also cover your entire down payment in some cases.' },
+    { question: 'How much down payment do I need on a $800,000 home in Santa Clarita?', answer: 'At minimum: $28,000 (3.5% FHA) or $24,000 (3% conventional). More typical: $40,000 (5%) or $80,000 (10%). To avoid PMI entirely: $160,000 (20%). Remember that closing costs (typically 2–3% = $16,000–$24,000) are in addition to your down payment.' },
+    { question: 'Is 20% down required to buy a home in California?', answer: 'No. 20% down is the threshold to avoid private mortgage insurance (PMI) on a conventional loan, but it is not required to buy a home. Many California buyers purchase with 3–10% down and pay PMI until they reach 20% equity. First-time buyers in particular frequently use low-down-payment programs.' },
+    { question: 'What down payment assistance programs are available in Santa Clarita?', answer: 'Key programs for 2026 include: CalHFA Dream For All (up to 20% or $150,000 in shared appreciation assistance for first-generation buyers), CalHFA MyHome (3.5% deferred second mortgage), GSFA Platinum (up to 5% non-repayable grant), and CalHFA ZIP (0% interest loan covering closing costs). Check eligibility with our free DPA Eligibility Checker.' },
+  ],
 }

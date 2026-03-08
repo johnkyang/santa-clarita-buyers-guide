@@ -227,4 +227,11 @@ Pre-approval is step one. We can connect you with a licensed Santa Clarita lende
 - [What Is Escrow? A Buyer's Guide](/blog/what-is-escrow-buyers-guide)
 - [Down Payment Assistance Programs in Santa Clarita](/blog/down-payment-assistance-programs-santa-clarita-2026)
 `.trim(),
+  faqs: [
+    { question: 'What is the difference between mortgage pre-qualification and pre-approval?', answer: 'Pre-qualification is an informal estimate based on unverified information you provide — it takes minutes and carries little weight with sellers. Pre-approval is a formal process where the lender pulls your credit, verifies your income and assets with actual documents, and issues a conditional commitment for a specific loan amount. In Santa Clarita\'s competitive market, you need a full pre-approval letter to be taken seriously by sellers.' },
+    { question: 'How long does mortgage pre-approval take in Santa Clarita?', answer: 'With all your documents ready, most lenders issue a pre-approval letter in 2–5 business days. Some online lenders can turn it around in 24–48 hours. A full underwritten pre-approval — where an actual underwriter reviews your file — may take slightly longer but carries more weight with sellers.' },
+    { question: 'What credit score do I need to get a mortgage pre-approval?', answer: 'FHA loans require a minimum 580 credit score for 3.5% down. Conventional loans typically require 620+, with the best rates at 720+. In practice, most Santa Clarita buyers aim for 680+ to have access to a broad range of conventional loan options at competitive rates.' },
+    { question: 'Does getting pre-approved hurt my credit score?', answer: 'A pre-approval triggers a \'hard inquiry\' that can temporarily lower your score by a few points. However, if you apply with multiple lenders within a 14–45 day window (depending on the credit scoring model), all those inquiries typically count as a single inquiry — so shopping around doesn\'t compound the impact.' },
+    { question: 'How long is a mortgage pre-approval valid?', answer: 'Most pre-approval letters are valid for 90 days. After that, you\'ll need to refresh with updated pay stubs and bank statements. If your financial situation hasn\'t changed, renewals are typically quick.' },
+  ],
 }

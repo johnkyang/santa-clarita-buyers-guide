@@ -221,4 +221,11 @@ The right loan for your situation depends on your full financial picture—credi
 
 *This is educational information only. Consult a licensed mortgage professional for advice specific to your situation.*
   `.trim(),
+  faqs: [
+    { question: 'What is the FHA loan limit in LA County for 2026?', answer: 'The FHA loan limit for a single-family home in LA County for 2026 is $1,089,300 — the same as the conventional conforming limit. This means most Santa Clarita homes fall well within FHA eligibility based on price alone.' },
+    { question: 'Can I get an FHA loan in Santa Clarita with a 580 credit score?', answer: 'Yes. FHA loans allow a minimum 580 credit score with 3.5% down. With a score between 500–579, you can still get an FHA loan but must put down at least 10%. Note that some individual lenders set higher minimums than FHA\'s official floor, so shop around if your score is right at 580.' },
+    { question: 'Is FHA or conventional better for first-time buyers in Santa Clarita?', answer: 'It depends on your credit score and down payment. FHA is generally better if your credit score is below 680 or if you have less than 5% to put down. Conventional is typically better at 20% down (no PMI) or if your credit score is 720+ (lower overall cost). FHA mortgage insurance is also permanent unless you refinance, while conventional PMI can be canceled when you reach 20% equity.' },
+    { question: 'Can I remove mortgage insurance from an FHA loan?', answer: 'For FHA loans originated after June 2013 with less than 10% down, mortgage insurance is permanent for the life of the loan — it cannot be canceled. The only way to remove it is to refinance into a conventional loan once you\'ve built sufficient equity. This is one reason many buyers prefer conventional loans if they qualify.' },
+    { question: 'How much down payment do I need for a conventional loan in Santa Clarita?', answer: 'Conventional loans technically allow as little as 3% down (through programs like Fannie Mae\'s HomeReady or Freddie Mac\'s Home Possible), though 5% is more common. At 20% down, you avoid PMI entirely. For a $750,000 home, that\'s $22,500 at 3%, $37,500 at 5%, or $150,000 at 20%.' },
+  ],
 }

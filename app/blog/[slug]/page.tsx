@@ -5,6 +5,7 @@ import { getPostBySlug, getPostSlugs, getAllPosts } from '@/data/blog'
 import { getCategoryBySlug } from '@/data/blog/categories'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { ArticleSchema } from '@/components/shared/article-schema'
+import { FAQJsonLd } from '@/components/shared/json-ld'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, User, ArrowRight, Share2 } from 'lucide-react'
@@ -68,6 +69,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         dateModified={post.updatedDate || post.publishedDate}
         authorName={post.author}
       />
+      {post.faqs && post.faqs.length > 0 && (
+        <FAQJsonLd faqs={post.faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
+      )}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-premium-blue to-premium-blue-dark py-12 lg:py-16">
@@ -119,6 +123,33 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <MarkdownContent content={post.content} />
+
+          {/* FAQ Section */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-12 pt-10 border-t">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {post.faqs.map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all duration-200"
+                  >
+                    <summary className="flex cursor-pointer items-start justify-between gap-4 px-5 py-4 font-semibold text-gray-900 list-none">
+                      <span>{faq.question}</span>
+                      <span className="mt-0.5 shrink-0 text-gray-400 group-open:rotate-180 transition-transform duration-200 text-lg leading-none">
+                        ↓
+                      </span>
+                    </summary>
+                    <div className="px-5 pb-5 pt-1 text-gray-600 leading-relaxed text-sm">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (

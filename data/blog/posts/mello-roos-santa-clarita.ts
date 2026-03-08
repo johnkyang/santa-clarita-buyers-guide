@@ -204,4 +204,11 @@ Before making an offer on any Santa Clarita home:
 - [New Construction in Santa Clarita 2026](/blog/new-construction-santa-clarita-2026)
 - [First-Time Buyer Guide](/first-time-buyer-guide)
 `.trim(),
+  faqs: [
+    { question: 'What is Mello-Roos in Santa Clarita?', answer: 'Mello-Roos is a special tax levied in Community Facilities Districts (CFDs) established to finance public infrastructure in newer developments — schools, roads, parks, and fire stations. It appears on your property tax bill and can add $1,200–$6,000+ per year to your costs. It\'s named after the two California legislators who authored the 1982 law.' },
+    { question: 'Which Santa Clarita neighborhoods have Mello-Roos?', answer: 'Mello-Roos is found primarily in newer communities built after 1982. In Santa Clarita, it\'s common in newer Valencia tracts, Canyon Country developments like Tesoro del Valle, newer Castaic subdivisions, and most new construction communities. Older, established neighborhoods in Newhall, older Saugus, and pre-1985 Valencia areas typically don\'t have it.' },
+    { question: 'How much is Mello-Roos per year in Santa Clarita?', answer: 'It varies significantly by community and CFD bond terms. Common ranges in Santa Clarita: low range $1,200–$2,400/year ($100–$200/month), mid range $2,400–$4,200/year ($200–$350/month), high range $4,200–$7,200+/year ($350–$600+/month). New construction almost always carries the highest Mello-Roos.' },
+    { question: 'Does Mello-Roos ever end?', answer: 'Yes — Mello-Roos bonds are typically 20–40 years in duration. When the bond is paid off, the special tax ends. If you\'re buying an older home in a Mello-Roos district, check how many years remain on the bond — a property with 5 years left is very different from one with 30 years remaining.' },
+    { question: 'How do I find out if a Santa Clarita home has Mello-Roos before I buy?', answer: 'Ask the listing agent directly — this is a standard question. You can also look up the current property tax bill on the LA County Assessor website (assessor.lacounty.gov) using the APN (parcel number). The Natural Hazard Disclosure report provided during escrow also identifies CFD participation. For new construction, the builder is required by law to disclose all Mello-Roos details upfront.' },
+  ],
 }

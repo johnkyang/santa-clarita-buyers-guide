@@ -239,4 +239,11 @@ Stevenson Ranch premium homes and Valencia hillside properties are your market. 
 
 *The Santa Clarita Buyers Guide Market Pulse publishes monthly. [Subscribe via our contact form →](/contact)*
 `.trim(),
+  faqs: [
+    { question: 'What is the median home price in Santa Clarita in 2026?', answer: 'The median sold price across the Santa Clarita Valley in February 2026 was $855,000, up 3.0% year-over-year from $830,000 in February 2025. Individual neighborhoods range from $718,000 (Castaic) to $1,155,000 (Stevenson Ranch).' },
+    { question: 'Is Santa Clarita a buyer\'s market or seller\'s market in 2026?', answer: 'Santa Clarita remains a seller\'s market in early 2026, with approximately 1.9 months of inventory (a balanced market is 4–6 months). However, inventory has increased meaningfully from its lows — buyers have more options than they did in late 2025 and face less intense competition than in 2022–2023.' },
+    { question: 'What are current mortgage rates for Santa Clarita buyers in March 2026?', answer: 'As of March 7, 2026, national average rates are approximately: 30-year fixed conventional at 6.87%, 30-year fixed FHA at 6.71%, 15-year fixed at 6.21%, and 5/1 ARM at 6.08%. Your actual rate will vary based on credit score, down payment, loan type, and lender.' },
+    { question: 'Which Santa Clarita neighborhood has the lowest home prices in 2026?', answer: 'Castaic has the lowest median price ($718,000) followed by Canyon Country ($728,000) and Newhall ($748,000). Canyon Country is actually showing the highest year-over-year appreciation (+4.1%) despite its lower price point, suggesting strong demand from buyers priced out of Valencia.' },
+    { question: 'How long does it take to buy a home in Santa Clarita?', answer: 'The home search phase varies — some buyers find their home within weeks, others take 2–4 months. Once under contract, escrow typically takes 30–45 days in California. From starting your pre-approval to getting keys, most buyers should plan for a 2–6 month process in total.' },
+  ],
 }
