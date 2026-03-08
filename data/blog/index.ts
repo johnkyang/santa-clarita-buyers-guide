@@ -17,9 +17,43 @@ import { post as vsSimiValley } from './posts/santa-clarita-vs-simi-valley'
 import { post as vsThousandOaks } from './posts/santa-clarita-vs-thousand-oaks'
 import { post as floodZoneRisk } from './posts/flood-zone-risk-santa-clarita'
 import { post as fireRisk } from './posts/fire-risk-santa-clarita-neighborhoods'
+// Part 4 SEO cluster — First-Time Buyer Process
+import { post as preApprovedSantaClarita } from './posts/how-to-get-pre-approved-santa-clarita'
+import { post as whatIsEscrow } from './posts/what-is-escrow-buyers-guide'
+import { post as hoaFeesSantaClarita } from './posts/hoa-fees-santa-clarita'
+import { post as propertyTaxesSantaClarita } from './posts/property-taxes-santa-clarita-explained'
+import { post as melloRoosSantaClarita } from './posts/mello-roos-santa-clarita'
+import { post as homeInspectionChecklist } from './posts/home-inspection-checklist-santa-clarita'
+// Part 2 SEO cluster — Mortgage & Buying Costs
+import { post as fhaVsConventional } from './posts/fha-vs-conventional-loan-santa-clarita'
+import { post as downPaymentGuide } from './posts/how-much-down-payment-santa-clarita'
+import { post as vaLoanBenefits } from './posts/va-loan-benefits-santa-clarita'
+import { post as closingCosts2026 } from './posts/closing-costs-santa-clarita-2026'
+// Part 3 SEO cluster — Advanced Mortgage Topics
+import { post as pmiCalifornia } from './posts/pmi-california-how-to-minimize'
+import { post as selfEmployedSantaClarita } from './posts/buying-while-self-employed-santa-clarita'
+import { post as usdaLoansSantaClarita } from './posts/usda-loans-santa-clarita'
+import { post as jumboLoansSantaClarita } from './posts/jumbo-loans-santa-clarita'
 
 export const blogPosts: BlogPost[] = [
-  // Part 1 SEO cluster (newest)
+  // Part 4 SEO cluster — First-Time Buyer Process (newest)
+  preApprovedSantaClarita,
+  whatIsEscrow,
+  hoaFeesSantaClarita,
+  propertyTaxesSantaClarita,
+  melloRoosSantaClarita,
+  homeInspectionChecklist,
+  // Part 3 SEO cluster — Advanced Mortgage Topics
+  pmiCalifornia,
+  selfEmployedSantaClarita,
+  usdaLoansSantaClarita,
+  jumboLoansSantaClarita,
+  // Part 2 SEO cluster — Mortgage & Buying Costs
+  fhaVsConventional,
+  downPaymentGuide,
+  vaLoanBenefits,
+  closingCosts2026,
+  // Part 1 SEO cluster
   youngProfessionals,
   schoolRatings,
   gatedCommunities,

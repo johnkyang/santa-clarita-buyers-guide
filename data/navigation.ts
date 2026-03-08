@@ -61,6 +61,11 @@ export const mainNavigation: NavSection[] = [
     href: '/guides',
     children: [
       {
+        name: 'First-Time Buyer Guide 2026',
+        href: '/first-time-buyer-guide',
+        description: 'Step-by-step pillar guide: pre-approval to closing day',
+      },
+      {
         name: 'First-Time Home Buyer',
         href: '/guides/first-time-buyer',
         description: 'Complete guide with affordability calculator & assistance programs',
@@ -171,6 +176,7 @@ export const footerNavigation = {
     { name: 'Castaic', href: '/neighborhoods/castaic' },
   ],
   guides: [
+    { name: 'First-Time Buyer Guide 2026', href: '/first-time-buyer-guide' },
     { name: 'First-Time Home Buyer Guide', href: '/guides/first-time-buyer' },
     { name: 'Down Payment Assistance', href: '/down-payment-assistance' },
     { name: 'Resale Home Guide', href: '/guides/resale' },
