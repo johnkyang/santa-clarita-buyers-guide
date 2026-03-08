@@ -20,6 +20,11 @@ export const mainNavigation: NavSection[] = [
     href: '/neighborhoods',
     children: [
       {
+        name: '🏡 Pelona Hills — New Homes',
+        href: '/pelona-hills',
+        description: 'New construction in Sand Canyon · No Mello-Roos · Grand Opening Mar 28',
+      },
+      {
         name: 'Valencia',
         href: '/neighborhoods/valencia',
         description: 'Master-planned community with modern amenities',
@@ -157,6 +162,7 @@ export const mainNavigation: NavSection[] = [
 
 export const footerNavigation = {
   neighborhoods: [
+    { name: '🏡 Pelona Hills — New Homes', href: '/pelona-hills' },
     { name: 'Valencia', href: '/neighborhoods/valencia' },
     { name: 'Newhall', href: '/neighborhoods/newhall' },
     { name: 'Saugus', href: '/neighborhoods/saugus' },

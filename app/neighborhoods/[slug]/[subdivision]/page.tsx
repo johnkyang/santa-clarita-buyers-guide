@@ -646,6 +646,44 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
         </section>
       )}
 
+      {/* Pelona Hills New Construction Callout — Sand Canyon only */}
+      {params.slug === 'canyon-country' && params.subdivision === 'sand-canyon' && (
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 lg:p-12">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div>
+                  <span className="inline-flex items-center gap-2 bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    New Construction · Grand Opening March 28, 2026
+                  </span>
+                  <h2 className="text-3xl font-bold text-white mb-3">
+                    Pelona Hills is Now Open in Sand Canyon
+                  </h2>
+                  <p className="text-white/70 leading-relaxed max-w-xl">
+                    119 brand-new single-family homes by Intracorp Homes — right here in Sand Canyon. 1,830–2,191 sq ft, 3–4 bedrooms, and <strong className="text-amber-400">no Mello-Roos</strong>. One of the only new-construction communities in Santa Clarita without this assessment.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4 shrink-0">
+                  <Link href="/pelona-hills">
+                    <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold h-14 px-8 w-full lg:w-auto">
+                      View Pelona Hills
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <a
+                    href="tel:8184456354"
+                    className="flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 transition-colors px-6 py-3 rounded-lg text-sm font-semibold text-white/80"
+                  >
+                    Call John Yang: (818) 445-6354
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">

@@ -166,6 +166,68 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
         </>
       )}
 
+      {/* Pelona Hills New Construction Spotlight — Canyon Country only */}
+      {params.slug === 'canyon-country' && (
+        <>
+          <Separator />
+          <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                New Construction — Grand Opening March 28, 2026
+              </div>
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                  <h2 className="text-3xl font-bold mb-3">Pelona Hills by Intracorp Homes</h2>
+                  <p className="text-lg text-gray-600 mb-4">
+                    119 brand-new single-family homes in Sand Canyon with 360° valley views and <strong>no Mello-Roos</strong> — one of the only new construction communities in Santa Clarita without this assessment.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {[
+                      '119 homes · 1,830–2,191 sq ft · 3–4 bed',
+                      'No Mello-Roos (saves $300–$600/month vs. other new builds)',
+                      'Walking distance to Sand Canyon Village (Sprouts, Starbucks)',
+                      'Near Vista Canyon Metrolink station',
+                      'Early California architecture · 2-car garage',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                        <span className="text-amber-500 font-bold mt-0.5">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/pelona-hills">
+                    <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white h-12 px-8">
+                      View Pelona Hills Community Page
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                </div>
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 text-white">
+                  <h3 className="text-xl font-bold mb-4 text-amber-400">Get Pre-Approval Info</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">
+                    Contact John Yang before the Grand Opening to understand your buying power, total monthly cost with HOA included, and how to position your offer.
+                  </p>
+                  <a
+                    href="tel:8184456354"
+                    className="flex items-center gap-3 bg-amber-500 hover:bg-amber-400 transition-colors px-6 py-4 rounded-xl font-bold text-slate-900 mb-4"
+                  >
+                    <Home className="w-5 h-5" />
+                    Call John: (818) 445-6354
+                  </a>
+                  <Link
+                    href="/pelona-hills#contact"
+                    className="flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 transition-colors px-6 py-3 rounded-xl text-sm font-semibold text-white/80"
+                  >
+                    Or fill out the contact form →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
       {/* CTA Section */}
       <section className="bg-gradient-to-b from-background to-muted/50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
