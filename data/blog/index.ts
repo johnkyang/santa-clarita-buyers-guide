@@ -1,4 +1,9 @@
 import type { BlogPost } from '@/types/blog'
+// March 2026 authority posts
+import { post as waitingForRates } from './posts/waiting-for-interest-rates-santa-clarita'
+import { post as preQualVsPreApproval } from './posts/pre-qualification-vs-pre-approval-santa-clarita'
+import { post as inspectionIssues } from './posts/home-inspection-issues-santa-clarita'
+import { post as under50kOutOfPocket } from './posts/buy-santa-clarita-home-under-50k-out-of-pocket'
 // Market Pulse series
 import { post as marketPulseMarch2026 } from './posts/santa-clarita-market-pulse-march-2026'
 import { post as januaryMarketReport } from './posts/santa-clarita-market-report-january-2025'
@@ -38,7 +43,12 @@ import { post as usdaLoansSantaClarita } from './posts/usda-loans-santa-clarita'
 import { post as jumboLoansSantaClarita } from './posts/jumbo-loans-santa-clarita'
 
 export const blogPosts: BlogPost[] = [
-  // Market Pulse series (newest)
+  // March 2026 authority posts (newest)
+  waitingForRates,
+  preQualVsPreApproval,
+  inspectionIssues,
+  under50kOutOfPocket,
+  // Market Pulse series
   marketPulseMarch2026,
   // Part 4 SEO cluster — First-Time Buyer Process
   preApprovedSantaClarita,
