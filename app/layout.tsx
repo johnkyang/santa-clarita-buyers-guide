@@ -29,7 +29,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#16a34a',
+  themeColor: '#e6b319',
 }
 
 export default function RootLayout({
@@ -41,6 +41,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="canonical" href="https://santaclaritabuyersguide.com" />

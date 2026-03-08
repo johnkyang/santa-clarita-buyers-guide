@@ -1,4 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
+import {
+  buildEmail2,
+  buildEmail3,
+  buildEmail4,
+  buildEmail5,
+  daysFromNow,
+  NURTURE_FROM,
+  NURTURE_REPLY_TO,
+} from '@/lib/email-templates/nurture-sequence'
 
 export async function POST(request: NextRequest) {
   try {
@@ -343,23 +352,27 @@ A free resource by Kailei Media
 You received this because you requested information from SantaClaritaBuyersGuide.com.
     `.trim()
 
-    // Send email to recipients (using Resend if API key is available)
-    if (process.env.RESEND_API_KEY) {
+    // Send email via Brevo (if API key is configured)
+    if (process.env.BREVO_API_KEY) {
+      const brevoHeaders = {
+        'Content-Type': 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
+      }
+      const BREVO_URL = 'https://api.brevo.com/v3/smtp/email'
+      const FROM_SENDER = { name: 'Santa Clarita Buyers Guide', email: 'hello@santaclaritabuyersguide.com' }
+
       try {
         // 1. Send lead notification to admin
-        const notificationResponse = await fetch('https://api.resend.com/emails', {
+        const notificationResponse = await fetch(BREVO_URL, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          },
+          headers: brevoHeaders,
           body: JSON.stringify({
-            from: 'Santa Clarita Buyers Guide <onboarding@resend.dev>',
-            to: ['johnkyang@outlook.com'],
-            reply_to: email,
+            sender: FROM_SENDER,
+            to: [{ email: 'johnkyang@outlook.com' }],
+            replyTo: { email },
             subject: `New Lead: ${fullName} - ${timeline || buyerType || 'Inquiry'}`,
-            html: emailHtml,
-            text: emailText,
+            htmlContent: emailHtml,
+            textContent: emailText,
           }),
         })
 
@@ -371,18 +384,15 @@ You received this because you requested information from SantaClaritaBuyersGuide
         }
 
         // 2. Send buyer confirmation email
-        const confirmationResponse = await fetch('https://api.resend.com/emails', {
+        const confirmationResponse = await fetch(BREVO_URL, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          },
+          headers: brevoHeaders,
           body: JSON.stringify({
-            from: 'Santa Clarita Buyers Guide <onboarding@resend.dev>',
-            to: [email],
+            sender: FROM_SENDER,
+            to: [{ email, name: fullName }],
             subject: `We got your request, ${fullName.split(' ')[0]} — here's what's next`,
-            html: confirmationHtml,
-            text: confirmationText,
+            htmlContent: confirmationHtml,
+            textContent: confirmationText,
           }),
         })
 
@@ -391,12 +401,48 @@ You received this because you requested information from SantaClaritaBuyersGuide
           console.error('Failed to send buyer confirmation:', errorData)
         } else {
           console.log('Buyer confirmation sent to:', email)
+
+          // Schedule nurture sequence: Emails 2–5 (Day 2, 4, 7, 10)
+          const recipientFirstName = fullName.split(' ')[0]
+          const nurtureEmails = [
+            { email: buildEmail2(recipientFirstName), scheduledAt: daysFromNow(2) },
+            { email: buildEmail3(recipientFirstName), scheduledAt: daysFromNow(4) },
+            { email: buildEmail4(recipientFirstName), scheduledAt: daysFromNow(7) },
+            { email: buildEmail5(recipientFirstName), scheduledAt: daysFromNow(10) },
+          ]
+
+          for (const { email: nurture, scheduledAt } of nurtureEmails) {
+            try {
+              const scheduleRes = await fetch(BREVO_URL, {
+                method: 'POST',
+                headers: brevoHeaders,
+                body: JSON.stringify({
+                  sender: { name: 'Santa Clarita Buyers Guide', email: NURTURE_FROM.match(/<(.+)>/)?.[1] || 'hello@santaclaritabuyersguide.com' },
+                  to: [{ email, name: fullName }],
+                  replyTo: { email: NURTURE_REPLY_TO },
+                  subject: nurture.subject,
+                  htmlContent: nurture.html,
+                  textContent: nurture.text,
+                  scheduledAt,
+                }),
+              })
+              if (scheduleRes.ok) {
+                const data = await scheduleRes.json()
+                console.log(`Nurture email scheduled (${scheduledAt}):`, data.messageId)
+              } else {
+                const err = await scheduleRes.json()
+                console.error(`Failed to schedule nurture email (${scheduledAt}):`, err)
+              }
+            } catch (scheduleError) {
+              console.error(`Error scheduling nurture email (${scheduledAt}):`, scheduleError)
+            }
+          }
         }
       } catch (emailError) {
         console.error('Email sending error:', emailError)
       }
     } else {
-      console.warn('RESEND_API_KEY not configured - emails will not be sent')
+      console.warn('BREVO_API_KEY not configured - emails will not be sent')
     }
 
     // 2. Send to n8n Webhook (if configured)

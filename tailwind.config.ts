@@ -50,7 +50,11 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-  			// Premium color palette
+  			// Editorial design palette
+			'editorial-gold': '#e6b319',
+			'editorial-light': '#f8f7f6',
+			'editorial-dark': '#211d11',
+			// Premium color palette (kept for backward compat)
   			'premium-blue': {
   				DEFAULT: '#2563eb',
   				dark: '#1e40af',
