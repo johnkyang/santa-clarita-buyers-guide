@@ -3,12 +3,28 @@ import { valenciaWestridge } from './valencia-westridge'
 import { valenciaBridgeport } from './valencia-bridgeport'
 import { newhallOldTown } from './newhall-old-town'
 import { saugusGoldenValley } from './saugus-golden-valley'
+import { stevensonRanchSouthernOaks } from './stevenson-ranch-southern-oaks'
+import { stevensonRanchWestridge } from './stevenson-ranch-westridge'
+import { canyonCountryFairOaksRanch } from './canyon-country-fair-oaks-ranch'
+import { canyonCountryStetsonRanch } from './canyon-country-stetson-ranch'
+import { canyonCountrySandCanyon } from './canyon-country-sand-canyon'
+import { castaicWilliamsRanch } from './castaic-williams-ranch'
+import { castaicNorthLake } from './castaic-north-lake'
+import { castaicEastCastaic } from './castaic-east-castaic'
 
 export const subdivisions: Subdivision[] = [
   valenciaWestridge,
   valenciaBridgeport,
   newhallOldTown,
   saugusGoldenValley,
+  stevensonRanchSouthernOaks,
+  stevensonRanchWestridge,
+  canyonCountryFairOaksRanch,
+  canyonCountryStetsonRanch,
+  canyonCountrySandCanyon,
+  castaicWilliamsRanch,
+  castaicNorthLake,
+  castaicEastCastaic,
 ]
 
 export function getAllSubdivisions(): Subdivision[] {
