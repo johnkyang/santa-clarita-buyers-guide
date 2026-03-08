@@ -18,8 +18,10 @@ import {
   Users,
   ArrowRight,
   Building2,
-  Sparkles
+  Sparkles,
+  Calculator
 } from 'lucide-react'
+import { SubdivisionLeadForm } from '@/components/neighborhoods/subdivision-lead-form'
 
 interface SubdivisionPageProps {
   params: {
@@ -536,6 +538,71 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Buying Power Callout + Inline Lead Form */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-start">
+
+            {/* Buying Power Callout */}
+            <div className="bg-white rounded-2xl border-2 border-premium-blue/20 p-8 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-premium-blue/10 flex items-center justify-center">
+                  <Calculator className="w-5 h-5 text-premium-blue" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Can You Afford {subdivision.name}?</h3>
+              </div>
+              <p className="text-gray-600 mb-5 leading-relaxed">
+                Homes in {subdivision.name} have a median price of{' '}
+                <strong className="text-premium-blue">{subdivision.quickFacts.medianPrice}</strong>.
+                Most buyers discover their real budget is different from what they expected — use our
+                free calculator to find your exact number before you fall in love with a home.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Based on your real income and existing debts',
+                  'Factors in Santa Clarita property taxes & HOA fees',
+                  'Shows both conventional and FHA loan options',
+                  'Includes down payment assistance scenarios',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/buying-power">
+                <Button className="w-full bg-premium-blue hover:bg-premium-blue-dark text-white font-bold h-12">
+                  Calculate My Buying Power
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <p className="mt-3 text-center text-xs text-gray-500">
+                Free · No signup required · Takes 60 seconds
+              </p>
+            </div>
+
+            {/* Inline Lead Form */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-sm">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Get Personalized Help With {subdivision.name}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  We&apos;re a free, independent buyer resource — no sales pressure, no obligation.
+                  Tell us where you are in your search and we&apos;ll point you in the right direction.
+                </p>
+              </div>
+              <SubdivisionLeadForm
+                subdivisionName={subdivision.name}
+                neighborhoodName={subdivision.parentNeighborhoodName}
+                sourcePage={`/neighborhoods/${params.slug}/${params.subdivision}`}
+              />
+            </div>
+
           </div>
         </div>
       </section>
