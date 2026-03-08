@@ -102,6 +102,11 @@ export const mainNavigation: NavSection[] = [
     href: '/blog',
     children: [
       {
+        name: '📊 Market Intelligence Hub',
+        href: '/santa-clarita-real-estate-market',
+        description: 'Live price data, inventory tracker & monthly Market Pulse reports',
+      },
+      {
         name: 'Market Updates',
         href: '/blog',
         description: 'Latest Santa Clarita housing market trends and analysis',
@@ -185,6 +190,7 @@ export const footerNavigation = {
     { name: 'Reverse for Purchase', href: '/guides/reverse-mortgage' },
   ],
   resources: [
+    { name: 'Market Intelligence Hub', href: '/santa-clarita-real-estate-market' },
     { name: 'Neighborhood Quiz', href: '/neighborhood-quiz' },
     { name: 'DPA Eligibility Checker', href: '/dpa-checker' },
     { name: 'Buying Power Calculator', href: '/buying-power' },

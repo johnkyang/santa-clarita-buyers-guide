@@ -1,4 +1,6 @@
 import type { BlogPost } from '@/types/blog'
+// Market Pulse series
+import { post as marketPulseMarch2026 } from './posts/santa-clarita-market-pulse-march-2026'
 import { post as januaryMarketReport } from './posts/santa-clarita-market-report-january-2025'
 import { post as dreamForAll2026 } from './posts/calhfa-dream-for-all-2026-what-to-know'
 import { post as valenciaWestridge } from './posts/valencia-westridge-neighborhood-guide'
@@ -36,7 +38,9 @@ import { post as usdaLoansSantaClarita } from './posts/usda-loans-santa-clarita'
 import { post as jumboLoansSantaClarita } from './posts/jumbo-loans-santa-clarita'
 
 export const blogPosts: BlogPost[] = [
-  // Part 4 SEO cluster — First-Time Buyer Process (newest)
+  // Market Pulse series (newest)
+  marketPulseMarch2026,
+  // Part 4 SEO cluster — First-Time Buyer Process
   preApprovedSantaClarita,
   whatIsEscrow,
   hoaFeesSantaClarita,
