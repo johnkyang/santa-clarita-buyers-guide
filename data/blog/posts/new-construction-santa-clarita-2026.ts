@@ -92,7 +92,7 @@ Pelona Hills is a 119-home single-family community on a hilltop setting with 360
 - Address: 28926 Sand Canyon Rd, Santa Clarita, CA 91387
 - Near Vista Canyon Metrolink station and Sand Canyon Village retail
 
-**Pricing:** Not publicly listed — estimated mid-to-upper $700s based on comparable SCV new construction.
+**Pricing:** Not publicly listed — contact builder or call (818) 445-6354 for current pricing.
 
 [→ See the full Pelona Hills community page](/pelona-hills)
 
@@ -120,7 +120,7 @@ Stevenson Ranch is a finished neighborhood. There is no meaningful new tract con
 
 | Builder | Active Communities | Typical Price Range |
 |---|---|---|
-| Intracorp Homes | **Pelona Hills** (Canyon Country) | Est. mid-to-upper $700s |
+| Intracorp Homes | **Pelona Hills** (Canyon Country) | Contact for pricing |
 | Pardee Homes | Williams Ranch, Castaic | $700K–$1.1M |
 | Tri Pointe Homes | Williams Ranch, North Lake | $800K–$1.2M |
 | KB Home | North Lake and scattered | $700K–$950K |

@@ -95,7 +95,7 @@ const considerations = [
   'Sand Canyon area carries elevated wildland fire risk — verify insurance costs before committing',
   'School district is Canyon Country / Hart Union (Canyon High School, 7/10)',
   'HOA fees apply (amount TBD — confirm with builder)',
-  'Pricing not yet publicly listed — expect mid-to-upper $700K range based on comparable new SCV builds',
+  'Pricing not yet publicly listed — contact John Yang for current availability and pricing details',
   'Community is under construction — move-in timeline dependent on build phase',
 ]
 
