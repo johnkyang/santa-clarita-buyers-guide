@@ -22,19 +22,19 @@ export function DPAOverview() {
             <h3 className="font-display text-2xl font-bold mb-6">Why DPA Programs Exist</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 text-premium-green flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-6 w-6 text-[#10b981] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Help first-time buyers overcome the down payment barrier</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 text-premium-green flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-6 w-6 text-[#10b981] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Support moderate-income families in high-cost areas like Santa Clarita</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 text-premium-green flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-6 w-6 text-[#10b981] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Encourage homeownership in California communities</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 text-premium-green flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-6 w-6 text-[#10b981] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Provide special assistance for teachers, veterans, and public servants</span>
               </li>
             </ul>
@@ -44,15 +44,15 @@ export function DPAOverview() {
             <h3 className="font-display text-2xl font-bold mb-6">How DPA Programs Work</h3>
             <div className="space-y-6">
               <div>
-                <div className="font-semibold text-premium-blue mb-2">Grants</div>
+                <div className="font-semibold text-navy-700 mb-2">Grants</div>
                 <p className="text-sm text-gray-600">Free money that doesn&apos;t need to be repaid (like AccessZero)</p>
               </div>
               <div>
-                <div className="font-semibold text-premium-orange mb-2">Deferred Payment Loans</div>
+                <div className="font-semibold text-gold-600 mb-2">Deferred Payment Loans</div>
                 <p className="text-sm text-gray-600">0% interest loans with no monthly payment, due when you sell or refinance</p>
               </div>
               <div>
-                <div className="font-semibold text-premium-green mb-2">Forgivable Loans</div>
+                <div className="font-semibold text-[#10b981] mb-2">Forgivable Loans</div>
                 <p className="text-sm text-gray-600">Loans that are forgiven if you stay in the home for a certain period</p>
               </div>
             </div>
@@ -60,7 +60,7 @@ export function DPAOverview() {
         </div>
 
         {/* Common Myths */}
-        <Card className="p-8 bg-premium-cream border-premium-gold">
+        <Card className="p-8 bg-warm-50 border-gold-100">
           <h3 className="font-display text-2xl font-bold mb-6 text-center">Common Myths Debunked</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>

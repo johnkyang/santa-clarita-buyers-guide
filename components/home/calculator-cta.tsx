@@ -9,7 +9,7 @@ export function CalculatorCTA() {
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-premium-blue to-premium-blue-dark p-8 sm:p-16 shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy-700 to-navy-800 p-8 sm:p-16 shadow-2xl">
           {/* Decorative Background Elements */}
           <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute bottom-0 left-0 -mb-4 -ml-4 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
@@ -75,7 +75,7 @@ export function CalculatorCTA() {
                 <Link href="/buying-power">
                   <Button
                     size="lg"
-                    className="bg-white text-premium-blue hover:bg-gray-100 font-semibold text-lg px-8 py-6 shadow-xl"
+                    className="bg-white text-navy-700 hover:bg-gray-100 font-semibold text-lg px-8 py-6 shadow-xl"
                   >
                     Calculate My Buying Power
                     <ArrowRight className="ml-2 h-5 w-5" />

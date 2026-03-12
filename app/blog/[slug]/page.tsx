@@ -59,6 +59,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3)
 
+
   return (
     <div>
       <ArticleSchema
@@ -74,7 +75,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-premium-blue to-premium-blue-dark py-12 lg:py-16">
+      <section className="bg-gradient-to-br from-navy-700 to-navy-800 py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {category && (
             <Badge className={`bg-gradient-to-r ${category.color} text-white border-0 mb-4`}>
@@ -122,7 +123,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article Content */}
       <article className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <MarkdownContent content={post.content} />
+          <MarkdownContent content={post.content} skipFirstH1 />
 
           {/* FAQ Section */}
           {post.faqs && post.faqs.length > 0 && (
@@ -188,9 +189,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <Link
                   key={relatedPost.slug}
                   href={`/blog/${relatedPost.slug}`}
-                  className="group bg-white rounded-lg border-2 border-gray-100 hover:border-premium-blue p-6 hover:shadow-lg transition-all"
+                  className="group bg-white rounded-lg border-2 border-gray-100 hover:border-navy-700 p-6 hover:shadow-lg transition-all"
                 >
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-premium-blue transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-navy-700 transition-colors">
                     {relatedPost.title}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{relatedPost.excerpt}</p>
@@ -206,7 +207,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark py-16">
+      <section className="bg-gradient-to-r from-navy-700 to-navy-800 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to Make Your Move?</h2>
           <p className="text-xl text-white/90 mb-8">
@@ -214,7 +215,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 text-lg font-bold bg-white text-premium-blue hover:bg-gray-100">
+              <Button size="lg" className="h-14 px-8 text-lg font-bold bg-white text-navy-700 hover:bg-gray-100">
                 Contact Us
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

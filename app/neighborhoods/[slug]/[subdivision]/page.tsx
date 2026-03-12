@@ -72,7 +72,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-premium-blue to-premium-blue-dark py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24" style={{ background: 'linear-gradient(135deg, #0f1f3d 0%, #162b52 100%)' }}>
         {subdivision.heroImage && (
           <div className="absolute inset-0 opacity-20">
             <Image
@@ -98,7 +98,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-premium-blue hover:bg-gray-100 h-12 px-8">
+                <Button size="lg" className="bg-white text-[#0f1f3d] hover:bg-gray-100 h-12 px-8">
                   Schedule a Tour
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -136,7 +136,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
             <Card className="border-2">
               <CardHeader className="pb-3">
-                <MapPin className="w-5 h-5 text-premium-blue mb-2" />
+                <MapPin className="w-5 h-5 text-[#0f1f3d] mb-2" />
                 <CardTitle className="text-sm font-medium text-gray-600">Location</CardTitle>
               </CardHeader>
               <CardContent>
@@ -145,7 +145,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             </Card>
             <Card className="border-2">
               <CardHeader className="pb-3">
-                <DollarSign className="w-5 h-5 text-premium-blue mb-2" />
+                <DollarSign className="w-5 h-5 text-[#0f1f3d] mb-2" />
                 <CardTitle className="text-sm font-medium text-gray-600">Median Price</CardTitle>
               </CardHeader>
               <CardContent>
@@ -154,7 +154,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             </Card>
             <Card className="border-2">
               <CardHeader className="pb-3">
-                <Home className="w-5 h-5 text-premium-blue mb-2" />
+                <Home className="w-5 h-5 text-[#0f1f3d] mb-2" />
                 <CardTitle className="text-sm font-medium text-gray-600">Home Sizes</CardTitle>
               </CardHeader>
               <CardContent>
@@ -163,7 +163,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             </Card>
             <Card className="border-2">
               <CardHeader className="pb-3">
-                <Building2 className="w-5 h-5 text-premium-blue mb-2" />
+                <Building2 className="w-5 h-5 text-[#0f1f3d] mb-2" />
                 <CardTitle className="text-sm font-medium text-gray-600">Lot Sizes</CardTitle>
               </CardHeader>
               <CardContent>
@@ -172,7 +172,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             </Card>
             <Card className="border-2">
               <CardHeader className="pb-3">
-                <Sparkles className="w-5 h-5 text-premium-blue mb-2" />
+                <Sparkles className="w-5 h-5 text-[#0f1f3d] mb-2" />
                 <CardTitle className="text-sm font-medium text-gray-600">HOA Fee</CardTitle>
               </CardHeader>
               <CardContent>
@@ -205,7 +205,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
-            <School className="w-8 h-8 text-premium-blue" />
+            <School className="w-8 h-8 text-[#0f1f3d]" />
             <h2 className="text-3xl font-bold">Schools</h2>
           </div>
 
@@ -215,7 +215,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
               <h3 className="text-xl font-semibold mb-4">Elementary Schools</h3>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {subdivision.schools.elementary.map((school) => (
-                  <Card key={school.name} className="border-2 hover:border-premium-blue transition-colors">
+                  <Card key={school.name} className="border-2 hover:border-[#0f1f3d] transition-colors">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <CardTitle className="text-lg">{school.name}</CardTitle>
@@ -243,7 +243,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
               <h3 className="text-xl font-semibold mb-4">Middle Schools</h3>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {subdivision.schools.middle.map((school) => (
-                  <Card key={school.name} className="border-2 hover:border-premium-blue transition-colors">
+                  <Card key={school.name} className="border-2 hover:border-[#0f1f3d] transition-colors">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <CardTitle className="text-lg">{school.name}</CardTitle>
@@ -271,7 +271,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
               <h3 className="text-xl font-semibold mb-4">High Schools</h3>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {subdivision.schools.high.map((school) => (
-                  <Card key={school.name} className="border-2 hover:border-premium-blue transition-colors">
+                  <Card key={school.name} className="border-2 hover:border-[#0f1f3d] transition-colors">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <CardTitle className="text-lg">{school.name}</CardTitle>
@@ -329,7 +329,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                       <CardTitle className="text-2xl mb-2">{style.builder}</CardTitle>
                       <CardDescription className="text-base">{style.style}</CardDescription>
                     </div>
-                    <Badge className="bg-premium-blue text-white text-lg px-4 py-2 w-fit">
+                    <Badge className="bg-[#0f1f3d] text-white text-lg px-4 py-2 w-fit">
                       {style.priceRange}
                     </Badge>
                   </div>
@@ -375,7 +375,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
-            <TrendingUp className="w-8 h-8 text-premium-blue" />
+            <TrendingUp className="w-8 h-8 text-[#0f1f3d]" />
             <h2 className="text-3xl font-bold">Market Insights</h2>
           </div>
 
@@ -385,7 +385,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 <CardTitle className="text-sm text-gray-600">Recent Sales (30 days)</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-premium-blue">{subdivision.marketData.recentSales.last30Days}</p>
+                <p className="text-3xl font-bold text-[#0f1f3d]">{subdivision.marketData.recentSales.last30Days}</p>
                 <p className="text-sm text-gray-600 mt-1">homes sold</p>
               </CardContent>
             </Card>
@@ -394,7 +394,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 <CardTitle className="text-sm text-gray-600">Average Price</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-premium-blue">{subdivision.marketData.recentSales.averagePrice}</p>
+                <p className="text-3xl font-bold text-[#0f1f3d]">{subdivision.marketData.recentSales.averagePrice}</p>
                 <p className="text-sm text-gray-600 mt-1">last 30 days</p>
               </CardContent>
             </Card>
@@ -403,7 +403,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 <CardTitle className="text-sm text-gray-600">Days on Market</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-premium-blue">{subdivision.marketData.recentSales.averageDays}</p>
+                <p className="text-3xl font-bold text-[#0f1f3d]">{subdivision.marketData.recentSales.averageDays}</p>
                 <p className="text-sm text-gray-600 mt-1">average</p>
               </CardContent>
             </Card>
@@ -412,7 +412,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 <CardTitle className="text-sm text-gray-600">Sale-to-List Ratio</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-premium-blue">{subdivision.marketData.recentSales.saleToListRatio}</p>
+                <p className="text-3xl font-bold text-[#0f1f3d]">{subdivision.marketData.recentSales.saleToListRatio}</p>
                 <p className="text-sm text-gray-600 mt-1">of asking price</p>
               </CardContent>
             </Card>
@@ -502,7 +502,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
-            <Users className="w-8 h-8 text-premium-blue" />
+            <Users className="w-8 h-8 text-[#0f1f3d]" />
             <h2 className="text-3xl font-bold">Is {subdivision.name} Right for You?</h2>
           </div>
 
@@ -543,21 +543,21 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
       </section>
 
       {/* Buying Power Callout + Inline Lead Form */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="py-16 bg-gradient-to-br from-[#fdf8e8] to-[#f9f6f0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2 items-start">
 
             {/* Buying Power Callout */}
-            <div className="bg-white rounded-2xl border-2 border-premium-blue/20 p-8 shadow-sm">
+            <div className="bg-white rounded-2xl border-2 border-[rgba(15,31,61,0.15)] p-8 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-premium-blue/10 flex items-center justify-center">
-                  <Calculator className="w-5 h-5 text-premium-blue" />
+                <div className="w-10 h-10 rounded-full bg-[rgba(15,31,61,0.08)] flex items-center justify-center">
+                  <Calculator className="w-5 h-5 text-[#0f1f3d]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Can You Afford {subdivision.name}?</h3>
               </div>
               <p className="text-gray-600 mb-5 leading-relaxed">
                 Homes in {subdivision.name} have a median price of{' '}
-                <strong className="text-premium-blue">{subdivision.quickFacts.medianPrice}</strong>.
+                <strong className="text-[#0f1f3d]">{subdivision.quickFacts.medianPrice}</strong>.
                 Most buyers discover their real budget is different from what they expected — use our
                 free calculator to find your exact number before you fall in love with a home.
               </p>
@@ -575,7 +575,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                 ))}
               </ul>
               <Link href="/buying-power">
-                <Button className="w-full bg-premium-blue hover:bg-premium-blue-dark text-white font-bold h-12">
+                <Button className="w-full bg-[#0f1f3d] hover:bg-[#162b52] text-white font-bold h-12">
                   Calculate My Buying Power
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -664,7 +664,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             <h2 className="text-3xl font-bold mb-8">Also Consider</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {subdivision.alternatives.map((alt, idx) => (
-                <Card key={idx} className="border-2 hover:border-premium-blue transition-colors">
+                <Card key={idx} className="border-2 hover:border-[#0f1f3d] transition-colors">
                   <CardHeader>
                     <CardTitle className="text-lg">{alt.name}</CardTitle>
                   </CardHeader>
@@ -692,9 +692,9 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
                   href={`/neighborhoods/${related.parentNeighborhood}/${related.slug}`}
                   className="group"
                 >
-                  <Card className="h-full border-2 hover:border-premium-blue hover:shadow-lg transition-all">
+                  <Card className="h-full border-2 hover:border-[#0f1f3d] hover:shadow-lg transition-all">
                     <CardHeader>
-                      <CardTitle className="group-hover:text-premium-blue transition-colors">
+                      <CardTitle className="group-hover:text-[#0f1f3d] transition-colors">
                         {related.name}
                       </CardTitle>
                       <CardDescription>{related.tagline}</CardDescription>
@@ -752,7 +752,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
       )}
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark py-16">
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #0f1f3d 0%, #162b52 100%)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Explore {subdivision.name}?
@@ -764,7 +764,7 @@ export default function SubdivisionPage({ params }: SubdivisionPageProps) {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="h-14 px-8 text-lg font-bold bg-white text-premium-blue hover:bg-gray-100"
+                className="h-14 px-8 text-lg font-bold bg-white text-[#0f1f3d] hover:bg-gray-100"
               >
                 Schedule a Tour
                 <ArrowRight className="ml-2 w-5 h-5" />

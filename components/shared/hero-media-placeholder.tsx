@@ -12,8 +12,8 @@ export function HeroMediaPlaceholder({
   className = ''
 }: HeroMediaPlaceholderProps) {
   const gradients = {
-    community: 'from-premium-blue via-blue-600 to-premium-blue-dark',
-    guide: 'from-premium-orange via-orange-600 to-premium-rust'
+    community: 'from-navy-700 via-blue-600 to-navy-800',
+    guide: 'from-gold-600 via-orange-600 to-gold-800'
   }
 
   return (

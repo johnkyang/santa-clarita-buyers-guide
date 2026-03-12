@@ -32,7 +32,7 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
       {/* Program Highlights */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-gradient-to-br from-premium-green to-emerald-600 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-[#10b981] to-emerald-600 rounded-lg flex items-center justify-center">
             <CheckCircle2 className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-semibold text-gray-900">Program Highlights</h3>
@@ -41,25 +41,25 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
         <Card className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 p-6">
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-green flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-[#10b981] flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Up to 20% assistance</strong> for down payment or closing costs, not to exceed $150,000
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-green flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-[#10b981] flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>No interest rate and no monthly payment</strong> on the down payment assistance
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-green flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-[#10b981] flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Appreciation share requirement:</strong> CalHFA shares in the appreciation when you sell or refinance
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-green flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-[#10b981] flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Voucher system:</strong> Homebuyers must register for a voucher. A randomized drawing will select registrants who receive the voucher. This is <strong>not first come, first served</strong>.
               </span>
@@ -71,7 +71,7 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
       {/* Eligibility Requirements */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-gradient-to-br from-premium-blue to-premium-blue-dark rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-navy-700 to-navy-800 rounded-lg flex items-center justify-center">
             <Users className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-semibold text-gray-900">Eligibility Requirements</h3>
@@ -80,25 +80,25 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
         <Card className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 p-6 mb-6">
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-blue flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-navy-700 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>First-generation homebuyer:</strong> At least one borrower must be a first-generation homebuyer (neither parent has owned a home)
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-blue flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-navy-700 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>California resident:</strong> One borrower must be a current resident of California
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-blue flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-navy-700 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>First-time homebuyers:</strong> All borrowers must be first-time homebuyers
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-blue flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-navy-700 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Income requirements:</strong> Income must meet CalHFA Income Limits for the county you are purchasing in
               </span>
@@ -113,7 +113,7 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
       {/* Documents Needed */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-gradient-to-br from-premium-orange to-premium-rust rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-gold-600 to-gold-800 rounded-lg flex items-center justify-center">
             <FileText className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-semibold text-gray-900">Documents Needed</h3>
@@ -122,25 +122,25 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
         <Card className="bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 p-6">
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-orange flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-gold-600 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 California Dream For All Lender Pre-Approval Letter
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-orange flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-gold-600 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Government ID:</strong> Passports, driver&apos;s license, state-issued ID, military ID, permanent residence cards, visas, or employment authorization documents
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-orange flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-gold-600 flex-shrink-0" />
               <span className="text-gray-700 leading-relaxed">
                 <strong>Foster care documentation</strong> (if applicable): Foster Care Verification Form/Letter or court documents
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 text-premium-orange flex-shrink-0" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-gold-600 flex-shrink-0" />
               <div className="text-gray-700 leading-relaxed">
                 <strong>Parent information</strong> for designated first-generation borrower(s):
                 <ul className="mt-2 ml-4 space-y-1 text-sm">
@@ -161,7 +161,7 @@ export function CalHFADFASection({ showFAQ = true }: CalHFADFASectionProps) {
         <Link href="/get-pre-approved">
           <Button
             size="lg"
-            className="w-full sm:w-auto h-14 px-8 text-lg font-bold bg-gradient-to-r from-premium-orange to-premium-rust hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto h-14 px-8 text-lg font-bold bg-gradient-to-r from-gold-600 to-gold-800 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             See If You Qualify
           </Button>

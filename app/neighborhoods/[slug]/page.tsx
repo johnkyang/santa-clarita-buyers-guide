@@ -106,7 +106,7 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
           <section className="py-16 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center gap-3 mb-2">
-                <MapPin className="w-8 h-8 text-premium-blue" />
+                <MapPin className="w-8 h-8 text-navy-700" />
                 <h2 className="text-3xl font-bold">Explore {neighborhood.name} Neighborhoods</h2>
               </div>
               <p className="text-lg text-gray-600 mb-8">
@@ -119,15 +119,15 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
                     href={`/neighborhoods/${params.slug}/${subdivision.slug}`}
                     className="group"
                   >
-                    <Card className="h-full border-2 hover:border-premium-blue hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                    <Card className="h-full border-2 hover:border-navy-700 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                       <CardHeader>
                         <div className="flex items-start justify-between mb-2">
-                          <Home className="w-6 h-6 text-premium-blue" />
-                          <Badge className="bg-premium-blue text-white">
+                          <Home className="w-6 h-6 text-navy-700" />
+                          <Badge className="bg-navy-700 text-white">
                             {subdivision.quickFacts.medianPrice}
                           </Badge>
                         </div>
-                        <CardTitle className="text-2xl group-hover:text-premium-blue transition-colors">
+                        <CardTitle className="text-2xl group-hover:text-navy-700 transition-colors">
                           {subdivision.name}
                         </CardTitle>
                         <CardDescription className="text-base">
@@ -151,7 +151,7 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
                         </div>
                         <Button
                           variant="outline"
-                          className="w-full group-hover:bg-premium-blue group-hover:text-white group-hover:border-premium-blue transition-all"
+                          className="w-full group-hover:bg-navy-700 group-hover:text-white group-hover:border-navy-700 transition-all"
                         >
                           View Details
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

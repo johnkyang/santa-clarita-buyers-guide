@@ -157,6 +157,10 @@ export const stevensonRanch: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 15,
+  walkScore: 42,
+  schoolRating: '9.4/10',
+
   metaDescription:
     'Complete Stevenson Ranch, CA community guide. Explore gated neighborhoods, The Centre recreation facility, West Ranch High School (9/10), Robinson Ranch golf, home prices ($850K-$2.5M+), HOA amenities, Mello-Roos info, and why affluent families choose this exclusive Santa Clarita community. Comprehensive buyer\'s guide to Stevenson Ranch real estate.',
 

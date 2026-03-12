@@ -23,7 +23,7 @@ export function GuidePreview() {
   const displayedGuides = [firstTimeBuyerGuide, ...guides.slice(0, 3)]
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-warm-50/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
@@ -47,7 +47,7 @@ export function GuidePreview() {
           <Link href="/guides">
             <Button
               size="lg"
-              className="group h-14 px-8 text-lg font-semibold bg-premium-orange hover:bg-premium-rust shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+              className="group h-14 px-8 text-lg font-semibold bg-gold-600 hover:bg-gold-800 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
             >
               <BookOpen className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
               Explore All Guides

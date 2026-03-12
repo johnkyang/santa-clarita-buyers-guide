@@ -50,7 +50,7 @@ export default function ResourcesPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-premium-blue to-premium-blue-dark py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-navy-700 to-navy-800 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
@@ -80,11 +80,11 @@ export default function ResourcesPage() {
               const Icon = category ? iconMap[category.icon as keyof typeof iconMap] : FileText
 
               return (
-                <Card key={resource.id} className="border-2 border-yellow-200 bg-yellow-50/30 hover:border-premium-blue hover:shadow-xl transition-all duration-300">
+                <Card key={resource.id} className="border-2 border-yellow-200 bg-yellow-50/30 hover:border-navy-700 hover:shadow-xl transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-3">
-                      <div className="p-3 bg-premium-blue/10 rounded-lg">
-                        <Icon className="w-6 h-6 text-premium-blue" />
+                      <div className="p-3 bg-navy-700/10 rounded-lg">
+                        <Icon className="w-6 h-6 text-navy-700" />
                       </div>
                       <Badge className={fileTypeColors[resource.fileType]}>
                         {resource.fileType}
@@ -109,7 +109,7 @@ export default function ResourcesPage() {
                       )}
                     </div>
                     <Link href={`/resources/${resource.id}`}>
-                      <Button className="w-full bg-premium-blue hover:bg-premium-blue-dark">
+                      <Button className="w-full bg-navy-700 hover:bg-navy-800">
                         <Download className="w-4 h-4 mr-2" />
                         Download Free
                       </Button>
@@ -123,11 +123,11 @@ export default function ResourcesPage() {
       </section>
 
       {/* Mortgage Qualifier Tool */}
-      <section className="py-12 bg-gradient-to-r from-premium-orange/10 to-premium-rust/10 border-y border-orange-100">
+      <section className="py-12 bg-gradient-to-r from-gold-600/10 to-gold-800/10 border-y border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-gradient-to-br from-premium-orange to-premium-rust rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-gold-600 to-gold-800 rounded-xl">
                 <FileSpreadsheet className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -136,7 +136,7 @@ export default function ResourcesPage() {
               </div>
             </div>
             <Link href="/mortgage-qualifier">
-              <Button className="bg-gradient-to-r from-premium-orange to-premium-rust hover:opacity-90 text-white">
+              <Button className="bg-gradient-to-r from-gold-600 to-gold-800 hover:opacity-90 text-white">
                 Try Calculator
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -155,10 +155,10 @@ export default function ResourcesPage() {
               const categoryResources = allResources.filter((r) => r.category === category.slug)
 
               return (
-                <Card key={category.slug} className="border-2 hover:border-premium-blue hover:shadow-lg transition-all">
+                <Card key={category.slug} className="border-2 hover:border-navy-700 hover:shadow-lg transition-all">
                   <CardHeader>
-                    <div className="p-3 bg-premium-blue/10 rounded-lg w-fit mb-3">
-                      <Icon className="w-6 h-6 text-premium-blue" />
+                    <div className="p-3 bg-navy-700/10 rounded-lg w-fit mb-3">
+                      <Icon className="w-6 h-6 text-navy-700" />
                     </div>
                     <CardTitle className="text-lg">{category.name}</CardTitle>
                     <CardDescription className="text-sm">
@@ -182,7 +182,7 @@ export default function ResourcesPage() {
               const Icon = category ? iconMap[category.icon as keyof typeof iconMap] : FileText
 
               return (
-                <Card key={resource.id} className="border-2 hover:border-premium-blue hover:shadow-lg transition-all">
+                <Card key={resource.id} className="border-2 hover:border-navy-700 hover:shadow-lg transition-all">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-3">
                       <div className="p-2 bg-gray-100 rounded-lg">
@@ -215,7 +215,7 @@ export default function ResourcesPage() {
                       <span className="text-xs text-gray-500">{resource.fileSize}</span>
                     </div>
                     <Link href={`/resources/${resource.id}`}>
-                      <Button variant="outline" className="w-full hover:bg-premium-blue hover:text-white hover:border-premium-blue">
+                      <Button variant="outline" className="w-full hover:bg-navy-700 hover:text-white hover:border-navy-700">
                         <Download className="w-4 h-4 mr-2" />
                         Download
                       </Button>
@@ -229,7 +229,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark py-16">
+      <section className="bg-gradient-to-r from-navy-700 to-navy-800 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Home Search?
@@ -240,7 +240,7 @@ export default function ResourcesPage() {
           <Link href="/contact">
             <Button
               size="lg"
-              className="h-14 px-8 text-lg font-bold bg-white text-premium-blue hover:bg-gray-100"
+              className="h-14 px-8 text-lg font-bold bg-white text-navy-700 hover:bg-gray-100"
             >
               Contact Us Today
               <ArrowRight className="ml-2 w-5 h-5" />

@@ -71,7 +71,7 @@ export default function NeighborhoodsPage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
         {/* Photo Placeholder with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-800/90 to-blue-700/85 z-10" />
+          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(160deg, rgba(7,21,37,0.97) 0%, rgba(15,31,61,0.95) 55%, rgba(22,43,82,0.92) 100%)' }} />
           {/* Placeholder for: Santa Clarita aerial view / neighborhoods collage */}
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
             <div className="text-center text-white/30 z-20 relative">
@@ -86,7 +86,7 @@ export default function NeighborhoodsPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center w-full">
           <AnimatedSection>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
-              <MapPin className="w-4 h-4 text-orange-400" />
+              <MapPin className="w-4 h-4 text-[#c9a227]" />
               <span className="text-white/90 text-sm font-medium">6 Unique Communities</span>
             </div>
 
@@ -102,7 +102,7 @@ export default function NeighborhoodsPage() {
       </section>
 
       {/* Intro Section with Colored Background */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-b from-[#f9f6f0] to-white py-16">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center mb-16">
@@ -120,7 +120,7 @@ export default function NeighborhoodsPage() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-16">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                  <thead className="bg-[#0f1f3d] text-white">
                     <tr>
                       <th className="px-6 py-4 text-left font-semibold">Neighborhood</th>
                       <th className="px-6 py-4 text-left font-semibold">Price Range</th>
@@ -130,8 +130,8 @@ export default function NeighborhoodsPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {neighborhoodData.map((neighborhood) => (
-                      <tr key={neighborhood.slug} className={`${neighborhood.hoverBg} transition-colors cursor-pointer`}>
-                        <td className={`px-6 py-4 font-semibold text-${neighborhood.colorTheme}-600`}>{neighborhood.name}</td>
+                      <tr key={neighborhood.slug} className="hover:bg-[#f9f6f0] transition-colors cursor-pointer">
+                        <td className="px-6 py-4 font-semibold text-[#0f1f3d]">{neighborhood.name}</td>
                         <td className="px-6 py-4">{neighborhood.priceRange}</td>
                         <td className="px-6 py-4">{neighborhood.character}</td>
                         <td className="px-6 py-4">{neighborhood.bestFor}</td>
@@ -159,7 +159,7 @@ export default function NeighborhoodsPage() {
       </section>
 
       {/* CTA Section with Background Color */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 py-20">
+      <section className="bg-[#0f1f3d] py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-4xl font-bold text-white mb-6">
@@ -172,7 +172,7 @@ export default function NeighborhoodsPage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="px-8 py-6 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-50 hover:scale-105 transition-all shadow-xl text-lg h-auto"
+                  className="px-8 py-6 bg-white text-[#c9a227] font-semibold rounded-xl hover:bg-gray-50 hover:scale-105 transition-all shadow-xl text-lg h-auto"
                 >
                   Get Started
                 </Button>
@@ -180,7 +180,7 @@ export default function NeighborhoodsPage() {
               <a href="tel:6614517200">
                 <Button
                   size="lg"
-                  className="px-8 py-6 bg-orange-500 text-white font-semibold rounded-xl hover:bg-orange-600 hover:scale-105 transition-all shadow-xl text-lg h-auto"
+                  className="px-8 py-6 bg-[#162b52] text-white font-semibold rounded-xl hover:bg-[#1e3a6e] hover:scale-105 transition-all shadow-xl text-lg h-auto"
                 >
                   Call (661) 451-7200
                 </Button>

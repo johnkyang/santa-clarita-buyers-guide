@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buying Power Calculator — Prototype</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════
+       TOKENS
+       ═══════════════════════════════════════ */
+    :root {
+      --c-page:        #f4f2ee;
+      --c-card:        #0f1f3d;
+      --c-card-mid:    #162847;
+      --c-card-panel:  #0c1a32;
+      --c-gold:        #c9a227;
+      --c-gold-bright: #dbb84a;
+      --c-gold-glow:   rgba(201,162,39,0.28);
+      --c-gold-dim:    rgba(201,162,39,0.18);
+      --c-gold-wash:   rgba(201,162,39,0.07);
+      --c-white:       #ffffff;
+      --c-w90:         rgba(255,255,255,0.90);
+      --c-w60:         rgba(255,255,255,0.60);
+      --c-w35:         rgba(255,255,255,0.35);
+      --c-w15:         rgba(255,255,255,0.15);
+      --c-w08:         rgba(255,255,255,0.08);
+
+      --c-zone-safe:   #2ecc71;
+      --c-zone-mod:    #c9a227;
+      --c-zone-push:   #e67e22;
+      --c-zone-risk:   #e74c3c;
+
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-ui:      'DM Sans', system-ui, sans-serif;
+
+      --r-card:    12px;
+      --r-panel:   8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--c-page);
+      font-family: var(--f-ui);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    /* ═══════════════════════════════════════
+       CARD
+       ═══════════════════════════════════════ */
+    .calc-card {
+      width: 100%;
+      max-width: 960px;
+      background: var(--c-card);
+      border-radius: var(--r-card);
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.08),
+        0 12px 40px rgba(0,0,0,0.28),
+        0 40px 80px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Subtle grain overlay */
+    .calc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(-45deg,
+          transparent 0, transparent 60px,
+          rgba(255,255,255,0.009) 60px, rgba(255,255,255,0.009) 61px
+        );
+    }
+
+    /* ═══════════════════════════════════════
+       CARD HEADER
+       ═══════════════════════════════════════ */
+    .card-header {
+      position: relative;
+      z-index: 1;
+      padding: 1.75rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--c-w08);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Top gold accent rule */
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 2rem; right: 2rem;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--c-gold), transparent);
+      opacity: 0.6;
+    }
+
+    .header-eyebrow {
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header-eyebrow::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--c-gold);
+    }
+
+    .header-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.25rem, 3vw, 1.875rem);
+      font-weight: 400;
+      color: var(--c-white);
+      letter-spacing: -0.01em;
+    }
+
+    .header-meta {
+      font-size: 0.6875rem;
+      color: var(--c-w35);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════
+       BODY: INPUT | OUTPUT SPLIT
+       ═══════════════════════════════════════ */
+    .card-body {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+    }
+
+    .col-divider {
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        var(--c-w15) 15%,
+        var(--c-w15) 85%,
+        transparent 100%
+      );
+    }
+
+    /* ═══════════════════════════════════════
+       INPUTS PANEL
+       ═══════════════════════════════════════ */
+    .inputs-panel {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .input-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-w60);
+    }
+
+    .input-value {
+      font-family: var(--f-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--c-gold);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Custom range slider ── */
+    .slider-track {
+      position: relative;
+      height: 2px;
+      background: var(--c-w15);
+      border-radius: 1px;
+    }
+
+    .slider-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--c-gold);
+      border-radius: 1px;
+      pointer-events: none;
+      transition: width 0.05s;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 2px;
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      border: 2px solid var(--c-card);
+      box-shadow: 0 0 0 1px var(--c-gold), 0 2px 8px var(--c-gold-glow);
+      cursor: grab;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(1.2);
+      box-shadow: 0 0 0 3px var(--c-gold-dim), 0 4px 16px var(--c-gold-glow);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      border: 2px solid var(--c-card);
+      box-shadow: 0 0 0 1px var(--c-gold), 0 2px 8px var(--c-gold-glow);
+      cursor: grab;
+    }
+
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    .tick-label {
+      font-size: 0.5625rem;
+      color: var(--c-w35);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Credit score selector ── */
+    .score-selector {
+      display: flex;
+      gap: 0.375rem;
+    }
+
+    .score-btn {
+      flex: 1;
+      padding: 0.5rem 0.25rem;
+      background: transparent;
+      border: 1px solid var(--c-w15);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .score-btn:hover {
+      border-color: var(--c-gold-dim);
+      background: var(--c-gold-wash);
+    }
+
+    .score-btn.active {
+      border-color: var(--c-gold);
+      background: rgba(201,162,39,0.12);
+    }
+
+    .score-grade {
+      font-family: var(--f-display);
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--c-w60);
+      line-height: 1;
+    }
+
+    .score-btn.active .score-grade { color: var(--c-gold); }
+
+    .score-name {
+      font-size: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-w35);
+      text-align: center;
+    }
+
+    .score-btn.active .score-name { color: var(--c-w60); }
+
+    .score-rate {
+      font-size: 0.5625rem;
+      color: var(--c-w35);
+    }
+
+    .score-btn.active .score-rate { color: var(--c-gold); }
+
+    /* ═══════════════════════════════════════
+       OUTPUT PANEL
+       ═══════════════════════════════════════ */
+    .output-panel {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--c-card-panel);
+    }
+
+    /* ── Price range ── */
+    .price-section {
+      margin-bottom: 1.75rem;
+    }
+
+    .output-sublabel {
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-w35);
+      margin-bottom: 0.5rem;
+    }
+
+    .price-range {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .price-main {
+      font-family: var(--f-display);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--c-white);
+      letter-spacing: -0.025em;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .price-main.updating { color: var(--c-gold); }
+
+    .price-range-sep {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      color: var(--c-w35);
+      font-weight: 300;
+    }
+
+    .price-max {
+      font-family: var(--f-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 300;
+      color: var(--c-w60);
+      letter-spacing: -0.01em;
+    }
+
+    .price-note {
+      font-size: 0.625rem;
+      color: var(--c-w35);
+      margin-top: 0.375rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Monthly payment ── */
+    .payment-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-top: 1px solid var(--c-w08);
+      border-bottom: 1px solid var(--c-w08);
+      margin-bottom: 1.75rem;
+    }
+
+    .payment-label {
+      font-size: 0.6875rem;
+      color: var(--c-w60);
+      letter-spacing: 0.06em;
+    }
+
+    .payment-amount {
+      font-family: var(--f-display);
+      font-size: 1.625rem;
+      font-weight: 400;
+      color: var(--c-gold);
+      letter-spacing: -0.01em;
+    }
+
+    .payment-sub {
+      font-size: 0.5625rem;
+      color: var(--c-w35);
+      text-align: right;
+      margin-top: 0.125rem;
+    }
+
+    /* ── Affordability gauge ── */
+    .gauge-section {
+      flex: 1;
+    }
+
+    .gauge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .gauge-label-text {
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-w35);
+    }
+
+    .gauge-reading {
+      font-family: var(--f-display);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.3s;
+    }
+
+    .gauge-svg-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      max-height: 120px;
+    }
+
+    .gauge-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* Zone labels below gauge */
+    .gauge-zones {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.25rem;
+    }
+
+    .zone-tag {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+
+    /* ── Rate info chip ── */
+    .rate-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding: 0.625rem 0.875rem;
+      background: var(--c-gold-wash);
+      border: 1px solid var(--c-gold-dim);
+      border-radius: 4px;
+    }
+
+    .rate-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      flex-shrink: 0;
+    }
+
+    .rate-chip-text {
+      font-size: 0.6875rem;
+      color: var(--c-w60);
+      line-height: 1.4;
+    }
+
+    .rate-chip-text strong {
+      color: var(--c-gold);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════ */
+    @media (max-width: 700px) {
+      .card-body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+      .col-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,
+          transparent 0%,
+          var(--c-w15) 15%,
+          var(--c-w15) 85%,
+          transparent 100%
+        );
+      }
+      .card-header {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .header-meta { text-align: left; }
+      .price-main { font-size: 2.5rem; }
+    }
+
+    @media (max-width: 400px) {
+      .inputs-panel, .output-panel { padding: 1.5rem; }
+      .score-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="calc-card" role="main">
+
+  <!-- ── Header ── -->
+  <div class="card-header">
+    <div>
+      <p class="header-eyebrow">Buying Power Calculator</p>
+      <h1 class="header-title">What Can You Afford?</h1>
+    </div>
+    <p class="header-meta">Estimates based on current<br>Santa Clarita market rates</p>
+  </div>
+
+  <!-- ── Body: inputs | output ── -->
+  <div class="card-body">
+
+    <!-- ════ INPUTS ════ -->
+    <div class="inputs-panel">
+
+      <!-- Monthly Income -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Monthly Income</span>
+          <span class="input-value" id="income-display">$8,000</span>
+        </div>
+        <div class="slider-track">
+          <div class="slider-fill" id="income-fill"></div>
+          <input type="range" id="income-slider"
+            min="2000" max="30000" step="500" value="8000"
+            aria-label="Monthly income">
+        </div>
+        <div class="slider-ticks">
+          <span class="tick-label">$2k</span>
+          <span class="tick-label">$8k</span>
+          <span class="tick-label">$15k</span>
+          <span class="tick-label">$22k</span>
+          <span class="tick-label">$30k</span>
+        </div>
+      </div>
+
+      <!-- Credit Score -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Credit Score</span>
+          <span class="input-value" id="score-display">Good</span>
+        </div>
+        <div class="score-selector" role="group" aria-label="Credit score tier">
+          <button class="score-btn" data-score="poor"        data-rate="8.50" data-label="Poor"        aria-pressed="false">
+            <span class="score-grade">D</span>
+            <span class="score-name">Poor</span>
+            <span class="score-rate">8.50%</span>
+          </button>
+          <button class="score-btn" data-score="fair"        data-rate="7.50" data-label="Fair"        aria-pressed="false">
+            <span class="score-grade">C</span>
+            <span class="score-name">Fair</span>
+            <span class="score-rate">7.50%</span>
+          </button>
+          <button class="score-btn active" data-score="good" data-rate="6.75" data-label="Good"        aria-pressed="true">
+            <span class="score-grade">B</span>
+            <span class="score-name">Good</span>
+            <span class="score-rate">6.75%</span>
+          </button>
+          <button class="score-btn" data-score="excellent"   data-rate="6.25" data-label="Excellent"   aria-pressed="false">
+            <span class="score-grade">A</span>
+            <span class="score-name">Excel.</span>
+            <span class="score-rate">6.25%</span>
+          </button>
+          <button class="score-btn" data-score="exceptional" data-rate="5.875" data-label="Exceptional" aria-pressed="false">
+            <span class="score-grade">A+</span>
+            <span class="score-name">Except.</span>
+            <span class="score-rate">5.88%</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Down Payment -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Down Payment</span>
+          <span class="input-value" id="down-display">10%</span>
+        </div>
+        <div class="slider-track">
+          <div class="slider-fill" id="down-fill"></div>
+          <input type="range" id="down-slider"
+            min="3" max="30" step="1" value="10"
+            aria-label="Down payment percentage">
+        </div>
+        <div class="slider-ticks">
+          <span class="tick-label">3%</span>
+          <span class="tick-label">10%</span>
+          <span class="tick-label">20%</span>
+          <span class="tick-label">25%</span>
+          <span class="tick-label">30%</span>
+        </div>
+      </div>
+
+    </div>
+    <!-- /inputs-panel -->
+
+    <div class="col-divider" aria-hidden="true"></div>
+
+    <!-- ════ OUTPUTS ════ -->
+    <div class="output-panel">
+
+      <!-- Price Range -->
+      <div class="price-section">
+        <p class="output-sublabel">Estimated Home Price Range</p>
+        <div class="price-range">
+          <span class="price-main" id="price-min" aria-live="polite">$340,000</span>
+          <span class="price-range-sep">–</span>
+          <span class="price-max" id="price-max" aria-live="polite">$480,000</span>
+        </div>
+        <p class="price-note">Conservative (28% DTI) to maximum (43% DTI)</p>
+      </div>
+
+      <!-- Monthly Payment -->
+      <div class="payment-row">
+        <div>
+          <p class="payment-label">Est. Monthly Payment</p>
+          <p class="payment-sub">(at moderate 36% DTI price)</p>
+        </div>
+        <div style="text-align:right">
+          <p class="payment-amount" id="payment-display" aria-live="polite">$2,248/mo</p>
+        </div>
+      </div>
+
+      <!-- Affordability Gauge -->
+      <div class="gauge-section">
+        <div class="gauge-header">
+          <span class="gauge-label-text">Affordability Index</span>
+          <span class="gauge-reading" id="gauge-label" style="color: var(--c-zone-safe)">Comfortable</span>
+        </div>
+
+        <!-- SVG Gauge -->
+        <div class="gauge-svg-wrap" aria-hidden="true">
+          <svg class="gauge-svg" viewBox="0 0 220 115" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Zone gradient arc colors -->
+              <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#2ecc71" stop-opacity="0.35"/>
+                <stop offset="42%"  stop-color="#c9a227" stop-opacity="0.35"/>
+                <stop offset="70%"  stop-color="#e67e22" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#e74c3c" stop-opacity="0.35"/>
+              </linearGradient>
+              <linearGradient id="activeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#2ecc71"/>
+                <stop offset="42%"  stop-color="#c9a227"/>
+                <stop offset="70%"  stop-color="#e67e22"/>
+                <stop offset="100%" stop-color="#e74c3c"/>
+              </linearGradient>
+              <clipPath id="gaugeClip">
+                <rect x="0" y="0" width="220" height="115"/>
+              </clipPath>
+            </defs>
+
+            <!-- Background track arc -->
+            <path
+              d="M 15 110 A 95 95 0 0 1 205 110"
+              fill="none"
+              stroke="rgba(255,255,255,0.10)"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+
+            <!-- Colored track (full) -->
+            <path
+              d="M 15 110 A 95 95 0 0 1 205 110"
+              fill="none"
+              stroke="url(#trackGrad)"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+
+            <!-- Zone tick marks -->
+            <!-- 28% DTI mark → 50.4° from left = angle 129.6° in polar -->
+            <line id="tick-28" x1="110" y1="110" x2="110" y2="110"
+              stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line id="tick-36" x1="110" y1="110" x2="110" y2="110"
+              stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+
+            <!-- Active arc (clipped to needle position) -->
+            <path id="active-arc"
+              d="M 15 110 A 95 95 0 0 1 205 110"
+              fill="none"
+              stroke="url(#activeGrad)"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-dasharray="300"
+              stroke-dashoffset="300"
+            />
+
+            <!-- Needle group (rotates around center 110,110) -->
+            <g id="needle-group" transform="rotate(-90, 110, 110)"
+               style="transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1)">
+              <!-- Needle shadow -->
+              <line x1="110" y1="110" x2="110" y2="24"
+                stroke="rgba(0,0,0,0.4)" stroke-width="2.5"
+                stroke-linecap="round"/>
+              <!-- Needle line -->
+              <line x1="110" y1="110" x2="110" y2="26"
+                stroke="var(--c-gold)" stroke-width="1.5"
+                stroke-linecap="round"/>
+              <!-- Needle tip -->
+              <circle cx="110" cy="26" r="2.5" fill="var(--c-gold)"/>
+            </g>
+
+            <!-- Center hub -->
+            <circle cx="110" cy="110" r="6"
+              fill="var(--c-card-panel)"
+              stroke="var(--c-gold)" stroke-width="1.5"/>
+            <circle cx="110" cy="110" r="2.5" fill="var(--c-gold)"/>
+
+            <!-- DTI percentage display -->
+            <text id="dti-text"
+              x="110" y="92"
+              text-anchor="middle"
+              font-family="'Cormorant Garamond', Georgia, serif"
+              font-size="18"
+              font-weight="400"
+              fill="rgba(255,255,255,0.85)"
+            >28%</text>
+            <text
+              x="110" y="103"
+              text-anchor="middle"
+              font-family="'DM Sans', sans-serif"
+              font-size="7"
+              font-weight="400"
+              letter-spacing="1.5"
+              fill="rgba(255,255,255,0.35)"
+            >HOUSING DTI</text>
+          </svg>
+        </div>
+
+        <div class="gauge-zones">
+          <span class="zone-tag" style="color: var(--c-zone-safe)">Comfortable</span>
+          <span class="zone-tag" style="color: var(--c-zone-mod)">Moderate</span>
+          <span class="zone-tag" style="color: var(--c-zone-push)">Stretching</span>
+          <span class="zone-tag" style="color: var(--c-zone-risk)">Aggressive</span>
+        </div>
+      </div>
+
+      <!-- Rate info chip -->
+      <div class="rate-chip">
+        <div class="rate-chip-dot"></div>
+        <p class="rate-chip-text" id="rate-info">
+          Using est. rate of <strong>6.75%</strong> for Good credit.
+          Rates are illustrative — get pre-approved for your actual rate.
+        </p>
+      </div>
+
+    </div>
+    <!-- /output-panel -->
+
+  </div>
+  <!-- /card-body -->
+
+</div>
+
+<script>
+  /* ══════════════════════════════════════════════════
+     STATE
+     ══════════════════════════════════════════════════ */
+  const state = {
+    income:   8000,
+    downPct:  10,
+    rate:     6.75,
+    rateLabel: 'Good',
+  };
+
+  /* ══════════════════════════════════════════════════
+     CALCULATION ENGINE
+     ══════════════════════════════════════════════════ */
+  function calcMonthlyPayment(loanAmount, annualRate, years = 30) {
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    if (r === 0) return loanAmount / n;
+    return loanAmount * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function calcMaxLoan(monthlyPayment, annualRate, years = 30) {
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    if (r === 0) return monthlyPayment * n;
+    return monthlyPayment * (1 - Math.pow(1 + r, -n)) / r;
+  }
+
+  function calcHomePrice(maxMonthlyPayment, annualRate, downPct) {
+    const loan = calcMaxLoan(maxMonthlyPayment, annualRate);
+    return loan / (1 - downPct / 100);
+  }
+
+  function compute() {
+    const { income, downPct, rate } = state;
+
+    // Price range: 28% DTI (conservative) → 43% DTI (max)
+    const conservativePayment = income * 0.28;
+    const maxPayment          = income * 0.43;
+    const moderatePayment     = income * 0.36;
+
+    const priceMin = calcHomePrice(conservativePayment, rate, downPct);
+    const priceMax = calcHomePrice(maxPayment,           rate, downPct);
+    const priceMod = calcHomePrice(moderatePayment,      rate, downPct);
+
+    // Monthly payment at moderate price
+    const loanMod     = priceMod * (1 - downPct / 100);
+    const monthlyPayt = calcMonthlyPayment(loanMod, rate);
+
+    // Housing DTI at moderate price
+    const housingDTI = monthlyPayt / income;
+
+    return { priceMin, priceMax, monthlyPayt, housingDTI };
+  }
+
+  /* ══════════════════════════════════════════════════
+     NUMBER ANIMATION
+     ══════════════════════════════════════════════════ */
+  const animTargets = {};
+
+  function animateTo(id, targetValue, formatter) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    if (animTargets[id]) cancelAnimationFrame(animTargets[id].raf);
+
+    const startValue = animTargets[id]?.current ?? targetValue;
+    const startTime  = performance.now();
+    const duration   = 420;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function tick(now) {
+      const elapsed  = Math.min(now - startTime, duration);
+      const progress = easeOut(elapsed / duration);
+      const current  = startValue + (targetValue - startValue) * progress;
+
+      el.textContent = formatter(current);
+      animTargets[id] = { current, raf: null };
+
+      if (elapsed < duration) {
+        animTargets[id].raf = requestAnimationFrame(tick);
+      } else {
+        animTargets[id].current = targetValue;
+      }
+    }
+
+    animTargets[id] = { current: startValue, raf: requestAnimationFrame(tick) };
+  }
+
+  function fmtPrice(v) {
+    if (v >= 1e6) return '$' + (v / 1e6).toFixed(2) + 'M';
+    return '$' + Math.round(v).toLocaleString();
+  }
+  function fmtPayment(v) { return '$' + Math.round(v).toLocaleString() + '/mo'; }
+  function fmtPct(v)     { return Math.round(v * 1000) / 10 + '%'; }
+
+  /* ══════════════════════════════════════════════════
+     GAUGE RENDER
+     ══════════════════════════════════════════════════ */
+  const GAUGE_TOTAL_ARC = 299.4; // approximate arc length of semicircle r=95
+
+  function getZoneColor(dti) {
+    if (dti < 0.28) return '#2ecc71';
+    if (dti < 0.36) return '#c9a227';
+    if (dti < 0.43) return '#e67e22';
+    return '#e74c3c';
+  }
+
+  function getZoneLabel(dti) {
+    if (dti < 0.28) return 'Comfortable';
+    if (dti < 0.36) return 'Moderate';
+    if (dti < 0.43) return 'Stretching';
+    return 'Aggressive';
+  }
+
+  function renderGauge(dti) {
+    const clampedDTI = Math.min(dti, 0.50);
+    const ratio      = clampedDTI / 0.50; // 0.50 = full swing
+
+    // Needle angle: -90° = far left (0% DTI), +90° = far right (50% DTI)
+    const angle = -90 + ratio * 180;
+    document.getElementById('needle-group').setAttribute(
+      'transform', `rotate(${angle}, 110, 110)`
+    );
+
+    // Active arc dashoffset (lower = more filled)
+    const offset = GAUGE_TOTAL_ARC * (1 - ratio);
+    document.getElementById('active-arc').setAttribute('stroke-dashoffset', offset);
+
+    // DTI text
+    document.getElementById('dti-text').textContent = fmtPct(dti);
+
+    // Zone color + label
+    const color = getZoneColor(dti);
+    const label = getZoneLabel(dti);
+    const gaugeLabel = document.getElementById('gauge-label');
+    gaugeLabel.textContent = label;
+    gaugeLabel.style.color = color;
+  }
+
+  /* ══════════════════════════════════════════════════
+     UPDATE ALL OUTPUTS
+     ══════════════════════════════════════════════════ */
+  function update() {
+    const { priceMin, priceMax, monthlyPayt, housingDTI } = compute();
+
+    // Animate numbers
+    animateTo('price-min', priceMin, fmtPrice);
+    animateTo('price-max', priceMax, fmtPrice);
+    animateTo('payment-display', monthlyPayt, fmtPayment);
+
+    // Gauge
+    renderGauge(housingDTI);
+
+    // Rate chip
+    document.getElementById('rate-info').innerHTML =
+      `Using est. rate of <strong>${state.rate.toFixed(3).replace(/\.?0+$/, '')}%</strong> for ${state.rateLabel} credit.
+       Rates are illustrative — get pre-approved for your actual rate.`;
+  }
+
+  /* ══════════════════════════════════════════════════
+     SLIDER FILL HELPERS
+     ══════════════════════════════════════════════════ */
+  function updateSliderFill(slider, fillEl) {
+    const pct = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    fillEl.style.width = pct + '%';
+  }
+
+  /* ══════════════════════════════════════════════════
+     WIRE UP EVENTS
+     ══════════════════════════════════════════════════ */
+
+  // Income slider
+  const incomeSlider = document.getElementById('income-slider');
+  const incomeFill   = document.getElementById('income-fill');
+  updateSliderFill(incomeSlider, incomeFill);
+
+  incomeSlider.addEventListener('input', () => {
+    state.income = +incomeSlider.value;
+    const display = state.income >= 1000
+      ? '$' + (state.income / 1000).toLocaleString(undefined, {maximumFractionDigits:1}) + 'k'
+      : '$' + state.income;
+    document.getElementById('income-display').textContent = display;
+    updateSliderFill(incomeSlider, incomeFill);
+    update();
+  });
+
+  // Down payment slider
+  const downSlider = document.getElementById('down-slider');
+  const downFill   = document.getElementById('down-fill');
+  updateSliderFill(downSlider, downFill);
+
+  downSlider.addEventListener('input', () => {
+    state.downPct = +downSlider.value;
+    document.getElementById('down-display').textContent = state.downPct + '%';
+    updateSliderFill(downSlider, downFill);
+    update();
+  });
+
+  // Credit score buttons
+  document.querySelectorAll('.score-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.score-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      state.rate      = parseFloat(btn.dataset.rate);
+      state.rateLabel = btn.dataset.label;
+      document.getElementById('score-display').textContent = state.rateLabel;
+      update();
+    });
+  });
+
+  // Prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('#needle-group').forEach(el => {
+      el.style.transition = 'none';
+    });
+  }
+
+  // Initial render
+  update();
+</script>
+
+</body>
+</html>

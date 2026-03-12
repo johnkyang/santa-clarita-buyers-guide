@@ -24,7 +24,7 @@ export function NeighborhoodHero({ neighborhood }: NeighborhoodHeroProps) {
           <Link href="/contact">
             <Button
               size="lg"
-              className="group h-14 px-8 text-lg font-bold bg-gradient-to-r from-premium-blue to-premium-blue-dark hover:from-blue-700 hover:to-blue-800 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
+              className="group h-14 px-8 text-lg font-bold bg-gradient-to-r from-navy-700 to-navy-800 hover:from-blue-700 hover:to-blue-800 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:scale-105"
             >
               Schedule a Tour
             </Button>
@@ -33,7 +33,7 @@ export function NeighborhoodHero({ neighborhood }: NeighborhoodHeroProps) {
             <Button
               size="lg"
               variant="outline"
-              className="h-14 px-8 text-lg font-semibold border-2 border-premium-blue text-premium-blue hover:bg-premium-blue hover:text-white transition-all duration-300"
+              className="h-14 px-8 text-lg font-semibold border-2 border-navy-700 text-navy-700 hover:bg-navy-700 hover:text-white transition-all duration-300"
             >
               View All Neighborhoods
             </Button>
@@ -44,7 +44,7 @@ export function NeighborhoodHero({ neighborhood }: NeighborhoodHeroProps) {
       {/* Price Range Info */}
       {neighborhood.priceRanges.singleFamily && (
         <div className="inline-flex items-center gap-3 bg-white rounded-xl px-6 py-4 shadow-md border-2 border-blue-100">
-          <div className="w-12 h-12 bg-gradient-to-br from-premium-green to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+          <div className="w-12 h-12 bg-gradient-to-br from-[#10b981] to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
             <DollarSign className="w-6 h-6 text-white" />
           </div>
           <div className="text-left">

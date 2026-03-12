@@ -19,7 +19,7 @@ export function ScheduleTourCTA({
   showPhone = true
 }: ScheduleTourCTAProps) {
   const bgStyles = {
-    primary: 'bg-gradient-to-r from-premium-blue via-blue-600 to-premium-blue-dark',
+    primary: 'bg-gradient-to-r from-navy-700 via-blue-600 to-navy-800',
     secondary: 'bg-gradient-to-br from-blue-50 to-orange-50'
   }
 
@@ -39,7 +39,7 @@ export function ScheduleTourCTA({
         <AnimatedSection>
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-              <Calendar className={`w-8 h-8 ${variant === 'primary' ? 'text-white' : 'text-premium-blue'}`} />
+              <Calendar className={`w-8 h-8 ${variant === 'primary' ? 'text-white' : 'text-navy-700'}`} />
             </div>
 
             <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${textStyles[variant]} mb-4`}>
@@ -56,8 +56,8 @@ export function ScheduleTourCTA({
                   size="lg"
                   className={`group h-14 px-8 text-lg font-bold ${
                     variant === 'primary'
-                      ? 'bg-white text-premium-blue hover:bg-gray-50'
-                      : 'bg-gradient-to-r from-premium-orange to-premium-rust hover:from-orange-600 hover:to-orange-700'
+                      ? 'bg-white text-navy-700 hover:bg-gray-50'
+                      : 'bg-gradient-to-r from-gold-600 to-gold-800 hover:from-orange-600 hover:to-orange-700'
                   } shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-105`}
                 >
                   <Calendar className="mr-2 h-5 w-5" />
@@ -73,8 +73,8 @@ export function ScheduleTourCTA({
                     variant="outline"
                     className={`group h-14 px-8 text-lg font-bold ${
                       variant === 'primary'
-                        ? 'bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue'
-                        : 'border-2 border-premium-blue text-premium-blue hover:bg-premium-blue hover:text-white'
+                        ? 'bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700'
+                        : 'border-2 border-navy-700 text-navy-700 hover:bg-navy-700 hover:text-white'
                     } transition-all duration-300 hover:scale-105`}
                   >
                     <Phone className="mr-2 h-5 w-5 transition-transform group-hover:rotate-12" />

@@ -163,6 +163,10 @@ export const saugus: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 21,
+  walkScore: 45,
+  schoolRating: '8.8/10',
+
   metaDescription:
     'Complete Saugus, CA community guide. Santa Clarita\'s best value: award-winning schools (Saugus High 9/10), Central Park, affordable homes ($380K-$1.2M), mature neighborhoods, no Mello-Roos in most areas, first-time buyer friendly. Everything you need to know about buying in Saugus, Santa Clarita\'s hidden gem for families seeking quality and value.',
 

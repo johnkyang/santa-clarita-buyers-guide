@@ -163,6 +163,10 @@ export const canyonCountry: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 28,
+  walkScore: 38,
+  schoolRating: '7.8/10',
+
   metaDescription:
     'Complete Canyon Country, CA guide. Santa Clarita\'s largest, most affordable community: spacious lots (10,000-20,000+ sq ft), equestrian properties, homes $400K-$1.5M+ ($200K-$400K below Valencia), Canyon High (8/10), Angeles National Forest access, 14 Freeway commuters. Best value for families seeking space, outdoor living, and affordability.',
 

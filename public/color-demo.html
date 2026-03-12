@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color System Reference — Santa Clarita Buyers Guide</title>
+  <link rel="stylesheet" href="colors.css" />
+  <style>
+    /* --- Dark mode demo overrides ---
+       The demo page itself needs to respond to the data-theme attribute.
+       Component demos that hardcode colors (inline styles) are wrapped in
+       .respects-theme and updated below. */
+
+    [data-theme='dark'] body,
+    @media (prefers-color-scheme: dark) { body { color-scheme: dark; } }
+
+    [data-theme='dark'] body {
+      color-scheme: dark;
+    }
+
+    /* Token-driven elements inherit automatically.
+       Inline-style demo blocks need explicit overrides. */
+    [data-theme='dark'] .token-info {
+      background: var(--color-navy-800);
+      border-top-color: var(--border-subtle);
+    }
+    [data-theme='dark'] .swatch-name { color: var(--text-body); }
+    [data-theme='dark'] .swatch-hex  { color: var(--text-subtle); }
+    [data-theme='dark'] .swatch-group-title { color: var(--text-muted); border-bottom-color: var(--border-subtle); }
+    [data-theme='dark'] .section-title { color: var(--text-primary); }
+    [data-theme='dark'] .section-desc  { color: var(--text-muted); }
+    [data-theme='dark'] .token-subhead { color: var(--text-muted); }
+    [data-theme='dark'] .border-demo-label { color: var(--text-subtle); }
+    [data-theme='dark'] .shadow-box { background: var(--bg-card); }
+    [data-theme='dark'] .shadow-box-label { color: var(--text-subtle); }
+    [data-theme='dark'] .gradient-chip-label { background: rgba(26,22,18,0.85); color: var(--color-white-80); }
+    [data-theme='dark'] .hover-note { color: var(--text-subtle); }
+    [data-theme='dark'] .code-note {
+      background: var(--color-navy-800);
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+    }
+    [data-theme='dark'] .callout-heading { color: var(--text-primary); }
+    [data-theme='dark'] .callout-text { color: var(--text-body); }
+    [data-theme='dark'] .callout-label { color: var(--color-gold-500); }
+    [data-theme='dark'] .demo-callout {
+      background: var(--bg-gold-tint);
+      border-color: rgba(201,162,39,0.20);
+      border-left-color: var(--color-gold-700);
+    }
+    [data-theme='dark'] .demo-testimonial { background: var(--bg-card); border-color: var(--card-border); }
+    [data-theme='dark'] .testimonial-text { color: var(--text-body); }
+    [data-theme='dark'] .author-name { color: var(--text-primary); }
+    [data-theme='dark'] .author-detail { color: var(--text-subtle); }
+    [data-theme='dark'] .card-title { color: var(--text-primary); }
+    [data-theme='dark'] .card-text  { color: var(--text-body); }
+    [data-theme='dark'] .card-meta  { color: var(--text-accent); }
+    [data-theme='dark'] .demo-card,
+    [data-theme='dark'] .demo-card-left {
+      background: var(--bg-card);
+      border-color: var(--card-border);
+    }
+    [data-theme='dark'] .form-label  { color: var(--input-label); }
+    [data-theme='dark'] .form-input  {
+      background: var(--input-bg);
+      border-color: var(--input-border);
+      color: var(--input-text);
+    }
+    [data-theme='dark'] .form-hint  { color: var(--text-subtle); }
+    [data-theme='dark'] .form-error-msg { color: var(--color-error); }
+
+    /* Demo TOC */
+    [data-theme='dark'] .demo-toc { background: var(--color-warm-950); border-bottom-color: var(--color-warm-900); }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-default);
+      border-radius: 9999px;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .theme-toggle:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-gold);
+      color: var(--text-accent);
+    }
+    .theme-toggle .icon { font-size: 1rem; line-height: 1; }
+  </style>
+  <style>
+    /* ------------------------------------------------------------------ */
+    /* Demo-page layout only — none of this ships to the site              */
+    /* ------------------------------------------------------------------ */
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-body);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+
+    /* --- Demo chrome --- */
+    .demo-header {
+      background: var(--gradient-hero);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--color-navy-700);
+    }
+    .demo-header .eyebrow {
+      display: inline-block;
+      color: var(--color-gold-700);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .demo-header h1 {
+      color: var(--color-white);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .demo-header p {
+      color: var(--color-white-60);
+      font-size: 1.0625rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .demo-toc {
+      background: var(--color-navy-950);
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--color-navy-700);
+    }
+    .demo-toc a {
+      color: var(--color-white-60);
+      font-size: 0.8125rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .demo-toc a:hover { color: var(--color-gold-700); }
+
+    .demo-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .demo-section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--section-label-color);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+
+    /* ================================================================== */
+    /* SECTION 1 — PALETTE SWATCHES                                        */
+    /* ================================================================== */
+
+    .swatch-group { margin-bottom: 3rem; }
+    .swatch-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .swatch-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      width: 120px;
+    }
+    .swatch-chip {
+      width: 120px;
+      height: 72px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      margin-bottom: 0.5rem;
+      transition: transform 0.15s ease;
+    }
+    .swatch:hover .swatch-chip { transform: translateY(-3px); }
+    .swatch-name {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+      font-family: 'Courier New', monospace;
+    }
+    .swatch-hex {
+      font-size: 0.6875rem;
+      color: var(--text-subtle);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* ================================================================== */
+    /* SECTION 2 — SEMANTIC TOKENS                                         */
+    /* ================================================================== */
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .token-card {
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .token-preview {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .token-info {
+      padding: 0.625rem 0.875rem;
+      background: var(--color-white);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .token-var {
+      font-size: 0.6875rem;
+      font-family: 'Courier New', monospace;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .token-desc {
+      font-size: 0.6875rem;
+      color: var(--text-subtle);
+      margin-top: 2px;
+    }
+
+    .token-subhead {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 2rem 0 0.875rem;
+    }
+
+    /* Border demo */
+    .border-demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .border-demo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .border-demo-line {
+      width: 200px;
+      height: 0;
+    }
+    .border-demo-label {
+      font-size: 0.6875rem;
+      font-family: 'Courier New', monospace;
+      color: var(--text-subtle);
+    }
+
+    /* Shadow demo */
+    .shadow-demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .shadow-box {
+      width: 120px;
+      height: 80px;
+      background: var(--color-white);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+    .shadow-box-label {
+      font-size: 0.625rem;
+      font-family: 'Courier New', monospace;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    /* Gradient demo */
+    .gradient-demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .gradient-chip {
+      width: 200px;
+      height: 80px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-end;
+      padding: 0.5rem;
+    }
+    .gradient-chip-label {
+      font-size: 0.625rem;
+      font-family: 'Courier New', monospace;
+      background: rgba(255,255,255,0.85);
+      color: #071525;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    /* ================================================================== */
+    /* SECTION 3 — COMPONENTS                                              */
+    /* ================================================================== */
+
+    /* --- Buttons --- */
+    .component-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* --- Card --- */
+    .demo-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      max-width: 340px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .demo-card:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-accent-bar-top {
+      height: 4px;
+      background: var(--card-accent-bar);
+    }
+    .card-body { padding: 1.5rem; }
+    .card-meta {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      margin-bottom: 0.625rem;
+    }
+    .card-text {
+      font-size: 0.875rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Left-bar card variant */
+    .demo-card-left {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--card-accent-bar);
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem;
+      max-width: 340px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .demo-card-left:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    /* --- Nav strip --- */
+    .demo-nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--nav-border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 64px;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+    .nav-logo {
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.01em;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--color-gold-700); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex: 1;
+    }
+    .nav-link {
+      color: var(--nav-text);
+      font-size: 0.875rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--nav-text-hover); }
+    .nav-link.active { color: var(--nav-text-active); }
+    .nav-cta {
+      background: var(--nav-cta-bg);
+      color: var(--nav-cta-text);
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--color-gold-600);
+      box-shadow: var(--shadow-gold);
+    }
+
+    /* --- Dark section --- */
+    .demo-dark-section {
+      background: var(--gradient-hero);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .demo-dark-section .eyebrow-dark {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold-700);
+      margin-bottom: 0.75rem;
+    }
+    .demo-dark-section h2 {
+      color: var(--text-on-dark);
+      font-size: clamp(1.375rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.875rem;
+    }
+    .demo-dark-section p {
+      color: var(--text-on-dark-muted);
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 1.75rem;
+    }
+    .demo-dark-section .btn-row {
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+    }
+
+    /* --- Gold tint callout --- */
+    .demo-callout {
+      background: var(--bg-gold-tint);
+      border: 1px solid var(--color-gold-400);
+      border-left: 4px solid var(--color-gold-700);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .callout-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold-800);
+      margin-bottom: 0.5rem;
+    }
+    .callout-heading {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-navy-900);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .callout-text {
+      font-size: 0.9375rem;
+      color: var(--color-warm-800);
+      line-height: 1.6;
+    }
+
+    /* --- Testimonial card --- */
+    .demo-testimonial {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      padding: 1.75rem;
+      max-width: 400px;
+      position: relative;
+    }
+    .testimonial-quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--testimonial-quote);
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 0.5rem;
+      right: 1.25rem;
+      opacity: 0.6;
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 0.875rem;
+    }
+    .star {
+      color: var(--star-color);
+      font-size: 1.125rem;
+    }
+    .testimonial-text {
+      font-size: 0.9375rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-navy-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold-500);
+      font-size: 0.875rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+    .author-detail {
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+      margin-top: 2px;
+    }
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: var(--badge-verified-bg);
+      border: 1px solid var(--badge-verified-border);
+      border-radius: 9999px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--color-gold-900);
+      margin-top: 0.5rem;
+    }
+
+    /* --- Input field --- */
+    .demo-form {
+      max-width: 440px;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--input-label);
+      margin-bottom: 0.375rem;
+      letter-spacing: 0.01em;
+    }
+    .form-label .required { color: var(--color-error); margin-left: 2px; }
+    .form-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1.5px solid var(--input-border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
+      color: var(--input-text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+      font-family: inherit;
+    }
+    .form-input::placeholder {
+      color: var(--input-placeholder);
+    }
+    .form-input:focus {
+      border-color: var(--input-border-focus);
+      box-shadow: var(--shadow-gold);
+    }
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+      margin-top: 0.375rem;
+    }
+    .form-input.is-error {
+      border-color: var(--color-error);
+    }
+    .form-error-msg {
+      font-size: 0.75rem;
+      color: var(--color-error);
+      margin-top: 0.375rem;
+    }
+
+    /* --- Badges row --- */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Cards grid --- */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Code snippet */
+    .code-note {
+      display: inline-block;
+      background: var(--color-warm-100);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Divider */
+    .demo-divider {
+      height: 1px;
+      background: var(--section-divider);
+      margin: 2rem 0;
+    }
+
+    /* Two column layout for demos */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* Footer demo */
+    .demo-footer {
+      background: var(--footer-bg);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 640px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-brand-name {
+      color: var(--footer-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.625rem;
+    }
+    .footer-brand-name span { color: var(--color-gold-700); }
+    .footer-desc {
+      color: var(--footer-text);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+    .footer-col-title {
+      color: var(--footer-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.875rem;
+    }
+    .footer-link-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-link-list a {
+      color: var(--footer-link);
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link-list a:hover { color: var(--footer-link-hover); }
+    .footer-divider {
+      height: 1px;
+      background: var(--footer-border);
+      margin-bottom: 1.5rem;
+    }
+    .footer-bottom {
+      color: var(--footer-text);
+      font-size: 0.8125rem;
+      opacity: 0.7;
+    }
+
+    /* hover annotation */
+    .hover-note {
+      font-size: 0.6875rem;
+      color: var(--text-subtle);
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- HEADER                                                         -->
+  <!-- ============================================================ -->
+  <header class="demo-header">
+    <span class="eyebrow">Design System Reference</span>
+    <h1>Santa Clarita Buyers Guide<br>Color System</h1>
+    <p>Every token, palette swatch, and component in one place.
+       Drop <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.4em;border-radius:3px;font-size:0.9em;">colors.css</code>
+       into any project to use this system.</p>
+  </header>
+
+  <nav class="demo-toc">
+    <a href="#palette">Palette</a>
+    <a href="#semantic">Semantic Tokens</a>
+    <a href="#shadows">Shadows &amp; Gradients</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#nav">Navigation</a>
+    <a href="#cards">Cards</a>
+    <a href="#badges">Badges &amp; Tags</a>
+    <a href="#sections">Sections</a>
+    <a href="#testimonial">Testimonial</a>
+    <a href="#forms">Forms</a>
+    <a href="#footer">Footer</a>
+  </nav>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 1 — FULL PALETTE                                      -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="palette">
+    <p class="section-label">Section 01</p>
+    <h2 class="section-title">Core Palette</h2>
+    <p class="section-desc">Raw color values. Reference these through semantic tokens in components, not directly.</p>
+
+    <!-- Navy -->
+    <div class="swatch-group">
+      <p class="swatch-group-title">Navy — Primary Dark</p>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#071525;"></div>
+          <span class="swatch-name">--color-navy-950</span>
+          <span class="swatch-hex">#071525</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0f1f3d;"></div>
+          <span class="swatch-name">--color-navy-900</span>
+          <span class="swatch-hex">#0f1f3d</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#162b52;"></div>
+          <span class="swatch-name">--color-navy-800</span>
+          <span class="swatch-hex">#162b52</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#1e3a6e;"></div>
+          <span class="swatch-name">--color-navy-700</span>
+          <span class="swatch-hex">#1e3a6e</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#2a4f94;"></div>
+          <span class="swatch-name">--color-navy-600</span>
+          <span class="swatch-hex">#2a4f94</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#3a6bc7;"></div>
+          <span class="swatch-name">--color-navy-500</span>
+          <span class="swatch-hex">#3a6bc7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold -->
+    <div class="swatch-group">
+      <p class="swatch-group-title">Gold — Brand Accent</p>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#7a5200;"></div>
+          <span class="swatch-name">--color-gold-900</span>
+          <span class="swatch-hex">#7a5200</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#a06c00;"></div>
+          <span class="swatch-name">--color-gold-800</span>
+          <span class="swatch-hex">#a06c00</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#c9a227; border:2px solid rgba(0,0,0,0.15);"></div>
+          <span class="swatch-name">--color-gold-700 ★</span>
+          <span class="swatch-hex">#c9a227 — PRIMARY</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#d4af3a;"></div>
+          <span class="swatch-name">--color-gold-600</span>
+          <span class="swatch-hex">#d4af3a</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#e2c458;"></div>
+          <span class="swatch-name">--color-gold-500</span>
+          <span class="swatch-hex">#e2c458</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#ecd98a;"></div>
+          <span class="swatch-name">--color-gold-400</span>
+          <span class="swatch-hex">#ecd98a</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#fdf8e8;"></div>
+          <span class="swatch-name">--color-gold-100</span>
+          <span class="swatch-hex">#fdf8e8</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warm Neutrals -->
+    <div class="swatch-group">
+      <p class="swatch-group-title">Warm Neutrals — Backgrounds, Text, Cards</p>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#1a1612;"></div>
+          <span class="swatch-name">--color-warm-950</span>
+          <span class="swatch-hex">#1a1612</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#2d2926;"></div>
+          <span class="swatch-name">--color-warm-900</span>
+          <span class="swatch-hex">#2d2926</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#4a4540;"></div>
+          <span class="swatch-name">--color-warm-800</span>
+          <span class="swatch-hex">#4a4540</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#6b6560;"></div>
+          <span class="swatch-name">--color-warm-700</span>
+          <span class="swatch-hex">#6b6560</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#8c8680;"></div>
+          <span class="swatch-name">--color-warm-600</span>
+          <span class="swatch-hex">#8c8680</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#b8b2aa;"></div>
+          <span class="swatch-name">--color-warm-400</span>
+          <span class="swatch-hex">#b8b2aa</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#d4cfc8;"></div>
+          <span class="swatch-name">--color-warm-300</span>
+          <span class="swatch-hex">#d4cfc8</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#e8e3dc;"></div>
+          <span class="swatch-name">--color-warm-200</span>
+          <span class="swatch-hex">#e8e3dc</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#f2ede6;"></div>
+          <span class="swatch-name">--color-warm-100</span>
+          <span class="swatch-hex">#f2ede6</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#f9f6f0;"></div>
+          <span class="swatch-name">--color-warm-50</span>
+          <span class="swatch-hex">#f9f6f0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- White -->
+    <div class="swatch-group">
+      <p class="swatch-group-title">White — with opacity variants</p>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#ffffff; background-image: linear-gradient(45deg,#ccc 25%,transparent 25%),linear-gradient(-45deg,#ccc 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#ccc 75%),linear-gradient(-45deg,transparent 75%,#ccc 75%);background-size:8px 8px;background-position:0 0,0 4px,4px -4px,-4px 0;"></div>
+          <div class="swatch-chip" style="background:#ffffff; position:relative; top:-76px; margin-bottom:-76px;"></div>
+          <span class="swatch-name">--color-white</span>
+          <span class="swatch-hex">#ffffff</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0f1f3d;"></div>
+          <div class="swatch-chip" style="background:rgba(255,255,255,0.95); position:relative; top:-76px; margin-bottom:-76px;"></div>
+          <span class="swatch-name">--color-white-95</span>
+          <span class="swatch-hex">rgba(255,255,255,0.95)</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0f1f3d;"></div>
+          <div class="swatch-chip" style="background:rgba(255,255,255,0.80); position:relative; top:-76px; margin-bottom:-76px;"></div>
+          <span class="swatch-name">--color-white-80</span>
+          <span class="swatch-hex">rgba(255,255,255,0.80)</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0f1f3d;"></div>
+          <div class="swatch-chip" style="background:rgba(255,255,255,0.60); position:relative; top:-76px; margin-bottom:-76px;"></div>
+          <span class="swatch-name">--color-white-60</span>
+          <span class="swatch-hex">rgba(255,255,255,0.60)</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0f1f3d;"></div>
+          <div class="swatch-chip" style="background:rgba(255,255,255,0.20); position:relative; top:-76px; margin-bottom:-76px;"></div>
+          <span class="swatch-name">--color-white-20</span>
+          <span class="swatch-hex">rgba(255,255,255,0.20)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2 — SEMANTIC TOKENS                                   -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="semantic">
+    <p class="section-label">Section 02</p>
+    <h2 class="section-title">Semantic Color Tokens</h2>
+    <p class="section-desc">These are the tokens you use in every component. They map palette values to site roles and can be re-themed in one place.</p>
+
+    <!-- Backgrounds -->
+    <p class="token-subhead">Backgrounds</p>
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-primary); color: var(--text-muted); border:1px solid var(--border-subtle);">Page background</div>
+        <div class="token-info"><p class="token-var">--bg-primary</p><p class="token-desc">Default page bg — warm off-white</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-secondary); color: var(--text-muted); border:1px solid var(--border-subtle);">Section bg</div>
+        <div class="token-info"><p class="token-var">--bg-secondary</p><p class="token-desc">Alternating section bg</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-dark); color: var(--text-on-dark);">Hero / Footer / Nav</div>
+        <div class="token-info"><p class="token-var">--bg-dark</p><p class="token-desc">Navy hero, footer, and nav bg</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-darker); color: var(--text-on-dark);">Deepest dark</div>
+        <div class="token-info"><p class="token-var">--bg-darker</p><p class="token-desc">Richest dark bg — footer bottom</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-card); color: var(--text-muted); border:1px solid var(--border-default);">Card background</div>
+        <div class="token-info"><p class="token-var">--bg-card</p><p class="token-desc">All card surfaces — pure white</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:var(--bg-gold-tint); color:var(--color-gold-900); border:1px solid var(--color-gold-400);">Gold tint callout</div>
+        <div class="token-info"><p class="token-var">--bg-gold-tint</p><p class="token-desc">Callout / highlight section bg</p></div>
+      </div>
+      <div class="token-card">
+        <div class="token-preview" style="background:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"40\"><rect fill=\"%230f1f3d\" width=\"60\" height=\"40\"/><text x=\"5\" y=\"25\" fill=\"white\" font-size=\"10\">photo</text></svg>') center/cover; position:relative; overflow:hidden;">
+          <div style="position:absolute;inset:0;background:var(--bg-overlay);display:flex;align-items:center;justify-content:center;color:white;font-size:0.875rem;">Overlay on image</div>
+        </div>
+        <div class="token-info"><p class="token-var">--bg-overlay</p><p class="token-desc">Image overlay — 72% opacity navy</p></div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <p class="token-subhead">Text Colors</p>
+    <div style="background:var(--bg-primary); border:1px solid var(--border-subtle); border-radius:10px; padding:1.75rem; margin-bottom:1.5rem;">
+      <p style="font-size:1.5rem; font-weight:700; color:var(--text-primary); margin-bottom:0.5rem; letter-spacing:-0.02em;">Your Home Search Starts Here</p>
+      <p style="font-size:1.0625rem; color:var(--text-body); margin-bottom:0.5rem; line-height:1.65;">Santa Clarita's most trusted free resource for home buyers. Independent, unbiased, and always on your side — from first-time buyers to seasoned investors.</p>
+      <p style="font-size:0.9375rem; color:var(--text-muted); margin-bottom:0.5rem;">Updated monthly · March 2026 Market Pulse available</p>
+      <p style="font-size:0.8125rem; color:var(--text-subtle); margin-bottom:0.75rem;">SFR · Townhome · New Construction · Condo</p>
+      <p style="font-size:0.9375rem;"><a href="#" style="color:var(--text-link); text-decoration:none; font-weight:600;">Read the Valencia Neighborhood Guide</a> — hover for gold</p>
+      <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-accent); margin-top:0.75rem;">Free Buyer Resource · No Sales Pressure</p>
+    </div>
+    <div style="background:var(--bg-dark); border-radius:10px; padding:1.75rem; margin-bottom:1.5rem;">
+      <p style="font-size:1.125rem; font-weight:700; color:var(--text-on-dark); margin-bottom:0.5rem;">Text on Dark — Headings</p>
+      <p style="font-size:0.9375rem; color:var(--text-on-dark-muted); line-height:1.65;">Secondary copy on dark backgrounds. Gentle 60% white so it doesn't compete with primary headings.</p>
+    </div>
+
+    <!-- Borders -->
+    <p class="token-subhead">Borders</p>
+    <div class="border-demo-row">
+      <div class="border-demo-item">
+        <div class="border-demo-line" style="border-top:1px solid var(--border-subtle);"></div>
+        <span class="border-demo-label">--border-subtle (section dividers)</span>
+      </div>
+      <div class="border-demo-item">
+        <div class="border-demo-line" style="border-top:1.5px solid var(--border-default);"></div>
+        <span class="border-demo-label">--border-default (cards, inputs)</span>
+      </div>
+      <div class="border-demo-item">
+        <div class="border-demo-line" style="border-top:2px solid var(--border-strong);"></div>
+        <span class="border-demo-label">--border-strong (emphasized)</span>
+      </div>
+      <div class="border-demo-item">
+        <div class="border-demo-line" style="border-top:2px solid var(--border-accent);"></div>
+        <span class="border-demo-label">--border-accent (gold accent)</span>
+      </div>
+      <div class="border-demo-item">
+        <div style="background:var(--bg-dark); padding:4px;">
+          <div class="border-demo-line" style="border-top:1px solid var(--border-dark);"></div>
+        </div>
+        <span class="border-demo-label">--border-dark (on dark surfaces)</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 3 — SHADOWS & GRADIENTS                               -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="shadows">
+    <p class="section-label">Section 03</p>
+    <h2 class="section-title">Shadows &amp; Gradients</h2>
+    <p class="section-desc">Depth tokens for elevation hierarchy. Gradients for atmospheric backgrounds.</p>
+
+    <p class="token-subhead">Shadows</p>
+    <div class="shadow-demo-row">
+      <div class="shadow-box" style="box-shadow:var(--shadow-sm);">
+        <span class="shadow-box-label">--shadow-sm</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--shadow-md);">
+        <span class="shadow-box-label">--shadow-md</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--shadow-lg);">
+        <span class="shadow-box-label">--shadow-lg</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--shadow-xl);">
+        <span class="shadow-box-label">--shadow-xl</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--shadow-gold); border:1px solid var(--color-gold-600);">
+        <span class="shadow-box-label">--shadow-gold<br>(focus ring)</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--card-shadow);">
+        <span class="shadow-box-label">--card-shadow</span>
+      </div>
+      <div class="shadow-box" style="box-shadow:var(--card-shadow-hover);">
+        <span class="shadow-box-label">--card-shadow-hover</span>
+      </div>
+    </div>
+
+    <p class="token-subhead">Gradients</p>
+    <div class="gradient-demo-row">
+      <div class="gradient-chip" style="background:var(--gradient-hero);">
+        <span class="gradient-chip-label">--gradient-hero</span>
+      </div>
+      <div class="gradient-chip" style="background:linear-gradient(to right,#0f1f3d 40%, transparent); position:relative; overflow:hidden;">
+        <div style="position:absolute;inset:0;background:var(--gradient-overlay);"></div>
+        <span class="gradient-chip-label" style="position:relative;">--gradient-overlay</span>
+      </div>
+      <div class="gradient-chip" style="background:var(--gradient-gold);">
+        <span class="gradient-chip-label">--gradient-gold</span>
+      </div>
+      <div class="gradient-chip" style="background:linear-gradient(to right,#0f1f3d 40%,transparent);position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:var(--gradient-card);"></div>
+        <span class="gradient-chip-label" style="position:relative;">--gradient-card</span>
+      </div>
+      <div class="gradient-chip" style="background:var(--gradient-section); border:1px solid var(--border-default);">
+        <span class="gradient-chip-label">--gradient-section</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 4 — BUTTONS                                           -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="buttons">
+    <p class="section-label">Section 04</p>
+    <h2 class="section-title">Buttons</h2>
+    <p class="section-desc">All three button styles, shown on both light and dark surfaces. Hover to see transitions.</p>
+
+    <p class="token-subhead">On Light Background</p>
+    <div class="component-row">
+      <a href="#" class="btn-primary">See What You Can Afford</a>
+      <a href="#" class="btn-ghost">Find My Neighborhood</a>
+    </div>
+    <p class="hover-note">Hover to see gold focus ring and color transitions (transition: all 0.25s ease)</p>
+
+    <div class="demo-divider"></div>
+
+    <p class="token-subhead">On Dark Background</p>
+    <div style="background:var(--gradient-hero); padding:2rem; border-radius:10px;">
+      <div class="component-row">
+        <a href="#" class="btn-primary">Download Free Buyer Guide</a>
+        <a href="#" class="btn-secondary">View All Neighborhoods</a>
+      </div>
+    </div>
+    <p class="hover-note">Secondary button is designed specifically for dark surfaces — white border, white text.</p>
+
+    <div class="demo-divider"></div>
+
+    <p class="token-subhead">Semantic Tokens Used</p>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+      <span class="code-note">--btn-primary-bg</span>
+      <span class="code-note">--btn-primary-bg-hover</span>
+      <span class="code-note">--btn-primary-text</span>
+      <span class="code-note">--btn-secondary-border</span>
+      <span class="code-note">--btn-secondary-hover-bg</span>
+      <span class="code-note">--btn-ghost-border</span>
+      <span class="code-note">--btn-ghost-text</span>
+      <span class="code-note">--btn-ghost-hover-bg</span>
+      <span class="code-note">--shadow-gold</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 5 — NAVIGATION                                        -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="nav">
+    <p class="section-label">Section 05</p>
+    <h2 class="section-title">Navigation</h2>
+    <p class="section-desc">Full nav strip in navy. Active state uses brand gold. CTA button uses gold fill.</p>
+
+    <nav class="demo-nav">
+      <span class="nav-logo">Santa Clarita <span>Buyers</span> Guide</span>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Neighborhoods</a>
+        <a href="#" class="nav-link">Buyer Guides</a>
+        <a href="#" class="nav-link">Calculators</a>
+        <a href="#" class="nav-link">Blog</a>
+      </div>
+      <a href="#" class="nav-cta">Get Pre-Qualified</a>
+    </nav>
+    <p class="hover-note">Hover nav links to see white color transition. "Neighborhoods" shows gold active state.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+      <span class="code-note">--nav-bg</span>
+      <span class="code-note">--nav-text</span>
+      <span class="code-note">--nav-text-hover</span>
+      <span class="code-note">--nav-text-active</span>
+      <span class="code-note">--nav-border</span>
+      <span class="code-note">--nav-cta-bg</span>
+      <span class="code-note">--nav-cta-text</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 6 — CARDS                                             -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="cards">
+    <p class="section-label">Section 06</p>
+    <h2 class="section-title">Cards</h2>
+    <p class="section-desc">Two card treatments. Hover each card to see the gold border and elevated shadow. Every detail driven by token.</p>
+
+    <div class="cards-grid">
+      <!-- Top-bar card -->
+      <div>
+        <p class="token-subhead">Top accent bar variant</p>
+        <div class="demo-card">
+          <div class="card-accent-bar-top"></div>
+          <div class="card-body">
+            <p class="card-meta">Valencia · Santa Clarita</p>
+            <h3 class="card-title">The Complete Valencia Home Buyer's Guide</h3>
+            <p class="card-text">Master-planned communities, top-rated schools, and more green space per resident than any other SCV neighborhood. Here's what you need to know before you buy.</p>
+            <div style="display:flex; gap:0.75rem; align-items:center;">
+              <a href="#" class="btn-ghost" style="padding:0.5rem 1.25rem; font-size:0.875rem;">Read Guide</a>
+              <span class="tag-guide">Neighborhood Guide</span>
+            </div>
+          </div>
+        </div>
+        <p class="hover-note">Hover for gold border + lifted shadow</p>
+      </div>
+
+      <!-- Left-bar card -->
+      <div>
+        <p class="token-subhead">Left accent bar variant</p>
+        <div class="demo-card-left">
+          <p class="card-meta">Buyer Tip</p>
+          <h3 class="card-title">How to Win a Bidding War in Santa Clarita Without Overpaying</h3>
+          <p class="card-text">Escalation clauses, appraisal gaps, and the two non-price terms that sellers value more than most agents will tell you.</p>
+          <a href="#" class="btn-ghost" style="padding:0.5rem 1.25rem; font-size:0.875rem; margin-top:0.25rem;">Read Strategy Guide</a>
+        </div>
+        <p class="hover-note">Border defined by --card-border; accent via border-left</p>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
+      <span class="code-note">--card-bg</span>
+      <span class="code-note">--card-border</span>
+      <span class="code-note">--card-border-hover</span>
+      <span class="code-note">--card-shadow</span>
+      <span class="code-note">--card-shadow-hover</span>
+      <span class="code-note">--card-accent-bar</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 7 — BADGES & TAGS                                     -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="badges">
+    <p class="section-label">Section 07</p>
+    <h2 class="section-title">Badges &amp; Tags</h2>
+    <p class="section-desc">Compact label components for categories, status, and verification.</p>
+
+    <div class="badge-row">
+      <span class="badge-gold">Free Resource</span>
+      <span class="badge-gold">Updated March 2026</span>
+      <span class="tag-guide">Neighborhood Guide</span>
+      <span class="tag-guide">Market Report</span>
+      <span class="tag-featured">Featured</span>
+    </div>
+
+    <!-- Verified badge (trust context) -->
+    <div style="background:var(--bg-gold-tint); border:1px solid var(--color-gold-400); border-radius:8px; padding:1.25rem; display:inline-flex; align-items:center; gap:1rem; margin-top:1rem;">
+      <div>
+        <p style="font-size:0.875rem; font-weight:700; color:var(--color-navy-900);">SantaClaritaBuyersGuide.com</p>
+        <p style="font-size:0.8125rem; color:var(--color-warm-700);">Independent buyer resource. Not affiliated with any brokerage.</p>
+      </div>
+      <div>
+        <span class="verified-badge">✓ Verified Independent</span>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem;">
+      <span class="code-note">--badge-bg</span>
+      <span class="code-note">--badge-text</span>
+      <span class="code-note">--tag-bg</span>
+      <span class="code-note">--tag-text</span>
+      <span class="code-note">--tag-border</span>
+      <span class="code-note">--badge-verified-bg</span>
+      <span class="code-note">--badge-verified-border</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 8 — DARK SECTION + CALLOUT                           -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="sections">
+    <p class="section-label">Section 08</p>
+    <h2 class="section-title">Section Types</h2>
+    <p class="section-desc">Dark hero-style section and the gold tint callout block. Both build entirely from tokens.</p>
+
+    <!-- Dark section -->
+    <div class="demo-dark-section">
+      <p class="eyebrow-dark">Free · Independent · Always On Your Side</p>
+      <h2>Buy Your Santa Clarita Home With Confidence</h2>
+      <p>No commissions. No referral fees. No sales pressure. We built this resource because home buyers deserve an honest, independent guide to one of Southern California's most competitive markets.</p>
+      <div class="btn-row">
+        <a href="#" class="btn-primary">See What You Can Afford</a>
+        <a href="#" class="btn-secondary">Browse All Guides</a>
+      </div>
+    </div>
+
+    <!-- Gold tint callout -->
+    <div class="demo-callout">
+      <p class="callout-label">Market Intelligence</p>
+      <h3 class="callout-heading">Santa Clarita Median Home Price Hits $745,000 in February 2026</h3>
+      <p class="callout-text">Inventory remains tight at 1.4 months of supply — down 18% from this time last year. Our March Market Pulse report breaks down what this means for buyers entering the market now.</p>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
+      <span class="code-note">--gradient-hero</span>
+      <span class="code-note">--text-on-dark</span>
+      <span class="code-note">--text-on-dark-muted</span>
+      <span class="code-note">--bg-gold-tint</span>
+      <span class="code-note">--section-label-color</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 9 — TESTIMONIAL                                       -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="testimonial">
+    <p class="section-label">Section 09</p>
+    <h2 class="section-title">Testimonial Card</h2>
+    <p class="section-desc">Social proof component. Stars use <span class="code-note">--star-color</span>. Quote mark uses <span class="code-note">--testimonial-quote</span>.</p>
+
+    <div class="demo-testimonial">
+      <div class="testimonial-quote-mark">"</div>
+      <div class="stars">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <p class="testimonial-text">"We were first-time buyers with no idea where to start. The Santa Clarita Buyers Guide walked us through every neighborhood, every calculator, and every question we were afraid to ask our agent. We closed on our Valencia home in 30 days."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">MR</div>
+        <div>
+          <p class="author-name">Marcus &amp; Rachel T.</p>
+          <p class="author-detail">First-time buyers · Valencia, CA · Feb 2026</p>
+          <span class="verified-badge">✓ Verified Buyer</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem;">
+      <span class="code-note">--star-color</span>
+      <span class="code-note">--testimonial-quote</span>
+      <span class="code-note">--badge-verified-bg</span>
+      <span class="code-note">--badge-verified-border</span>
+      <span class="code-note">--card-shadow</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 10 — FORMS                                            -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="forms">
+    <p class="section-label">Section 10</p>
+    <h2 class="section-title">Form Inputs</h2>
+    <p class="section-desc">Click any field to see the gold focus ring via <span class="code-note">--shadow-gold</span> and <span class="code-note">--input-border-focus</span>.</p>
+
+    <div class="two-col">
+      <div class="demo-form">
+        <div class="form-group">
+          <label class="form-label" for="f-name">Your Name <span class="required">*</span></label>
+          <input id="f-name" class="form-input" type="text" placeholder="e.g. Sarah Johnson" />
+          <p class="form-hint">We'll use this to personalize your guide.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-email">Email Address <span class="required">*</span></label>
+          <input id="f-email" class="form-input" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-phone">Phone Number</label>
+          <input id="f-phone" class="form-input" type="tel" placeholder="(661) 555-0100" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-timeline">When are you looking to buy?</label>
+          <input id="f-timeline" class="form-input is-error" type="text" placeholder="e.g. Next 3 months" />
+          <p class="form-error-msg">Please provide an approximate timeline.</p>
+        </div>
+        <a href="#" class="btn-primary" style="width:100%; margin-top:0.5rem;">Send My Free Buyer Guide</a>
+      </div>
+
+      <div>
+        <p class="token-subhead">Input token reference</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+          <span class="code-note">--input-bg</span>
+          <span class="code-note">--input-border</span>
+          <span class="code-note">--input-border-focus → gold</span>
+          <span class="code-note">--input-text</span>
+          <span class="code-note">--input-placeholder</span>
+          <span class="code-note">--input-label</span>
+          <span class="code-note">--shadow-gold → focus ring</span>
+          <span class="code-note">--color-error → error state</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION 11 — FOOTER                                           -->
+  <!-- ============================================================ -->
+  <section class="demo-section" id="footer">
+    <p class="section-label">Section 11</p>
+    <h2 class="section-title">Footer</h2>
+    <p class="section-desc">Deepest navy. White headings, 60% white body text, gold link hover.</p>
+
+    <div class="demo-footer">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">Santa Clarita <span>Buyers</span> Guide</p>
+          <p class="footer-desc">A free, independent home buyer resource for the Santa Clarita Valley. We're not a brokerage. We don't earn commissions. We're just here to help you buy with confidence.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Neighborhoods</p>
+          <ul class="footer-link-list">
+            <li><a href="#">Valencia</a></li>
+            <li><a href="#">Newhall</a></li>
+            <li><a href="#">Saugus</a></li>
+            <li><a href="#">Canyon Country</a></li>
+            <li><a href="#">Stevenson Ranch</a></li>
+            <li><a href="#">Castaic</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Resources</p>
+          <ul class="footer-link-list">
+            <li><a href="#">Buying Power Calculator</a></li>
+            <li><a href="#">Neighborhood Quiz</a></li>
+            <li><a href="#">DPA Checker</a></li>
+            <li><a href="#">Buyer Guides</a></li>
+            <li><a href="#">Market Reports</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-bottom">© 2026 Santa Clarita Buyers Guide · Operated by Kailei Media · Not a licensed real estate brokerage · (661) 451-7200</p>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem;">
+      <span class="code-note">--footer-bg</span>
+      <span class="code-note">--footer-heading</span>
+      <span class="code-note">--footer-text</span>
+      <span class="code-note">--footer-link</span>
+      <span class="code-note">--footer-link-hover</span>
+      <span class="code-note">--footer-border</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- QUICK-REFERENCE TABLE                                         -->
+  <!-- ============================================================ -->
+  <section class="demo-section">
+    <p class="section-label">Reference</p>
+    <h2 class="section-title">State Colors &amp; Utility Classes</h2>
+    <p class="section-desc">Status/feedback states and the full list of utility classes available from <span class="code-note">colors.css</span>.</p>
+
+    <p class="token-subhead">States</p>
+    <div class="component-row" style="margin-bottom:1.5rem;">
+      <span style="color:var(--color-success); font-weight:700;">✓ Success — #2d7d46</span>
+      <span style="color:var(--color-warning); font-weight:700;">⚠ Warning — #b45309</span>
+      <span style="color:var(--color-error); font-weight:700;">✕ Error — #c0392b</span>
+      <span style="color:var(--color-info); font-weight:700;">ℹ Info — navy-600</span>
+    </div>
+
+    <p class="token-subhead">Utility Classes</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0.875rem;">
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Backgrounds</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.bg-navy</span>
+          <span class="code-note">.bg-navy-dark</span>
+          <span class="code-note">.bg-warm</span>
+          <span class="code-note">.bg-white</span>
+          <span class="code-note">.bg-gold-tint</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Text</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.text-navy</span>
+          <span class="code-note">.text-gold</span>
+          <span class="code-note">.text-muted</span>
+          <span class="code-note">.text-on-dark</span>
+          <span class="code-note">.text-body</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Borders</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.border-gold</span>
+          <span class="code-note">.border-accent</span>
+          <span class="code-note">.border-subtle</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Shadows</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.shadow-card</span>
+          <span class="code-note">.shadow-card-hover</span>
+          <span class="code-note">.shadow-gold-focus</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Buttons</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.btn-primary</span>
+          <span class="code-note">.btn-secondary</span>
+          <span class="code-note">.btn-ghost</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Badges</p>
+        <div style="display:flex;flex-direction:column;gap:0.375rem;">
+          <span class="code-note">.badge-gold</span>
+          <span class="code-note">.tag-guide</span>
+          <span class="code-note">.tag-featured</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--footer-bg); text-align:center; padding:2rem; color:var(--footer-text); font-size:0.8125rem; border-top:1px solid var(--footer-border);">
+    Santa Clarita Buyers Guide — Color System Reference · <span style="color:var(--color-gold-700);">colors.css</span>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- THEME TOGGLE                                                   -->
+  <!-- ============================================================ -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="icon" id="themeIcon">🌙</span>
+    <span id="themeLabel">Dark Mode</span>
+  </button>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const icon   = document.getElementById('themeIcon');
+    const label  = document.getElementById('themeLabel');
+    const html   = document.documentElement;
+
+    // Respect system preference on first load
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent  = '☀️';
+      label.textContent = 'Light Mode';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.setAttribute('data-theme', 'light');
+        icon.textContent  = '🌙';
+        label.textContent = 'Dark Mode';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        icon.textContent  = '☀️';
+        label.textContent = 'Light Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>

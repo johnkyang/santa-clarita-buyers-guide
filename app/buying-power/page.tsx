@@ -30,7 +30,7 @@ export default function BuyingPowerPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white py-12 lg:py-16">
+      <section className="bg-gradient-to-r from-navy-700 to-navy-800 text-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
@@ -63,7 +63,7 @@ export default function BuyingPowerPage() {
           </p>
           <a
             href="/mortgage-qualifier"
-            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-premium-orange to-premium-rust text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-gold-600 to-gold-800 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
           >
             <Calculator className="mr-2 h-5 w-5" />
             Try Our Mortgage Qualifying Calculator
@@ -79,7 +79,7 @@ export default function BuyingPowerPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="w-16 h-16 bg-premium-blue rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-navy-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -101,7 +101,7 @@ export default function BuyingPowerPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-premium-orange rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gold-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -123,7 +123,7 @@ export default function BuyingPowerPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-premium-green rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#10b981] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -153,7 +153,7 @@ export default function BuyingPowerPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">How the Calculator Works</h2>
           <div className="prose prose-lg max-w-none">
-            <div className="bg-blue-50 border-l-4 border-premium-blue p-6 mb-6">
+            <div className="bg-blue-50 border-l-4 border-navy-700 p-6 mb-6">
               <h3 className="text-xl font-bold text-gray-900 mt-0">Conservative Underwriting Standards</h3>
               <p className="mb-0">
                 Our calculator uses <strong>43% DTI for Conventional loans</strong> and{' '}
@@ -250,7 +250,7 @@ export default function BuyingPowerPage() {
               <p className="text-gray-700">
                 This calculator doesn&apos;t support VA loan calculations due to their unique requirements (no down
                 payment, no PMI, VA funding fee). If you&apos;re a veteran or active military,{' '}
-                <a href="/get-pre-approved" className="text-premium-blue font-semibold hover:underline">
+                <a href="/get-pre-approved" className="text-navy-700 font-semibold hover:underline">
                   contact us for specialized VA loan analysis
                 </a>
                 .
@@ -261,7 +261,7 @@ export default function BuyingPowerPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white py-12 lg:py-16">
+      <section className="bg-gradient-to-r from-navy-700 to-navy-800 text-white py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Home Search?</h2>
           <p className="text-xl text-blue-100 mb-8">
@@ -271,7 +271,7 @@ export default function BuyingPowerPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/get-pre-approved"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-premium-blue font-semibold rounded-lg hover:bg-gray-100 transition-colors text-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-navy-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-lg"
             >
               Get Pre-Approved Now
             </a>

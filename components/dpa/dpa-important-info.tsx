@@ -7,7 +7,7 @@ const importantItems = [
   {
     icon: DollarSign,
     title: 'Income Limits Vary by County',
-    color: 'premium-blue',
+    color: 'navy-700',
     description:
       'Los Angeles County (including Santa Clarita) has specific income limits that vary by household size and program. These limits are typically higher than you might expect.',
     details: [
@@ -21,7 +21,7 @@ const importantItems = [
   {
     icon: Info,
     title: 'Property Type Restrictions',
-    color: 'premium-green',
+    color: '[#10b981]',
     description:
       'DPA programs can be used on most property types, but there are some restrictions to be aware of.',
     details: [
@@ -36,7 +36,7 @@ const importantItems = [
   {
     icon: Clock,
     title: 'Repayment Timing Matters',
-    color: 'premium-orange',
+    color: 'gold-600',
     description:
       'Understanding when and how you repay DPA funds is crucial to long-term planning.',
     details: [
@@ -52,7 +52,7 @@ const importantItems = [
   {
     icon: TrendingUp,
     title: 'Interest Rates May Be Slightly Higher',
-    color: 'premium-blue',
+    color: 'navy-700',
     description:
       'Some DPA programs (like CalPLUS) come with a slightly higher interest rate on your primary mortgage.',
     details: [
@@ -68,7 +68,7 @@ const importantItems = [
   {
     icon: Shield,
     title: 'Mortgage Insurance Requirements',
-    color: 'premium-green',
+    color: '[#10b981]',
     description:
       'DPA programs combined with different loan types have varying mortgage insurance requirements.',
     details: [
@@ -84,7 +84,7 @@ const importantItems = [
   {
     icon: AlertCircle,
     title: 'Homebuyer Education is Mandatory',
-    color: 'premium-orange',
+    color: 'gold-600',
     description:
       'All DPA programs require completion of an approved homebuyer education course before closing.',
     details: [
@@ -187,7 +187,7 @@ export function DPAImportantInfo() {
         </Card>
 
         {/* Myths vs Reality */}
-        <Card className="mt-12 p-8 bg-gradient-to-r from-premium-cream to-white border-2 border-premium-gold">
+        <Card className="mt-12 p-8 bg-gradient-to-r from-warm-50 to-white border-2 border-gold-100">
           <h3 className="font-display text-2xl font-bold text-gray-900 mb-8 text-center">
             Common Misconceptions Debunked
           </h3>

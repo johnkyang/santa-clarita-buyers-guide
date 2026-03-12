@@ -4,15 +4,21 @@ import type { Components } from 'react-markdown'
 
 interface MarkdownContentProps {
   content: string
+  skipFirstH1?: boolean
 }
 
-const components: Components = {
+function makeComponents(skipFirstH1: boolean): Components {
+  let h1Count = 0
+  return {
   // Headings
-  h1: ({ children, ...props }) => (
-    <h1 className="text-4xl font-bold mt-8 mb-4 text-gray-900 leading-tight" {...props}>
-      {children}
-    </h1>
-  ),
+  h1: ({ children, ...props }) => {
+    if (skipFirstH1 && h1Count++ === 0) return null
+    return (
+      <h1 className="text-4xl font-bold mt-8 mb-4 text-gray-900 leading-tight" {...props}>
+        {children}
+      </h1>
+    )
+  },
   h2: ({ children, ...props }) => (
     <h2 className="text-3xl font-bold mt-8 mb-4 text-gray-900 leading-tight" {...props}>
       {children}
@@ -50,7 +56,7 @@ const components: Components = {
   a: ({ children, href, ...props }) => (
     <a
       href={href}
-      className="text-premium-blue hover:text-premium-blue-dark underline decoration-2 underline-offset-2 transition-colors"
+      className="text-navy-700 hover:text-navy-800 underline decoration-2 underline-offset-2 transition-colors"
       {...props}
     >
       {children}
@@ -77,7 +83,7 @@ const components: Components = {
   // Blockquotes
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="border-l-4 border-premium-blue pl-6 py-2 my-6 bg-blue-50 rounded-r-lg italic text-gray-700"
+      className="border-l-4 border-navy-700 pl-6 py-2 my-6 bg-blue-50 rounded-r-lg italic text-gray-700"
       {...props}
     >
       {children}
@@ -153,9 +159,11 @@ const components: Components = {
       {children}
     </em>
   ),
+  }
 }
 
-export function MarkdownContent({ content }: MarkdownContentProps) {
+export function MarkdownContent({ content, skipFirstH1 = false }: MarkdownContentProps) {
+  const components = makeComponents(skipFirstH1)
   return (
     <div className="prose prose-lg max-w-none">
       <ReactMarkdown

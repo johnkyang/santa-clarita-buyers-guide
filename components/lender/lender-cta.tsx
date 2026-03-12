@@ -16,7 +16,7 @@ export function LenderCTA() {
             backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2400')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-premium-blue-dark/95 via-premium-blue/90 to-premium-blue-dark/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-800/95 via-navy-700/90 to-navy-800/95" />
       </div>
 
       {/* Content */}
@@ -29,7 +29,7 @@ export function LenderCTA() {
           <p className="mx-auto max-w-3xl text-xl text-white/90 leading-relaxed mb-4">
             Take the first step toward homeownership today. Get pre-approved and start shopping with confidence.
           </p>
-          <p className="mx-auto max-w-2xl text-lg text-premium-orange font-semibold mb-12">
+          <p className="mx-auto max-w-2xl text-lg text-gold-600 font-semibold mb-12">
             Remember to mention SantaClaritaBuyersGuide.com for your $500 closing costs credit!
           </p>
 
@@ -38,7 +38,7 @@ export function LenderCTA() {
             <a href="https://www.loandepot.com/jyang" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
                 Apply Online Now
                 <ExternalLink className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export function LenderCTA() {
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
                 Call (818) 445-6354
@@ -119,7 +119,7 @@ export function LenderCTA() {
                 <a href="tel:8184456354">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto h-14 px-8 bg-white text-premium-blue hover:bg-premium-cream font-bold"
+                    className="w-full sm:w-auto h-14 px-8 bg-white text-navy-700 hover:bg-warm-50 font-bold"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     Call for Free Consultation
@@ -129,7 +129,7 @@ export function LenderCTA() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue font-bold"
+                    className="w-full sm:w-auto h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 font-bold"
                   >
                     <MessageSquare className="mr-2 h-5 w-5" />
                     Send a Message
@@ -142,17 +142,17 @@ export function LenderCTA() {
           {/* Trust Signals */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center">
-              <CheckCircle2 className="h-12 w-12 text-premium-orange mb-3" />
+              <CheckCircle2 className="h-12 w-12 text-gold-600 mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">No Obligation</h3>
               <p className="text-white/80 text-sm">Free consultation and application with no commitment required</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <CheckCircle2 className="h-12 w-12 text-premium-orange mb-3" />
+              <CheckCircle2 className="h-12 w-12 text-gold-600 mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">Fast Response</h3>
               <p className="text-white/80 text-sm">Get answers within 24 hours and pre-approval in 5-7 days</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <CheckCircle2 className="h-12 w-12 text-premium-orange mb-3" />
+              <CheckCircle2 className="h-12 w-12 text-gold-600 mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">Local Expert</h3>
               <p className="text-white/80 text-sm">15+ years serving Santa Clarita home buyers</p>
             </div>
@@ -162,7 +162,7 @@ export function LenderCTA() {
 
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-premium-orange/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
     </section>
   );
 }

@@ -17,7 +17,7 @@ export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) 
         <div className="mx-auto max-w-4xl">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-premium-blue to-premium-blue-dark rounded-2xl flex items-center justify-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#0f1f3d] to-[#162b52] rounded-2xl flex items-center justify-center">
                 <GraduationCap className="h-7 w-7 text-white" />
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Schools & Education</h2>
@@ -29,7 +29,7 @@ export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) 
           <div className="grid gap-6">
             {neighborhood.schools.map((school, index) => (
               <AnimatedSection key={index} delay={0.1 * (index + 1)}>
-                <Card className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01]">
+                <Card className="bg-gradient-to-br from-white to-warm-50/30 border-2 border-warm-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01]">
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
@@ -41,12 +41,12 @@ export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) 
                       <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2">
                         <Badge
                           variant={school.type === 'elementary' ? 'default' : 'secondary'}
-                          className="bg-gradient-to-r from-premium-orange to-premium-rust text-white border-0"
+                          className="bg-gradient-to-r from-[#c9a227] to-[#d4af3a] text-white border-0"
                         >
                           {school.type.charAt(0).toUpperCase() + school.type.slice(1)}
                         </Badge>
                         {school.rating && (
-                          <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-3 py-1.5 text-sm font-bold text-white shadow-md">
+                          <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4af3a] px-3 py-1.5 text-sm font-bold text-white shadow-md">
                             <Star className="h-4 w-4 fill-current" />
                             {school.rating}/10
                           </div>
@@ -61,10 +61,10 @@ export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) 
 
           {neighborhood.nearbyAttractions && neighborhood.nearbyAttractions.length > 0 && (
             <AnimatedSection delay={0.2}>
-              <Card className="mt-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-100 shadow-lg">
+              <Card className="mt-8 bg-gradient-to-br from-[#f9f6f0] to-white border-2 border-[#e8e0d0] shadow-lg">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-premium-green to-emerald-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#10b981] to-[#0d9668] rounded-xl flex items-center justify-center">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <CardTitle className="text-2xl text-gray-900">Nearby Attractions</CardTitle>
@@ -74,7 +74,7 @@ export function NeighborhoodSchools({ neighborhood }: NeighborhoodSchoolsProps) 
                   <ul className="grid gap-3 sm:grid-cols-2">
                     {neighborhood.nearbyAttractions.map((attraction, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <span className="mt-1 w-2 h-2 bg-gradient-to-br from-premium-green to-emerald-600 rounded-full flex-shrink-0"></span>
+                        <span className="mt-1 w-2 h-2 bg-gradient-to-br from-[#10b981] to-[#0d9668] rounded-full flex-shrink-0"></span>
                         <span className="text-gray-700">{attraction}</span>
                       </li>
                     ))}

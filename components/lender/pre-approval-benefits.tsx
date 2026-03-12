@@ -8,43 +8,43 @@ const benefits = [
     icon: TrendingUp,
     title: 'Stronger Negotiating Power',
     description: 'Pre-approval shows sellers you&apos;re a serious, qualified buyer, making your offer more competitive in Santa Clarita&apos;s market.',
-    color: 'premium-blue',
+    color: 'navy-700',
   },
   {
     icon: DollarSign,
     title: 'Know Your True Budget',
     description: 'Understand exactly how much home you can afford, including down payment assistance programs that can add $50,000+ to your buying power.',
-    color: 'premium-green',
+    color: '[#10b981]',
   },
   {
     icon: Clock,
     title: 'Faster Closing Process',
     description: 'Pre-approval speeds up the final loan process, helping you close in 30-45 days and avoid losing your dream home to another buyer.',
-    color: 'premium-orange',
+    color: 'gold-600',
   },
   {
     icon: Shield,
     title: 'Rate Lock Protection',
     description: 'Lock in today&apos;s interest rates while you shop, protecting you from potential rate increases during your home search.',
-    color: 'premium-blue',
+    color: 'navy-700',
   },
   {
     icon: Home,
     title: 'Identify Issues Early',
     description: 'Discover and address any credit or documentation issues before you find your home, avoiding last-minute surprises.',
-    color: 'premium-green',
+    color: '[#10b981]',
   },
   {
     icon: CheckCircle2,
     title: 'DPA Program Qualification',
     description: 'Find out which down payment assistance programs you qualify for and how much help you can receive upfront.',
-    color: 'premium-orange',
+    color: 'gold-600',
   },
 ];
 
 export function PreApprovalBenefits() {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-warm-50/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">
@@ -87,7 +87,7 @@ export function PreApprovalBenefits() {
                   'Social Security number',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -104,7 +104,7 @@ export function PreApprovalBenefits() {
                   'Preferred neighborhoods',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -124,22 +124,22 @@ export function PreApprovalBenefits() {
             Pre-Approval Timeline
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 text-center bg-gradient-to-br from-premium-blue/5 to-premium-blue/10 border-premium-blue/20">
-              <div className="text-4xl font-bold text-premium-blue mb-2">1-2 Days</div>
+            <Card className="p-6 text-center bg-gradient-to-br from-navy-700/5 to-navy-700/10 border-navy-700/20">
+              <div className="text-4xl font-bold text-navy-700 mb-2">1-2 Days</div>
               <div className="text-sm font-semibold text-gray-900 mb-2">Initial Application</div>
               <p className="text-xs text-gray-600">
                 Complete digital application online (15-20 minutes) and submit initial documents
               </p>
             </Card>
-            <Card className="p-6 text-center bg-gradient-to-br from-premium-green/5 to-premium-green/10 border-premium-green/20">
-              <div className="text-4xl font-bold text-premium-green mb-2">24-48 Hours</div>
+            <Card className="p-6 text-center bg-gradient-to-br from-[#10b981]/5 to-[#10b981]/10 border-[#10b981]/20">
+              <div className="text-4xl font-bold text-[#10b981] mb-2">24-48 Hours</div>
               <div className="text-sm font-semibold text-gray-900 mb-2">Credit Review</div>
               <p className="text-xs text-gray-600">
                 Lender reviews your credit, income, and assets to determine loan amount
               </p>
             </Card>
-            <Card className="p-6 text-center bg-gradient-to-br from-premium-orange/5 to-premium-orange/10 border-premium-orange/20">
-              <div className="text-4xl font-bold text-premium-orange mb-2">3-5 Days</div>
+            <Card className="p-6 text-center bg-gradient-to-br from-gold-600/5 to-gold-600/10 border-gold-600/20">
+              <div className="text-4xl font-bold text-gold-600 mb-2">3-5 Days</div>
               <div className="text-sm font-semibold text-gray-900 mb-2">Pre-Approval Letter</div>
               <p className="text-xs text-gray-600">
                 Receive official pre-approval letter to use when making offers

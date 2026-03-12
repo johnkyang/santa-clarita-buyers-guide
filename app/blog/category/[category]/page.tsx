@@ -35,7 +35,7 @@ export default function BlogCategoryPage({ params }: Props) {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-premium-blue to-premium-blue-dark py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-navy-700 to-navy-800 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
@@ -53,7 +53,7 @@ export default function BlogCategoryPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/blog">
-              <Badge variant="outline" className="px-4 py-2 text-sm cursor-pointer hover:scale-105 transition-transform hover:border-premium-blue">
+              <Badge variant="outline" className="px-4 py-2 text-sm cursor-pointer hover:scale-105 transition-transform text-[#0f1f3d] border-[#1e3a6e] hover:bg-[#1e3a6e] hover:text-white">
                 All Posts
               </Badge>
             </Link>
@@ -61,7 +61,7 @@ export default function BlogCategoryPage({ params }: Props) {
               <Link key={cat.slug} href={`/blog/category/${cat.slug}`}>
                 <Badge
                   variant={cat.slug === params.category ? 'default' : 'outline'}
-                  className="px-4 py-2 text-sm cursor-pointer hover:scale-105 transition-transform hover:border-premium-blue"
+                  className="px-4 py-2 text-sm cursor-pointer hover:scale-105 transition-transform text-[#0f1f3d] border-[#1e3a6e] hover:bg-[#1e3a6e] hover:text-white"
                 >
                   {cat.name}
                 </Badge>
@@ -75,7 +75,7 @@ export default function BlogCategoryPage({ params }: Props) {
       <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-premium-blue hover:underline text-sm font-medium">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-navy-700 hover:underline text-sm font-medium">
               <ArrowLeft className="w-4 h-4" />
               Back to all posts
             </Link>
@@ -85,12 +85,12 @@ export default function BlogCategoryPage({ params }: Props) {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <Card className="h-full border-2 border-gray-100 hover:border-premium-blue hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                  <Card className="h-full border-2 border-gray-100 hover:border-navy-700 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                     <CardHeader>
                       <Badge className={`w-fit bg-gradient-to-r ${category.color} text-white border-0 mb-3`}>
                         {category.name}
                       </Badge>
-                      <CardTitle className="text-2xl group-hover:text-premium-blue transition-colors">
+                      <CardTitle className="text-2xl group-hover:text-navy-700 transition-colors">
                         {post.title}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed line-clamp-3">
@@ -114,7 +114,7 @@ export default function BlogCategoryPage({ params }: Props) {
                       </div>
                       <Button
                         variant="ghost"
-                        className="w-full group-hover:bg-premium-blue group-hover:text-white transition-all justify-between"
+                        className="w-full group-hover:bg-navy-700 group-hover:text-white transition-all justify-between"
                       >
                         Read Article
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -136,14 +136,14 @@ export default function BlogCategoryPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-premium-blue to-premium-blue-dark py-16">
+      <section className="bg-gradient-to-r from-navy-700 to-navy-800 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Home Search?</h2>
           <p className="text-xl text-white/90 mb-8">
             Get personalized guidance and access to exclusive Santa Clarita listings
           </p>
           <Link href="/contact">
-            <Button size="lg" className="h-14 px-8 text-lg font-bold bg-white text-premium-blue hover:bg-gray-100">
+            <Button size="lg" className="h-14 px-8 text-lg font-bold bg-white text-navy-700 hover:bg-gray-100">
               Contact Us Today
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

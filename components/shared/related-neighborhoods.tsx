@@ -26,11 +26,11 @@ export function RelatedNeighborhoods({
   if (!neighborhoods || neighborhoods.length === 0) return null
 
   return (
-    <section className="bg-gradient-to-br from-green-50 to-white py-12 lg:py-16">
+    <section className="bg-gradient-to-br from-[#f9f6f0] to-white py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-premium-green to-emerald-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#0f1f3d] to-[#1e3a6e] rounded-xl flex items-center justify-center">
               <Home className="h-6 w-6 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
@@ -43,12 +43,12 @@ export function RelatedNeighborhoods({
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {neighborhoods.map((neighborhood, index) => (
             <Link key={index} href={`/neighborhoods/${neighborhood.slug}`} className="group">
-              <Card className="h-full bg-white border-2 border-green-100 hover:border-premium-green hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+              <Card className="h-full bg-white border-2 border-[#e8e0d0] hover:border-[#c9a227] hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-5 w-5 text-premium-green flex-shrink-0" />
-                      <CardTitle className="text-xl text-gray-900 group-hover:text-premium-green transition-colors">
+                      <MapPin className="h-5 w-5 text-[#c9a227] flex-shrink-0" />
+                      <CardTitle className="text-xl text-gray-900 group-hover:text-[#c9a227] transition-colors">
                         {neighborhood.name}
                       </CardTitle>
                     </div>
@@ -59,7 +59,7 @@ export function RelatedNeighborhoods({
                 </CardHeader>
                 <CardContent>
                   {neighborhood.priceRange && (
-                    <Badge className="mb-3 bg-premium-green text-white hover:bg-emerald-700">
+                    <Badge className="mb-3 bg-[#c9a227] text-[#071525] hover:bg-[#d4af3a]">
                       {neighborhood.priceRange}
                     </Badge>
                   )}
@@ -67,7 +67,7 @@ export function RelatedNeighborhoods({
                     <ul className="space-y-1 mb-4">
                       {neighborhood.highlights.slice(0, 2).map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                          <span className="mt-1 w-1.5 h-1.5 bg-premium-green rounded-full flex-shrink-0"></span>
+                          <span className="mt-1 w-1.5 h-1.5 bg-[#c9a227] rounded-full flex-shrink-0"></span>
                           <span>{highlight}</span>
                         </li>
                       ))}
@@ -75,7 +75,7 @@ export function RelatedNeighborhoods({
                   )}
                   <Button
                     variant="ghost"
-                    className="w-full justify-between group-hover:bg-premium-green group-hover:text-white transition-all"
+                    className="w-full justify-between group-hover:bg-[#0f1f3d] group-hover:text-white transition-all"
                   >
                     Explore {neighborhood.name}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -90,7 +90,7 @@ export function RelatedNeighborhoods({
           <Link href="/neighborhoods">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-premium-green to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-lg"
+              className="bg-[#0f1f3d] hover:bg-[#1e3a6e] text-white shadow-lg"
             >
               View All Neighborhoods
               <ArrowRight className="ml-2 h-5 w-5" />

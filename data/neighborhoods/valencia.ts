@@ -155,6 +155,10 @@ export const valencia: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 18,
+  walkScore: 52,
+  schoolRating: '9.2/10',
+
   metaDescription:
     'Complete Valencia, CA community guide. Explore 6 distinct neighborhoods (Westridge, Bridgeport, Northbridge), top-rated schools (Old Orchard 10/10), 30+ parks, shopping, dining, commute times, Mello-Roos info, and current home prices ($500K-$2.5M+). Everything you need to know about buying a home in Valencia, Santa Clarita.',
 

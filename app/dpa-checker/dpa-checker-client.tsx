@@ -122,7 +122,7 @@ export function DPACheckerClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-premium-cream to-white">
+    <div className="min-h-screen bg-gradient-to-b from-warm-50 to-white">
       <div className="container px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <AnimatePresence mode="wait">
@@ -136,8 +136,8 @@ export function DPACheckerClient() {
                 transition={{ duration: 0.4 }}
                 className="text-center"
               >
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-premium-green/10">
-                  <DollarSign className="h-10 w-10 text-premium-green" />
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#10b981]/10">
+                  <DollarSign className="h-10 w-10 text-[#10b981]" />
                 </div>
                 <h1 className="font-display text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
                   Do You Qualify for Down Payment Assistance?
@@ -156,7 +156,7 @@ export function DPACheckerClient() {
                     'Your results are instant',
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 shrink-0 text-premium-green" />
+                      <CheckCircle className="h-5 w-5 shrink-0 text-[#10b981]" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -164,7 +164,7 @@ export function DPACheckerClient() {
                 <Button
                   size="lg"
                   onClick={() => setStep('questions')}
-                  className="group h-14 w-full bg-gradient-to-r from-premium-green to-emerald-600 px-8 text-lg font-bold text-white hover:opacity-90 transition-all duration-300 hover:scale-105 sm:w-auto"
+                  className="group h-14 w-full bg-gradient-to-r from-[#10b981] to-emerald-600 px-8 text-lg font-bold text-white hover:opacity-90 transition-all duration-300 hover:scale-105 sm:w-auto"
                 >
                   Check My Eligibility
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -189,7 +189,7 @@ export function DPACheckerClient() {
                   </div>
                   <div className="h-2 rounded-full bg-gray-200">
                     <div
-                      className="h-2 rounded-full bg-gradient-to-r from-premium-green to-emerald-600 transition-all duration-500"
+                      className="h-2 rounded-full bg-gradient-to-r from-[#10b981] to-emerald-600 transition-all duration-500"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -204,9 +204,9 @@ export function DPACheckerClient() {
                     <button
                       key={option.id}
                       onClick={() => handleAnswer(option.id)}
-                      className={`w-full rounded-xl border-2 p-4 text-left font-medium transition-all duration-200 hover:scale-[1.01] hover:border-premium-green hover:bg-green-50 ${
+                      className={`w-full rounded-xl border-2 p-4 text-left font-medium transition-all duration-200 hover:scale-[1.01] hover:border-[#10b981] hover:bg-green-50 ${
                         answers[currentQuestion.id] === option.id
-                          ? 'border-premium-green bg-green-50 text-emerald-900'
+                          ? 'border-[#10b981] bg-green-50 text-emerald-900'
                           : 'border-gray-200 bg-white text-gray-800'
                       }`}
                     >
@@ -235,8 +235,8 @@ export function DPACheckerClient() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-premium-green/10">
-                    <CheckCircle className="h-6 w-6 text-premium-green" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#10b981]/10">
+                    <CheckCircle className="h-6 w-6 text-[#10b981]" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Assessment complete!</p>
@@ -293,7 +293,7 @@ export function DPACheckerClient() {
                       type="checkbox"
                       checked={consent}
                       onChange={(e) => setConsent(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-premium-green"
+                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-[#10b981]"
                     />
                     <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
                       I agree to receive my DPA eligibility results and helpful home buying information from Santa Clarita Buyers Guide. No spam, unsubscribe anytime.
@@ -306,7 +306,7 @@ export function DPACheckerClient() {
                     type="submit"
                     size="lg"
                     disabled={submitting}
-                    className="group h-14 w-full bg-gradient-to-r from-premium-green to-emerald-600 text-lg font-bold text-white hover:opacity-90 transition-all duration-300"
+                    className="group h-14 w-full bg-gradient-to-r from-[#10b981] to-emerald-600 text-lg font-bold text-white hover:opacity-90 transition-all duration-300"
                   >
                     {submitting ? 'Loading...' : 'Show My DPA Eligibility'}
                     {!submitting && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
@@ -333,7 +333,7 @@ export function DPACheckerClient() {
                   </h2>
                   {likelyCount > 0 ? (
                     <p className="text-gray-600">
-                      Based on your answers, you appear to be <strong className="text-premium-green">likely eligible for {likelyCount} program{likelyCount > 1 ? 's' : ''}</strong>. A CalHFA-approved lender can confirm exact eligibility.
+                      Based on your answers, you appear to be <strong className="text-[#10b981]">likely eligible for {likelyCount} program{likelyCount > 1 ? 's' : ''}</strong>. A CalHFA-approved lender can confirm exact eligibility.
                     </p>
                   ) : (
                     <p className="text-gray-600">
@@ -383,13 +383,13 @@ export function DPACheckerClient() {
                     })}
                 </div>
 
-                <div className="rounded-2xl bg-premium-blue/5 border border-premium-blue/20 p-6 text-center mb-4">
+                <div className="rounded-2xl bg-navy-700/5 border border-navy-700/20 p-6 text-center mb-4">
                   <p className="font-semibold text-gray-900 mb-1">Ready to take the next step?</p>
                   <p className="text-sm text-gray-600 mb-4">
                     Connect with a CalHFA-approved lender in Santa Clarita to verify your eligibility and start your pre-approval.
                   </p>
                   <Link href="/contact">
-                    <Button className="bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white hover:opacity-90">
+                    <Button className="bg-gradient-to-r from-navy-700 to-navy-800 text-white hover:opacity-90">
                       Connect with a DPA Specialist
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

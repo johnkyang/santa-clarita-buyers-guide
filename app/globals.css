@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('/colors.css');
+@import url('/typography.css');
 
 @tailwind base;
 @tailwind components;
@@ -10,15 +12,21 @@
   }
 
   .text-gradient-premium {
-    @apply bg-gradient-to-r from-premium-blue to-premium-blue-dark bg-clip-text text-transparent;
+    background: linear-gradient(to right, var(--color-navy-600), var(--color-navy-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-warm {
-    @apply bg-gradient-to-r from-premium-orange to-premium-rust bg-clip-text text-transparent;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-editorial {
-    background: linear-gradient(135deg, #e6b319, #c99a14);
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -35,25 +43,26 @@
 
 @layer base {
   :root {
-    --background: 40 25% 97%;      /* warm off-white #f8f7f6 */
-    --foreground: 220 20% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
-    --primary: 42 82% 50%;         /* editorial gold #e6b319 */
-    --primary-foreground: 30 40% 8%;
-    --secondary: 40 15% 93%;
-    --secondary-foreground: 220 20% 20%;
-    --muted: 40 15% 93%;
-    --muted-foreground: 220 10% 45%;
-    --accent: 42 60% 92%;
-    --accent-foreground: 42 82% 25%;
-    --destructive: 0 84.2% 60.2%;
+    /* --- Bridge: shadcn tokens → new color system --- */
+    --background:             240 25% 98%;   /* warm off-white */
+    --foreground:             221 62% 16%;   /* navy-900 #0f1f3d */
+    --card:                   0 0% 100%;
+    --card-foreground:        221 62% 16%;
+    --popover:                0 0% 100%;
+    --popover-foreground:     221 62% 16%;
+    --primary:                41 69% 47%;    /* gold-700 #c9a227 */
+    --primary-foreground:     221 90% 6%;    /* navy-950 #071525 */
+    --secondary:              32 30% 92%;    /* warm-100 #f2ede6 */
+    --secondary-foreground:   221 62% 16%;
+    --muted:                  32 30% 92%;
+    --muted-foreground:       28 8% 42%;     /* warm-700 #6b6560 */
+    --accent:                 41 90% 95%;    /* gold-100 #fdf8e8 */
+    --accent-foreground:      38 100% 24%;   /* gold-900 #7a5200 */
+    --destructive:            0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 42 82% 50%;
+    --border:                 32 17% 83%;    /* warm-300 #d4cfc8 */
+    --input:                  32 17% 83%;
+    --ring:                   41 69% 47%;    /* gold-700 focus ring */
     --chart-1: 42 82% 50%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -63,31 +72,54 @@
   }
 
   .dark {
-    --background: 30 20% 10%;
-    --foreground: 40 20% 92%;
-    --card: 30 15% 13%;
-    --card-foreground: 40 20% 92%;
-    --popover: 30 15% 13%;
-    --popover-foreground: 40 20% 92%;
-    --primary: 42 82% 50%;
-    --primary-foreground: 30 40% 8%;
-    --secondary: 30 15% 18%;
-    --secondary-foreground: 40 20% 90%;
-    --muted: 30 15% 18%;
-    --muted-foreground: 40 10% 60%;
-    --accent: 30 15% 18%;
-    --accent-foreground: 40 20% 90%;
-    --destructive: 0 62.8% 30.6%;
+    --background:             20 13% 9%;     /* warm-950 #1a1612 */
+    --foreground:             0 0% 95%;
+    --card:                   221 62% 16%;   /* navy-900 */
+    --card-foreground:        0 0% 95%;
+    --popover:                221 62% 16%;
+    --popover-foreground:     0 0% 95%;
+    --primary:                41 69% 47%;    /* gold-700 unchanged */
+    --primary-foreground:     221 90% 6%;
+    --secondary:              20 10% 17%;    /* warm-900 */
+    --secondary-foreground:   0 0% 80%;
+    --muted:                  20 10% 17%;
+    --muted-foreground:       0 0% 60%;
+    --accent:                 41 69% 47%;
+    --accent-foreground:      41 60% 73%;    /* gold-400 */
+    --destructive:            0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 15% 22%;
-    --input: 30 15% 22%;
-    --ring: 42 82% 50%;
+    --border:                 221 55% 27%;   /* navy-700 */
+    --input:                  221 55% 27%;
+    --ring:                   41 69% 47%;
     --chart-1: 42 82% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+/* Dark mode: data-theme attribute (manual toggle + system preference via colors.css @media) */
+[data-theme='dark'] {
+  --background:             20 13% 9%;
+  --foreground:             0 0% 95%;
+  --card:                   221 62% 16%;
+  --card-foreground:        0 0% 95%;
+  --popover:                221 62% 16%;
+  --popover-foreground:     0 0% 95%;
+  --primary:                41 69% 47%;
+  --primary-foreground:     221 90% 6%;
+  --secondary:              20 10% 17%;
+  --secondary-foreground:   0 0% 80%;
+  --muted:                  20 10% 17%;
+  --muted-foreground:       0 0% 60%;
+  --accent:                 41 69% 47%;
+  --accent-foreground:      41 60% 73%;
+  --destructive:            0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border:                 221 55% 27%;
+  --input:                  221 55% 27%;
+  --ring:                   41 69% 47%;
 }
 
 @layer base {
@@ -110,6 +142,21 @@
   }
 }
 
+/* ── Header — force dark navy regardless of cascade ─────────────────────── */
+/* Belt-and-suspenders: inline styles + this rule ensure the header is always
+   dark navy even if Tailwind JIT or typography.css wins the cascade race.    */
+header.site-header {
+  background-color: #0f1f3d !important;
+  border-bottom-color: rgba(30, 58, 110, 0.4) !important;
+}
+
+header.site-header a,
+header.site-header button,
+header.site-header .nav-text {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
 /* Custom Range Slider Styling */
 @layer components {
   .slider-thumb {
@@ -125,7 +172,7 @@
     appearance: none;
     width: 24px;
     height: 24px;
-    background: #e6b319;
+    background: var(--color-gold-700);
     border: 4px solid white;
     border-radius: 50%;
     cursor: pointer;
@@ -144,7 +191,7 @@
   .slider-thumb::-moz-range-thumb {
     width: 24px;
     height: 24px;
-    background: #e6b319;
+    background: var(--color-gold-700);
     border: 4px solid white;
     border-radius: 50%;
     cursor: pointer;

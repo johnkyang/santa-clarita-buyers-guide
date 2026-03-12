@@ -11,7 +11,7 @@ const programs = [
     id: 'calhfa-myhome',
     name: 'CalHFA MyHome',
     provider: 'CalHFA',
-    color: 'premium-blue',
+    color: 'navy-700',
     maxAssistance: 'Up to 3.5%',
     interestRate: '0%',
     repayment: 'Deferred (due on sale/refinance)',
@@ -25,7 +25,7 @@ const programs = [
     id: 'calhfa-calplus-zip',
     name: 'CalPLUS with ZIP',
     provider: 'CalHFA',
-    color: 'premium-blue',
+    color: 'navy-700',
     maxAssistance: 'Up to $110,000',
     interestRate: '0%',
     repayment: 'Deferred (due on sale/refinance)',
@@ -39,7 +39,7 @@ const programs = [
     id: 'calhfa-calplus-fha',
     name: 'CalPLUS FHA',
     provider: 'CalHFA',
-    color: 'premium-blue',
+    color: 'navy-700',
     maxAssistance: '3.5% minimum',
     interestRate: '0%',
     repayment: 'Deferred payment',
@@ -53,7 +53,7 @@ const programs = [
     id: 'calhfa-ectp',
     name: 'Extra Credit Teacher',
     provider: 'CalHFA',
-    color: 'premium-blue',
+    color: 'navy-700',
     maxAssistance: 'Up to $110,000',
     interestRate: '0% + reduced mortgage rate',
     repayment: 'Deferred payment',
@@ -67,7 +67,7 @@ const programs = [
     id: 'accesszero',
     name: 'AccessZero FHA',
     provider: 'AccessZero',
-    color: 'premium-green',
+    color: '[#10b981]',
     maxAssistance: '3.5% grant + 3.5% FHA',
     interestRate: 'Grant (no repayment)',
     repayment: 'Forgiven after 5 years',
@@ -81,7 +81,7 @@ const programs = [
     id: 'gsfa',
     name: 'GSFA MyHome',
     provider: 'GSFA',
-    color: 'premium-orange',
+    color: 'gold-600',
     maxAssistance: '3.5% or $15,000 max',
     interestRate: '0%',
     repayment: 'Silent second (due on sale)',
@@ -150,7 +150,7 @@ export function DPAComparison() {
         <div className="hidden lg:block overflow-x-auto">
           <Card className="overflow-hidden">
             <table className="w-full">
-              <thead className="bg-premium-cream">
+              <thead className="bg-warm-50">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Program</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Max Assistance</th>
@@ -177,19 +177,19 @@ export function DPAComparison() {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-700 font-semibold">{program.maxAssistance}</td>
-                    <td className="px-6 py-4 text-sm text-premium-green font-semibold">{program.interestRate}</td>
+                    <td className="px-6 py-4 text-sm text-[#10b981] font-semibold">{program.interestRate}</td>
                     <td className="px-6 py-4 text-sm text-gray-700">{program.repayment}</td>
                     <td className="px-6 py-4 text-sm text-gray-700">{program.minCreditScore}</td>
                     <td className="px-6 py-4">
                       {program.firstTimeBuyer ? (
-                        <Check className="h-5 w-5 text-premium-green" />
+                        <Check className="h-5 w-5 text-[#10b981]" />
                       ) : (
                         <X className="h-5 w-5 text-gray-300" />
                       )}
                     </td>
                     <td className="px-6 py-4">
                       {program.educationRequired ? (
-                        <Check className="h-5 w-5 text-premium-green" />
+                        <Check className="h-5 w-5 text-[#10b981]" />
                       ) : (
                         <X className="h-5 w-5 text-gray-300" />
                       )}
@@ -220,7 +220,7 @@ export function DPAComparison() {
                 </div>
                 <div className="flex justify-between items-start">
                   <span className="text-sm font-semibold text-gray-700">Interest Rate:</span>
-                  <span className="text-sm text-premium-green font-semibold text-right">{program.interestRate}</span>
+                  <span className="text-sm text-[#10b981] font-semibold text-right">{program.interestRate}</span>
                 </div>
                 <div className="flex justify-between items-start">
                   <span className="text-sm font-semibold text-gray-700">Repayment:</span>
@@ -233,7 +233,7 @@ export function DPAComparison() {
                 <div className="flex justify-between items-start">
                   <span className="text-sm font-semibold text-gray-700">First-Time Buyer:</span>
                   {program.firstTimeBuyer ? (
-                    <Check className="h-5 w-5 text-premium-green" />
+                    <Check className="h-5 w-5 text-[#10b981]" />
                   ) : (
                     <X className="h-5 w-5 text-gray-300" />
                   )}
@@ -241,7 +241,7 @@ export function DPAComparison() {
                 <div className="flex justify-between items-start">
                   <span className="text-sm font-semibold text-gray-700">Education Required:</span>
                   {program.educationRequired ? (
-                    <Check className="h-5 w-5 text-premium-green" />
+                    <Check className="h-5 w-5 text-[#10b981]" />
                   ) : (
                     <X className="h-5 w-5 text-gray-300" />
                   )}

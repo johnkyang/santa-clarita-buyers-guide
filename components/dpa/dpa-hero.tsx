@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export function DPAHero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-premium-blue via-premium-blue-dark to-blue-900">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-700 via-navy-800 to-blue-900">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -23,7 +23,7 @@ export function DPAHero() {
             transition={{ duration: 0.6 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2.5 text-sm font-medium text-white"
           >
-            <CheckCircle2 className="h-4 w-4 text-premium-orange" />
+            <CheckCircle2 className="h-4 w-4 text-gold-600" />
             Helping hundreds of families achieve homeownership since 2010
           </motion.div>
 
@@ -44,7 +44,7 @@ export function DPAHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto max-w-3xl text-xl sm:text-2xl text-white/90 leading-relaxed mb-12"
           >
-            Get up to <strong className="text-premium-orange">$110,000+</strong> in down payment help for your Santa Clarita home
+            Get up to <strong className="text-gold-600">$110,000+</strong> in down payment help for your Santa Clarita home
           </motion.p>
 
           <motion.div
@@ -56,7 +56,7 @@ export function DPAHero() {
             <Link href="#dpa-calculator">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
                 Check Your Eligibility
                 <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
@@ -66,7 +66,7 @@ export function DPAHero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
                 (661) 451-7200

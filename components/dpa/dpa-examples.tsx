@@ -21,7 +21,7 @@ const examples = [
     },
     program: {
       name: 'CalHFA MyHome Assistance',
-      color: 'premium-blue',
+      color: 'navy-700',
     },
     breakdown: [
       { label: 'Home Price', amount: '$725,000' },
@@ -54,7 +54,7 @@ const examples = [
     },
     program: {
       name: 'Extra Credit Teacher Program (ECTP)',
-      color: 'premium-blue',
+      color: 'navy-700',
     },
     breakdown: [
       { label: 'Home Price', amount: '$650,000' },
@@ -88,7 +88,7 @@ const examples = [
     },
     program: {
       name: 'AccessZero FHA Grant',
-      color: 'premium-green',
+      color: '[#10b981]',
     },
     breakdown: [
       { label: 'Home Price', amount: '$580,000' },
@@ -122,7 +122,7 @@ const examples = [
     },
     program: {
       name: 'CalPLUS Conventional with ZIP',
-      color: 'premium-blue',
+      color: 'navy-700',
     },
     breakdown: [
       { label: 'Home Price', amount: '$775,000' },
@@ -180,8 +180,8 @@ export function DPAExamples() {
                     {/* Buyer Profile */}
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <div className="h-8 w-8 rounded-lg bg-premium-cream flex items-center justify-center">
-                          <DollarSign className="h-5 w-5 text-premium-blue" />
+                        <div className="h-8 w-8 rounded-lg bg-warm-50 flex items-center justify-center">
+                          <DollarSign className="h-5 w-5 text-navy-700" />
                         </div>
                         Buyer Profile
                       </h4>
@@ -208,8 +208,8 @@ export function DPAExamples() {
                     {/* Property Details */}
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <div className="h-8 w-8 rounded-lg bg-premium-cream flex items-center justify-center">
-                          <Home className="h-5 w-5 text-premium-blue" />
+                        <div className="h-8 w-8 rounded-lg bg-warm-50 flex items-center justify-center">
+                          <Home className="h-5 w-5 text-navy-700" />
                         </div>
                         Property Details
                       </h4>
@@ -233,12 +233,12 @@ export function DPAExamples() {
                   {/* Financial Breakdown */}
                   <div className="mb-8">
                     <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <div className="h-8 w-8 rounded-lg bg-premium-cream flex items-center justify-center">
-                        <TrendingDown className="h-5 w-5 text-premium-blue" />
+                      <div className="h-8 w-8 rounded-lg bg-warm-50 flex items-center justify-center">
+                        <TrendingDown className="h-5 w-5 text-navy-700" />
                       </div>
                       Financial Breakdown
                     </h4>
-                    <div className="bg-premium-cream rounded-xl p-6">
+                    <div className="bg-warm-50 rounded-xl p-6">
                       <div className="space-y-3">
                         {example.breakdown.map((item, idx) => (
                           <div
@@ -253,7 +253,7 @@ export function DPAExamples() {
                             <span
                               className={`text-lg ${
                                 item.highlight
-                                  ? 'text-premium-green font-bold'
+                                  ? 'text-[#10b981] font-bold'
                                   : 'text-gray-900 font-semibold'
                               }`}
                             >
@@ -271,7 +271,7 @@ export function DPAExamples() {
                     <ul className="grid sm:grid-cols-2 gap-3">
                       {example.benefits.map((benefit, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-gray-700">{benefit}</span>
                         </li>
                       ))}
@@ -281,7 +281,7 @@ export function DPAExamples() {
                   {/* Result */}
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-premium-green flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-6 w-6 text-[#10b981] flex-shrink-0 mt-0.5" />
                       <div>
                         <h5 className="font-semibold text-gray-900 mb-1">Result:</h5>
                         <p className="text-gray-700">{example.result}</p>

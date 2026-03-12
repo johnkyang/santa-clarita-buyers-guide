@@ -24,18 +24,18 @@ export function LenderInfo() {
             {/* Left Column - Photo and Basic Info */}
             <div className="md:col-span-2 text-center md:text-left">
               <div className="mb-6">
-                <div className="w-48 h-48 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-premium-blue to-premium-blue-dark flex items-center justify-center mb-4">
+                <div className="w-48 h-48 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center mb-4">
                   <span className="text-6xl font-bold text-white">JY</span>
                 </div>
                 <h3 className="font-display text-3xl font-bold text-gray-900 mb-2">John Yang</h3>
                 <p className="text-xl text-gray-600 mb-4">Senior Loan Officer</p>
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-                  <Building2 className="h-5 w-5 text-premium-blue" />
+                  <Building2 className="h-5 w-5 text-navy-700" />
                   <span className="font-semibold text-gray-900">loanDepot</span>
                 </div>
                 <div className="space-y-3">
                   <a href="tel:8184456354">
-                    <Button className="w-full bg-gradient-to-r from-premium-blue to-premium-blue-dark hover:from-premium-blue-dark hover:to-blue-900">
+                    <Button className="w-full bg-gradient-to-r from-navy-700 to-navy-800 hover:from-navy-800 hover:to-blue-900">
                       <Phone className="mr-2 h-5 w-5" />
                       (818) 445-6354
                     </Button>
@@ -54,13 +54,13 @@ export function LenderInfo() {
             <div className="md:col-span-3">
               <div className="mb-8">
                 <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Award className="h-5 w-5 text-premium-orange" />
+                  <Award className="h-5 w-5 text-gold-600" />
                   Specializations
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-premium-blue text-white">CalHFA Programs</Badge>
-                  <Badge className="bg-premium-green text-white">AccessZero FHA</Badge>
-                  <Badge className="bg-premium-orange text-white">GSFA</Badge>
+                  <Badge className="bg-navy-700 text-white">CalHFA Programs</Badge>
+                  <Badge className="bg-[#10b981] text-white">AccessZero FHA</Badge>
+                  <Badge className="bg-gold-600 text-white">GSFA</Badge>
                   <Badge className="bg-blue-600 text-white">FHA Loans</Badge>
                   <Badge className="bg-green-600 text-white">VA Loans</Badge>
                   <Badge className="bg-purple-600 text-white">Conventional</Badge>
@@ -70,28 +70,28 @@ export function LenderInfo() {
 
               <div className="mb-8">
                 <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-premium-orange" />
+                  <GraduationCap className="h-5 w-5 text-gold-600" />
                   Experience & Expertise
                 </h4>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-premium-blue flex-shrink-0" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-navy-700 flex-shrink-0" />
                     <span>15+ years helping Santa Clarita families achieve homeownership</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-premium-blue flex-shrink-0" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-navy-700 flex-shrink-0" />
                     <span>Certified in all major down payment assistance programs</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-premium-blue flex-shrink-0" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-navy-700 flex-shrink-0" />
                     <span>Specializes in first-time home buyers and complex financing scenarios</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-premium-blue flex-shrink-0" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-navy-700 flex-shrink-0" />
                     <span>Deep knowledge of Valencia, Stevenson Ranch, and all Santa Clarita neighborhoods</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-premium-blue flex-shrink-0" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-navy-700 flex-shrink-0" />
                     <span>Bilingual service available</span>
                   </li>
                 </ul>
@@ -117,7 +117,7 @@ export function LenderInfo() {
         </Card>
 
         {/* Digital Application CTA */}
-        <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-premium-blue via-premium-blue-dark to-blue-900 text-white text-center shadow-premium-lg">
+        <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-navy-700 via-navy-800 to-blue-900 text-white text-center shadow-premium-lg">
           <h3 className="font-display text-3xl font-bold mb-4">
             Start Your Pre-Approval Application Online
           </h3>
@@ -128,7 +128,7 @@ export function LenderInfo() {
           <a href="https://www.loandepot.com/jyang" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
-              className="h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream shadow-lg"
+              className="h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50 shadow-lg"
             >
               Apply Now at www.loanDepot.com/jyang
               <ExternalLink className="ml-3 h-6 w-6" />
@@ -146,8 +146,8 @@ export function LenderInfo() {
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-6 text-center">
-              <div className="h-16 w-16 rounded-2xl bg-premium-blue/10 flex items-center justify-center mx-auto mb-4">
-                <Award className="h-8 w-8 text-premium-blue" />
+              <div className="h-16 w-16 rounded-2xl bg-navy-700/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-navy-700" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Top-Rated Lender</h4>
               <p className="text-sm text-gray-600">
@@ -155,8 +155,8 @@ export function LenderInfo() {
               </p>
             </Card>
             <Card className="p-6 text-center">
-              <div className="h-16 w-16 rounded-2xl bg-premium-green/10 flex items-center justify-center mx-auto mb-4">
-                <Building2 className="h-8 w-8 text-premium-green" />
+              <div className="h-16 w-16 rounded-2xl bg-[#10b981]/10 flex items-center justify-center mx-auto mb-4">
+                <Building2 className="h-8 w-8 text-[#10b981]" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Technology-Driven</h4>
               <p className="text-sm text-gray-600">
@@ -164,8 +164,8 @@ export function LenderInfo() {
               </p>
             </Card>
             <Card className="p-6 text-center">
-              <div className="h-16 w-16 rounded-2xl bg-premium-orange/10 flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="h-8 w-8 text-premium-orange" />
+              <div className="h-16 w-16 rounded-2xl bg-gold-600/10 flex items-center justify-center mx-auto mb-4">
+                <GraduationCap className="h-8 w-8 text-gold-600" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Local Expertise</h4>
               <p className="text-sm text-gray-600">

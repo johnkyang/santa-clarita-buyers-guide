@@ -8,7 +8,7 @@ import { AnimatedSection } from '@/components/shared/animated-section'
 export function QuizCTAStrip() {
   return (
     <AnimatedSection>
-      <div className="bg-gradient-to-r from-premium-orange to-premium-rust py-8 sm:py-12">
+      <div className="bg-gradient-to-r from-gold-600 to-gold-800 py-8 sm:py-12">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <div className="flex items-center gap-4">
@@ -27,7 +27,7 @@ export function QuizCTAStrip() {
             <Link href="/neighborhood-quiz" className="shrink-0">
               <Button
                 size="lg"
-                className="group h-12 w-full px-8 font-bold bg-white text-premium-rust hover:bg-white/90 transition-all duration-300 hover:scale-105 sm:w-auto"
+                className="group h-12 w-full px-8 font-bold bg-white text-gold-800 hover:bg-white/90 transition-all duration-300 hover:scale-105 sm:w-auto"
               >
                 Take the 2-Min Quiz
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

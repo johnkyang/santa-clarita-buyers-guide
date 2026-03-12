@@ -57,6 +57,11 @@ export interface Neighborhood {
   // FAQs
   faqs?: FAQ[]
 
+  // Card hover stats
+  daysOnMarket?: number
+  walkScore?: number
+  schoolRating?: string
+
   // SEO
   metaDescription: string
   keywords: string[]

@@ -157,6 +157,10 @@ export const castaic: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 32,
+  walkScore: 30,
+  schoolRating: '7.2/10',
+
   metaDescription:
     'Complete Castaic, CA guide. Santa Clarita\'s lakeside community: 9,000-acre Castaic Lake recreation, homes $350K-$1.2M+ ($150K-$300K below Valencia), larger lots (8,000-20,000+ sq ft), Rivervillage master-plan, Castaic High (7/10), outdoor paradise. Best value for waterfront lifestyle, boating, fishing, nature lovers in Santa Clarita Valley.',
 

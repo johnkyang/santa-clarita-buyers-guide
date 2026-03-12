@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhoods — Santa Clarita Buyers Guide</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <!-- Material Symbols (already loaded on site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════════
+       DESIGN TOKENS — mirror site's existing CSS vars
+       ══════════════════════════════════════════════════ */
+    :root {
+      /* Site palette */
+      --c-navy:         #0f1f3d;
+      --c-navy-mid:     #162847;
+      --c-navy-light:   #1e3a5f;
+      --c-gold:         #c9a227;
+      --c-gold-bright:  #dbb84a;
+      --c-gold-dim:     rgba(201, 162, 39, 0.22);
+      --c-gold-wash:    rgba(201, 162, 39, 0.08);
+
+      /* Page & card surfaces */
+      --c-section-bg:   #f9f6f0;
+      --c-card-bg:      #ffffff;
+      --c-text-heading: #0f1f3d;
+      --c-text-body:    #4a5568;
+      --c-text-muted:   #8a95a3;
+      --c-border:       #e8e3db;
+
+      /* Typography */
+      --f-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --f-body:    'DM Sans', system-ui, -apple-system, sans-serif;
+
+      /* Motion */
+      --ease-std: 0.25s ease;
+
+      /* Layout */
+      --max-w:   1200px;
+      --pad-x:   clamp(1.25rem, 4vw, 3rem);
+
+      /* Card */
+      --card-radius: 12px;
+      --card-img-h:  220px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: var(--c-section-bg);
+      font-family: var(--f-body);
+      color: var(--c-text-body);
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       SECTION WRAPPER
+       ══════════════════════════════════════════════════ */
+    .neighborhoods-section {
+      padding: clamp(4rem, 8vw, 6.5rem) var(--pad-x);
+      background: var(--c-section-bg);
+      position: relative;
+    }
+
+    /* Subtle top rule */
+    .neighborhoods-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: var(--pad-x); right: var(--pad-x);
+      height: 1px;
+      background: var(--c-border);
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--c-gold);
+    }
+
+    .section-heading {
+      font-family: var(--f-display);
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 500;
+      color: var(--c-text-heading);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.875rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--c-text-muted);
+      line-height: 1.65;
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       GRID
+       ══════════════════════════════════════════════════ */
+    .neighborhoods-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.25rem, 2.5vw, 1.75rem);
+      max-width: var(--max-w);
+      margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    @media (max-width: 900px) {
+      .neighborhoods-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .neighborhoods-grid { grid-template-columns: 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       CARD
+       ══════════════════════════════════════════════════ */
+    .nbhd-card {
+      background: var(--c-card-bg);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 4px 16px rgba(0,0,0,0.08);
+      transition:
+        transform     var(--ease-std),
+        box-shadow    var(--ease-std),
+        border-color  var(--ease-std);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      /* Gold bottom border starts hidden, revealed on hover */
+      border-bottom: 3px solid transparent;
+    }
+
+    .nbhd-card:hover {
+      transform: translateY(-4px);
+      border-bottom-color: var(--c-gold);
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.06),
+        0 12px 40px rgba(0,0,0,0.14),
+        0 2px 0 var(--c-gold) inset; /* fallback for old browsers */
+      border-color: var(--c-gold-dim);
+    }
+
+    /* ── Card image / gradient area ── */
+    .card-img {
+      position: relative;
+      height: var(--card-img-h);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /*
+      BACKGROUND IMAGE:
+        Replace the gradient background on each .card-img-[neighborhood]
+        with:  background-image: url('/images/neighborhoods/[name].jpg');
+               background-size: cover;
+               background-position: center;
+        Each neighborhood has a unique placeholder gradient below.
+    */
+    .card-img-valencia {
+      background:
+        linear-gradient(160deg, #1d3461 0%, #0f2040 55%, #0c1829 100%);
+    }
+    .card-img-newhall {
+      background:
+        linear-gradient(155deg, #2a2018 0%, #1a2c42 50%, #0f1f3d 100%);
+    }
+    .card-img-saugus {
+      background:
+        linear-gradient(165deg, #162847 0%, #1a3550 50%, #0f1f3d 100%);
+    }
+    .card-img-canyon-country {
+      background:
+        linear-gradient(150deg, #2d2415 0%, #1e2e44 50%, #0f1f3d 100%);
+    }
+    .card-img-stevenson-ranch {
+      background:
+        linear-gradient(160deg, #0d1e38 0%, #1a3040 55%, #0a1520 100%);
+    }
+    .card-img-castaic {
+      background:
+        linear-gradient(162deg, #112236 0%, #1a3050 50%, #0f1f3d 100%);
+    }
+
+    /* Hover: subtle lighten */
+    .nbhd-card:hover .card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* ── Price badge ── */
+    .price-badge {
+      position: absolute;
+      top: 0.875rem;
+      right: 0.875rem;
+      background: var(--c-gold);
+      color: var(--c-navy);
+      font-family: var(--f-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(201,162,39,0.35);
+      /* Subtle lift on card hover */
+      transition: box-shadow var(--ease-std), transform var(--ease-std);
+    }
+
+    .nbhd-card:hover .price-badge {
+      box-shadow: 0 4px 16px rgba(201,162,39,0.50);
+      transform: translateY(-1px);
+    }
+
+    /* ── Map pin icon in image (bottom-left) ── */
+    .card-location-tag {
+      position: absolute;
+      bottom: 0.875rem;
+      left: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(15,31,61,0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 0.25rem 0.625rem 0.25rem 0.375rem;
+    }
+
+    .card-location-tag .material-symbols-outlined {
+      font-size: 14px;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    .card-location-tag span:last-child {
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── Card body ── */
+    .card-body {
+      padding: 1.375rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-name {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--c-text-heading);
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      transition: color var(--ease-std);
+    }
+
+    .nbhd-card:hover .card-name { color: var(--c-navy-light); }
+
+    .card-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--c-text-muted);
+      line-height: 1.65;
+      flex: 1;
+      /* Clamp to 2 lines */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Card footer / link ── */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--c-text-muted);
+      text-decoration: none;
+      transition: color var(--ease-std), gap var(--ease-std);
+      letter-spacing: 0.02em;
+    }
+
+    .nbhd-card:hover .card-link {
+      color: var(--c-gold);
+      gap: 0.625rem;
+    }
+
+    .card-link .material-symbols-outlined {
+      font-size: 16px;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      transition: transform var(--ease-std);
+    }
+
+    .nbhd-card:hover .card-link .material-symbols-outlined {
+      transform: translateX(3px);
+    }
+
+    /* School / score chip */
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+    }
+
+    .card-tag .material-symbols-outlined {
+      font-size: 13px;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       CTA BUTTON
+       ══════════════════════════════════════════════════ */
+    .cta-wrap {
+      display: flex;
+      justify-content: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2.25rem;
+      background: transparent;
+      border: 1.5px solid var(--c-gold);
+      border-radius: 2px;
+      font-family: var(--f-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-navy);
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        background    var(--ease-std),
+        color         var(--ease-std),
+        box-shadow    var(--ease-std),
+        transform     var(--ease-std);
+    }
+
+    .cta-btn:hover {
+      background: var(--c-gold);
+      color: var(--c-navy);
+      box-shadow: 0 4px 24px rgba(201,162,39,0.28);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .cta-btn .material-symbols-outlined {
+      font-size: 18px;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      transition: transform var(--ease-std);
+    }
+
+    .cta-btn:hover .material-symbols-outlined {
+      transform: translateX(3px);
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       ENTRANCE ANIMATION
+       ══════════════════════════════════════════════════ */
+    .nbhd-card {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity      0.5s ease,
+        transform    0.5s ease,
+        box-shadow   var(--ease-std),
+        border-color var(--ease-std),
+        border-bottom-color var(--ease-std);
+    }
+
+    .nbhd-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hover override once visible */
+    .nbhd-card.visible:hover {
+      transform: translateY(-4px);
+    }
+
+    .section-header {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section-header.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .nbhd-card,
+      .section-header {
+        opacity: 1;
+        transform: none;
+        transition: box-shadow var(--ease-std), border-color var(--ease-std);
+      }
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       STAT TOOLTIP
+       Appears centered over the card image on hover.
+       Lives inside .card-img (overflow: hidden keeps it
+       contained). Pointer-events: none so it can't block
+       the card link click.
+       ══════════════════════════════════════════════════ */
+    .card-tooltip {
+      position: absolute;
+      top: 50%;
+      left: 0.75rem;
+      right: 0.75rem;
+      transform: translateY(calc(-50% + 10px));
+
+      background: rgba(11, 24, 50, 0.97);
+      border: 1px solid rgba(201, 162, 39, 0.30);
+      border-radius: 8px;
+      padding: 0.75rem 0.5rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      opacity: 0;
+      pointer-events: none;
+      z-index: 20;
+
+      transition:
+        opacity   0.2s ease,
+        transform 0.2s ease;
+
+      /* Frosted glass feel */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      /* Subtle top gold shine */
+      box-shadow:
+        0 0 0 0.5px rgba(201, 162, 39, 0.15) inset,
+        0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .nbhd-card:hover .card-tooltip {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+
+    /* ── Dividers between stats ── */
+    .tt-divider {
+      width: 1px;
+      height: 2rem;
+      background: rgba(255, 255, 255, 0.10);
+      flex-shrink: 0;
+    }
+
+    /* ── Individual stat cell ── */
+    .tt-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tt-icon {
+      font-size: 14px !important;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      line-height: 1;
+      margin-bottom: 0.15rem;
+    }
+
+    .tt-value {
+      font-family: var(--f-display);
+      font-size: 1.1875rem;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .tt-label {
+      font-family: var(--f-body);
+      font-size: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Respect reduce-motion */
+    @media (prefers-reduced-motion: reduce) {
+      .card-tooltip {
+        transition: opacity 0.15s ease;
+        transform: translateY(-50%) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     NEIGHBORHOODS SECTION
+     ════════════════════════════════════════════════════ -->
+<section class="neighborhoods-section" aria-labelledby="nbhd-heading">
+
+  <!-- Section header -->
+  <header class="section-header" id="nbhd-header">
+    <p class="section-eyebrow">Santa Clarita Valley</p>
+    <h2 class="section-heading" id="nbhd-heading">
+      Explore Santa Clarita<br>Neighborhoods
+    </h2>
+    <p class="section-sub">
+      Find the community that fits your lifestyle and budget
+    </p>
+  </header>
+
+  <!-- Card grid -->
+  <div class="neighborhoods-grid" role="list">
+
+    <!-- ── 1. Valencia ── -->
+    <a class="nbhd-card" href="/neighborhoods/valencia" role="listitem" aria-label="Valencia neighborhood">
+      <div class="card-img card-img-valencia">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/valencia.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$650K – $900K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Valencia</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Valencia quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">14</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">52</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">9/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Valencia</h3>
+        <p class="card-desc">Master-planned community with top-rated schools, trails, and a Town Center. Santa Clarita's most sought-after address.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Valencia
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">school</span>
+            Top-Rated Schools
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── 2. Newhall ── -->
+    <a class="nbhd-card" href="/neighborhoods/newhall" role="listitem" aria-label="Newhall neighborhood">
+      <div class="card-img card-img-newhall">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/newhall.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$480K – $700K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Newhall</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Newhall quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">22</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">71</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">7/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Newhall</h3>
+        <p class="card-desc">Historic heart of the valley. Walkable arts district, local dining, and charming older character homes.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Newhall
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">palette</span>
+            Arts District
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── 3. Saugus ── -->
+    <a class="nbhd-card" href="/neighborhoods/saugus" role="listitem" aria-label="Saugus neighborhood">
+      <div class="card-img card-img-saugus">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/saugus.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$550K – $780K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Saugus</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Saugus quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">18</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">38</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">8/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Saugus</h3>
+        <p class="card-desc">Family-friendly suburbs with newer tracts, parks, and easy freeway access.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Saugus
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">family_restroom</span>
+            Family-Friendly
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── 4. Canyon Country ── -->
+    <a class="nbhd-card" href="/neighborhoods/canyon-country" role="listitem" aria-label="Canyon Country neighborhood">
+      <div class="card-img card-img-canyon-country">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/canyon-country.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$450K – $650K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Canyon Country</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Canyon Country quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">28</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">32</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">7/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Canyon Country</h3>
+        <p class="card-desc">Most affordable entry point. Larger lots, mountain views, and a strong sense of community.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Canyon Country
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">landscape</span>
+            Mountain Views
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── 5. Stevenson Ranch ── -->
+    <a class="nbhd-card" href="/neighborhoods/stevenson-ranch" role="listitem" aria-label="Stevenson Ranch neighborhood">
+      <div class="card-img card-img-stevenson-ranch">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/stevenson-ranch.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$700K – $950K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Stevenson Ranch</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Stevenson Ranch quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">11</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">28</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">9/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Stevenson Ranch</h3>
+        <p class="card-desc">Upscale hillside living with low crime rates, award-winning schools, and panoramic views.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Stevenson Ranch
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">star</span>
+            Upscale Living
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── 6. Castaic ── -->
+    <a class="nbhd-card" href="/neighborhoods/castaic" role="listitem" aria-label="Castaic neighborhood">
+      <div class="card-img card-img-castaic">
+        <!--
+          BACKGROUND IMAGE — swap gradient for real photo:
+          style="background-image: url('/images/neighborhoods/castaic.jpg');
+                 background-size: cover; background-position: center;"
+        -->
+        <span class="price-badge">$500K – $720K</span>
+        <div class="card-location-tag">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Castaic</span>
+        </div>
+        <div class="card-tooltip" role="tooltip" aria-label="Castaic quick stats">
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">schedule</span>
+            <span class="tt-value">24</span>
+            <span class="tt-label">Days on<br>Market</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">directions_walk</span>
+            <span class="tt-value">22</span>
+            <span class="tt-label">Walk<br>Score</span>
+          </div>
+          <div class="tt-divider" aria-hidden="true"></div>
+          <div class="tt-stat">
+            <span class="material-symbols-outlined tt-icon">school</span>
+            <span class="tt-value">8/10</span>
+            <span class="tt-label">School<br>Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Castaic</h3>
+        <p class="card-desc">Quiet and spacious. Close to the lake, newer builds, and room to grow.</p>
+        <div class="card-footer">
+          <span class="card-link">
+            Explore Castaic
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+          <span class="card-tag">
+            <span class="material-symbols-outlined">water</span>
+            Lake Access
+          </span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  <!-- /grid -->
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a href="/neighborhoods" class="cta-btn">
+      View All Neighborhoods
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+
+</section>
+
+<script>
+  // ── Scroll-triggered entrance animation ──────────────────────
+  const toObserve = [
+    document.getElementById('nbhd-header'),
+    ...document.querySelectorAll('.nbhd-card'),
+  ];
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger cards by index
+          const el = entry.target;
+          const idx = el.classList.contains('section-header')
+            ? 0
+            : [...document.querySelectorAll('.nbhd-card')].indexOf(el) + 1;
+
+          setTimeout(() => el.classList.add('visible'), idx * 80);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    toObserve.forEach(el => el && observer.observe(el));
+  } else {
+    // Fallback: show all immediately
+    toObserve.forEach(el => el && el.classList.add('visible'));
+  }
+</script>
+
+</body>
+</html>

@@ -16,7 +16,7 @@ export function CTASection() {
             backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2400')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-premium-blue-dark/95 via-premium-blue/90 to-premium-blue-dark/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-800/95 via-navy-700/90 to-navy-800/95" />
       </div>
 
       {/* Content */}
@@ -35,7 +35,7 @@ export function CTASection() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
                 <MessageSquare className="mr-3 h-6 w-6 transition-transform group-hover:scale-110" />
                 Get Started Today
@@ -45,7 +45,7 @@ export function CTASection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
                 (661) 451-7200
@@ -90,7 +90,7 @@ export function CTASection() {
 
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-premium-orange/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
     </section>
   )
 }

@@ -1,0 +1,590 @@
+/**
+ * Santa Clarita Buyers Guide — Design System Color Tokens
+ * www.SantaClaritaBuyersGuide.com
+ *
+ * Single source of truth for all color decisions.
+ * Drop-in ready. No Tailwind. No preprocessors.
+ * Every element on the site is rebuildable from these tokens.
+ *
+ * Structure:
+ *   1. Core Palette
+ *   2. Semantic Color Tokens  (light mode, default)
+ *   3. Dark Mode Override     [data-theme='dark'] + @media prefers-color-scheme
+ *   4. Utility Classes
+ *   5. Component Base Styles
+ */
+
+/* ==========================================================================
+   1. CORE PALETTE
+   Raw color values — use semantic tokens in components, not these directly.
+   ========================================================================== */
+
+:root {
+
+  /* --- Navy (Primary Dark) --- */
+  --color-navy-950: #071525;   /* deepest — rich dark backgrounds */
+  --color-navy-900: #0f1f3d;   /* primary navy — hero, footer, nav */
+  --color-navy-800: #162b52;   /* hover states on dark surfaces */
+  --color-navy-700: #1e3a6e;   /* active states, borders on dark */
+  --color-navy-600: #2a4f94;   /* secondary navy elements */
+  --color-navy-500: #3a6bc7;   /* links on dark backgrounds */
+
+  /* --- Gold (Accent) --- */
+  --color-gold-900: #7a5200;   /* darkest gold — text on light for contrast */
+  --color-gold-800: #a06c00;   /* dark gold hover */
+  --color-gold-700: #c9a227;   /* PRIMARY BRAND GOLD — buttons, icons, highlights */
+  --color-gold-600: #d4af3a;   /* hover state on gold elements */
+  --color-gold-500: #e2c458;   /* lighter gold — decorative accents */
+  --color-gold-400: #ecd98a;   /* very light gold — subtle tints */
+  --color-gold-100: #fdf8e8;   /* gold tint background — callout sections */
+
+  /* --- Warm Neutrals (Backgrounds, Cards, Text) --- */
+  --color-warm-950: #1a1612;   /* rich warm black */
+  --color-warm-900: #2d2926;   /* dark warm text */
+  --color-warm-800: #4a4540;   /* secondary text */
+  --color-warm-700: #6b6560;   /* muted text, placeholders */
+  --color-warm-600: #8c8680;   /* captions, disabled */
+  --color-warm-400: #b8b2aa;   /* borders, dividers */
+  --color-warm-300: #d4cfc8;   /* light borders */
+  --color-warm-200: #e8e3dc;   /* subtle section dividers */
+  --color-warm-100: #f2ede6;   /* card hover bg */
+  --color-warm-50:  #f9f6f0;   /* primary warm off-white bg */
+
+  /* --- Pure White (with opacity variants) --- */
+  --color-white:    #ffffff;
+  --color-white-95: rgba(255, 255, 255, 0.95);
+  --color-white-80: rgba(255, 255, 255, 0.80);
+  --color-white-60: rgba(255, 255, 255, 0.60);
+  --color-white-20: rgba(255, 255, 255, 0.20);
+
+
+  /* ==========================================================================
+     2. SEMANTIC COLOR TOKENS
+     Map palette values to site roles. Use these in all component styles.
+     ========================================================================== */
+
+  /* --- Backgrounds --- */
+  --bg-primary:       var(--color-warm-50);       /* default page background */
+  --bg-secondary:     var(--color-warm-100);      /* alternating sections */
+  --bg-dark:          var(--color-navy-900);      /* hero, footer, nav */
+  --bg-darker:        var(--color-navy-950);      /* deepest dark sections */
+  --bg-card:          var(--color-white);         /* all cards */
+  --bg-card-hover:    var(--color-warm-50);       /* card hover state */
+  --bg-gold-tint:     var(--color-gold-100);      /* callout/highlight sections */
+  --bg-overlay:       rgba(7, 21, 37, 0.72);      /* image overlays */
+
+  /* --- Text --- */
+  --text-primary:       var(--color-navy-900);    /* headings, primary copy */
+  --text-body:          var(--color-warm-800);    /* body paragraphs */
+  --text-muted:         var(--color-warm-700);    /* secondary/supporting text */
+  --text-subtle:        var(--color-warm-600);    /* captions, metadata */
+  --text-on-dark:       var(--color-white);       /* text on navy backgrounds */
+  --text-on-dark-muted: var(--color-white-60);   /* secondary text on dark */
+  --text-accent:        var(--color-gold-700);    /* gold text, labels, links */
+  --text-link:          var(--color-navy-600);    /* body links */
+  --text-link-hover:    var(--color-gold-700);    /* link hover */
+
+  /* --- Borders --- */
+  --border-default:  var(--color-warm-300);       /* default card/input borders */
+  --border-subtle:   var(--color-warm-200);       /* section dividers */
+  --border-strong:   var(--color-warm-400);       /* emphasized borders */
+  --border-accent:   var(--color-gold-700);       /* gold accent borders */
+  --border-dark:     var(--color-navy-700);       /* borders on dark surfaces */
+
+  /* --- Buttons --- */
+  --btn-primary-bg:         var(--color-gold-700);
+  --btn-primary-bg-hover:   var(--color-gold-600);
+  --btn-primary-text:       var(--color-navy-950);
+  --btn-secondary-bg:       transparent;
+  --btn-secondary-border:   var(--color-white);
+  --btn-secondary-text:     var(--color-white);
+  --btn-secondary-hover-bg: var(--color-white-20);
+  --btn-ghost-border:       var(--color-gold-700);
+  --btn-ghost-text:         var(--color-gold-700);
+  --btn-ghost-hover-bg:     var(--color-gold-100);
+
+  /* --- Badges & Tags --- */
+  --badge-bg:     var(--color-gold-700);
+  --badge-text:   var(--color-navy-950);
+  --tag-bg:       var(--color-gold-100);
+  --tag-text:     var(--color-gold-900);
+  --tag-border:   var(--color-gold-500);
+
+  /* --- Navigation --- */
+  --nav-bg:           var(--color-navy-900);
+  --nav-text:         var(--color-white-80);
+  --nav-text-hover:   var(--color-white);
+  --nav-text-active:  var(--color-gold-700);
+  --nav-border:       var(--color-navy-700);
+  --nav-cta-bg:       var(--color-gold-700);
+  --nav-cta-text:     var(--color-navy-950);
+
+  /* --- Cards --- */
+  --card-bg:           var(--color-white);
+  --card-border:       var(--color-warm-300);
+  --card-border-hover: var(--color-gold-700);
+  --card-shadow:       0 2px 12px rgba(15, 31, 61, 0.08);
+  --card-shadow-hover: 0 8px 32px rgba(15, 31, 61, 0.16);
+  --card-accent-bar:   var(--color-gold-700);     /* left or top gold bar on cards */
+
+  /* --- Forms & Inputs --- */
+  --input-bg:           var(--color-white);
+  --input-border:       var(--color-warm-300);
+  --input-border-focus: var(--color-gold-700);
+  --input-text:         var(--color-navy-900);
+  --input-placeholder:  var(--color-warm-600);
+  --input-label:        var(--color-navy-900);
+
+  /* --- Sections --- */
+  --section-label-color: var(--color-gold-700);   /* gold small caps above headings */
+  --section-divider:     var(--color-warm-200);
+  --section-icon-bg:     var(--color-navy-900);
+  --section-icon-color:  var(--color-gold-700);
+
+  /* --- Footer --- */
+  --footer-bg:         var(--color-navy-950);
+  --footer-text:       var(--color-white-60);
+  --footer-heading:    var(--color-white);
+  --footer-link:       var(--color-white-60);
+  --footer-link-hover: var(--color-gold-700);
+  --footer-border:     var(--color-navy-700);
+
+  /* --- Trust & Social Proof --- */
+  --star-color:             var(--color-gold-700);
+  --counter-color:          var(--color-gold-700);
+  --badge-verified-bg:      var(--color-gold-100);
+  --badge-verified-border:  var(--color-gold-500);
+  --testimonial-quote:      var(--color-gold-500);
+
+  /* --- States --- */
+  --color-success: #2d7d46;
+  --color-warning: #b45309;
+  --color-error:   #c0392b;
+  --color-info:    var(--color-navy-600);
+
+  /* --- Shadows --- */
+  --shadow-sm:   0 1px 4px rgba(15, 31, 61, 0.06);
+  --shadow-md:   0 4px 16px rgba(15, 31, 61, 0.10);
+  --shadow-lg:   0 8px 32px rgba(15, 31, 61, 0.16);
+  --shadow-xl:   0 16px 48px rgba(15, 31, 61, 0.22);
+  --shadow-gold: 0 0 0 3px rgba(201, 162, 39, 0.25);  /* gold focus ring */
+
+  /* --- Gradients --- */
+  --gradient-hero:    linear-gradient(160deg, #071525 0%, #0f1f3d 60%, #162b52 100%);
+  --gradient-overlay: linear-gradient(to bottom, rgba(7,21,37,0.3) 0%, rgba(7,21,37,0.75) 100%);
+  --gradient-gold:    linear-gradient(135deg, #c9a227 0%, #e2c458 100%);
+  --gradient-card:    linear-gradient(180deg, transparent 50%, rgba(7,21,37,0.85) 100%);
+  --gradient-section: linear-gradient(180deg, #f9f6f0 0%, #f2ede6 100%);
+
+}
+
+
+/* ==========================================================================
+   3. DARK MODE OVERRIDE
+   Remaps semantic tokens only — palette variables above are untouched.
+
+   Design intent: premium late-night reading experience.
+   Think WSJ.com at midnight. Architectural Digest digital. Bloomberg Terminal
+   warmth without the green. The key moves:
+
+     • Warm black (#1a1612) as the page foundation — not cold navy.
+       The site breathes differently at night. It doesn't turn into a tech app.
+     • Cool navy cards on a warm black page — the temperature contrast
+       (warm bg, cool elevated card) is the signature of this dark mode.
+       Like moonlight on old paper.
+     • Gold doesn't dim — it shifts one step lighter (gold-500 → gold-700)
+       so it glows against dark rather than competing with it.
+     • Shadows deepen dramatically. On a dark surface, depth comes from
+       pure black shadows, not navy-tinted ones.
+     • Text is never stark white. white-95 for headings, white-80 for body.
+       The eye relaxes.
+
+   Usage:
+     Add data-theme="dark" to <html> for manual toggle.
+     System preference is honored automatically via @media block below.
+   ========================================================================== */
+
+[data-theme='dark'] {
+
+  /* --- Backgrounds ---
+     The warm-950 base is the anchor. Everything lifts from there.
+     Cards surface in navy — a deliberate cool/warm contrast. */
+  --bg-primary:       var(--color-warm-950);         /* #1a1612 — warm black, not cold */
+  --bg-secondary:     var(--color-warm-900);         /* #2d2926 — subtle warmth lift for alt sections */
+  --bg-dark:          var(--color-navy-900);         /* hero/nav stays navy — contrasts warm bg */
+  --bg-darker:        var(--color-navy-950);         /* deepest navy sections unchanged */
+  --bg-card:          var(--color-navy-900);         /* cool card on warm page — the signature look */
+  --bg-card-hover:    var(--color-navy-800);         /* hover elevates card surface */
+  --bg-gold-tint:     rgba(201, 162, 39, 0.08);      /* dark amber whisper — no harsh yellow block */
+  --bg-overlay:       rgba(7, 21, 37, 0.88);         /* slightly more opaque on dark surfaces */
+
+  /* --- Text ---
+     white-95 for headings: near-white, not clinical.
+     white-80 for body: readable, not tiring.
+     warm-400 for captions: warm gray keeps the editorial tone. */
+  --text-primary:       var(--color-white-95);       /* headings — soft, not harsh */
+  --text-body:          var(--color-white-80);       /* body — easy on the eyes at night */
+  --text-muted:         var(--color-white-60);       /* supporting text */
+  --text-subtle:        var(--color-warm-400);       /* captions — warm gray, not cold */
+  --text-on-dark:       var(--color-white);          /* unchanged — already designed for dark */
+  --text-on-dark-muted: var(--color-white-60);       /* unchanged */
+  --text-accent:        var(--color-gold-500);       /* gold-500 glows on dark; gold-700 would muddy */
+  --text-link:          var(--color-navy-500);       /* blue links legible on dark bg */
+  --text-link-hover:    var(--color-gold-500);       /* gold hover — consistent with accent */
+
+  /* --- Borders ---
+     Near-invisible on dark. Navy tones absorb light rather than reflect it.
+     Only gold accent borders assert themselves. */
+  --border-default:  var(--color-navy-700);          /* card/input edges — present but quiet */
+  --border-subtle:   var(--color-navy-800);          /* section dividers — barely there */
+  --border-strong:   var(--color-navy-600);          /* when emphasis is needed */
+  --border-accent:   var(--color-gold-700);          /* gold always holds its ground */
+  --border-dark:     var(--color-navy-700);          /* dark-surface borders unchanged */
+
+  /* --- Buttons ---
+     Primary gold button is unchanged — it's the call-to-action anchor.
+     Ghost hover switches from light gold-100 fill to a dark amber tint. */
+  --btn-primary-bg:         var(--color-gold-700);
+  --btn-primary-bg-hover:   var(--color-gold-500);   /* lighter hover = glow effect on dark */
+  --btn-primary-text:       var(--color-navy-950);   /* deep navy on gold — unchanged */
+  --btn-secondary-bg:       transparent;
+  --btn-secondary-border:   var(--color-white-60);   /* softer white border on dark */
+  --btn-secondary-text:     var(--color-white-80);
+  --btn-secondary-hover-bg: var(--color-white-20);
+  --btn-ghost-border:       var(--color-gold-700);
+  --btn-ghost-text:         var(--color-gold-500);   /* brighter gold on dark */
+  --btn-ghost-hover-bg:     rgba(201, 162, 39, 0.12); /* dark amber tint — not the light gold-100 */
+
+  /* --- Badges & Tags ---
+     Filled gold badge unchanged — it reads the same on any dark surface.
+     Tags use a dark amber tint bg to feel dimensional without brightness. */
+  --badge-bg:     var(--color-gold-700);             /* unchanged */
+  --badge-text:   var(--color-navy-950);             /* unchanged */
+  --tag-bg:       rgba(201, 162, 39, 0.12);          /* dark amber tint */
+  --tag-text:     var(--color-gold-400);             /* lighter gold for legibility */
+  --tag-border:   rgba(201, 162, 39, 0.28);          /* semi-transparent border */
+
+  /* --- Navigation ---
+     Nav deepens to navy-950 in dark mode — it sinks into the warm-black
+     page rather than floating above it. The gold active state glows. */
+  --nav-bg:           var(--color-navy-950);         /* nav sinks to darkest navy */
+  --nav-text:         var(--color-white-60);         /* softer resting state */
+  --nav-text-hover:   var(--color-white-95);
+  --nav-text-active:  var(--color-gold-500);         /* brighter gold active — feels like a lamp */
+  --nav-border:       var(--color-navy-800);         /* nearly invisible nav border */
+  --nav-cta-bg:       var(--color-gold-700);         /* unchanged */
+  --nav-cta-text:     var(--color-navy-950);         /* unchanged */
+
+  /* --- Cards ---
+     The cool-on-warm contrast is intentional and defining.
+     Shadows become pure black — they absorb rather than tint. */
+  --card-bg:           var(--color-navy-900);        /* cool blue-dark card on warm-black page */
+  --card-border:       var(--color-navy-700);        /* quiet navy border */
+  --card-border-hover: var(--color-gold-600);        /* gold hover — richer than gold-700 glow */
+  --card-shadow:       0 2px 12px rgba(0, 0, 0, 0.45);  /* deep shadow — no navy tint */
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.65);  /* dramatic lift */
+  --card-accent-bar:   var(--color-gold-700);        /* unchanged */
+
+  /* --- Forms & Inputs ---
+     Inputs surface above the page like cards.
+     Focus ring gold-shadow intensity bumped for dark bg visibility. */
+  --input-bg:           var(--color-navy-900);       /* elevated surface */
+  --input-border:       var(--color-navy-700);       /* quiet border */
+  --input-border-focus: var(--color-gold-600);       /* clear gold focus line */
+  --input-text:         var(--color-white-95);       /* legible near-white */
+  --input-placeholder:  var(--color-warm-600);       /* warm gray placeholder */
+  --input-label:        var(--color-white-80);       /* soft white label */
+
+  /* --- Sections --- */
+  --section-label-color: var(--color-gold-500);      /* gold eyebrows glow on dark */
+  --section-divider:     var(--color-navy-800);      /* near-invisible warm divider */
+  --section-icon-bg:     var(--color-navy-800);      /* icon bg sits above page */
+  --section-icon-color:  var(--color-gold-500);
+
+  /* --- Footer ---
+     In dark mode the footer merges with the page floor.
+     Warm-950 matches bg-primary so it feels like the page simply ends.
+     Warm-toned dividers and text maintain editorial warmth. */
+  --footer-bg:         var(--color-warm-950);        /* merges with page — no harsh boundary */
+  --footer-text:       var(--color-warm-600);        /* warm gray body text */
+  --footer-heading:    var(--color-white-80);        /* soft white column headings */
+  --footer-link:       var(--color-warm-600);        /* warm gray links */
+  --footer-link-hover: var(--color-gold-500);        /* gold hover */
+  --footer-border:     var(--color-warm-900);        /* warm separator line */
+
+  /* --- Trust & Social Proof ---
+     Stars and counters step up to gold-500 — they read as glowing on dark. */
+  --star-color:             var(--color-gold-500);
+  --counter-color:          var(--color-gold-500);
+  --badge-verified-bg:      rgba(201, 162, 39, 0.10);
+  --badge-verified-border:  rgba(201, 162, 39, 0.30);
+  --testimonial-quote:      var(--color-gold-600);
+
+  /* --- States ---
+     Slightly lighter variants ensure legibility on dark surfaces. */
+  --color-success: #3d9e5a;   /* lifted green — #2d7d46 disappears on dark */
+  --color-warning: #d97706;   /* amber — more visible than warm #b45309 */
+  --color-error:   #e05252;   /* lifted red — #c0392b reads too dark */
+  --color-info:    var(--color-navy-500);
+
+  /* --- Shadows ---
+     Pure black shadows on dark surfaces. Navy-tinted light-mode shadows
+     would look grey and flat here. Black absorbs. */
+  --shadow-sm:   0 1px 4px rgba(0, 0, 0, 0.32);
+  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.48);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.64);
+  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.76);
+  --shadow-gold: 0 0 0 3px rgba(201, 162, 39, 0.35);  /* slightly stronger glow ring */
+
+  /* --- Gradients ---
+     Hero and gold gradients are unchanged — they're already optimized for dark.
+     Section gradient flips to warm dark scale. Overlay deepens for legibility. */
+  --gradient-hero:    linear-gradient(160deg, #071525 0%, #0f1f3d 60%, #162b52 100%);
+  --gradient-overlay: linear-gradient(to bottom, rgba(7,21,37,0.5) 0%, rgba(7,21,37,0.92) 100%);
+  --gradient-gold:    linear-gradient(135deg, #c9a227 0%, #e2c458 100%);
+  --gradient-card:    linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.92) 100%);
+  --gradient-section: linear-gradient(180deg, #1a1612 0%, #2d2926 100%); /* warm dark scale */
+
+}
+
+
+/* ==========================================================================
+   SYSTEM PREFERENCE — Auto dark mode
+   Mirrors the [data-theme='dark'] block exactly.
+   [data-theme] attribute always takes precedence over this @media rule,
+   so a manual toggle will override the system setting.
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+
+    --bg-primary:       var(--color-warm-950);
+    --bg-secondary:     var(--color-warm-900);
+    --bg-dark:          var(--color-navy-900);
+    --bg-darker:        var(--color-navy-950);
+    --bg-card:          var(--color-navy-900);
+    --bg-card-hover:    var(--color-navy-800);
+    --bg-gold-tint:     rgba(201, 162, 39, 0.08);
+    --bg-overlay:       rgba(7, 21, 37, 0.88);
+
+    --text-primary:       var(--color-white-95);
+    --text-body:          var(--color-white-80);
+    --text-muted:         var(--color-white-60);
+    --text-subtle:        var(--color-warm-400);
+    --text-on-dark:       var(--color-white);
+    --text-on-dark-muted: var(--color-white-60);
+    --text-accent:        var(--color-gold-500);
+    --text-link:          var(--color-navy-500);
+    --text-link-hover:    var(--color-gold-500);
+
+    --border-default:  var(--color-navy-700);
+    --border-subtle:   var(--color-navy-800);
+    --border-strong:   var(--color-navy-600);
+    --border-accent:   var(--color-gold-700);
+    --border-dark:     var(--color-navy-700);
+
+    --btn-primary-bg:         var(--color-gold-700);
+    --btn-primary-bg-hover:   var(--color-gold-500);
+    --btn-primary-text:       var(--color-navy-950);
+    --btn-secondary-bg:       transparent;
+    --btn-secondary-border:   var(--color-white-60);
+    --btn-secondary-text:     var(--color-white-80);
+    --btn-secondary-hover-bg: var(--color-white-20);
+    --btn-ghost-border:       var(--color-gold-700);
+    --btn-ghost-text:         var(--color-gold-500);
+    --btn-ghost-hover-bg:     rgba(201, 162, 39, 0.12);
+
+    --badge-bg:     var(--color-gold-700);
+    --badge-text:   var(--color-navy-950);
+    --tag-bg:       rgba(201, 162, 39, 0.12);
+    --tag-text:     var(--color-gold-400);
+    --tag-border:   rgba(201, 162, 39, 0.28);
+
+    --nav-bg:           var(--color-navy-950);
+    --nav-text:         var(--color-white-60);
+    --nav-text-hover:   var(--color-white-95);
+    --nav-text-active:  var(--color-gold-500);
+    --nav-border:       var(--color-navy-800);
+    --nav-cta-bg:       var(--color-gold-700);
+    --nav-cta-text:     var(--color-navy-950);
+
+    --card-bg:           var(--color-navy-900);
+    --card-border:       var(--color-navy-700);
+    --card-border-hover: var(--color-gold-600);
+    --card-shadow:       0 2px 12px rgba(0, 0, 0, 0.45);
+    --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.65);
+    --card-accent-bar:   var(--color-gold-700);
+
+    --input-bg:           var(--color-navy-900);
+    --input-border:       var(--color-navy-700);
+    --input-border-focus: var(--color-gold-600);
+    --input-text:         var(--color-white-95);
+    --input-placeholder:  var(--color-warm-600);
+    --input-label:        var(--color-white-80);
+
+    --section-label-color: var(--color-gold-500);
+    --section-divider:     var(--color-navy-800);
+    --section-icon-bg:     var(--color-navy-800);
+    --section-icon-color:  var(--color-gold-500);
+
+    --footer-bg:         var(--color-warm-950);
+    --footer-text:       var(--color-warm-600);
+    --footer-heading:    var(--color-white-80);
+    --footer-link:       var(--color-warm-600);
+    --footer-link-hover: var(--color-gold-500);
+    --footer-border:     var(--color-warm-900);
+
+    --star-color:             var(--color-gold-500);
+    --counter-color:          var(--color-gold-500);
+    --badge-verified-bg:      rgba(201, 162, 39, 0.10);
+    --badge-verified-border:  rgba(201, 162, 39, 0.30);
+    --testimonial-quote:      var(--color-gold-600);
+
+    --color-success: #3d9e5a;
+    --color-warning: #d97706;
+    --color-error:   #e05252;
+    --color-info:    var(--color-navy-500);
+
+    --shadow-sm:   0 1px 4px rgba(0, 0, 0, 0.32);
+    --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.48);
+    --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.64);
+    --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.76);
+    --shadow-gold: 0 0 0 3px rgba(201, 162, 39, 0.35);
+
+    --gradient-hero:    linear-gradient(160deg, #071525 0%, #0f1f3d 60%, #162b52 100%);
+    --gradient-overlay: linear-gradient(to bottom, rgba(7,21,37,0.5) 0%, rgba(7,21,37,0.92) 100%);
+    --gradient-gold:    linear-gradient(135deg, #c9a227 0%, #e2c458 100%);
+    --gradient-card:    linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.92) 100%);
+    --gradient-section: linear-gradient(180deg, #1a1612 0%, #2d2926 100%);
+
+  }
+}
+
+
+/* ==========================================================================
+   4. UTILITY CLASSES
+   Single-purpose helpers for rapid layout and styling.
+   ========================================================================== */
+
+/* --- Backgrounds --- */
+.bg-navy       { background-color: var(--color-navy-900); }
+.bg-navy-dark  { background-color: var(--color-navy-950); }
+.bg-warm       { background-color: var(--color-warm-50); }
+.bg-white      { background-color: var(--color-white); }
+.bg-gold-tint  { background-color: var(--color-gold-100); }
+
+/* --- Text Colors --- */
+.text-navy     { color: var(--text-primary); }
+.text-gold     { color: var(--text-accent); }
+.text-muted    { color: var(--text-muted); }
+.text-on-dark  { color: var(--text-on-dark); }
+.text-body     { color: var(--text-body); }
+
+/* --- Borders --- */
+.border-gold   { border-color: var(--border-accent); }
+.border-accent { border-color: var(--border-accent); }
+.border-subtle { border-color: var(--border-subtle); }
+
+/* --- Shadows --- */
+.shadow-card        { box-shadow: var(--card-shadow); }
+.shadow-card-hover  { box-shadow: var(--card-shadow-hover); }
+.shadow-gold-focus  { box-shadow: var(--shadow-gold); }
+
+
+/* ==========================================================================
+   5. COMPONENT BASE STYLES
+   Reusable component classes built entirely from semantic tokens.
+   ========================================================================== */
+
+/* --- Buttons --- */
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--btn-primary-bg-hover);
+  border-color: var(--btn-primary-bg-hover);
+  box-shadow: var(--shadow-gold);
+  outline: none;
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--btn-secondary-border);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: var(--btn-secondary-hover-bg);
+  outline: none;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--btn-ghost-text);
+  border-color: var(--btn-ghost-border);
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background-color: var(--btn-ghost-hover-bg);
+  outline: none;
+}
+
+/* --- Badges --- */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* --- Tags --- */
+.tag-guide,
+.tag-featured {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.tag-featured {
+  background-color: var(--color-gold-700);
+  color: var(--color-navy-950);
+  border-color: var(--color-gold-700);
+}

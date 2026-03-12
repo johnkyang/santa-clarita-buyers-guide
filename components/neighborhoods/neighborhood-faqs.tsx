@@ -26,7 +26,7 @@ export function NeighborhoodFAQs({ faqs, neighborhoodName }: NeighborhoodFAQsPro
         <div className="mx-auto max-w-4xl">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 bg-gradient-to-br from-premium-blue to-premium-blue-dark rounded-2xl flex items-center justify-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-navy-700 to-navy-800 rounded-2xl flex items-center justify-center">
                 <MessageCircleQuestion className="h-7 w-7 text-white" />
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
@@ -58,14 +58,14 @@ export function NeighborhoodFAQs({ faqs, neighborhoodName }: NeighborhoodFAQsPro
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="mt-10 bg-gradient-to-r from-premium-blue/10 to-premium-orange/10 rounded-2xl p-8 border-2 border-gray-100">
+            <div className="mt-10 bg-gradient-to-r from-navy-700/10 to-gold-600/10 rounded-2xl p-8 border-2 border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Still have questions?</h3>
               <p className="text-gray-700 mb-4">
                 I&apos;m here to help you find the perfect home in {neighborhoodName}. Get in touch for personalized guidance.
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-navy-700 to-navy-800 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300"
               >
                 Contact Me
               </a>

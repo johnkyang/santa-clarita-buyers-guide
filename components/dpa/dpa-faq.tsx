@@ -90,7 +90,7 @@ const faqs = [
 
 export function DPAFAQ() {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-warm-50/30 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">
@@ -105,7 +105,7 @@ export function DPAFAQ() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-premium-blue">
+                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-navy-700">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed">
@@ -117,7 +117,7 @@ export function DPAFAQ() {
         </Card>
 
         {/* Still Have Questions CTA */}
-        <Card className="p-8 bg-gradient-to-r from-premium-blue via-premium-blue-dark to-blue-900 text-white text-center shadow-premium-lg">
+        <Card className="p-8 bg-gradient-to-r from-navy-700 via-navy-800 to-blue-900 text-white text-center shadow-premium-lg">
           <MessageSquare className="h-12 w-12 text-white mx-auto mb-4 opacity-80" />
           <h3 className="font-display text-2xl font-bold mb-3">Still Have Questions?</h3>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
@@ -128,7 +128,7 @@ export function DPAFAQ() {
             <a href="tel:6614517200">
               <Button
                 size="lg"
-                className="w-full sm:w-auto h-14 px-8 bg-white text-premium-blue hover:bg-premium-cream font-bold"
+                className="w-full sm:w-auto h-14 px-8 bg-white text-navy-700 hover:bg-warm-50 font-bold"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call (661) 451-7200
@@ -138,7 +138,7 @@ export function DPAFAQ() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue font-bold"
+                className="w-full sm:w-auto h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 font-bold"
               >
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Send Us a Message
@@ -150,15 +150,15 @@ export function DPAFAQ() {
         {/* Quick Reference */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           <Card className="p-6 text-center">
-            <div className="text-3xl font-bold text-premium-blue mb-2">$110,000+</div>
+            <div className="text-3xl font-bold text-navy-700 mb-2">$110,000+</div>
             <div className="text-sm text-gray-600">Maximum DPA Available</div>
           </Card>
           <Card className="p-6 text-center">
-            <div className="text-3xl font-bold text-premium-green mb-2">0%</div>
+            <div className="text-3xl font-bold text-[#10b981] mb-2">0%</div>
             <div className="text-sm text-gray-600">Interest Rate on Most DPA</div>
           </Card>
           <Card className="p-6 text-center">
-            <div className="text-3xl font-bold text-premium-orange mb-2">30-45</div>
+            <div className="text-3xl font-bold text-gold-600 mb-2">30-45</div>
             <div className="text-sm text-gray-600">Days to Close (Average)</div>
           </Card>
         </div>

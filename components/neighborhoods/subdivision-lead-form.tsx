@@ -137,7 +137,7 @@ export function SubdivisionLeadForm({
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-premium-orange hover:bg-premium-rust text-white font-bold py-5 text-base rounded-xl shadow-md disabled:opacity-50"
+        className="w-full bg-gold-600 hover:bg-gold-800 text-white font-bold py-5 text-base rounded-xl shadow-md disabled:opacity-50"
       >
         {isSubmitting ? (
           <>

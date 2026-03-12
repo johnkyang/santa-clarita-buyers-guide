@@ -22,21 +22,21 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
   }
 
   const propertyTypeColors = {
-    singleFamily: { gradient: 'from-premium-blue to-premium-blue-dark', bg: 'from-blue-50 to-white', border: 'border-blue-100' },
-    townhome: { gradient: 'from-premium-orange to-premium-rust', bg: 'from-orange-50 to-white', border: 'border-orange-100' },
-    condo: { gradient: 'from-premium-green to-emerald-600', bg: 'from-green-50 to-white', border: 'border-green-100' }
+    singleFamily: { gradient: 'from-[#0f1f3d] to-[#162b52]', bg: 'from-[#f9f6f0] to-white', border: 'border-[#e8e0d0]' },
+    townhome: { gradient: 'from-[#c9a227] to-[#d4af3a]', bg: 'from-[#f9f6f0] to-white', border: 'border-[#e8e0d0]' },
+    condo: { gradient: 'from-[#10b981] to-[#0d9668]', bg: 'from-[#f9f6f0] to-white', border: 'border-[#e8e0d0]' }
   }
 
   return (
-    <section className="bg-gradient-to-b from-blue-50/30 to-white py-16 lg:py-20">
+    <section className="bg-gradient-to-b from-[#f9f6f0] to-white py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 bg-gradient-to-br from-premium-green to-emerald-600 rounded-2xl flex items-center justify-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#0f1f3d] to-[#162b52] rounded-2xl flex items-center justify-center">
                 <DollarSign className="h-7 w-7 text-white" />
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Price Ranges & Market Data</h2>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold text-gray-900">Price Ranges & Market Data</h2>
             </div>
           </AnimatedSection>
 
@@ -61,7 +61,7 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
                     </div>
                     <div className="pt-2 border-t border-gray-200">
                       <div className="text-sm font-medium text-gray-600 mb-1">Median Price</div>
-                      <div className="text-2xl font-bold text-premium-blue">
+                      <div className="text-2xl font-bold text-[#0f1f3d]">
                         {formatPrice(neighborhood.priceRanges.singleFamily.median)}
                       </div>
                     </div>
@@ -93,7 +93,7 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
                     </div>
                     <div className="pt-2 border-t border-gray-200">
                       <div className="text-sm font-medium text-gray-600 mb-1">Median Price</div>
-                      <div className="text-2xl font-bold text-premium-orange">
+                      <div className="text-2xl font-bold text-[#c9a227]">
                         {formatPrice(neighborhood.priceRanges.townhome.median)}
                       </div>
                     </div>
@@ -125,7 +125,7 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
                     </div>
                     <div className="pt-2 border-t border-gray-200">
                       <div className="text-sm font-medium text-gray-600 mb-1">Median Price</div>
-                      <div className="text-2xl font-bold text-premium-green">
+                      <div className="text-2xl font-bold text-[#10b981]">
                         {formatPrice(neighborhood.priceRanges.condo.median)}
                       </div>
                     </div>
@@ -139,7 +139,7 @@ export function NeighborhoodPricing({ neighborhood }: NeighborhoodPricingProps) 
           </div>
 
           <AnimatedSection delay={0.25}>
-            <div className="mt-8 bg-blue-50 border-2 border-blue-100 rounded-xl p-4">
+            <div className="mt-8 bg-[#fdf8e8] border-2 border-[rgba(201,162,39,0.2)] rounded-xl p-4">
               <p className="text-sm text-gray-700 text-center">
                 <span className="font-semibold">Note:</span> Prices are estimates based on recent market data and may vary. Contact us for current listings and accurate pricing information.
               </p>

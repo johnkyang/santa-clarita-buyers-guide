@@ -11,7 +11,7 @@ const programs = [
     id: 'calhfa',
     name: 'CalHFA Programs',
     icon: DollarSign,
-    color: 'premium-blue',
+    color: 'navy-700',
     tagline: 'California&apos;s Premier DPA Programs',
     maxAssistance: '$110,000',
     programs: [
@@ -73,7 +73,7 @@ const programs = [
     id: 'accesszero',
     name: 'AccessZero FHA Program',
     icon: Users,
-    color: 'premium-green',
+    color: '[#10b981]',
     tagline: 'True Zero Down Payment Solution',
     maxAssistance: '7% Total (3.5% grant + 3.5% FHA)',
     programs: [
@@ -97,7 +97,7 @@ const programs = [
     id: 'gsfa',
     name: 'GSFA (Golden State Finance Authority)',
     icon: GraduationCap,
-    color: 'premium-orange',
+    color: 'gold-600',
     tagline: 'Flexible Assistance Options',
     maxAssistance: '3.5% or $15,000',
     programs: [
@@ -123,7 +123,7 @@ export function DPAProgramCards() {
   const [expandedProgram, setExpandedProgram] = useState<string | null>('calhfa');
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-premium-cream/30">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-warm-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">
@@ -183,11 +183,11 @@ export function DPAProgramCards() {
                             <div className="space-y-3">
                               <div>
                                 <div className="text-sm font-semibold text-gray-700 mb-1">Assistance Amount</div>
-                                <div className="text-premium-blue font-semibold">{program.assistance}</div>
+                                <div className="text-navy-700 font-semibold">{program.assistance}</div>
                               </div>
                               <div>
                                 <div className="text-sm font-semibold text-gray-700 mb-1">Interest Rate</div>
-                                <div className="text-premium-green font-semibold">{program.rate}</div>
+                                <div className="text-[#10b981] font-semibold">{program.rate}</div>
                               </div>
                               <div>
                                 <div className="text-sm font-semibold text-gray-700 mb-1">Repayment Terms</div>
@@ -205,7 +205,7 @@ export function DPAProgramCards() {
                             <ul className="space-y-2">
                               {program.requirements.map((req, i) => (
                                 <li key={i} className="flex items-start gap-2">
-                                  <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                                  <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                                   <span className="text-sm text-gray-700">{req}</span>
                                 </li>
                               ))}

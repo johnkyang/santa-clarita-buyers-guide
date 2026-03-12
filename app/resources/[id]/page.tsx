@@ -84,7 +84,7 @@ export default function ResourcePage({ params }: ResourcePageProps) {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left Column - Resource Info */}
             <div>
-              <Link href="/resources" className="inline-flex items-center gap-2 text-premium-blue hover:underline mb-6">
+              <Link href="/resources" className="inline-flex items-center gap-2 text-navy-700 hover:underline mb-6">
                 <ArrowLeft className="w-4 h-4" />
                 Back to Resources
               </Link>
@@ -200,8 +200,8 @@ export default function ResourcePage({ params }: ResourcePageProps) {
             {/* Right Column - Download Form */}
             <div>
               <div className="sticky top-8">
-                <Card className="border-2 border-premium-blue shadow-xl">
-                  <CardHeader className="bg-gradient-to-br from-premium-blue to-premium-blue-dark text-white rounded-t-lg">
+                <Card className="border-2 border-navy-700 shadow-xl">
+                  <CardHeader className="bg-gradient-to-br from-navy-700 to-navy-800 text-white rounded-t-lg">
                     <CardTitle className="text-2xl">Download for Free</CardTitle>
                     <CardDescription className="text-white/90">
                       Enter your email to get instant access to this resource
@@ -234,7 +234,7 @@ export default function ResourcePage({ params }: ResourcePageProps) {
             <div className="grid gap-6 md:grid-cols-3">
               {relatedResources.map((related) => (
                 <Link key={related.id} href={`/resources/${related.id}`} className="group">
-                  <Card className="h-full border-2 hover:border-premium-blue hover:shadow-lg transition-all">
+                  <Card className="h-full border-2 hover:border-navy-700 hover:shadow-lg transition-all">
                     <CardHeader>
                       <div className="flex items-start justify-between mb-2">
                         <Badge className={fileTypeColors[related.fileType]}>
@@ -244,7 +244,7 @@ export default function ResourcePage({ params }: ResourcePageProps) {
                           <Star className="w-4 h-4 text-yellow-500" />
                         )}
                       </div>
-                      <CardTitle className="group-hover:text-premium-blue transition-colors">
+                      <CardTitle className="group-hover:text-navy-700 transition-colors">
                         {related.title}
                       </CardTitle>
                       <CardDescription className="line-clamp-2">
@@ -252,7 +252,7 @@ export default function ResourcePage({ params }: ResourcePageProps) {
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <Button variant="outline" className="w-full group-hover:bg-premium-blue group-hover:text-white group-hover:border-premium-blue">
+                      <Button variant="outline" className="w-full group-hover:bg-navy-700 group-hover:text-white group-hover:border-navy-700">
                         <Download className="w-4 h-4 mr-2" />
                         Download
                       </Button>

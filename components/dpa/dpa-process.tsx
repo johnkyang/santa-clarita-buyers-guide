@@ -10,7 +10,7 @@ const steps = [
     number: 1,
     title: 'Complete Homebuyer Education',
     icon: GraduationCap,
-    color: 'premium-blue',
+    color: 'navy-700',
     description: 'Take an approved 8-hour homebuyer education course (available online)',
     details: [
       'Required for all DPA programs',
@@ -29,7 +29,7 @@ const steps = [
     number: 2,
     title: 'Choose Your DPA Program',
     icon: FileText,
-    color: 'premium-green',
+    color: '[#10b981]',
     description: 'Work with us to determine which program(s) best fit your situation',
     details: [
       'Review your income, credit score, and savings',
@@ -44,7 +44,7 @@ const steps = [
     number: 3,
     title: 'Get Pre-Approved with DPA Lender',
     icon: UserCheck,
-    color: 'premium-orange',
+    color: 'gold-600',
     description: 'Work with a lender approved to process your chosen DPA program',
     details: [
       'Not all lenders are approved for all DPA programs',
@@ -59,7 +59,7 @@ const steps = [
     number: 4,
     title: 'Find Your Home & Make an Offer',
     icon: Home,
-    color: 'premium-blue',
+    color: 'navy-700',
     description: 'Search for homes within your budget and submit competitive offers',
     details: [
       'Your offer is just as competitive as any other qualified buyer',
@@ -74,7 +74,7 @@ const steps = [
     number: 5,
     title: 'Complete Loan Processing',
     icon: FileText,
-    color: 'premium-green',
+    color: '[#10b981]',
     description: 'Your lender processes both your primary mortgage and DPA loan',
     details: [
       'Submit full documentation (pay stubs, tax returns, bank statements)',
@@ -89,7 +89,7 @@ const steps = [
     number: 6,
     title: 'Close & Move In!',
     icon: Key,
-    color: 'premium-orange',
+    color: 'gold-600',
     description: 'Sign final documents, receive your keys, and become a homeowner',
     details: [
       'Review Closing Disclosure 3 days before closing',
@@ -104,7 +104,7 @@ const steps = [
 
 export function DPAProcess() {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-premium-cream/30">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-warm-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">
@@ -118,7 +118,7 @@ export function DPAProcess() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line (desktop) */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-premium-blue via-premium-green to-premium-orange transform -translate-x-1/2" />
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-navy-700 via-[#10b981] to-gold-600 transform -translate-x-1/2" />
 
           {/* Steps */}
           <div className="space-y-12">
@@ -138,7 +138,7 @@ export function DPAProcess() {
                             <div className="mb-4">
                               <div className="inline-flex items-center gap-3 mb-2">
                                 <span className="text-sm font-bold text-gray-500">STEP {step.number}</span>
-                                <Badge className="bg-premium-cream text-gray-700">
+                                <Badge className="bg-warm-50 text-gray-700">
                                   {step.timeline}
                                 </Badge>
                               </div>
@@ -150,25 +150,25 @@ export function DPAProcess() {
                             <ul className="space-y-2 mb-4">
                               {step.details.map((detail, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                                  <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                                  <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                                   <span>{detail}</span>
                                 </li>
                               ))}
                             </ul>
                             {step.tip && (
-                              <div className="bg-blue-50 border-l-4 border-premium-blue p-4 text-sm">
+                              <div className="bg-blue-50 border-l-4 border-navy-700 p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">Pro Tip:</p>
                                 <p className="text-gray-700">{step.tip}</p>
                               </div>
                             )}
                             {step.note && (
-                              <div className="bg-orange-50 border-l-4 border-premium-orange p-4 text-sm">
+                              <div className="bg-orange-50 border-l-4 border-gold-600 p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">Important:</p>
                                 <p className="text-gray-700">{step.note}</p>
                               </div>
                             )}
                             {step.celebration && (
-                              <div className="bg-green-50 border-l-4 border-premium-green p-4 text-sm">
+                              <div className="bg-green-50 border-l-4 border-[#10b981] p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">🎉 Success!</p>
                                 <p className="text-gray-700">{step.celebration}</p>
                               </div>
@@ -191,7 +191,7 @@ export function DPAProcess() {
                         <div className="flex justify-start">
                           <div className={`relative h-20 w-20 rounded-2xl bg-gradient-to-br from-${step.color} to-${step.color}-dark flex items-center justify-center shadow-lg`}>
                             <Icon className="h-10 w-10 text-white" />
-                            <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-white border-4 border-premium-cream flex items-center justify-center">
+                            <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-white border-4 border-warm-50 flex items-center justify-center">
                               <span className="text-sm font-bold text-gray-900">{step.number}</span>
                             </div>
                           </div>
@@ -203,7 +203,7 @@ export function DPAProcess() {
                         <div className="flex justify-end">
                           <div className={`relative h-20 w-20 rounded-2xl bg-gradient-to-br from-${step.color} to-${step.color}-dark flex items-center justify-center shadow-lg`}>
                             <Icon className="h-10 w-10 text-white" />
-                            <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-white border-4 border-premium-cream flex items-center justify-center">
+                            <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-white border-4 border-warm-50 flex items-center justify-center">
                               <span className="text-sm font-bold text-gray-900">{step.number}</span>
                             </div>
                           </div>
@@ -214,7 +214,7 @@ export function DPAProcess() {
                             <div className="mb-4">
                               <div className="inline-flex items-center gap-3 mb-2">
                                 <span className="text-sm font-bold text-gray-500">STEP {step.number}</span>
-                                <Badge className="bg-premium-cream text-gray-700">
+                                <Badge className="bg-warm-50 text-gray-700">
                                   {step.timeline}
                                 </Badge>
                               </div>
@@ -226,25 +226,25 @@ export function DPAProcess() {
                             <ul className="space-y-2 mb-4">
                               {step.details.map((detail, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                                  <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                                  <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                                   <span>{detail}</span>
                                 </li>
                               ))}
                             </ul>
                             {step.tip && (
-                              <div className="bg-blue-50 border-l-4 border-premium-blue p-4 text-sm">
+                              <div className="bg-blue-50 border-l-4 border-navy-700 p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">Pro Tip:</p>
                                 <p className="text-gray-700">{step.tip}</p>
                               </div>
                             )}
                             {step.note && (
-                              <div className="bg-orange-50 border-l-4 border-premium-orange p-4 text-sm">
+                              <div className="bg-orange-50 border-l-4 border-gold-600 p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">Important:</p>
                                 <p className="text-gray-700">{step.note}</p>
                               </div>
                             )}
                             {step.celebration && (
-                              <div className="bg-green-50 border-l-4 border-premium-green p-4 text-sm">
+                              <div className="bg-green-50 border-l-4 border-[#10b981] p-4 text-sm">
                                 <p className="font-semibold text-gray-900 mb-1">🎉 Success!</p>
                                 <p className="text-gray-700">{step.celebration}</p>
                               </div>
@@ -274,7 +274,7 @@ export function DPAProcess() {
                       <div className="flex-shrink-0">
                         <div className={`relative h-16 w-16 rounded-2xl bg-gradient-to-br from-${step.color} to-${step.color}-dark flex items-center justify-center shadow-lg`}>
                           <Icon className="h-8 w-8 text-white" />
-                          <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-white border-4 border-premium-cream flex items-center justify-center">
+                          <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-white border-4 border-warm-50 flex items-center justify-center">
                             <span className="text-xs font-bold text-gray-900">{step.number}</span>
                           </div>
                         </div>
@@ -284,7 +284,7 @@ export function DPAProcess() {
                         <div className="mb-4">
                           <div className="inline-flex items-center gap-2 mb-2">
                             <span className="text-xs font-bold text-gray-500">STEP {step.number}</span>
-                            <Badge className="bg-premium-cream text-gray-700 text-xs">
+                            <Badge className="bg-warm-50 text-gray-700 text-xs">
                               {step.timeline}
                             </Badge>
                           </div>
@@ -296,25 +296,25 @@ export function DPAProcess() {
                         <ul className="space-y-2 mb-4">
                           {step.details.map((detail, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                              <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                              <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                               <span>{detail}</span>
                             </li>
                           ))}
                         </ul>
                         {step.tip && (
-                          <div className="bg-blue-50 border-l-4 border-premium-blue p-3 text-sm">
+                          <div className="bg-blue-50 border-l-4 border-navy-700 p-3 text-sm">
                             <p className="font-semibold text-gray-900 mb-1">Pro Tip:</p>
                             <p className="text-gray-700">{step.tip}</p>
                           </div>
                         )}
                         {step.note && (
-                          <div className="bg-orange-50 border-l-4 border-premium-orange p-3 text-sm">
+                          <div className="bg-orange-50 border-l-4 border-gold-600 p-3 text-sm">
                             <p className="font-semibold text-gray-900 mb-1">Important:</p>
                             <p className="text-gray-700">{step.note}</p>
                           </div>
                         )}
                         {step.celebration && (
-                          <div className="bg-green-50 border-l-4 border-premium-green p-3 text-sm">
+                          <div className="bg-green-50 border-l-4 border-[#10b981] p-3 text-sm">
                             <p className="font-semibold text-gray-900 mb-1">🎉 Success!</p>
                             <p className="text-gray-700">{step.celebration}</p>
                           </div>
@@ -348,7 +348,7 @@ export function DPAProcess() {
         </div>
 
         {/* CTA */}
-        <Card className="mt-16 p-8 bg-gradient-to-r from-premium-blue via-premium-blue-dark to-blue-900 text-white text-center">
+        <Card className="mt-16 p-8 bg-gradient-to-r from-navy-700 via-navy-800 to-blue-900 text-white text-center">
           <h3 className="font-display text-3xl font-bold mb-4">
             Ready to Start Your DPA Journey?
           </h3>
@@ -357,7 +357,7 @@ export function DPAProcess() {
             education providers, and help you navigate the entire DPA application.
           </p>
           <a href="tel:6614517200">
-            <Button size="lg" className="h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream">
+            <Button size="lg" className="h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50">
               <Phone className="mr-3 h-6 w-6" />
               Call (661) 451-7200 - Let&apos;s Get Started
             </Button>

@@ -20,7 +20,7 @@ export function CountyIncomeLimits() {
   return (
     <Card className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 p-6">
       <div className="flex items-start gap-3 mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-premium-blue to-premium-blue-dark rounded-xl flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 bg-gradient-to-br from-navy-700 to-navy-800 rounded-xl flex items-center justify-center flex-shrink-0">
           <DollarSign className="h-6 w-6 text-white" />
         </div>
         <div>
@@ -57,7 +57,7 @@ export function CountyIncomeLimits() {
             <div className="text-sm font-medium text-gray-600 mb-1">
               Maximum Household Income
             </div>
-            <div className="text-3xl font-bold text-premium-blue">
+            <div className="text-3xl font-bold text-navy-700">
               {formatIncome(selectedLimit.limit)}
             </div>
             <div className="text-xs text-gray-500 mt-2">

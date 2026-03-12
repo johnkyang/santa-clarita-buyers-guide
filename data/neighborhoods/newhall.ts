@@ -157,6 +157,10 @@ export const newhall: Neighborhood = {
     },
   ],
 
+  daysOnMarket: 24,
+  walkScore: 64,
+  schoolRating: '7.5/10',
+
   metaDescription:
     'Complete Newhall, CA guide. Santa Clarita\'s historic heart: walkable Main Street, arts district, vintage homes $350K-$950K ($100K-$250K below Valencia), Hart Park 125 acres, Heritage Junction museum, Hart High (7/10). Best character homes, authentic community, first-time buyer friendly. Santa Clarita\'s bohemian alternative.',
 

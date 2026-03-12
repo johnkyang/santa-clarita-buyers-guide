@@ -116,7 +116,7 @@ export function DPAResources() {
         {/* Official Program Websites */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <div className="h-10 w-10 rounded-lg bg-premium-blue flex items-center justify-center">
+            <div className="h-10 w-10 rounded-lg bg-navy-700 flex items-center justify-center">
               <Globe className="h-5 w-5 text-white" />
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900">Official Program Websites</h3>
@@ -150,7 +150,7 @@ export function DPAResources() {
         {/* Homebuyer Education Providers */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <div className="h-10 w-10 rounded-lg bg-premium-green flex items-center justify-center">
+            <div className="h-10 w-10 rounded-lg bg-[#10b981] flex items-center justify-center">
               <GraduationCap className="h-5 w-5 text-white" />
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900">
@@ -162,7 +162,7 @@ export function DPAResources() {
               <Card key={index} className="p-6 hover:shadow-premium transition-shadow duration-300">
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="font-bold text-gray-900">{provider.name}</h4>
-                  <Badge className="bg-premium-green text-white">{provider.cost}</Badge>
+                  <Badge className="bg-[#10b981] text-white">{provider.cost}</Badge>
                 </div>
                 <div className="mb-3">
                   <Badge variant="outline" className="text-xs">
@@ -191,7 +191,7 @@ export function DPAResources() {
         {/* Helpful Resources */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <div className="h-10 w-10 rounded-lg bg-premium-orange flex items-center justify-center">
+            <div className="h-10 w-10 rounded-lg bg-gold-600 flex items-center justify-center">
               <FileText className="h-5 w-5 text-white" />
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900">Helpful Resources & Tools</h3>
@@ -202,8 +202,8 @@ export function DPAResources() {
               return (
                 <Card key={index} className="p-6 hover:shadow-premium transition-shadow duration-300">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-lg bg-premium-cream flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-5 w-5 text-premium-blue" />
+                    <div className="h-10 w-10 rounded-lg bg-warm-50 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-5 w-5 text-navy-700" />
                     </div>
                     <div>
                       <Badge variant="secondary" className="text-xs mb-2">
@@ -237,7 +237,7 @@ export function DPAResources() {
         {/* Local DPA Lenders */}
         <div>
           <div className="flex items-center gap-3 mb-8">
-            <div className="h-10 w-10 rounded-lg bg-premium-blue flex items-center justify-center">
+            <div className="h-10 w-10 rounded-lg bg-navy-700 flex items-center justify-center">
               <Building2 className="h-5 w-5 text-white" />
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900">
@@ -248,7 +248,7 @@ export function DPAResources() {
             {localLenders.map((lender, index) => (
               <Card
                 key={index}
-                className="p-8 bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white shadow-premium-lg"
+                className="p-8 bg-gradient-to-r from-navy-700 to-navy-800 text-white shadow-premium-lg"
               >
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -268,7 +268,7 @@ export function DPAResources() {
                   </div>
                   <div className="flex flex-col justify-center gap-4">
                     <a href={`tel:${lender.phone.replace(/\D/g, '')}`}>
-                      <Button size="lg" className="w-full bg-white text-premium-blue hover:bg-premium-cream font-bold">
+                      <Button size="lg" className="w-full bg-white text-navy-700 hover:bg-warm-50 font-bold">
                         {lender.phone}
                       </Button>
                     </a>
@@ -276,7 +276,7 @@ export function DPAResources() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="w-full bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue font-bold"
+                        className="w-full bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 font-bold"
                       >
                         {lender.email}
                       </Button>
@@ -297,9 +297,9 @@ export function DPAResources() {
         </div>
 
         {/* Downloadable Checklist */}
-        <Card className="mt-16 p-8 bg-gradient-to-r from-premium-cream to-white border-2 border-premium-gold">
+        <Card className="mt-16 p-8 bg-gradient-to-r from-warm-50 to-white border-2 border-gold-100">
           <div className="text-center max-w-3xl mx-auto">
-            <Download className="h-12 w-12 text-premium-blue mx-auto mb-4" />
+            <Download className="h-12 w-12 text-navy-700 mx-auto mb-4" />
             <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">
               DPA Application Checklist (Coming Soon)
             </h3>
@@ -307,7 +307,7 @@ export function DPAResources() {
               Download our comprehensive checklist covering all documents needed for DPA application, timeline
               expectations, and pro tips from experienced buyers.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-premium-blue to-premium-blue-dark" disabled>
+            <Button size="lg" className="bg-gradient-to-r from-navy-700 to-navy-800" disabled>
               <Download className="mr-2 h-5 w-5" />
               Download Free Checklist (PDF)
             </Button>

@@ -36,7 +36,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'CalHFA MyHome',
         provider: 'CalHFA',
-        color: 'premium-blue',
+        color: 'navy-700',
         estimatedAssistance: `$${Math.round(price * 0.035).toLocaleString()}`,
         reason: 'Up to 3.5% of purchase price',
       });
@@ -48,7 +48,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'CalPLUS with ZIP',
         provider: 'CalHFA',
-        color: 'premium-blue',
+        color: 'navy-700',
         estimatedAssistance: `Up to $${Math.round(assistance).toLocaleString()}`,
         reason: 'Maximum $110,000 down payment help',
       });
@@ -59,7 +59,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'CalPLUS FHA',
         provider: 'CalHFA',
-        color: 'premium-blue',
+        color: 'navy-700',
         estimatedAssistance: `$${Math.round(price * 0.035).toLocaleString()}`,
         reason: '3.5% minimum down payment assistance',
       });
@@ -70,7 +70,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'Extra Credit Teacher',
         provider: 'CalHFA',
-        color: 'premium-blue',
+        color: 'navy-700',
         estimatedAssistance: 'Up to $110,000',
         reason: 'Special program for education professionals',
       });
@@ -81,7 +81,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'AccessZero FHA',
         provider: 'AccessZero',
-        color: 'premium-green',
+        color: '[#10b981]',
         estimatedAssistance: `$${Math.round(price * 0.07).toLocaleString()}`,
         reason: '3.5% grant + 3.5% FHA = True zero down',
       });
@@ -93,7 +93,7 @@ export function DPACalculator() {
       qualified.push({
         name: 'GSFA MyHome',
         provider: 'GSFA',
-        color: 'premium-orange',
+        color: 'gold-600',
         estimatedAssistance: `$${Math.round(assistance).toLocaleString()}`,
         reason: '3.5% or $15,000 (whichever is less)',
       });
@@ -117,7 +117,7 @@ export function DPACalculator() {
   };
 
   return (
-    <section id="dpa-calculator" className="py-20 sm:py-32 bg-gradient-to-b from-premium-cream/30 to-white">
+    <section id="dpa-calculator" className="py-20 sm:py-32 bg-gradient-to-b from-warm-50/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">
@@ -131,7 +131,7 @@ export function DPACalculator() {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 shadow-premium">
             <div className="flex items-center gap-3 mb-8">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-premium-blue to-premium-blue-dark flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
                 <Calculator className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -230,7 +230,7 @@ export function DPACalculator() {
                 {results.length > 0 ? (
                   <>
                     <div className="flex items-center gap-2 mb-6">
-                      <CheckCircle2 className="h-6 w-6 text-premium-green" />
+                      <CheckCircle2 className="h-6 w-6 text-[#10b981]" />
                       <h4 className="font-display text-xl font-bold text-gray-900">
                         You may qualify for {results.length} program{results.length !== 1 ? 's' : ''}!
                       </h4>
@@ -238,7 +238,7 @@ export function DPACalculator() {
 
                     <div className="space-y-4 mb-8">
                       {results.map((program, index) => (
-                        <Card key={index} className="p-6 bg-gradient-to-r from-white to-premium-cream/30 border-2 border-premium-gold/30">
+                        <Card key={index} className="p-6 bg-gradient-to-r from-white to-warm-50/30 border-2 border-gold-100/30">
                           <div className="flex items-start justify-between mb-3">
                             <div>
                               <h5 className="font-display text-lg font-bold text-gray-900 mb-1">{program.name}</h5>
@@ -248,7 +248,7 @@ export function DPACalculator() {
                             </div>
                             <div className="text-right">
                               <div className="text-sm text-gray-600">Estimated Assistance</div>
-                              <div className="text-2xl font-bold text-premium-green">{program.estimatedAssistance}</div>
+                              <div className="text-2xl font-bold text-[#10b981]">{program.estimatedAssistance}</div>
                             </div>
                           </div>
                           <p className="text-sm text-gray-700">{program.reason}</p>
@@ -260,15 +260,15 @@ export function DPACalculator() {
                       <h5 className="font-semibold text-gray-900 mb-2">Next Steps:</h5>
                       <ul className="space-y-2 text-sm text-gray-700 mb-4">
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                           <span>Complete homebuyer education course (8 hours, online available)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                           <span>Get pre-approved with a DPA-approved lender</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-premium-green flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-4 w-4 text-[#10b981] flex-shrink-0 mt-0.5" />
                           <span>Contact us for personalized guidance and lender recommendations</span>
                         </li>
                       </ul>
@@ -291,7 +291,7 @@ export function DPACalculator() {
                       Let&apos;s discuss your specific situation.
                     </p>
                     <a href="tel:6614517200">
-                      <Button size="lg" className="bg-gradient-to-r from-premium-blue to-premium-blue-dark">
+                      <Button size="lg" className="bg-gradient-to-r from-navy-700 to-navy-800">
                         <Phone className="mr-2 h-5 w-5" />
                         Call (661) 451-7200 to Explore Options
                       </Button>

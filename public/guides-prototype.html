@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Home Buyer Guides — Santa Clarita Buyers Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════════
+       TOKENS
+       ══════════════════════════════════════════════════ */
+    :root {
+      --c-navy:         #0f1f3d;
+      --c-navy-mid:     #162847;
+      --c-navy-light:   #1e3a5f;
+      --c-gold:         #c9a227;
+      --c-gold-bright:  #dbb84a;
+      --c-gold-dim:     rgba(201, 162, 39, 0.20);
+      --c-gold-wash:    rgba(201, 162, 39, 0.08);
+      --c-section-bg:   #f9f6f0;
+      --c-card-bg:      #ffffff;
+      --c-text-h:       #0f1f3d;
+      --c-text-body:    #4a5568;
+      --c-text-muted:   #8a95a3;
+      --c-border:       #e8e3db;
+      --c-w90:          rgba(255,255,255,0.90);
+      --c-w60:          rgba(255,255,255,0.60);
+      --c-w35:          rgba(255,255,255,0.35);
+      --c-w10:          rgba(255,255,255,0.10);
+
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+
+      --ease:      0.25s ease;
+      --r-card:    12px;
+      --max-w:     1100px;
+      --pad-x:     clamp(1.25rem, 4vw, 3rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: var(--c-section-bg);
+      font-family: var(--f-body);
+      color: var(--c-text-body);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       PAGE HEADER
+       ══════════════════════════════════════════════════ */
+    .page-header {
+      background: var(--c-navy);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 var(--pad-x) clamp(2.5rem, 5vh, 3.5rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Grain texture */
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(-45deg,
+          transparent 0, transparent 60px,
+          rgba(255,255,255,0.011) 60px, rgba(255,255,255,0.011) 61px
+        );
+    }
+
+    /* Radial glow behind headline */
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse 70% 60% at 30% 60%,
+        rgba(30, 58, 95, 0.6) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    /* Top gold rule */
+    .header-rule {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right,
+        transparent, var(--c-gold) 30%, var(--c-gold) 70%, transparent
+      );
+      opacity: 0.5;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--c-w35);
+      margin-bottom: clamp(1.25rem, 3vh, 2rem);
+    }
+
+    .breadcrumb a {
+      color: var(--c-w60);
+      text-decoration: none;
+      transition: color var(--ease);
+    }
+    .breadcrumb a:hover { color: var(--c-gold); }
+
+    .breadcrumb-sep {
+      font-size: 0.5625rem;
+      opacity: 0.5;
+    }
+
+    .breadcrumb-current { color: var(--c-w60); }
+
+    /* Headline */
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: 0.875rem;
+    }
+
+    .header-eyebrow::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--c-gold);
+    }
+
+    .page-title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      font-weight: 500;
+      color: var(--c-w90);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Gold underline accent on headline */
+    .title-underline {
+      display: block;
+      height: 2px;
+      width: 4rem;
+      background: linear-gradient(to right, var(--c-gold), transparent);
+      margin-top: 0.5rem;
+      border-radius: 1px;
+    }
+
+    .page-sub {
+      font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+      font-weight: 300;
+      color: var(--c-w60);
+      line-height: 1.7;
+      max-width: 54ch;
+      margin-top: 0.875rem;
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       GUIDES SECTION
+       ══════════════════════════════════════════════════ */
+    .guides-section {
+      padding: clamp(3rem, 6vw, 5rem) var(--pad-x);
+      background: var(--c-section-bg);
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.25rem, 2.5vw, 1.75rem);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .guides-grid { grid-template-columns: 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       GUIDE CARD
+       ══════════════════════════════════════════════════ */
+    .guide-card {
+      background: var(--c-card-bg);
+      border-radius: var(--r-card);
+      border: 1px solid var(--c-border);
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 4px 16px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      position: relative;
+      transition:
+        transform      var(--ease),
+        box-shadow     var(--ease),
+        border-color   var(--ease);
+
+      /* Entrance animation state */
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    .guide-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hover: lift + inset left gold border (no layout shift) */
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.07),
+        0 16px 48px rgba(0,0,0,0.13),
+        inset 4px 0 0 var(--c-gold);
+      border-color: var(--c-gold-dim);
+    }
+
+    .guide-card.visible:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ── Card top: icon + tag row ── */
+    .card-top {
+      padding: 1.625rem 1.625rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.125rem;
+    }
+
+    .card-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: var(--c-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background var(--ease);
+      box-shadow: 0 2px 8px rgba(15,31,61,0.25);
+    }
+
+    .guide-card:hover .card-icon-wrap {
+      background: var(--c-navy-mid);
+    }
+
+    .card-icon-wrap .material-symbols-outlined {
+      font-size: 26px;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.625rem;
+      background: var(--c-gold-wash);
+      border: 1px solid var(--c-gold-dim);
+      border-radius: 100px;
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      white-space: nowrap;
+      margin-top: 0.25rem;
+    }
+
+    /* ── Card body: title + desc ── */
+    .card-body {
+      padding: 0 1.625rem;
+      flex: 1;
+    }
+
+    .card-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.3125rem, 2.5vw, 1.625rem);
+      font-weight: 500;
+      color: var(--c-text-h);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      margin-bottom: 0.625rem;
+      transition: color var(--ease);
+    }
+
+    .guide-card:hover .card-title {
+      color: var(--c-navy-light);
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--c-text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── What you'll learn list ── */
+    .card-learn-label {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+      margin-bottom: 0.625rem;
+    }
+
+    .card-learn-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.375rem;
+    }
+
+    .card-learn-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--c-text-body);
+      line-height: 1.45;
+    }
+
+    .learn-check {
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      font-size: 15px;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    /* ── Card footer: read time + CTA ── */
+    .card-footer {
+      padding: 0 1.625rem 1.625rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      border-top: 1px solid var(--c-border);
+      margin-top: auto;
+      padding-top: 1.125rem;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .read-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.625rem;
+      background: #f4f2ee;
+      border: 1px solid var(--c-border);
+      border-radius: 100px;
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--c-text-muted);
+    }
+
+    .read-time .material-symbols-outlined {
+      font-size: 13px;
+      color: var(--c-text-muted);
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    .card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      background: var(--c-gold);
+      color: var(--c-navy);
+      border: none;
+      border-radius: 6px;
+      font-family: var(--f-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        background  var(--ease),
+        box-shadow  var(--ease),
+        transform   var(--ease);
+    }
+
+    .card-cta:hover {
+      background: var(--c-gold-bright);
+      box-shadow: 0 4px 20px rgba(201,162,39,0.35);
+      transform: translateY(-1px);
+    }
+
+    .card-cta .material-symbols-outlined {
+      font-size: 16px;
+      transition: transform var(--ease);
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+    }
+
+    .guide-card:hover .card-cta .material-symbols-outlined {
+      transform: translateX(3px);
+    }
+
+
+    /* ══════════════════════════════════════════════════
+       TRUST STRIP
+       ══════════════════════════════════════════════════ */
+    .trust-strip {
+      background: var(--c-navy);
+      padding: clamp(3rem, 6vw, 4.5rem) var(--pad-x);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(-45deg,
+          transparent 0, transparent 60px,
+          rgba(255,255,255,0.01) 60px, rgba(255,255,255,0.01) 61px
+        );
+    }
+
+    .trust-top-rule {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right,
+        transparent, var(--c-gold) 30%, var(--c-gold) 70%, transparent
+      );
+      opacity: 0.4;
+    }
+
+    .trust-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .trust-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 3vw, 2rem);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 560px) {
+      .trust-stats {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    .trust-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.75rem 1rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--r-card);
+      background: rgba(255,255,255,0.03);
+      gap: 0.5rem;
+    }
+
+    .trust-stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--c-gold-wash);
+      border: 1px solid var(--c-gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.375rem;
+    }
+
+    .trust-stat-icon .material-symbols-outlined {
+      font-size: 22px;
+      color: var(--c-gold);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .trust-stat-value {
+      font-family: var(--f-display);
+      font-size: 2.25rem;
+      font-weight: 400;
+      color: var(--c-w90);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .trust-stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-w60);
+    }
+
+    /* Dividers between stats (desktop) */
+    .trust-stat + .trust-stat {
+      border-left: 1px solid rgba(255,255,255,0.07);
+    }
+
+    @media (max-width: 560px) {
+      .trust-stat + .trust-stat { border-left: none; }
+    }
+
+    .trust-disclaimer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--c-w35);
+      line-height: 1.6;
+    }
+
+    .trust-disclaimer strong { color: var(--c-w60); font-weight: 500; }
+
+
+    /* ══════════════════════════════════════════════════
+       FILTER BAR
+       ══════════════════════════════════════════════════ */
+    .filter-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--c-section-bg);
+      /* Shadow that only appears when sticky (always present but very subtle
+         at top of section, more visible when scrolled) */
+      box-shadow: 0 1px 0 var(--c-border), 0 4px 16px rgba(0,0,0,0);
+      transition: box-shadow 0.2s ease;
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .filter-wrap.is-stuck {
+      box-shadow: 0 1px 0 var(--c-border), 0 4px 20px rgba(0,0,0,0.09);
+    }
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1rem 0;
+      overflow-x: auto;
+      /* Hide scrollbar on mobile while keeping scroll ability */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      border: 1.5px solid var(--c-border);
+      background: var(--c-card-bg);
+      font-family: var(--f-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--c-text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition:
+        background      var(--ease),
+        border-color    var(--ease),
+        color           var(--ease),
+        box-shadow      var(--ease),
+        transform       0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .filter-tab:hover:not(.active) {
+      border-color: var(--c-gold-dim);
+      color: var(--c-text-body);
+      background: var(--c-gold-wash);
+    }
+
+    .filter-tab:active { transform: scale(0.97); }
+
+    .filter-tab.active {
+      background: var(--c-navy);
+      border-color: var(--c-navy);
+      color: #ffffff;
+      box-shadow: 0 2px 12px rgba(15,31,61,0.20);
+    }
+
+    /* Count badge inside each tab */
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 0.3rem;
+      border-radius: 100px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      line-height: 1;
+      background: rgba(0,0,0,0.08);
+      color: inherit;
+      transition: background var(--ease);
+    }
+
+    .filter-tab.active .filter-count {
+      background: rgba(201,162,39,0.25);
+      color: var(--c-gold);
+    }
+
+    /* Separator dot between filters */
+    .filter-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--c-border);
+      flex-shrink: 0;
+    }
+
+    /* Empty state when filter shows 0 results */
+    .filter-empty {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--c-text-muted);
+      font-size: 0.9375rem;
+    }
+
+    .filter-empty.visible { display: block; }
+
+    .filter-empty-icon {
+      font-size: 2.5rem;
+      color: var(--c-border);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ══════════════════════════════════════════════════
+       ENTRANCE ANIMATION
+       ══════════════════════════════════════════════════ */
+    .guide-card {
+      transition:
+        opacity      0.5s ease,
+        transform    0.5s ease,
+        box-shadow   var(--ease),
+        border-color var(--ease);
+    }
+
+    /* Filter fade-out state */
+    .guide-card.filter-out {
+      opacity: 0 !important;
+      transform: translateY(6px) scale(0.98) !important;
+      pointer-events: none;
+    }
+
+    /* Filter display:none — applied after transition completes */
+    .guide-card.filter-hidden {
+      display: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .guide-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: box-shadow var(--ease), border-color var(--ease);
+      }
+      .guide-card.filter-out {
+        opacity: 0 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════
+       PAGE HEADER
+       ════════════════════════════ -->
+  <header class="page-header">
+    <div class="header-rule" aria-hidden="true"></div>
+    <div class="header-inner">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Buyer Guides</span>
+      </nav>
+
+      <p class="header-eyebrow" aria-hidden="true">Expert Resources</p>
+
+      <h1 class="page-title">
+        Free Home Buyer Guides
+        <span class="title-underline" aria-hidden="true"></span>
+      </h1>
+
+      <p class="page-sub">
+        Straightforward, expert-written guides for every type of buyer in Santa Clarita.
+        No sales pitch. No obligation.
+      </p>
+
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════
+       GUIDES GRID
+       ════════════════════════════ -->
+  <main class="guides-section" id="main-content">
+
+    <!-- ── Sticky filter bar ── -->
+    <div class="filter-wrap" id="filter-wrap">
+      <div class="filter-bar" role="tablist" aria-label="Filter guides by buyer type">
+
+        <button class="filter-tab active" data-filter="all"
+                role="tab" aria-selected="true">
+          All
+          <span class="filter-count" aria-label="7 guides">7</span>
+        </button>
+
+        <span class="filter-sep" aria-hidden="true"></span>
+
+        <button class="filter-tab" data-filter="first-time"
+                role="tab" aria-selected="false">
+          First-Time Buyers
+          <span class="filter-count" aria-label="5 guides">5</span>
+        </button>
+
+        <span class="filter-sep" aria-hidden="true"></span>
+
+        <button class="filter-tab" data-filter="seniors"
+                role="tab" aria-selected="false">
+          Seniors
+          <span class="filter-count" aria-label="2 guides">2</span>
+        </button>
+
+        <span class="filter-sep" aria-hidden="true"></span>
+
+        <button class="filter-tab" data-filter="financing"
+                role="tab" aria-selected="false">
+          Financing
+          <span class="filter-count" aria-label="2 guides">2</span>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="guides-grid">
+
+      <!-- Empty state (shown when filter has no matches) -->
+      <div class="filter-empty" id="filter-empty" aria-live="polite">
+        <span class="material-symbols-outlined filter-empty-icon" aria-hidden="true">search_off</span>
+        No guides in this category yet.
+      </div>
+
+      <!-- ── 1. First-Time Buyer Guide 2026 ── -->
+      <a class="guide-card" href="/first-time-buyer-guide" aria-label="First-Time Buyer Guide 2026"
+         data-category="first-time">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">home</span>
+          </div>
+          <span class="card-tag">Step-by-Step Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">First-Time Buyer Guide 2026</h2>
+          <p class="card-desc">From pre-approval to closing day — everything a first-time buyer needs in one place.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Get pre-approved with confidence
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Understand CalHFA assistance programs ($15K–$30K)
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Navigate offers and escrow
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Close without surprises
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              15 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 2. First-Time Home Buyer Deep Dive ── -->
+      <a class="guide-card" href="/guides/first-time-buyer" aria-label="First-Time Home Buyer Deep Dive"
+         data-category="first-time">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">calculate</span>
+          </div>
+          <span class="card-tag">Interactive Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">First-Time Home Buyer Deep Dive</h2>
+          <p class="card-desc">Complete guide with live affordability calculator and down payment assistance programs.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Use the interactive affordability calculator
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Meet credit &amp; down payment requirements
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Explore assistance programs
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Understand true cost of ownership
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              12 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 3. Down Payment Assistance ── -->
+      <a class="guide-card" href="/down-payment-assistance" aria-label="Down Payment Assistance Guide"
+         data-category="first-time financing">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">attach_money</span>
+          </div>
+          <span class="card-tag">Funding Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Down Payment Assistance</h2>
+          <p class="card-desc">CalHFA, GSFA, and other programs that could put $15K–$30K toward your down payment.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Compare CalHFA vs GSFA programs
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Check income eligibility
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Stack multiple assistance sources
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Apply without hurting your credit
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              8 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 4. Resale Homes Guide ── -->
+      <a class="guide-card" href="/guides/resale" aria-label="Resale Homes Guide"
+         data-category="first-time">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+          <span class="card-tag">Buyer Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Resale Homes Guide</h2>
+          <p class="card-desc">How to find, evaluate, and win on existing homes in Santa Clarita's competitive market.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Advantages of buying resale
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Run the home search process
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Master the inspection process
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Negotiate price and terms
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              10 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 5. New Construction Guide ── -->
+      <a class="guide-card" href="/guides/new-construction" aria-label="New Construction Guide"
+         data-category="first-time">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">construction</span>
+          </div>
+          <span class="card-tag">Buyer Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">New Construction Guide</h2>
+          <p class="card-desc">Everything you need to know before buying a brand-new home from a builder.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Benefits of new construction
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Navigate the builder process
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Negotiate upgrades and incentives
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Understand builder contracts
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              11 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 6. 55+ Community Living Guide ── -->
+      <a class="guide-card" href="/guides/55-plus-communities" aria-label="55+ Community Living Guide"
+         data-category="seniors">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">favorite</span>
+          </div>
+          <span class="card-tag">Lifestyle Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">55+ Community Living Guide</h2>
+          <p class="card-desc">Discover active adult communities and what retirement living really looks like in Santa Clarita.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              What qualifies as a 55+ community
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Key lifestyle benefits
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Communities available in Santa Clarita
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Financial considerations for seniors
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              9 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- ── 7. Reverse Mortgage for Purchase ── -->
+      <a class="guide-card" href="/guides/reverse-mortgage" aria-label="Reverse Mortgage for Purchase Guide"
+         data-category="seniors financing">
+        <div class="card-top">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <span class="material-symbols-outlined">elderly</span>
+          </div>
+          <span class="card-tag">Senior Guide</span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Reverse Mortgage for Purchase</h2>
+          <p class="card-desc">A little-known financial tool that lets buyers 62+ purchase a home with no monthly mortgage payment.</p>
+          <p class="card-learn-label">What you'll learn</p>
+          <ul class="card-learn-list">
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              How reverse for purchase works
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Who qualifies at 62+
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Compare to traditional financing
+            </li>
+            <li>
+              <span class="material-symbols-outlined learn-check">check_circle</span>
+              Risks and protections explained
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta-row">
+            <span class="read-time">
+              <span class="material-symbols-outlined">schedule</span>
+              8 min read
+            </span>
+          </div>
+          <span class="card-cta">
+            Read the Guide
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+
+  <!-- ════════════════════════════
+       TRUST STRIP
+       ════════════════════════════ -->
+  <footer class="trust-strip">
+    <div class="trust-top-rule" aria-hidden="true"></div>
+    <div class="trust-inner">
+
+      <div class="trust-stats" role="list">
+
+        <div class="trust-stat" role="listitem">
+          <div class="trust-stat-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">menu_book</span>
+          </div>
+          <span class="trust-stat-value">7</span>
+          <span class="trust-stat-label">Free Guides</span>
+        </div>
+
+        <div class="trust-stat" role="listitem">
+          <div class="trust-stat-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">verified_user</span>
+          </div>
+          <span class="trust-stat-value">0</span>
+          <span class="trust-stat-label">Sales Pressure</span>
+        </div>
+
+        <div class="trust-stat" role="listitem">
+          <div class="trust-stat-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">location_city</span>
+          </div>
+          <span class="trust-stat-value">100%</span>
+          <span class="trust-stat-label">Santa Clarita Focused</span>
+        </div>
+
+      </div>
+
+      <p class="trust-disclaimer">
+        <strong>Santa Clarita Buyers Guide</strong> is operated by Kailei Media —
+        a marketing firm, not a real estate brokerage.<br>
+        All guides are free, independent, and written without sales pressure.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script>
+    const cards      = document.querySelectorAll('.guide-card');
+    const tabs       = document.querySelectorAll('.filter-tab');
+    const emptyState = document.getElementById('filter-empty');
+    const filterWrap = document.getElementById('filter-wrap');
+    const FADE_MS    = 200; // must match CSS transition duration
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ── Sticky sentinel — adds .is-stuck when bar leaves its natural position ──
+    if ('IntersectionObserver' in window) {
+      const sentinel = document.createElement('div');
+      sentinel.style.cssText = 'position:absolute;top:0;height:1px;width:100%;pointer-events:none;';
+      filterWrap.parentElement.insertBefore(sentinel, filterWrap);
+
+      new IntersectionObserver(([entry]) => {
+        filterWrap.classList.toggle('is-stuck', !entry.isIntersecting);
+      }, { threshold: 1.0 }).observe(sentinel);
+    }
+
+    // ── Filter logic ─────────────────────────────────────────────────────────
+    let activeFilter  = 'all';
+    let pendingTimers = [];
+
+    function applyFilter(filter) {
+      activeFilter = filter;
+
+      // Clear any in-flight show/hide timers
+      pendingTimers.forEach(clearTimeout);
+      pendingTimers = [];
+
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cats    = (card.dataset.category || '').split(' ');
+        const matches = filter === 'all' || cats.includes(filter);
+
+        if (matches) {
+          visibleCount++;
+
+          // If currently hidden, un-hide first then fade in
+          if (card.classList.contains('filter-hidden')) {
+            card.classList.remove('filter-hidden');
+            // Ensure filter-out class is set before we remove it (triggers transition)
+            card.classList.add('filter-out');
+            pendingTimers.push(setTimeout(() => {
+              card.classList.remove('filter-out');
+            }, reducedMotion ? 0 : 16)); // one rAF-worth delay
+          } else {
+            card.classList.remove('filter-out');
+          }
+
+        } else {
+          // Fade out, then hide
+          card.classList.add('filter-out');
+          pendingTimers.push(setTimeout(() => {
+            card.classList.add('filter-hidden');
+          }, reducedMotion ? 0 : FADE_MS));
+        }
+      });
+
+      // Toggle empty state
+      emptyState.classList.toggle('visible', visibleCount === 0);
+    }
+
+    // ── Tab click handler ─────────────────────────────────────────────────────
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        if (tab.dataset.filter === activeFilter) return;
+
+        // Update aria + active class
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        applyFilter(tab.dataset.filter);
+      });
+    });
+
+    // ── Keyboard: arrow keys navigate between tabs ────────────────────────────
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('keydown', e => {
+        let next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        if (e.key === 'ArrowLeft')  next = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (next) { next.focus(); next.click(); }
+      });
+    });
+
+    // ── Scroll-triggered entrance animation ───────────────────────────────────
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            const idx  = [...cards].indexOf(card);
+            const delay = Math.min(idx * 70, 420);
+            setTimeout(() => card.classList.add('visible'), delay);
+            io.unobserve(card);
+          }
+        });
+      }, { threshold: 0.10 });
+
+      cards.forEach(card => io.observe(card));
+    } else {
+      cards.forEach(card => card.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>

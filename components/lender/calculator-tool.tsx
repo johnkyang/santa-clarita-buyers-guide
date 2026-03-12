@@ -9,10 +9,10 @@ export function CalculatorTool() {
   return (
     <section className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden border-2 border-premium-blue/20 shadow-xl">
+        <Card className="overflow-hidden border-2 border-navy-700/20 shadow-xl">
           <div className="grid lg:grid-cols-2">
             {/* Left Side - CTA */}
-            <div className="bg-gradient-to-br from-premium-blue to-premium-blue-dark p-8 lg:p-12 text-white">
+            <div className="bg-gradient-to-br from-navy-700 to-navy-800 p-8 lg:p-12 text-white">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
                   <Calculator className="h-6 w-6" />
@@ -108,7 +108,7 @@ export function CalculatorTool() {
                 <Link href="/buying-power">
                   <Button
                     size="lg"
-                    className="w-full bg-white text-premium-blue hover:bg-gray-100 font-semibold text-lg py-6"
+                    className="w-full bg-white text-navy-700 hover:bg-gray-100 font-semibold text-lg py-6"
                   >
                     Try Buying Power Calculator
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -155,9 +155,9 @@ export function CalculatorTool() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-premium-blue/5 to-premium-blue/10 rounded-xl p-6 border border-premium-blue/20">
+              <div className="bg-gradient-to-br from-navy-700/5 to-navy-700/10 rounded-xl p-6 border border-navy-700/20">
                 <div className="text-sm text-gray-600 mb-1">Estimated Buying Power</div>
-                <div className="text-4xl font-bold text-premium-blue mb-3">$475,000</div>
+                <div className="text-4xl font-bold text-navy-700 mb-3">$475,000</div>
                 <div className="text-sm text-gray-600 mb-4">
                   Monthly Payment: <span className="font-semibold text-gray-900">$3,450</span>
                 </div>

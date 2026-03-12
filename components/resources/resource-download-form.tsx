@@ -97,7 +97,7 @@ export function ResourceDownloadForm({ resourceId, resourceTitle }: ResourceDown
         <Button
           onClick={() => window.open(`/downloads/${resourceId}.pdf`, '_blank')}
           size="lg"
-          className="w-full bg-premium-blue hover:bg-premium-blue-dark"
+          className="w-full bg-navy-700 hover:bg-navy-800"
         >
           <Download className="w-5 h-5 mr-2" />
           Download Now
@@ -163,7 +163,7 @@ export function ResourceDownloadForm({ resourceId, resourceTitle }: ResourceDown
       <Button
         type="submit"
         size="lg"
-        className="w-full bg-premium-blue hover:bg-premium-blue-dark h-14 text-lg"
+        className="w-full bg-navy-700 hover:bg-navy-800 h-14 text-lg"
         disabled={isSubmitting}
       >
         {isSubmitting ? (

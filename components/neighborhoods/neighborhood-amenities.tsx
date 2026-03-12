@@ -9,21 +9,21 @@ interface NeighborhoodAmenitiesProps {
 
 export function NeighborhoodAmenities({ neighborhood }: NeighborhoodAmenitiesProps) {
   const gradients = [
-    'from-premium-blue to-premium-blue-dark',
-    'from-premium-orange to-premium-rust',
-    'from-premium-green to-emerald-600',
-    'from-amber-500 to-orange-600',
-    'from-purple-500 to-purple-600',
-    'from-pink-500 to-pink-600'
+    'from-[#0f1f3d] to-[#162b52]',
+    'from-[#c9a227] to-[#d4af3a]',
+    'from-[#10b981] to-[#0d9668]',
+    'from-[#0f1f3d] to-[#1e3a6e]',
+    'from-[#0f1f3d] to-[#162b52]',
+    'from-[#c9a227] to-[#d4af3a]'
   ]
 
   return (
-    <section className="bg-gradient-to-b from-white to-orange-50/30 py-16 lg:py-20">
+    <section className="bg-gradient-to-b from-white to-[#f9f6f0] py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 bg-gradient-to-br from-premium-orange to-premium-rust rounded-2xl flex items-center justify-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#c9a227] to-[#d4af3a] rounded-2xl flex items-center justify-center">
                 <Sparkles className="h-7 w-7 text-white" />
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Amenities & Lifestyle</h2>

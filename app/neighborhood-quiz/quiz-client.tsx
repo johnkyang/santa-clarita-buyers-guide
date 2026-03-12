@@ -97,7 +97,7 @@ export function QuizClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-premium-cream to-white">
+    <div className="min-h-screen bg-gradient-to-b from-warm-50 to-white">
       <div className="container px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <AnimatePresence mode="wait">
@@ -111,8 +111,8 @@ export function QuizClient() {
                 transition={{ duration: 0.4 }}
                 className="text-center"
               >
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-premium-blue/10">
-                  <Compass className="h-10 w-10 text-premium-blue" />
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-navy-700/10">
+                  <Compass className="h-10 w-10 text-navy-700" />
                 </div>
                 <h1 className="font-display text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
                   Find Your Perfect Santa Clarita Neighborhood
@@ -123,7 +123,7 @@ export function QuizClient() {
                 <div className="mb-8 rounded-2xl bg-white p-6 shadow-sm border border-gray-100 text-left space-y-3">
                   {['Takes 2 minutes', 'Personalized to your priorities', 'No sign-up until you see results', 'Free — always'].map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 shrink-0 text-premium-green" />
+                      <CheckCircle className="h-5 w-5 shrink-0 text-[#10b981]" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -131,7 +131,7 @@ export function QuizClient() {
                 <Button
                   size="lg"
                   onClick={() => setStep('questions')}
-                  className="group h-14 w-full bg-gradient-to-r from-premium-blue to-premium-blue-dark px-8 text-lg font-bold text-white hover:opacity-90 transition-all duration-300 hover:scale-105 sm:w-auto"
+                  className="group h-14 w-full bg-gradient-to-r from-navy-700 to-navy-800 px-8 text-lg font-bold text-white hover:opacity-90 transition-all duration-300 hover:scale-105 sm:w-auto"
                 >
                   Start the Quiz
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -156,7 +156,7 @@ export function QuizClient() {
                   </div>
                   <div className="h-2 rounded-full bg-gray-200">
                     <div
-                      className="h-2 rounded-full bg-gradient-to-r from-premium-blue to-premium-blue-dark transition-all duration-500"
+                      className="h-2 rounded-full bg-gradient-to-r from-navy-700 to-navy-800 transition-all duration-500"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -171,9 +171,9 @@ export function QuizClient() {
                     <button
                       key={option.id}
                       onClick={() => handleAnswer(option.id)}
-                      className={`w-full rounded-xl border-2 p-4 text-left font-medium transition-all duration-200 hover:scale-[1.01] hover:border-premium-blue hover:bg-blue-50 ${
+                      className={`w-full rounded-xl border-2 p-4 text-left font-medium transition-all duration-200 hover:scale-[1.01] hover:border-navy-700 hover:bg-blue-50 ${
                         answers[currentQuestion.id] === option.id
-                          ? 'border-premium-blue bg-blue-50 text-premium-blue-dark'
+                          ? 'border-navy-700 bg-blue-50 text-navy-800'
                           : 'border-gray-200 bg-white text-gray-800'
                       }`}
                     >
@@ -202,8 +202,8 @@ export function QuizClient() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-premium-green/10">
-                    <CheckCircle className="h-6 w-6 text-premium-green" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#10b981]/10">
+                    <CheckCircle className="h-6 w-6 text-[#10b981]" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Quiz complete!</p>
@@ -260,7 +260,7 @@ export function QuizClient() {
                       type="checkbox"
                       checked={consent}
                       onChange={(e) => setConsent(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-premium-blue"
+                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-navy-700"
                     />
                     <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
                       I agree to receive my neighborhood recommendations and occasional helpful home buying information from Santa Clarita Buyers Guide. No spam, unsubscribe anytime.
@@ -273,7 +273,7 @@ export function QuizClient() {
                     type="submit"
                     size="lg"
                     disabled={submitting}
-                    className="group h-14 w-full bg-gradient-to-r from-premium-blue to-premium-blue-dark text-lg font-bold text-white hover:opacity-90 transition-all duration-300"
+                    className="group h-14 w-full bg-gradient-to-r from-navy-700 to-navy-800 text-lg font-bold text-white hover:opacity-90 transition-all duration-300"
                   >
                     {submitting ? 'Loading...' : 'Show My Neighborhood Matches'}
                     {!submitting && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
@@ -339,7 +339,7 @@ export function QuizClient() {
                         <ul className="space-y-1 mb-4">
                           {meta.highlights.map((h) => (
                             <li key={h} className="flex items-center gap-2 text-sm text-gray-700">
-                              <CheckCircle className="h-4 w-4 shrink-0 text-premium-green" />
+                              <CheckCircle className="h-4 w-4 shrink-0 text-[#10b981]" />
                               {h}
                             </li>
                           ))}
@@ -348,7 +348,7 @@ export function QuizClient() {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="group gap-2 border-gray-400 text-gray-700 hover:border-premium-blue hover:text-premium-blue"
+                            className="group gap-2 border-gray-400 text-gray-700 hover:border-navy-700 hover:text-navy-700"
                           >
                             <MapPin className="h-4 w-4" />
                             Explore {meta.name}
@@ -360,11 +360,11 @@ export function QuizClient() {
                   })}
                 </div>
 
-                <div className="rounded-2xl bg-premium-blue/5 border border-premium-blue/20 p-6 text-center">
+                <div className="rounded-2xl bg-navy-700/5 border border-navy-700/20 p-6 text-center">
                   <p className="font-semibold text-gray-900 mb-1">Know your budget before you tour</p>
                   <p className="text-sm text-gray-600 mb-4">Use our free Buying Power Calculator to see your maximum purchase price in 60 seconds.</p>
                   <Link href="/buying-power">
-                    <Button className="bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white hover:opacity-90">
+                    <Button className="bg-gradient-to-r from-navy-700 to-navy-800 text-white hover:opacity-90">
                       Calculate My Buying Power
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Clarita Buyers Guide — Hero Prototype</title>
+
+  <!--
+    FONTS:
+    Cormorant Garamond — editorial display serif
+    DM Sans           — clean sans for UI / body
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN TOKENS — update these site-wide
+       ══════════════════════════════════════════════ */
+    :root {
+      --c-navy:        #0f1f3d;
+      --c-navy-mid:    #162847;
+      --c-navy-light:  #1d3461;
+      --c-gold:        #c9a227;
+      --c-gold-bright: #dbb84a;
+      --c-gold-glow:   rgba(201, 162, 39, 0.35);
+      --c-gold-dim:    rgba(201, 162, 39, 0.22);
+      --c-gold-wash:   rgba(201, 162, 39, 0.07);
+      --c-white:       #ffffff;
+      --c-w90:         rgba(255,255,255,0.90);
+      --c-w65:         rgba(255,255,255,0.65);
+      --c-w35:         rgba(255,255,255,0.35);
+      --c-w12:         rgba(255,255,255,0.12);
+      --c-w06:         rgba(255,255,255,0.06);
+
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+
+      --max-w:   1280px;
+      --pad-x:   clamp(1.5rem, 4.5vw, 5rem);
+      --pad-y:   clamp(3rem, 7vh, 5.5rem);
+
+      /* Gap on each side of the vertical rule */
+      --rule-gap: clamp(2rem, 4vw, 4.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--c-navy);
+      font-family: var(--f-body);
+      min-height: 100vh;
+    }
+
+
+    /* ══════════════════════════════════════════════
+       HERO SHELL
+       ══════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ── Background ─────────────────────────────────
+       SWAP IN YOUR IMAGE:
+         1. .hero-bg → background-image: url('/images/santa-clarita-aerial.jpg');
+                        background-size: cover;
+                        background-position: center top;
+         2. Uncomment the dark gradient inside .hero-overlay.
+       ───────────────────────────────────────────── */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      /* PLACEHOLDER gradient — replace with real photo (see above) */
+      background:
+        radial-gradient(ellipse 100% 80% at 70% 40%,
+          var(--c-navy-light) 0%,
+          var(--c-navy-mid)   45%,
+          var(--c-navy)       100%
+        );
+    }
+
+    /* Dark wash — tune when using a real photo (opacity 0.65–0.85) */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      /* Uncomment with real photo:
+      background: linear-gradient(130deg,
+        rgba(15,31,61,0.88) 0%,
+        rgba(15,31,61,0.68) 55%,
+        rgba(15,31,61,0.82) 100%
+      ); */
+    }
+
+    /* Subtle diagonal texture adds grain depth */
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(-48deg,
+          transparent 0px, transparent 62px,
+          rgba(255,255,255,0.012) 62px, rgba(255,255,255,0.012) 63px
+        );
+    }
+
+    /* Thin gold rule — top edge accent */
+    .hero-rule-top {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right,
+        transparent 0%, var(--c-gold) 25%, var(--c-gold) 75%, transparent 100%
+      );
+      opacity: 0.5;
+      z-index: 10;
+    }
+
+
+    /* ══════════════════════════════════════════════
+       SPLIT LAYOUT
+       Two content columns flanking a vertical gold rule.
+       ══════════════════════════════════════════════ */
+    .hero-inner {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--pad-y) var(--pad-x);
+      padding-bottom: calc(var(--pad-y) + 4rem);
+    }
+
+    .hero-split {
+      display: grid;
+      /* Left column ~55%, vertical rule, right column ~45% */
+      grid-template-columns: 55fr auto 45fr;
+      align-items: center;
+      min-height: clamp(420px, 70vh, 680px);
+    }
+
+
+    /* ── LEFT COLUMN: eyebrow + headline ───────── */
+    .col-left {
+      padding-right: var(--rule-gap);
+      /* Align content toward bottom-left of its grid cell */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ── Eyebrow ── */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: clamp(1.25rem, 3vh, 2rem);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    .eyebrow-line {
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--c-gold);
+      flex-shrink: 0;
+    }
+
+    .eyebrow-text {
+      font-family: var(--f-body);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+    }
+
+    /* ── Headline ── */
+    .hero-headline {
+      font-family: var(--f-display);
+      font-size: clamp(3.25rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--c-white);
+    }
+
+    /* Each line uses overflow:hidden to create a mask-wipe reveal */
+    .hl-line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.07em; /* prevents descender clip */
+    }
+
+    .hl-inner {
+      display: block;
+      opacity: 0;
+      transform: translateY(105%);
+      animation: slideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hl-line:nth-child(1) .hl-inner { animation-delay: 0.18s; }
+    .hl-line:nth-child(2) .hl-inner { animation-delay: 0.34s; }
+    .hl-line:nth-child(3) .hl-inner { animation-delay: 0.50s; }
+
+    /* Gold italic final line */
+    .hl-accent {
+      color: var(--c-gold);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+
+    /* ── VERTICAL GOLD RULE ─────────────────────── */
+    .split-rule {
+      width: 1px;
+      height: min(460px, 65vh);
+      /* Gradient fades at top and bottom — rule floats in space */
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        var(--c-gold) 18%,
+        var(--c-gold) 82%,
+        transparent 100%
+      );
+      /* Draw animation: scaleY from 0 → 1, top-anchored */
+      transform: scaleY(0);
+      transform-origin: top center;
+      opacity: 0;
+      animation: drawRule 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.65s;
+    }
+
+    @keyframes drawRule {
+      0%   { transform: scaleY(0); opacity: 0; }
+      8%   { opacity: 1; }
+      100% { transform: scaleY(1); opacity: 1; }
+    }
+
+
+    /* ── RIGHT COLUMN: sub + CTAs + trust ─────── */
+    .col-right {
+      padding-left: var(--rule-gap);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0; /* controlled by margin on children */
+    }
+
+    /* Small label above the subhead */
+    .col-right-label {
+      font-family: var(--f-body);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-w35);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .hero-sub {
+      font-family: var(--f-body);
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      font-weight: 300;
+      color: var(--c-w65);
+      line-height: 1.75;
+      margin-bottom: clamp(1.75rem, 4vh, 2.5rem);
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.9s;
+    }
+
+    .hero-sub strong {
+      font-weight: 500;
+      color: var(--c-w90);
+    }
+
+    /* ── CTAs ── */
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: clamp(1.75rem, 3.5vh, 2.5rem);
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 1.05s;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 2px;
+      font-family: var(--f-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition:
+        transform    0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow   0.22s ease,
+        background   0.18s ease,
+        border-color 0.18s ease;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+      /* Full width within right column */
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn:hover  { transform: translateY(-2px) scale(1.02); }
+    .btn:active { transform: translateY(0)    scale(0.99); }
+
+    .btn-primary {
+      background: var(--c-gold);
+      color: var(--c-navy);
+      box-shadow: 0 4px 24px rgba(201,162,39,0.28);
+    }
+    .btn-primary:hover {
+      background: var(--c-gold-bright);
+      box-shadow: 0 8px 36px rgba(201,162,39,0.44);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--c-w90);
+      border: 1px solid var(--c-w35);
+    }
+    .btn-ghost:hover {
+      background: var(--c-w06);
+      border-color: var(--c-w65);
+    }
+
+    .btn-icon {
+      display: block;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+
+    /* ── Trust pills ── */
+    .hero-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.75rem 0.3rem 0.5rem;
+      border: 1px solid var(--c-gold-dim);
+      border-radius: 100px;
+      background: var(--c-gold-wash);
+    }
+
+    .trust-dot {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      flex-shrink: 0;
+    }
+
+    .trust-label {
+      font-family: var(--f-body);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      color: var(--c-w65);
+      letter-spacing: 0.02em;
+    }
+
+
+    /* ══════════════════════════════════════════════
+       SCROLL INDICATOR
+       ══════════════════════════════════════════════ */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 0.7s ease forwards;
+      animation-delay: 1.9s;
+    }
+
+    .scroll-indicator:focus-visible {
+      outline: 2px solid var(--c-gold);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .scroll-label {
+      font-family: var(--f-body);
+      font-size: 0.5625rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-w35);
+    }
+
+    .scroll-chevron-wrap {
+      animation: chevronFloat 2.2s ease-in-out infinite;
+    }
+
+    .scroll-chevron path {
+      stroke: var(--c-gold);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+
+    /* ══════════════════════════════════════════════
+       KEYFRAMES
+       ══════════════════════════════════════════════ */
+
+    /* Mask-wipe line reveal */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(105%); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* Fade + subtle lift */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* Plain fade */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Chevron pulse */
+    @keyframes chevronFloat {
+      0%, 100% { transform: translateY(0);   opacity: 0.6; }
+      55%       { transform: translateY(6px); opacity: 1;   }
+    }
+
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════════════ */
+
+    /* Tablet: narrow the gap, smaller fonts handled by clamp() */
+    @media (max-width: 900px) {
+      :root { --rule-gap: clamp(1.5rem, 3vw, 2.5rem); }
+    }
+
+    /* Below 720px: collapse to single column, hide vertical rule */
+    @media (max-width: 720px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        min-height: unset;
+        gap: clamp(2rem, 5vh, 3rem);
+      }
+
+      .split-rule { display: none; }
+
+      .col-left  { padding-right: 0; }
+      .col-right {
+        padding-left: 0;
+        gap: 0;
+      }
+
+      /* CTAs go back to horizontal wrap on mobile */
+      .hero-ctas {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .btn {
+        width: auto;
+        flex: 1 1 180px;
+      }
+
+      /* Trust pills go horizontal */
+      .hero-trust {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Small mobile */
+    @media (max-width: 420px) {
+      .hero-ctas { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero" aria-label="Homepage hero">
+
+  <!-- Top gold rule -->
+  <div class="hero-rule-top" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       BACKGROUND LAYERS
+       Swap in real photo: see CSS comment on .hero-bg
+       ═══════════════════════════════════════════ -->
+  <div class="hero-bg"      aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-texture" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       SPLIT CONTENT GRID
+       ═══════════════════════════════════════════ -->
+  <div class="hero-inner">
+    <div class="hero-split">
+
+      <!-- ── LEFT: eyebrow + headline ── -->
+      <div class="col-left">
+
+        <p class="hero-eyebrow" aria-hidden="true">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Santa Clarita Valley</span>
+        </p>
+
+        <h1 class="hero-headline">
+          <span class="hl-line"><span class="hl-inner">Your Journey</span></span>
+          <span class="hl-line"><span class="hl-inner">to Homeownership</span></span>
+          <span class="hl-line"><span class="hl-inner hl-accent">in Santa Clarita.</span></span>
+        </h1>
+
+      </div>
+
+      <!-- ── VERTICAL GOLD RULE ── -->
+      <div class="split-rule" aria-hidden="true"></div>
+
+      <!-- ── RIGHT: subtext + CTAs + trust ── -->
+      <div class="col-right">
+
+        <p class="col-right-label" aria-hidden="true">The independent buyer resource</p>
+
+        <p class="hero-sub">
+          The valley&rsquo;s only <strong>free, independent</strong> buyer resource.
+          Honest neighborhood data, financial tools, and expert guidance —
+          no sales pressure, ever.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="/buying-power" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2.5" y="2" width="11" height="12" rx="1.25" stroke-width="1.2"/>
+              <line x1="5" y1="5.5" x2="11" y2="5.5" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="5"  cy="8.5"   r="0.7" fill="currentColor" stroke="none"/>
+              <circle cx="8"  cy="8.5"   r="0.7" fill="currentColor" stroke="none"/>
+              <circle cx="11" cy="8.5"   r="0.7" fill="currentColor" stroke="none"/>
+              <circle cx="5"  cy="11.25" r="0.7" fill="currentColor" stroke="none"/>
+              <circle cx="8"  cy="11.25" r="0.7" fill="currentColor" stroke="none"/>
+              <circle cx="11" cy="11.25" r="0.7" fill="currentColor" stroke="none"/>
+            </svg>
+            See What You Can Afford
+          </a>
+
+          <a href="/neighborhood-quiz" class="btn btn-ghost">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="5.5" stroke-width="1.2"/>
+              <line x1="8" y1="2.5"  x2="8"    y2="4"    stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="8" y1="12"   x2="8"    y2="13.5" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="2.5" y1="8"  x2="4"    y2="8"    stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="12"  y1="8"  x2="13.5" y2="8"    stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M8 5.5 L9.2 8 L8 7.1 L6.8 8 Z" fill="currentColor" stroke="none"/>
+            </svg>
+            Find My Neighborhood
+          </a>
+        </div>
+
+        <div class="hero-trust" role="list" aria-label="Trust indicators">
+          <div class="trust-pill" role="listitem">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span class="trust-label">100% Free Resource</span>
+          </div>
+          <div class="trust-pill" role="listitem">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span class="trust-label">Zero Sales Pressure</span>
+          </div>
+          <div class="trust-pill" role="listitem">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span class="trust-label">6 Neighborhoods Analyzed</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- /col-right -->
+
+    </div>
+  </div>
+
+  <!-- Scroll chevron -->
+  <button
+    class="scroll-indicator"
+    aria-label="Scroll down to explore"
+    onclick="window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })"
+  >
+    <span class="scroll-label">Scroll</span>
+    <span class="scroll-chevron-wrap" aria-hidden="true">
+      <svg class="scroll-chevron" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 7 L10 13.5 L16.5 7"/>
+      </svg>
+    </span>
+  </button>
+
+</section>
+
+<script>
+  // Respect prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const els = document.querySelectorAll(
+      '.hero-eyebrow, .hl-inner, .split-rule, .col-right-label, ' +
+      '.hero-sub, .hero-ctas, .hero-trust, .scroll-indicator'
+    );
+    els.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.animation = 'none';
+    });
+  }
+</script>
+
+</body>
+</html>

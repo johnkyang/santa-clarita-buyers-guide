@@ -30,7 +30,10 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#e6b319',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#c9a227' },
+    { media: '(prefers-color-scheme: dark)',  color: '#1a1612' },
+  ],
 }
 
 export default function RootLayout({
@@ -39,8 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var s=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||m);})();` }} />
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

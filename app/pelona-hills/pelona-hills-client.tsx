@@ -46,7 +46,7 @@ export function PelonaHillsLeadForm() {
   if (submitted) {
     return (
       <div className="text-center py-8">
-        <CheckCircle className="w-14 h-14 text-editorial-gold mx-auto mb-4" />
+        <CheckCircle className="w-14 h-14 text-gold-700 mx-auto mb-4" />
         <h3 className="font-display text-2xl font-semibold text-slate-900 mb-2">
           Got it, {name.split(' ')[0]}!
         </h3>
@@ -55,7 +55,7 @@ export function PelonaHillsLeadForm() {
         </p>
         <a
           href="tel:8184456354"
-          className="inline-flex items-center gap-2 text-editorial-gold font-bold hover:underline"
+          className="inline-flex items-center gap-2 text-gold-700 font-bold hover:underline"
         >
           <Phone className="w-4 h-4" />
           Or call now: (818) 445-6354
@@ -76,7 +76,7 @@ export function PelonaHillsLeadForm() {
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="Jane Smith"
-          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-editorial-gold/50 focus:border-editorial-gold transition"
+          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-700/50 focus:border-gold-700 transition"
           required
         />
       </div>
@@ -90,7 +90,7 @@ export function PelonaHillsLeadForm() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="jane@email.com"
-          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-editorial-gold/50 focus:border-editorial-gold transition"
+          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-700/50 focus:border-gold-700 transition"
           required
         />
       </div>
@@ -104,7 +104,7 @@ export function PelonaHillsLeadForm() {
           value={phone}
           onChange={e => setPhone(e.target.value)}
           placeholder="(661) 555-0000"
-          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-editorial-gold/50 focus:border-editorial-gold transition"
+          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-700/50 focus:border-gold-700 transition"
         />
       </div>
 
@@ -115,7 +115,7 @@ export function PelonaHillsLeadForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-2 bg-editorial-gold text-editorial-dark font-bold py-4 rounded-lg hover:brightness-110 hover:scale-[1.01] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2 bg-gold-700 text-navy-950 font-bold py-4 rounded-lg hover:brightness-110 hover:scale-[1.01] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
           <>

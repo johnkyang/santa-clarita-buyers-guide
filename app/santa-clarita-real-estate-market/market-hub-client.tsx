@@ -76,8 +76,8 @@ const neighborhoods = [
     yoy: '+2.6%',
     direction: 'up' as const,
     vibe: 'Most competitive',
-    color: 'bg-premium-blue/8 border-premium-blue/20',
-    textColor: 'text-premium-blue',
+    color: 'bg-navy-700/8 border-navy-700/20',
+    textColor: 'text-navy-700',
   },
   {
     name: 'Stevenson Ranch',
@@ -98,8 +98,8 @@ const neighborhoods = [
     yoy: '+3.8%',
     direction: 'up' as const,
     vibe: 'Best negotiating room',
-    color: 'bg-premium-green/8 border-premium-green/20',
-    textColor: 'text-premium-green',
+    color: 'bg-[#10b981]/8 border-[#10b981]/20',
+    textColor: 'text-[#10b981]',
   },
   {
     name: 'Newhall',
@@ -143,7 +143,7 @@ const marketPosts = [
     href: '/blog/santa-clarita-market-pulse-march-2026',
     date: 'March 7, 2026',
     tag: 'Latest',
-    tagColor: 'bg-premium-green/10 text-premium-green',
+    tagColor: 'bg-[#10b981]/10 text-[#10b981]',
   },
   {
     title: 'Santa Clarita Housing Market Report — January 2025',
@@ -167,19 +167,19 @@ const relatedPosts = [
 ]
 
 function TrendIcon({ direction }: { direction: 'up' | 'down' | 'neutral' }) {
-  if (direction === 'up') return <TrendingUp className="h-4 w-4 text-premium-green" />
-  if (direction === 'down') return <TrendingDown className="h-4 w-4 text-premium-blue" />
+  if (direction === 'up') return <TrendingUp className="h-4 w-4 text-[#10b981]" />
+  if (direction === 'down') return <TrendingDown className="h-4 w-4 text-navy-700" />
   return <Minus className="h-4 w-4 text-gray-400" />
 }
 
 export function MarketHubClient() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-premium-cream to-white">
+    <div className="min-h-screen bg-gradient-to-b from-warm-50 to-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-premium-blue-dark py-20 sm:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-navy-800 py-20 sm:py-28">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute left-1/3 top-1/3 h-80 w-80 rounded-full bg-premium-gold blur-3xl" />
-          <div className="absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full bg-premium-blue blur-3xl" />
+          <div className="absolute left-1/3 top-1/3 h-80 w-80 rounded-full bg-gold-100 blur-3xl" />
+          <div className="absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full bg-navy-700 blur-3xl" />
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -189,12 +189,12 @@ export function MarketHubClient() {
               transition={{ duration: 0.5 }}
             >
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm border border-white/20">
-                <BarChart3 className="h-4 w-4 text-premium-gold" />
+                <BarChart3 className="h-4 w-4 text-gold-100" />
                 Updated {marketSnapshot.updatedDate}
               </div>
               <h1 className="font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl mb-6 leading-tight">
                 Santa Clarita
-                <span className="block text-premium-gold mt-1">Real Estate Market</span>
+                <span className="block text-gold-100 mt-1">Real Estate Market</span>
               </h1>
               <p className="text-lg text-white/80 sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
                 Monthly price data, inventory trends, and neighborhood breakdowns — so you can make informed decisions, not guesses.
@@ -203,7 +203,7 @@ export function MarketHubClient() {
                 <Link href="#snapshot">
                   <Button
                     size="lg"
-                    className="group h-14 bg-premium-gold hover:bg-amber-500 text-gray-900 font-bold px-8 text-base transition-all hover:scale-105"
+                    className="group h-14 bg-gold-100 hover:bg-amber-500 text-gray-900 font-bold px-8 text-base transition-all hover:scale-105"
                   >
                     See Current Data
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -239,7 +239,7 @@ export function MarketHubClient() {
               </div>
               <Link
                 href="/blog/santa-clarita-market-pulse-march-2026"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-premium-blue hover:underline"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:underline"
               >
                 Full March Report
                 <ChevronRight className="h-4 w-4" />
@@ -265,8 +265,8 @@ export function MarketHubClient() {
                   <div className="flex items-center gap-1.5">
                     <TrendIcon direction={stat.direction} />
                     <span className={`text-xs font-semibold ${
-                      stat.direction === 'up' ? 'text-premium-green' :
-                      stat.direction === 'down' ? 'text-premium-blue' :
+                      stat.direction === 'up' ? 'text-[#10b981]' :
+                      stat.direction === 'down' ? 'text-navy-700' :
                       'text-gray-500'
                     }`}>
                       {stat.change}
@@ -314,7 +314,7 @@ export function MarketHubClient() {
                     </div>
                     <div className="flex items-center gap-1">
                       <TrendIcon direction={n.direction} />
-                      <span className="text-sm font-bold text-premium-green">{n.yoy}</span>
+                      <span className="text-sm font-bold text-[#10b981]">{n.yoy}</span>
                     </div>
                   </div>
 
@@ -360,7 +360,7 @@ export function MarketHubClient() {
                 <strong>Not sure which neighborhood fits your budget and lifestyle?</strong> Our free quiz matches you in 2 minutes.
               </p>
               <Link href="/neighborhood-quiz">
-                <Button className="bg-gradient-to-r from-premium-blue to-premium-blue-dark text-white hover:opacity-90">
+                <Button className="bg-gradient-to-r from-navy-700 to-navy-800 text-white hover:opacity-90">
                   Take the Neighborhood Quiz
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -375,7 +375,7 @@ export function MarketHubClient() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-10">
-              <div className="inline-flex items-center gap-2 rounded-full bg-premium-blue/8 px-3 py-1.5 text-xs font-semibold text-premium-blue mb-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-navy-700/8 px-3 py-1.5 text-xs font-semibold text-navy-700 mb-3">
                 <Calendar className="h-3.5 w-3.5" />
                 Monthly Series
               </div>
@@ -400,7 +400,7 @@ export function MarketHubClient() {
                     href={post.href}
                     className="group flex items-start gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
                   >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-premium-blue/8 text-premium-blue">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-700/8 text-navy-700">
                       <BarChart3 className="h-6 w-6" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -410,12 +410,12 @@ export function MarketHubClient() {
                         </span>
                         <span className="text-xs text-gray-400">{post.date}</span>
                       </div>
-                      <h3 className="font-semibold text-gray-900 group-hover:text-premium-blue transition-colors">
+                      <h3 className="font-semibold text-gray-900 group-hover:text-navy-700 transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-sm text-gray-500 mt-1">{post.excerpt}</p>
                     </div>
-                    <ChevronRight className="mt-1 h-5 w-5 shrink-0 text-gray-300 group-hover:text-premium-blue transition-colors" />
+                    <ChevronRight className="mt-1 h-5 w-5 shrink-0 text-gray-300 group-hover:text-navy-700 transition-colors" />
                   </Link>
                 </motion.div>
               ))}
@@ -426,7 +426,7 @@ export function MarketHubClient() {
                 <strong className="text-gray-700">Subscribe to the monthly Market Pulse.</strong>{' '}
                 Get each report delivered to your inbox the first week of every month.
               </p>
-              <Link href="/contact" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-premium-blue hover:underline">
+              <Link href="/contact" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 hover:underline">
                 Subscribe via contact form
                 <ChevronRight className="h-4 w-4" />
               </Link>
@@ -445,7 +445,7 @@ export function MarketHubClient() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h3 className="font-display text-lg font-bold text-premium-gold mb-4 flex items-center gap-2">
+                <h3 className="font-display text-lg font-bold text-gold-100 mb-4 flex items-center gap-2">
                   <TrendingUp className="h-5 w-5" />
                   Reasons to Buy Now
                 </h3>
@@ -458,7 +458,7 @@ export function MarketHubClient() {
                     'Spring competition hasn\'t fully arrived yet — act before peak',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
-                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-premium-gold" />
+                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-gold-100" />
                       {item}
                     </li>
                   ))}
@@ -487,12 +487,12 @@ export function MarketHubClient() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-2xl bg-premium-gold/10 border border-premium-gold/30 p-6 text-center">
+            <div className="mt-8 rounded-2xl bg-gold-100/10 border border-gold-100/30 p-6 text-center">
               <p className="text-white font-semibold mb-1">The honest answer:</p>
               <p className="text-gray-300 text-sm max-w-2xl mx-auto">
                 Timing the market is nearly impossible. The right time to buy is when you&apos;re financially ready, planning to stay 5+ years, and have found the right home in the right neighborhood. Use our calculator to see if the numbers work for you — then decide.
               </p>
-              <Link href="/buying-power" className="mt-4 inline-flex items-center gap-2 text-premium-gold font-semibold text-sm hover:underline">
+              <Link href="/buying-power" className="mt-4 inline-flex items-center gap-2 text-gold-100 font-semibold text-sm hover:underline">
                 Run the numbers with the Buying Power Calculator
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -506,7 +506,7 @@ export function MarketHubClient() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 flex items-center gap-3">
-              <BookOpen className="h-6 w-6 text-premium-blue" />
+              <BookOpen className="h-6 w-6 text-navy-700" />
               <h2 className="font-display text-2xl font-bold text-gray-900 sm:text-3xl">
                 Market Intelligence Deep Dives
               </h2>
@@ -517,10 +517,10 @@ export function MarketHubClient() {
                 <Link
                   key={post.href}
                   href={post.href}
-                  className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3.5 shadow-sm hover:shadow-md hover:border-premium-blue/20 transition-all duration-200"
+                  className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3.5 shadow-sm hover:shadow-md hover:border-navy-700/20 transition-all duration-200"
                 >
-                  <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-premium-blue transition-colors" />
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-premium-blue transition-colors leading-snug">
+                  <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-navy-700 transition-colors" />
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-navy-700 transition-colors leading-snug">
                     {post.title}
                   </span>
                 </Link>
@@ -530,7 +530,7 @@ export function MarketHubClient() {
             <div className="mt-6 text-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-premium-blue hover:underline"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:underline"
               >
                 View all market articles
                 <ArrowRight className="h-4 w-4" />
@@ -544,7 +544,7 @@ export function MarketHubClient() {
       <section className="pb-16 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="rounded-3xl bg-gradient-to-br from-premium-blue to-premium-blue-dark p-10 sm:p-14 shadow-xl">
+            <div className="rounded-3xl bg-gradient-to-br from-navy-700 to-navy-800 p-10 sm:p-14 shadow-xl">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl mb-4">
                 Ready to Buy in This Market?
               </h2>
@@ -555,7 +555,7 @@ export function MarketHubClient() {
                 <Link href="/buying-power">
                   <Button
                     size="lg"
-                    className="h-14 bg-premium-gold hover:bg-amber-500 text-gray-900 font-bold px-8 transition-all hover:scale-105"
+                    className="h-14 bg-gold-100 hover:bg-amber-500 text-gray-900 font-bold px-8 transition-all hover:scale-105"
                   >
                     Calculate My Budget
                     <ArrowRight className="ml-2 h-5 w-5" />

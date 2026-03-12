@@ -10,7 +10,7 @@ const features = [
     description:
       'Compare new builds with resale homes to find the perfect fit for your lifestyle and budget.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800',
-    gradient: 'from-premium-blue/90 to-premium-blue-dark/90',
+    gradient: 'from-navy-700/90 to-navy-800/90',
   },
   {
     icon: Users,
@@ -18,7 +18,7 @@ const features = [
     description:
       'Explore active adult communities designed for an engaging and maintenance-free lifestyle.',
     image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800',
-    gradient: 'from-premium-orange/90 to-premium-rust/90',
+    gradient: 'from-gold-600/90 to-gold-800/90',
   },
   {
     icon: TrendingUp,
@@ -26,7 +26,7 @@ const features = [
     description:
       'Stay informed with up-to-date price ranges and market trends across all neighborhoods.',
     image: 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?q=80&w=800',
-    gradient: 'from-premium-green/90 to-emerald-700/90',
+    gradient: 'from-[#10b981]/90 to-emerald-700/90',
   },
   {
     icon: Shield,
@@ -40,7 +40,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-20 sm:py-32 bg-premium-cream">
+    <section className="py-20 sm:py-32 bg-warm-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">

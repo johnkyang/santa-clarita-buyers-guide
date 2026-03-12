@@ -12,9 +12,9 @@ interface GuideCardProps {
 }
 
 const gradients = [
-  'from-premium-blue via-premium-blue-dark to-blue-900',
-  'from-premium-orange via-premium-rust to-orange-700',
-  'from-premium-green via-emerald-600 to-teal-700',
+  'from-navy-700 via-navy-800 to-blue-900',
+  'from-gold-600 via-gold-800 to-orange-700',
+  'from-[#10b981] via-emerald-600 to-teal-700',
   'from-amber-500 via-orange-500 to-red-600',
 ]
 
@@ -54,7 +54,7 @@ export function GuideCard({ guide, icon }: GuideCardProps) {
                 <ul className="space-y-3">
                   {guide.sections.slice(0, 3).map((section, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
                         {section.title}
                       </span>
@@ -62,7 +62,7 @@ export function GuideCard({ guide, icon }: GuideCardProps) {
                   ))}
                 </ul>
                 {guide.sections.length > 3 && (
-                  <p className="mt-4 text-sm font-semibold text-premium-blue">
+                  <p className="mt-4 text-sm font-semibold text-navy-700">
                     + {guide.sections.length - 3} more topics
                   </p>
                 )}
@@ -71,25 +71,25 @@ export function GuideCard({ guide, icon }: GuideCardProps) {
               <>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
                       Interactive Affordability Calculator
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
                       Down Payment & Credit Requirements
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-premium-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#10b981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
                       CalHFA Assistance Programs ($15K-$30K)
                     </span>
                   </li>
                 </ul>
-                <p className="mt-4 text-sm font-semibold text-premium-blue">
+                <p className="mt-4 text-sm font-semibold text-navy-700">
                   + 3 more comprehensive sections
                 </p>
               </>
@@ -97,7 +97,7 @@ export function GuideCard({ guide, icon }: GuideCardProps) {
           </div>
 
           {/* CTA */}
-          <div className="flex items-center gap-2 text-premium-blue font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+          <div className="flex items-center gap-2 text-navy-700 font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
             <span>Read Full Guide</span>
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
           </div>

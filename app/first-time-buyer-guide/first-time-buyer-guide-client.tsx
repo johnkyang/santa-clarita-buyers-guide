@@ -129,14 +129,14 @@ const resources = [
     title: 'Buying Power Calculator',
     description: 'See exactly what you can afford based on your income and debts.',
     href: '/buying-power',
-    color: 'bg-premium-blue/10 text-premium-blue',
+    color: 'bg-navy-700/10 text-navy-700',
   },
   {
     icon: DollarSign,
     title: 'DPA Eligibility Checker',
     description: 'Find out if you qualify for $15,000–$150,000 in down payment assistance.',
     href: '/dpa-checker',
-    color: 'bg-premium-green/10 text-premium-green',
+    color: 'bg-[#10b981]/10 text-[#10b981]',
   },
   {
     icon: Home,
@@ -149,12 +149,12 @@ const resources = [
 
 export function FirstTimeBuyerGuideClient() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-premium-cream to-white">
+    <div className="min-h-screen bg-gradient-to-b from-warm-50 to-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-premium-blue via-premium-blue-dark to-slate-900 py-20 sm:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-700 via-navy-800 to-slate-900 py-20 sm:py-28">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-premium-gold blur-3xl" />
+          <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-gold-100 blur-3xl" />
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -169,7 +169,7 @@ export function FirstTimeBuyerGuideClient() {
               </div>
               <h1 className="font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl mb-6 leading-tight">
                 First-Time Home Buyer Guide
-                <span className="block text-premium-gold mt-2">Santa Clarita 2026</span>
+                <span className="block text-gold-100 mt-2">Santa Clarita 2026</span>
               </h1>
               <p className="text-lg text-white/80 sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
                 Everything you need to go from &ldquo;thinking about buying&rdquo; to holding your keys —
@@ -179,7 +179,7 @@ export function FirstTimeBuyerGuideClient() {
                 <Link href="#steps">
                   <Button
                     size="lg"
-                    className="group h-14 bg-premium-gold hover:bg-amber-500 text-gray-900 font-bold px-8 text-base transition-all duration-300 hover:scale-105"
+                    className="group h-14 bg-gold-100 hover:bg-amber-500 text-gray-900 font-bold px-8 text-base transition-all duration-300 hover:scale-105"
                   >
                     Start the Guide
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -219,7 +219,7 @@ export function FirstTimeBuyerGuideClient() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 group-hover:text-premium-blue transition-colors text-sm">
+                    <p className="font-semibold text-gray-900 group-hover:text-navy-700 transition-colors text-sm">
                       {resource.title}
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{resource.description}</p>
@@ -257,13 +257,13 @@ export function FirstTimeBuyerGuideClient() {
                 >
                   <div className="flex items-start gap-5">
                     <div className="flex-shrink-0">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-premium-blue/8 text-premium-blue">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-700/8 text-navy-700">
                         <Icon className="h-7 w-7" />
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-xs font-bold text-premium-gold uppercase tracking-widest">
+                        <span className="text-xs font-bold text-gold-100 uppercase tracking-widest">
                           Step {step.number}
                         </span>
                       </div>
@@ -276,7 +276,7 @@ export function FirstTimeBuyerGuideClient() {
                           <Link
                             key={link.href}
                             href={link.href}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-premium-blue/8 hover:text-premium-blue transition-colors duration-200 border border-gray-200"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-navy-700/8 hover:text-navy-700 transition-colors duration-200 border border-gray-200"
                           >
                             {link.label}
                             <ChevronRight className="h-3.5 w-3.5" />
@@ -309,7 +309,7 @@ export function FirstTimeBuyerGuideClient() {
               {/* Upfront Costs */}
               <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
                 <h3 className="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <DollarSign className="h-5 w-5 text-premium-gold" />
+                  <DollarSign className="h-5 w-5 text-gold-100" />
                   Upfront Costs (One-Time)
                 </h3>
                 <div className="space-y-3">
@@ -332,7 +332,7 @@ export function FirstTimeBuyerGuideClient() {
               {/* Monthly Costs */}
               <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
                 <h3 className="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Home className="h-5 w-5 text-premium-gold" />
+                  <Home className="h-5 w-5 text-gold-100" />
                   Monthly Costs (Ongoing)
                 </h3>
                 <div className="space-y-3">
@@ -355,7 +355,7 @@ export function FirstTimeBuyerGuideClient() {
 
             <p className="text-center text-gray-500 text-sm mt-6">
               All estimates for a $750,000 home in Santa Clarita at March 2026 rates. Use the{' '}
-              <Link href="/buying-power" className="text-premium-gold hover:underline">
+              <Link href="/buying-power" className="text-gold-100 hover:underline">
                 Buying Power Calculator
               </Link>{' '}
               for your specific numbers.
@@ -388,7 +388,7 @@ export function FirstTimeBuyerGuideClient() {
                   className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-premium-blue" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-navy-700" />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
@@ -433,9 +433,9 @@ export function FirstTimeBuyerGuideClient() {
                   className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <div className="flex items-start gap-3">
-                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-premium-blue opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-navy-700 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div>
-                      <p className="font-semibold text-gray-900 group-hover:text-premium-blue transition-colors text-sm leading-snug mb-1">
+                      <p className="font-semibold text-gray-900 group-hover:text-navy-700 transition-colors text-sm leading-snug mb-1">
                         {post.title}
                       </p>
                       <p className="text-xs text-gray-500 leading-relaxed">{post.desc}</p>
@@ -452,7 +452,7 @@ export function FirstTimeBuyerGuideClient() {
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="rounded-3xl bg-gradient-to-br from-premium-blue to-premium-blue-dark p-10 sm:p-14 shadow-xl">
+            <div className="rounded-3xl bg-gradient-to-br from-navy-700 to-navy-800 p-10 sm:p-14 shadow-xl">
               <h2 className="font-display text-3xl font-bold text-white sm:text-4xl mb-4">
                 Ready to Start Your Home Search?
               </h2>
@@ -464,7 +464,7 @@ export function FirstTimeBuyerGuideClient() {
                 <Link href="/buying-power">
                   <Button
                     size="lg"
-                    className="h-14 bg-premium-gold hover:bg-amber-500 text-gray-900 font-bold px-8 transition-all hover:scale-105"
+                    className="h-14 bg-gold-100 hover:bg-amber-500 text-gray-900 font-bold px-8 transition-all hover:scale-105"
                   >
                     Calculate My Budget
                     <ArrowRight className="ml-2 h-5 w-5" />

@@ -104,14 +104,14 @@ export default function PelonaHillsPage() {
     <div className="bg-white">
 
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-editorial-dark overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-navy-950 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(230,179,25,0.15),transparent_60%)]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
 
           {/* Badge */}
           <div className="flex flex-wrap gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-editorial-gold/20 border border-editorial-gold/40 text-editorial-gold text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-editorial-gold animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 bg-gold-700/20 border border-gold-700/40 text-gold-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-700 animate-pulse" />
               Grand Opening — March 28, 2026
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-white/80 text-xs font-semibold px-4 py-1.5 rounded-full">
@@ -125,7 +125,7 @@ export default function PelonaHillsPage() {
             <div>
               <h1 className="font-display text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.05] tracking-tight text-white mb-6">
                 Pelona Hills<br />
-                <em className="not-italic text-editorial-gold">by Intracorp Homes</em>
+                <em className="not-italic text-gold-700">by Intracorp Homes</em>
               </h1>
               <p className="text-xl text-white/75 font-light leading-relaxed mb-8 max-w-lg">
                 119 new single-family homes with 360° valley views, no Mello-Roos, and early California architecture — on a hilltop perch in Santa Clarita&apos;s sought-after Sand Canyon.
@@ -139,7 +139,7 @@ export default function PelonaHillsPage() {
                   { value: '$0', label: 'Mello-Roos' },
                 ].map(stat => (
                   <div key={stat.label} className="bg-white/8 border border-white/10 rounded-xl p-4 text-center">
-                    <p className="font-display text-2xl font-bold text-editorial-gold">{stat.value}</p>
+                    <p className="font-display text-2xl font-bold text-gold-700">{stat.value}</p>
                     <p className="text-white/60 text-xs uppercase tracking-wider mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -148,7 +148,7 @@ export default function PelonaHillsPage() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#contact"
-                  className="flex items-center gap-2 bg-editorial-gold px-7 py-4 rounded-full text-editorial-dark font-bold hover:brightness-110 hover:scale-105 transition-all"
+                  className="flex items-center gap-2 bg-gold-700 px-7 py-4 rounded-full text-navy-950 font-bold hover:brightness-110 hover:scale-105 transition-all"
                 >
                   Get Pre-Approval Info
                   <ArrowRight className="w-4 h-4" />
@@ -179,7 +179,7 @@ export default function PelonaHillsPage() {
                     'Adjacent neighborhood park',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-editorial-gold mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-gold-700 mt-0.5 shrink-0" />
                       <span className="text-white/80 text-sm">{item}</span>
                     </li>
                   ))}
@@ -207,16 +207,16 @@ export default function PelonaHillsPage() {
       {/* Community Highlights Grid */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="mb-12">
-          <p className="text-editorial-gold font-bold tracking-widest uppercase text-xs mb-3">Why Pelona Hills</p>
+          <p className="text-gold-700 font-bold tracking-widest uppercase text-xs mb-3">Why Pelona Hills</p>
           <h2 className="font-display text-4xl lg:text-5xl font-medium text-slate-900">
             What Makes This Community Special
           </h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {highlights.map(h => (
-            <div key={h.title} className="group p-8 rounded-2xl border border-slate-100 hover:border-editorial-gold/30 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-editorial-gold/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-editorial-gold/20 transition-colors">
-                <h.icon className="w-6 h-6 text-editorial-gold" />
+            <div key={h.title} className="group p-8 rounded-2xl border border-slate-100 hover:border-gold-700/30 hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-gold-700/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold-700/20 transition-colors">
+                <h.icon className="w-6 h-6 text-gold-700" />
               </div>
               <h3 className="font-display text-xl font-semibold text-slate-900 mb-2">{h.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{h.desc}</p>
@@ -288,13 +288,13 @@ export default function PelonaHillsPage() {
       </section>
 
       {/* Lead Capture — Contact John Yang */}
-      <section id="contact" className="bg-gradient-to-br from-slate-900 to-editorial-dark py-20">
+      <section id="contact" className="bg-gradient-to-br from-slate-900 to-navy-950 py-20">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
 
             {/* Left: copy */}
             <div>
-              <p className="text-editorial-gold font-bold tracking-widest uppercase text-xs mb-4">Get Pre-Approved</p>
+              <p className="text-gold-700 font-bold tracking-widest uppercase text-xs mb-4">Get Pre-Approved</p>
               <h2 className="font-display text-4xl lg:text-5xl font-medium text-white leading-tight mb-6">
                 Ready to Buy at<br />Pelona Hills?
               </h2>
@@ -310,7 +310,7 @@ export default function PelonaHillsPage() {
                   'Free, no obligation — always on your side',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-editorial-gold mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-gold-700 mt-0.5 shrink-0" />
                     <span className="text-white/80 text-sm">{item}</span>
                   </div>
                 ))}
@@ -318,7 +318,7 @@ export default function PelonaHillsPage() {
 
               <a
                 href="tel:8184456354"
-                className="inline-flex items-center gap-3 text-editorial-gold font-bold text-lg hover:underline"
+                className="inline-flex items-center gap-3 text-gold-700 font-bold text-lg hover:underline"
               >
                 <Phone className="w-5 h-5" />
                 Call John: (818) 445-6354
@@ -343,7 +343,7 @@ export default function PelonaHillsPage() {
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-editorial-gold font-bold tracking-widest uppercase text-xs mb-3">Location</p>
+            <p className="text-gold-700 font-bold tracking-widest uppercase text-xs mb-3">Location</p>
             <h2 className="font-display text-4xl font-medium text-slate-900 mb-6">
               Sand Canyon,<br />Canyon Country
             </h2>
@@ -352,21 +352,21 @@ export default function PelonaHillsPage() {
             </p>
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3 text-sm text-slate-700">
-                <MapPin className="w-4 h-4 text-editorial-gold shrink-0" />
+                <MapPin className="w-4 h-4 text-gold-700 shrink-0" />
                 28926 Sand Canyon Rd, Santa Clarita, CA 91387
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-700">
-                <Train className="w-4 h-4 text-editorial-gold shrink-0" />
+                <Train className="w-4 h-4 text-gold-700 shrink-0" />
                 Vista Canyon Metrolink station — commuter rail to downtown LA
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-700">
-                <ShoppingBag className="w-4 h-4 text-editorial-gold shrink-0" />
+                <ShoppingBag className="w-4 h-4 text-gold-700 shrink-0" />
                 Sand Canyon Village: Sprouts, Starbucks, Jersey Mike&apos;s
               </div>
             </div>
             <Link
               href="/neighborhoods/canyon-country"
-              className="inline-flex items-center gap-2 text-editorial-gold font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-gold-700 font-semibold hover:underline"
             >
               Explore Canyon Country Neighborhood
               <ArrowRight className="w-4 h-4" />
@@ -384,9 +384,9 @@ export default function PelonaHillsPage() {
       </section>
 
       {/* Bottom CTA — Buying Power */}
-      <section className="bg-editorial-gold/8 border-t border-editorial-gold/15 py-16">
+      <section className="bg-gold-700/8 border-t border-gold-700/15 py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <Calculator className="w-10 h-10 text-editorial-gold mx-auto mb-4" />
+          <Calculator className="w-10 h-10 text-gold-700 mx-auto mb-4" />
           <h2 className="font-display text-3xl font-medium text-slate-900 mb-4">
             Know Your Numbers Before You Tour
           </h2>
@@ -395,7 +395,7 @@ export default function PelonaHillsPage() {
           </p>
           <Link
             href="/buying-power"
-            className="inline-flex items-center gap-2 bg-editorial-gold px-8 py-4 rounded-full text-editorial-dark font-bold hover:brightness-110 hover:scale-105 transition-all"
+            className="inline-flex items-center gap-2 bg-gold-700 px-8 py-4 rounded-full text-navy-950 font-bold hover:brightness-110 hover:scale-105 transition-all"
           >
             <Calculator className="w-5 h-5" />
             Calculate My Buying Power — Free

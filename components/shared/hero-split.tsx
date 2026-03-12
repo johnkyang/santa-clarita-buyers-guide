@@ -27,21 +27,21 @@ export function HeroSplit({
   placeholderTitle,
   children
 }: HeroSplitProps) {
-  const bgGradients = {
-    community: 'from-blue-50 via-white to-blue-50/30',
-    guide: 'from-orange-50 via-white to-orange-50/30'
-  }
+  const isCommunity = variant === 'community'
 
   const badgeColors = {
-    community: 'bg-blue-100 border-blue-200 text-blue-700',
+    community: 'border-[rgba(201,162,39,0.3)] bg-[rgba(201,162,39,0.1)] text-[#c9a227]',
     guide: 'bg-orange-100 border-orange-200 text-orange-700'
   }
 
   return (
-    <section className={`relative bg-gradient-to-b ${bgGradients[variant]} py-16 lg:py-24 overflow-hidden`}>
+    <section
+      className={`relative py-16 lg:py-24 overflow-hidden ${!isCommunity ? 'bg-gradient-to-b from-orange-50 via-white to-orange-50/30' : ''}`}
+      style={isCommunity ? { background: 'linear-gradient(180deg, #071525 0%, #0f1f3d 55%, #162b52 100%)' } : undefined}
+    >
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-premium-blue/5 to-premium-orange/5 rounded-full blur-3xl -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-premium-green/5 to-premium-blue/5 rounded-full blur-3xl -ml-48 -mb-48" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#0f1f3d]/5 to-[#c9a227]/5 rounded-full blur-3xl -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#10b981]/5 to-[#0f1f3d]/5 rounded-full blur-3xl -ml-48 -mb-48" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -63,11 +63,11 @@ export function HeroSplit({
                 </div>
               )}
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+              <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight ${isCommunity ? 'text-white' : 'text-gray-900'} mb-6 leading-tight`}>
                 {title}
               </h1>
 
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+              <p className={`text-xl lg:text-2xl ${isCommunity ? 'text-white/80' : 'text-gray-600'} mb-8 leading-relaxed`}>
                 {subtitle}
               </p>
 

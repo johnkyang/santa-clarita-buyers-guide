@@ -6,7 +6,7 @@ import { Phone, ExternalLink, BadgeDollarSign, CheckCircle2 } from 'lucide-react
 
 export function LenderHero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-premium-blue via-premium-blue-dark to-blue-900">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-700 via-navy-800 to-blue-900">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -52,7 +52,7 @@ export function LenderHero() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed mb-12"
           >
-            Mention <strong className="text-premium-orange">SantaClaritaBuyersGuide.com</strong> and receive a <strong className="text-premium-orange">$500 closing costs credit</strong>
+            Mention <strong className="text-gold-600">SantaClaritaBuyersGuide.com</strong> and receive a <strong className="text-gold-600">$500 closing costs credit</strong>
           </motion.p>
 
           <motion.div
@@ -64,7 +64,7 @@ export function LenderHero() {
             <a href="https://www.loandepot.com/jyang" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-premium-blue hover:bg-premium-cream shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white text-navy-700 hover:bg-warm-50 shadow-premium-lg hover:shadow-premium transition-all duration-300 hover:scale-110"
               >
                 Start Your Application Now
                 <ExternalLink className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
@@ -74,7 +74,7 @@ export function LenderHero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-premium-blue transition-all duration-300 hover:scale-110"
+                className="group w-full sm:w-auto h-16 px-10 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-navy-700 transition-all duration-300 hover:scale-110"
               >
                 <Phone className="mr-3 h-6 w-6 transition-transform group-hover:rotate-12" />
                 (818) 445-6354
@@ -103,7 +103,7 @@ export function LenderHero() {
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6"
                 >
-                  <Icon className="h-8 w-8 text-premium-orange mx-auto mb-3" />
+                  <Icon className="h-8 w-8 text-gold-600 mx-auto mb-3" />
                   <div className="text-base text-white font-medium">
                     {item.label}
                   </div>
